@@ -19,7 +19,7 @@ interface ArrowIconProps {
 export function ButtonPill({ as: Component = "button", children, className = "", ...props }: ButtonPillProps) {
   return (
     <Component
-      className={`mt-[27px] inline-flex cursor-pointer items-center gap-1.5 rounded-full border-2 border-sws-red-bright bg-transparent px-[19px] py-2 font-sans text-[19px] font-[350] leading-snug text-white hover:bg-[rgba(122,0,0,0.8)] ${className}`}
+      className={`mt-[27px] inline-flex cursor-pointer items-center gap-1.5 rounded-full border-2 border-digital-red-xlight bg-transparent px-19 py-8 font-sans text-[19px] font-[350] leading-snug text-white hocus-visible:bg-digital-red ${className}`}
       {...props}
     >
       {children}

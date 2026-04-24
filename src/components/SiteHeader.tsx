@@ -1,13 +1,17 @@
 import { UnitSignature } from "./UnitSignature";
 
 const NAV = [
-  { href: "#", label: "Our work" },
+  { href: "/", label: "Our work" },
   { href: "#", label: "Services" },
-  { href: "#", label: "Why Web Services" },
+  { href: "/why-web-services", label: "Why Web Services" },
   { href: "#", label: "Contact us" },
 ];
 
-export function SiteHeader() {
+interface SiteHeaderProps {
+  activeLabel?: string;
+}
+
+export function SiteHeader({ activeLabel }: SiteHeaderProps) {
   return (
     <header>
       <div className="bg-white py-1.5 pl-[clamp(1.25rem,5vw,100px)]">
@@ -29,7 +33,13 @@ export function SiteHeader() {
               <a
                 key={label}
                 href={href}
-                className="whitespace-nowrap text-[19px] font-semibold text-sws-digital-red hover:underline"
+                aria-current={label === activeLabel ? "page" : undefined}
+                className={[
+                  "border-b-4 pb-5 whitespace-nowrap text-[19px] font-semibold transition-colors",
+                  label === activeLabel
+                    ? "border-sws-text text-sws-text"
+                    : "border-transparent text-sws-digital-red hover:border-sws-text/20 hover:text-sws-text",
+                ].join(" ")}
               >
                 {label}
               </a>

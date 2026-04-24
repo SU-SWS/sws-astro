@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "decanter";
 
 @theme {
   --font-sans: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;

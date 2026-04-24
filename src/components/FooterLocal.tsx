@@ -1,13 +1,25 @@
 import { UnitSignature } from "./UnitSignature";
 
 const NAV = [
-  { href: "#", label: "Our work" },
+  { href: "/", label: "Our work" },
   { href: "#", label: "Services" },
-  { href: "#", label: "Why Web Services" },
+  { href: "/why-web-services", label: "Why Web Services" },
   { href: "#", label: "Contact us" },
 ];
 
-export function FooterLocal() {
+interface FooterLocalProps {
+  heading?: string;
+  buttonHref?: string;
+  buttonLabel?: string;
+  activeLabel?: string;
+}
+
+export function FooterLocal({
+  heading = "Curabitur condimentum ipsum nec purus interdum commodo.",
+  buttonHref = "#",
+  buttonLabel = "Connect with us",
+  activeLabel,
+}: FooterLocalProps) {
   return (
     <footer className="bg-sws-tan px-[clamp(1.25rem,5vw,100px)] py-[95px]">
       <div className="mx-auto max-w-[1300px] px-0">
@@ -15,14 +27,14 @@ export function FooterLocal() {
           <div className="min-h-px min-w-[120px] flex-1 basis-[120px]" aria-hidden />
           <div className="max-w-[560px] flex-1 basis-[280px]">
             <p className="m-0 font-serif text-[33px] font-normal leading-snug">
-              Curabitur condimentum ipsum nec purus interdum commodo.
+              {heading}
             </p>
-            <button
-              type="button"
+            <a
+              href={buttonHref}
               className="mt-[38px] inline-flex cursor-pointer items-center gap-1.5 rounded-full border-2 border-sws-red-bright bg-transparent px-[19px] py-2 font-sans text-[19px] font-[350] leading-snug text-sws-text hover:bg-[rgba(248,53,53,0.08)]"
             >
-              Connect with us
-            </button>
+              {buttonLabel}
+            </a>
           </div>
         </div>
         <div className="flex flex-wrap items-start justify-between gap-8 pt-[95px]">
@@ -32,7 +44,13 @@ export function FooterLocal() {
               <a
                 key={label}
                 href={href}
-                className="whitespace-nowrap text-[19px] font-semibold text-sws-digital-red hover:underline"
+                aria-current={label === activeLabel ? "page" : undefined}
+                className={[
+                  "border-b-4 pb-5 whitespace-nowrap text-[19px] font-semibold transition-colors",
+                  label === activeLabel
+                    ? "border-sws-text text-sws-text"
+                    : "border-transparent text-sws-digital-red hover:border-sws-text/20 hover:text-sws-text",
+                ].join(" ")}
               >
                 {label}
               </a>
