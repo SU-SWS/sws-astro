@@ -1,14 +1,14 @@
 const CARDS = [
   {
-    title: "Products crafted for your mission",
+    title: "Modern practices. Flexible platforms. Award-winning work.",
     body: "Phasellus convallis sagittis aliquam. Quisque porttitor nibh orci, non cursus odio elementum et. Quisque eu porttitor nulla, ut tempor erat. Sed non pulvinar leo, non fermentum odio.",
   },
   {
-    title: "Products crafted for your mission",
+    title: "Digital solutions, without the overhead.",
     body: "Phasellus convallis sagittis aliquam. Quisque porttitor nibh orci, non cursus odio elementum et. Quisque eu porttitor nulla, ut tempor erat. Sed non pulvinar leo, non fermentum odio.",
   },
   {
-    title: "Products crafted for your mission",
+    title: "The team Stanford teams trust.",
     body: "Phasellus convallis sagittis aliquam. Quisque porttitor nibh orci, non cursus odio elementum et. Quisque eu porttitor nulla, ut tempor erat. Sed non pulvinar leo, non fermentum odio.",
   },
 ];
@@ -21,8 +21,7 @@ export function TalkingPointsSection() {
           Talking points
         </h2>
         <p className="m-0 max-w-[800px] font-serif text-[clamp(1.5rem,2.5vw,36px)] font-normal leading-tight">
-          Nulla ut pulvinar nibh, ac venenatis mi. Nam venenatis finibus sapien, quis dapibus turpis. Proin ac diam pretium,
-          eleifend sapien nec, commodo massa. Etiam posuere, nulla a pharetra bibendum, mauris metus.
+          We work closely with the Stanford community to translate complex goals into clear, engaging, and easy-to-manage experiences.
         </p>
         <div className="mt-[95px] grid grid-cols-1 gap-10 min-[901px]:grid-cols-3">
           {CARDS.map((card, index) => (

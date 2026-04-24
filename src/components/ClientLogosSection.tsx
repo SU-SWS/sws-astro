@@ -18,8 +18,7 @@ export function ClientLogosSection() {
       <div className="mx-auto max-w-[1300px] p-0">
         <p className="m-0 mb-[38px] text-[19px] leading-snug">Lasting Partnerships</p>
         <h2 id="logos-heading" className="m-0 max-w-[1000px] font-serif text-[clamp(2rem,3vw,51px)] font-normal leading-snug">
-          Aliquam egestas sem lacinia tellus congue sollicitudin. Vivamus interdum pretium volutpat. Vivamus rutrum scelerisque
-          velit non auctor. Praesent sagittis est elit, at lacinia odio euismod eu.
+          Our clients  |  SWS maintains long-term partnerships across Stanford, providing strategic and technical support for schools, institutes, and organizations.
         </h2>
 
         <div className="mt-[114px] flex flex-col gap-[114px] max-[1000px]:gap-12">

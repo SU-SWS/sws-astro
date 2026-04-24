@@ -5,8 +5,7 @@ export function IntroLede() {
         Introduction
       </h1>
       <p className="m-0 max-w-[1000px] flex-1 font-serif text-[clamp(2rem,4vw,56px)] font-medium leading-tight text-sws-text">
-        From research initiatives to schools and programs, we build digital experiences worthy of Stanford’s work — for every
-        team, every scale, every mission.
+        We build digital experiences worthy of the work behind them — for every team, every scale, every vision.
       </p>
     </section>
   );
