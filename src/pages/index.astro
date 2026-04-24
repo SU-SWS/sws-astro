@@ -1,9 +1,11 @@
 ---
 import "../index.css";
 import App from "../App";
+import { SiteHeader } from "../components/SiteHeader";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Stanford Web Services">
+<BaseLayout title="Stanford Web Services" footerActiveLabel="Our work">
+  <SiteHeader activeLabel="Our work" />
   <App client:load />
 </BaseLayout>

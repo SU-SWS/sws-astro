@@ -1,8 +1,5 @@
 import { ArrowIcon, ButtonPill } from "./ButtonPill";
-import { FooterGlobal } from "./FooterGlobal";
-import { FooterLocal } from "./FooterLocal";
 import { ServiceSection } from "./ServiceSection";
-import { SiteHeader } from "./SiteHeader";
 
 const PRINCIPLES = [
   {
@@ -79,43 +76,42 @@ const TECHNOLOGY_COLUMNS = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <SiteHeader activeLabel="Services" theme="dark" />
-
+    <div className="min-h-screen bg-sws-ood text-white">
       <main>
-        <section className="cc rs-pb-7 rs-pt-8">
-          <div className="max-w-1300">
-            <h1 className="font-serif text-[3.6rem] leading-cozy tracking-[0.01em] text-white md:text-[5.5rem] 4xl:text-[7rem]">
+        <section className="cc pb-[114px] pt-[133px]">
+          <div className="max-w-[1300px]">
+            <h1 className="max-w-[900px] font-serif text-[45px] leading-[1.4] tracking-[0.01em] text-white md:text-[56px] 4xl:text-[70px]">
               Services
             </h1>
-            <p className="rs-mt-3 max-w-900 text-[2.4rem] leading-cozy text-black-50 md:text-[3rem] 4xl:text-[3.6rem]">
-              We partner with teams across Stanford, big and small. From a focused UX strategy sprint to a multi-year program,
-              our job is to help your users engage with Stanford’s mission and your work through digital experiences that last.
+            <p className="max-w-[900px] pt-[48px] text-[26px] leading-[1.4] text-[#979694] md:text-[30px] 4xl:text-[36px]">
+              We partner with teams across Stanford, big and small. From a ten-hour UX strategy consult to a multi-year
+              program, we share the same campus and the same goal: moving Stanford forward through digital experiences that help
+              your users engage with the mission behind your work.
             </p>
           </div>
         </section>
 
-        <section className="cc pb-4">
-          <div className="grid max-w-1300 gap-61 lg:grid-cols-[392px_minmax(0,1fr)]">
-            <aside className="lg:sticky lg:top-0 lg:self-start lg:pt-95 lg:pb-95">
+        <section className="cc pb-[4px]">
+          <div className="grid max-w-[1300px] gap-[76px] lg:grid-cols-[392.667px_minmax(0,1fr)]">
+            <aside className="lg:sticky lg:top-0 lg:self-start lg:py-[95px]">
               {PRINCIPLES.map((principle, index) => (
-                <article key={principle.title} className={index === 0 ? "" : "rs-pt-4"}>
-                  <div className="size-76 rounded-full border border-black-60/65 bg-black-90/35" aria-hidden />
-                  <h2 className="rs-pt-1 font-serif text-[2.7rem] leading-display tracking-[0.01em] text-white md:text-[3.6rem] 4xl:text-[4.5rem]">
+                <article key={principle.title} className={index === 0 ? "w-full" : "w-full pt-[61px]"}>
+                  <div className="size-[76px]" aria-hidden />
+                  <h2 className="pt-[10px] font-serif text-[36px] leading-[1.2] tracking-[0.01em] text-white md:text-[40px] 4xl:text-[45px]">
                     {principle.title}
                   </h2>
-                  <p className="mt-27 basefont-23 leading-snug text-black-50">{principle.body}</p>
+                  <p className="mt-[27px] text-[21px] leading-[1.3] text-[#979694] md:text-[23px]">{principle.body}</p>
                 </article>
               ))}
             </aside>
 
-            <div className="rs-pt-10 rs-pb-6">
+            <div className="pb-[95px]">
               <div className="flex flex-col rs-gap-y-6">
                 {SERVICES.map((service) => (
                   <ServiceSection key={service.title} {...service} />
                 ))}
               </div>
-              <a href="/why-web-services" className="inline-flex items-center gap-6 rs-mt-6 text-19 text-white">
+              <a href="/why-web-services" className="mt-[13px] inline-flex items-center gap-6 text-[19px] leading-[1.32] text-white">
                 <span className="underline decoration-digital-red-xlight underline-offset-4">Why partner with us</span>
                 <ArrowIcon />
               </a>
@@ -123,10 +119,10 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="cc rs-pt-10">
-          <div className="max-w-1300 rounded-4xl border border-black-60 px-38 py-61">
+        <section className="cc pt-95">
+          <div className="rounded-[8px] border border-black-60 px-38 py-61 mx-auto">
             <p className="text-19 text-black-50">Types of work</p>
-            <h2 className="rs-pt-1 font-serif text-[2.7rem] leading-display tracking-[0.01em] text-white md:text-[3.6rem] 4xl:text-[4.5rem]">
+            <h2 className="rs-pt-1 font-serif text-27 leading-display tracking-[0.01em] text-white md:text-36 4xl:text-45">
               We do more than web
             </h2>
             <p className="rs-mt-2 max-w-900 text-[2.1rem] leading-normal text-black-50 md:text-[2.3rem] 4xl:text-[2.6rem]">
@@ -143,7 +139,7 @@ export default function ServicesPage() {
               ))}
             </div>
 
-            <div className="flex justify-center rs-pt-6">
+            <div className="flex justify-center pt-[38px]">
               <ButtonPill as="a" href="#" className="mt-0 border-digital-red-xlight px-22 py-11 text-white hover:bg-white/8">
                 Talk to us <ArrowIcon />
               </ButtonPill>
@@ -151,8 +147,8 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="cc rs-pt-10 rs-pb-10">
-          <div className="max-w-1300 border-t border-black-60 pt-27">
+        <section className="cc pb-[95px] pt-[95px]">
+          <div className="max-w-[1300px] border-t border-black-60 pt-[27px]">
             <p className="text-19 text-black-50">Technologies</p>
             <h2 className="rs-pt-1 font-serif text-[2.7rem] leading-display tracking-[0.01em] text-white md:text-[3.6rem] 4xl:text-[4.5rem]">
               We work in
@@ -163,7 +159,7 @@ export default function ServicesPage() {
               forcing the problem to fit a tool.
             </p>
 
-            <div className="grid rs-gap-x-6 rs-gap-y-4 rs-pt-4 md:grid-cols-3">
+            <div className="grid gap-x-[76px] gap-y-[16px] pt-[48px] md:grid-cols-3">
               {TECHNOLOGY_COLUMNS.map((column, index) => (
                 <ul key={index} className="text-black-50">
                   {column.map((item, itemIndex) => (

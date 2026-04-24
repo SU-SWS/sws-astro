@@ -1,9 +1,11 @@
 ---
 import "../index.css";
+import { SiteHeader } from "../components/SiteHeader";
 import WhyWebServicesPage from "../components/WhyWebServicesPage";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Why Web Services | Stanford Web Services">
+<BaseLayout title="Why Web Services | Stanford Web Services" footerActiveLabel="Why Web Services">
+  <SiteHeader activeLabel="Why Web Services" />
   <WhyWebServicesPage />
 </BaseLayout>
