@@ -1,4 +1,7 @@
-### Component Styling
+### Components and Styling
+
+**Component Usage:**
+- Use starter components such as `Grid`, `FlexBox`, `WidthBox`, `Container` when possible
 
 **Style Organization:**
 - Styles are defined in `*.styles.ts` files as exported constants
@@ -17,8 +20,12 @@
 **Typography Values:**
 - Prefer named line-height tokens first: `leading-none`, `leading-tight`, `leading-display`, `leading-snug`, `leading-cozy`, `leading-normal`
 - Use numeric scale without brackets only when no named token matches the design intent (e.g., `leading-20`, `leading-28`)
-- **Avoid arbitrary pixel values when a named or numeric utility works:** ❌ `leading-[20px]`, ✅ `leading-20` or `leading-snug`
-- Text sizes: Use predefined `text-*` utilities (`text-14`, `text-16`, `text-20`) or custom utility scale
+- **Avoid arbitrary pixel values when a named or numeric utility works:** ❌ `leading-[20px]`, ✅ `leading-snug` preferred, or `leading-20` if necessary
+- Text sizes: Use predefined `text-*` utilities (`text-14`, `text-16`, `text-20`) or custom utility scale such as `type-4` or `fluid-type-6` for responsive sizes
+
+**Spacing and Sizing:**
+- Use numeric scale for padding, margin, gap, width, height, max-width, etc (e.g., `p-16`, `mb-24`, `gap-32`, `w-200`, `h-80`, `max-w-720`)
+- For responsive values, use Decanter's responsive spacing classes (e.g., `rs-p-3`, `rs-mb-4`, `rs-px-0`)
 
 **CSS Selector Prefixes:**
 - CSS selectors with brackets are fine: `[&>b]:font-semibold`, `[&_strong]:font-bold`
