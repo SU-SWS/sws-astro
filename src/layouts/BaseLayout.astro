@@ -1,4 +1,8 @@
 ---
+import { GlobalFooter } from '../components/GlobalFooter/GlobalFooter';
+import { SiteHeader } from '../components/SiteHeader';
+import { FooterLocal } from '../components/FooterLocal';
+
 interface Props {
   title?: string;
 }
@@ -26,6 +30,14 @@ const { title = "Stanford Web Services" } = Astro.props;
     />
   </head>
   <body>
+    <SiteHeader />
     <slot />
+    <FooterLocal
+      heading="We’d love to hear about what you’re working on."
+      buttonHref="#"
+      buttonLabel="Connect with us"
+      activeLabel="Why Web Services"
+    />
+    <GlobalFooter />
   </body>
 </html>

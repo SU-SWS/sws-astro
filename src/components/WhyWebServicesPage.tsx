@@ -1,7 +1,4 @@
 import { ArrowIcon, ButtonPill } from "./ButtonPill";
-import { FooterGlobal } from "./FooterGlobal";
-import { FooterLocal } from "./FooterLocal";
-import { SiteHeader } from "./SiteHeader";
 
 const DIFFERENTIATORS = [
   {
@@ -90,8 +87,6 @@ const PARTNERS = [
 export default function WhyWebServicesPage() {
   return (
     <div className="min-h-screen bg-white text-sws-text">
-      <SiteHeader activeLabel="Why Web Services" />
-
       <main>
         <section className="px-[clamp(1.25rem,5vw,100px)] pb-[114px] pt-[clamp(4rem,10vw,133px)]">
           <div className="mx-auto max-w-[1300px]">
@@ -212,14 +207,6 @@ export default function WhyWebServicesPage() {
           </div>
         </section>
       </main>
-
-      <FooterLocal
-        heading="We’d love to hear about what you’re working on."
-        buttonHref="#"
-        buttonLabel="Connect with us"
-        activeLabel="Why Web Services"
-      />
-      <FooterGlobal />
     </div>
   );
 }

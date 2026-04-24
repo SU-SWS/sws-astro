@@ -18,6 +18,7 @@
     "@astrojs/check": "^0.9.8",
     "@astrojs/react": "^5.0.3",
     "astro": "^6.1.7",
+    "cnbuilder": "^3.1.0",
     "decanter": "github:SU-SWS/decanter#v8",
     "motion": "^12.38.0",
     "react": "^19.2.0",

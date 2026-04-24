@@ -11,15 +11,15 @@ import { FooterGlobal } from "./components/FooterGlobal";
 export default function App() {
   return (
     <div className="min-h-screen">
-      <SiteHeader />
+      {/* <SiteHeader /> */}
       <IntroLede />
       <MomentumSection />
       <TalkingPointsSection />
       <PortfolioSection />
       <ClientLogosSection />
-      <EngineeringSection />
+      {/* <EngineeringSection />
       <FooterLocal />
-      <FooterGlobal />
+      <FooterGlobal /> */}
     </div>
   );
 }
