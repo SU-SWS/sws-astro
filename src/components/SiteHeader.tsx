@@ -1,5 +1,5 @@
 import { UnitSignature } from "./UnitSignature";
-// import brandBarLogo from '../images/brand-bar-logo.svg';
+// import brandBarLogo from '@images/brand-bar-logo.svg';
 
 const NAV = [
   { href: "/", label: "Our work" },

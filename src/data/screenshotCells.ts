@@ -1,12 +1,12 @@
 import type { ScreenshotCell } from "../ScreenshotGrid";
-import screenshotBioengineering from "../images/Solutions images/Bioengineering.jpg";
-import screenshotEngineeringMain from "../images/Solutions images/Eng Main Site.jpg";
-import screenshotIcme from "../images/Solutions images/ICME.jpg";
-import screenshotMechanicalEngineering from "../images/Solutions images/Mechanical Eng.jpg";
-import screenshotChemh from "../images/Stanford Sites images/Chemh 1.png";
-import screenshotCSharp from "../images/Stanford Sites images/C-Sharp.jpg";
-import screenshotResearchHub from "../images/Stanford Sites images/Research Hub.jpg";
-import screenshotTechResources from "../images/Stanford Sites images/Tech Resources.jpg";
+import screenshotBioengineering from "@images/Solutions images/Bioengineering.jpg";
+import screenshotEngineeringMain from "@images/Solutions images/Eng Main Site.jpg";
+import screenshotIcme from "@images/Solutions images/ICME.jpg";
+import screenshotMechanicalEngineering from "@images/Solutions images/Mechanical Eng.jpg";
+import screenshotChemh from "@images/Stanford Sites images/Chemh 1.png";
+import screenshotCSharp from "@images/Stanford Sites images/C-Sharp.jpg";
+import screenshotResearchHub from "@images/Stanford Sites images/Research Hub.jpg";
+import screenshotTechResources from "@images/Stanford Sites images/Tech Resources.jpg";
 
 export const stanfordSitesCells: ScreenshotCell[] = [
   { id: "c1", src: screenshotChemh.src, alt: "Chem h" },

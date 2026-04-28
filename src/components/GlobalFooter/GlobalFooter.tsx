@@ -1,5 +1,5 @@
 import { StanfordLogo } from '../Logo';
-import { Container } from '../Container';
+import { Container } from '@components/Container';
 import { FlexBox } from '../FlexBox';
 import * as styles from './GlobalFooter.styles';
 

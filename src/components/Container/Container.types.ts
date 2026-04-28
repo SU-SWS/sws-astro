@@ -1,4 +1,4 @@
-import * as styles from './Container.styles';
+import * as styles from '@components/Container/Container.styles';
 
 export type ContainerElementType = 'div' | 'section' | 'article' | 'main' | 'footer' | 'aside' | 'header' | 'nav' | 'form' | 'fieldset' | 'figcaption' | 'figure';
 

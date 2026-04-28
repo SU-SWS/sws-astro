@@ -1,11 +1,11 @@
-import btsLogo from '../images/logos/BTS.png';
-import centennialLogo from '../images/logos/Centennial logo wrapper.png';
-import doeerLogo from '../images/logos/Doeer wrapper.png';
-import gseLogo from '../images/logos/GSE Wrapper.png';
-import khsLogo from '../images/logos/KHS wrapper.png';
-import officeOfDevelopmentLogo from '../images/logos/Office of Development.png';
-import sulLogo from '../images/logos/SUL.png';
-import supLogo from '../images/logos/SUP logo.png';
+import btsLogo from '@images/logos/BTS.png';
+import centennialLogo from '@images/logos/Centennial logo wrapper.png';
+import doeerLogo from '@images/logos/Doeer wrapper.png';
+import gseLogo from '@images/logos/GSE Wrapper.png';
+import khsLogo from '@images/logos/KHS wrapper.png';
+import officeOfDevelopmentLogo from '@images/logos/Office of Development.png';
+import sulLogo from '@images/logos/SUL.png';
+import supLogo from '@images/logos/SUP logo.png';
 
 const ROW_1 = [
   { src: officeOfDevelopmentLogo, alt: "Office of Development, Stanford University" },
@@ -45,7 +45,7 @@ export function ClientLogosSection() {
               />
             ))}
           </div>
-          <div className="grid grid-cols-2 items-center justify-items-start gap-12 max-[1000px]:grid-cols-2 min-[1001:grid-cols-4 min-[1001:gap-3">
+          <div className="grid grid-cols-2 items-center justify-items-start gap-12 max-[1000px]:grid-cols-2 min-[1001px]:grid-cols-4 min-[1001px]:gap-3">
             {ROW_2.map((logo) => (
               <img
                 key={logo.alt}

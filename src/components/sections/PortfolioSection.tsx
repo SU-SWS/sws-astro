@@ -1,7 +1,7 @@
-import { ScreenshotGrid } from "../ScreenshotGrid";
-import { stanfordSitesCells, solutionsCells } from "../data/screenshotCells";
-import { ArrowIcon, ButtonPill } from "./ButtonPill";
-import sectionPortfolioBg from '../images/section-portfolio-bg.jpg';
+import { ScreenshotGrid } from "../../ScreenshotGrid";
+import { stanfordSitesCells, solutionsCells } from "../../data/screenshotCells";
+import { ArrowIcon, ButtonPill } from "../ButtonPill";
+import sectionPortfolioBg from '@images/section-portfolio-bg.jpg';
 
 const STATS_ROW_1 = [
   { num: "850 +", label: "Websites" },
@@ -23,7 +23,7 @@ function Stat({ num, label }: StatProps) {
   return (
     <div className="min-w-160 flex-[0_1_260px]">
       <p className="m-0 font-serif text-[clamp(4rem,8vw,110px)] font-normal leading-tight text-white">{num}</p>
-      <p className="m-0 mt-1.5 max-w-264 text-23 leading-snug text-sws-muted">{label}</p>
+      <p className="m-0 mt-2 max-w-264 text-23 leading-snug text-sws-muted">{label}</p>
     </div>
   );
 }

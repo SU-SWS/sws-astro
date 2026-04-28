@@ -1,6 +1,7 @@
 ---
-import { ArrowIcon, ButtonPill } from "./ButtonPill";
-import { ServiceSection } from "./ServiceSection";
+import { ArrowIcon, ButtonPill } from "@components/ButtonPill";
+import { ServiceSection } from "@components/sections/ServiceSection";
+import { Container } from "@components/Container/Container";
 
 const PRINCIPLES = [
   {
@@ -78,18 +79,14 @@ const TECHNOLOGY_COLUMNS = [
 
 <div class="min-h-screen bg-campaign-black text-white">
   <main>
-    <section class="cc pb-114 pt-133">
-      <div class="max-w-1300">
-        <h1 class="max-w-900 font-serif text-45 leading-cozy tracking-[0.01em] text-white md:text-56 4xl:text-70">
-          Services
-        </h1>
-        <p class="max-w-900 pt-48 text-26 leading-cozy text-#979694] md:text-30 4xl:text-36">
-          We partner with teams across Stanford, big and small. From a ten-hour UX strategy consult to a multi-year
-          program, we share the same campus and the same goal: moving Stanford forward through digital experiences that help
-          your users engage with the mission behind your work.
-        </p>
-      </div>
-    </section>
+    <Container as="section" className="pb-114 pt-133">
+      <h1 class="font-serif rs-mb-3 font-normal fluid-type-5 leading-display tracking-[0.01em] text-white">
+        Services
+      </h1>
+      <p class="max-w-900 intro-text leading-cozy text-secondary-muted">
+        We partner with teams across Stanford big and small. From a ten hour ux strategy consult to a multi-year program, we are here to help. We are committed to finding the right solution for your project and creating tools that empower you to do your best work, all while taking the guesswork out of security, accessibility, and infrastructure decisions. moving Stanford forward through digital experiences that help your users engage with the mission behind your work.
+      </p>
+    </Container>
 
     <section class="cc pb-4">
       <div class="grid max-w-1300 gap-76 lg:grid-cols-[392.667px_minmax(0,1fr)]">
