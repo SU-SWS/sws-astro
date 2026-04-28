@@ -1,13 +1,5 @@
 @import "decanter";
 
-@font-face {
-  font-family: "Stanford";
-  src: url("./assets/fonts/stanford.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
 @theme {
   --color-sws-text: #43423e;
   --color-sws-digital-red: #b1040e;
