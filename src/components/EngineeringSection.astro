@@ -1,22 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 import { ArrowIcon, ButtonPill } from "./ButtonPill";
-import momentumHero from '../images/momentum-hero.png';
-import sectionPortfolioBg from '../images/section-portfolio-bg.jpg';
-import webbyNominee from '../images/webby-nominee.png';
+import centennial from '../images/centennial.png';
 ---
 
-<section class="relative overflow-hidden px-[clamp(1.25rem,5vw,100px)] pb-114 pt-95 text-white" aria-labelledby="momentum-title">
-  <div class="pointer-events-none absolute inset-0" aria-hidden>
-    <Image
-      src={sectionPortfolioBg}
-      alt=""
-      width={sectionPortfolioBg.width}
-      height={sectionPortfolioBg.height}
-      class="absolute inset-0 size-full object-cover"
-    />
-    <div class="absolute inset-0 bg-sws-bleed-overlay" />
-  </div>
+<section class="relative overflow-hidden bg-sws-engineering cc pb-114 pt-95 text-white" aria-labelledby="momentum-title">
   <div class="relative z-1 mx-auto">
     <div class="flex flex-wrap items-start justify-center gap-8">
       <div class="flex max-w-532 flex-[1_1_280px] flex-col justify-start gap-8 pr-[clamp(0rem,2vw,38px)]">
@@ -39,11 +26,14 @@ import webbyNominee from '../images/webby-nominee.png';
           </ButtonPill>
         </div>
       </div>
-      <div class="relative max-w-768 min-h-400 flex-[1_1_320px] overflow-hidden rounded-md border border-[#2e2d29] bg-sws-momentum-frame">
-        <Image src={momentumHero} alt="Momentum campaign creative" width={momentumHero.width} height={momentumHero.height} class="size-full object-cover" />
-        <div class="absolute bottom-[clamp(12px,3vw,24px)] right-[clamp(12px,3vw,24px)] z-2 flex max-w-[calc(100%-24px)] flex-col gap-1 rounded-lg bg-digital-blue p-1.5">
-          <Image src={webbyNominee} alt="Webby Awards" width={webbyNominee.width} height={webbyNominee.height} class="h-auto w-90" />
-        </div>
+      <div class="relative max-w-768 min-h-400 flex-[1_1_320px] overflow-hidden rounded-mds">
+        <img
+          src={centennial.src}
+          alt="Centennial website screenshot"
+          width={centennial.width}
+          height={centennial.height}
+          class="size-full object-cover"
+        />
       </div>
     </div>
     <div class="pt-95 text-center">

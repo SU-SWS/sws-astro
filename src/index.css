@@ -14,7 +14,7 @@
   --color-sws-red-bright: #f83535;
   --color-sws-tan: #f3f0e2;
   --color-sws-muted: #c0c0bf;
-  --color-sws-ood: #17171a;
+  --color-campaign-black: #17171a;
   --color-sws-cardinal: #8c1515;
   --color-sws-engineering: #4d0000;
   --color-sws-bleed-overlay: rgba(0, 0, 0, 0.8);
@@ -24,10 +24,19 @@
   --shadow-card: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+@theme inline {
+  --color-primary: var(--color-black-90);
+  --color-secondary-muted: var(--color-black-70);
+}
+
 @layer base {
   body {
     margin: 0;
-    font-size: 19px;
+    font-size: 18px;
+
+    @media (min-width: 992px) {
+      font-size: 2.3rem;
+    }
   }
 
   a {

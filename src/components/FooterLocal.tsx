@@ -26,12 +26,12 @@ export function FooterLocal({
         <div className="flex flex-wrap items-start gap-10">
           <div className="min-h-px min-w-120 flex-1 basis-120" aria-hidden />
           <div className="max-w-4xl flex-1 basis-md">
-            <p className="m-0 font-serif text-[33px] font-normal leading-snug">
+            <p className="m-0 font-serif text-33 font-normal leading-snug">
               {heading}
             </p>
             <a
               href={buttonHref}
-              className="mt-38 inline-flex cursor-pointer items-center gap-1.5 rounded-full border-2 border-sws-red-bright bg-transparent px-19 py-2 font-sans text-19 font-[350] leading-snug text-sws-text hover:bg-[rgba(248,53,53,0.08)]"
+              className="mt-38 inline-flex cursor-pointer items-center gap-1.5 rounded-full border-2 border-sws-red-bright bg-transparent px-19 py-2 font-sans text-19 leading-snug text-sws-text hover:bg-[rgba(248,53,53,0.08)]"
             >
               {buttonLabel}
             </a>

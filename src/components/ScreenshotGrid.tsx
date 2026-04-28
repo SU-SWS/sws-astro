@@ -6,7 +6,7 @@ type ScreenshotCellId = "c1" | "c2" | "c3" | "c4";
 
 export interface ScreenshotCell {
   id: ScreenshotCellId;
-  src: string;
+  src: ImageMetadata;
   alt?: string;
 }
 
@@ -67,7 +67,7 @@ export function ScreenshotGrid({ gridClass, ariaLabel, cells }: ScreenshotGridPr
 
   return (
     <motion.div
-      className="relative aspect-768/760 w-full max-w-768"
+      className="relative aspect-768/760 w-full max-w-[768"
       role="img"
       aria-label={ariaLabel}
       variants={containerVariants}
@@ -81,7 +81,14 @@ export function ScreenshotGrid({ gridClass, ariaLabel, cells }: ScreenshotGridPr
           className={`absolute overflow-hidden rounded-md shadow-card ${layout[cell.id]}`}
           variants={itemVariants(reduceMotion)}
         >
-          <img src={cell.src} alt={cell.alt ?? ""} loading="lazy" className="size-full object-cover" />
+          <img
+            src={cell.src.src}
+            alt={cell.alt ?? ""}
+            width={cell.src.width}
+            height={cell.src.height}
+            loading="lazy"
+            className="size-full object-cover"
+          />
         </motion.div>
       ))}
     </motion.div>
