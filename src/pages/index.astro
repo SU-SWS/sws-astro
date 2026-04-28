@@ -1,11 +1,21 @@
 ---
 import "../index.css";
-import App from "../App";
-import { SiteHeader } from "../components/SiteHeader";
+import { SiteHeader } from "@components/SiteHeader";
+import IntroLede from "@components/sections/IntroLede.astro";
+import MomentumSection from "@components/sections/MomentumSection.astro";
+import { TalkingPointsSection } from "@components/sections/TalkingPointsSection";
+import { PortfolioSection } from "@components/sections/PortfolioSection";
+import { ClientLogosSection } from "@components/sections/ClientLogosSection";
+import EngineeringSection from "@components/sections/EngineeringSection.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Stanford Web Services" footerActiveLabel="Our work">
-  <SiteHeader activeLabel="Our work" />
-  <App client:load />
+  <SiteHeader activeLabel="" />
+  <IntroLede />
+  <MomentumSection />
+  <TalkingPointsSection />
+  <PortfolioSection client:visible />
+  <ClientLogosSection />
+  <EngineeringSection />
 </BaseLayout>

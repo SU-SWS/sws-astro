@@ -1,0 +1,219 @@
+---
+import { Image } from 'astro:assets';
+import { Container } from "@components/Container/Container";
+import { ArrowIcon, ButtonPill } from "@components/ButtonPill";
+import momentumHero from '@images/momentum-hero.png';
+import sectionPortfolioBg from '@images/section-portfolio-bg.jpg';
+
+const DIFFERENTIATORS = [
+  {
+    icon: "fa-regular fa-clipboard",
+    title: "University policy compliance",
+    body: "Committed adherence to security, accessibility, privacy, and Stanford brand guidelines.",
+  },
+  {
+    icon: "fa-solid fa-server",
+    title: "Robust solutions",
+    body: "Scalable delivery designed for performance, maintainability, and long-term resilience.",
+  },
+  {
+    icon: "fa-solid fa-arrow-pointer",
+    title: "Easy-to-use platforms",
+    body: "Tools that balance editorial simplicity with standards your site needs behind the scenes.",
+  },
+  {
+    icon: "fa-solid fa-life-ring",
+    title: "Premier customer support",
+    body: "A reliable team that helps site owners respond quickly, recover smoothly, and keep momentum.",
+  },
+  {
+    icon: "fa-solid fa-screwdriver-wrench",
+    title: "Continuous support",
+    body: "We stay involved after launch with platform stewardship, guidance, and ongoing iteration.",
+  },
+  {
+    icon: "fa-solid fa-seedling",
+    title: "Award-winning products",
+    body: "Thoughtful, high-performing experiences shaped around university needs, audiences, and scale.",
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "Their deep expertise, professional responsiveness, and steady partnership made a real and valuable difference in our launch.",
+    name: "Research Communications Lead",
+  },
+  {
+    quote:
+      "Web Services guided our team practically and strategically through decisions that would have slowed us down on our own.",
+    name: "School of Engineering Partner",
+  },
+  {
+    quote:
+      "Working as an extension of our staff, they brought structure, trust, and momentum when timelines were tight.",
+    name: "University IT Collaborator",
+  },
+];
+
+const EXPERTISE = [
+  {
+    title: "User Research",
+    body: "Editorial strategy, content audits, and stakeholder alignment grounded in measurable audience needs.",
+  },
+  {
+    title: "Digital Strategy",
+    body: "Roadmaps and platform planning that connect communications goals with sustainable delivery.",
+  },
+  {
+    title: "Technical Consulting",
+    body: "Practical guidance on architecture, governance, integrations, migration planning, and launch readiness.",
+  },
+];
+
+const PARTNERS = [
+  ["SM", "Sarah M.", "School of Medicine"],
+  ["DT", "David T.", "Earth Systems"],
+  ["JR", "Jordan R.", "Graduate School of Education"],
+  ["CM", "Chris M.", "Department Communications"],
+  ["TR", "Taylor R.", "Vice Provost Office"],
+  ["AP", "Avery P.", "Admissions"],
+  ["MN", "Morgan N.", "Human Resources"],
+  ["SL", "Sam L.", "Libraries"],
+  ["VK", "Val K.", "Student Affairs"],
+  ["JC", "Jamie C.", "Research Programs"],
+  ["EL", "Emerson L.", "Doerr School"],
+  ["AM", "Alex M.", "Alumni Relations"],
+  ["CW", "Casey W.", "Engineering"],
+  ["RB", "Riley B.", "University IT"],
+  ["KH", "Kendall H.", "Communications"],
+];
+---
+
+<div class="min-h-screen bg-white text-sws-text">
+  <main>
+    <Container as="section" pt={8} pb={7} className="">
+      <div class="mx-auto max-w-1300">
+        <h1 class="max-w-900 type-4 rs-mb-3 font-serif font-normal leading-display tracking-[0.01em]">
+          Why Web Services
+        </h1>
+        <div class="flex flex-col lg:flex-row lg:gap-48">
+          <p class="basis-2/5 type-2 font-semibold leading-display text-primary lg:rs-pr-5">
+            Security, legal compliance, malicious traffic might be new challenges for you, but they aren’t for us!
+          </p>
+          <p class="basis-3/5 big-paragraph leading-normal text-secondary-muted lg:rs-pl-3">
+            Websites are simple to launch but difficult to maintain. Behind every university web property lies a network of security requirements, accessibility standards, brand compliance, and ongoing vulnerability management that most content owners never see coming — until something goes wrong. We've spent years building platforms and practices that handle all of it, so you can focus on your communication strategy.
+          </p>
+        </div>
+      </div>
+    </Container>
+
+    <section class="bg-campaign-black px-[clamp(1.25rem,5vw,100px)] py-114 text-white">
+      <div class="mx-auto max-w-1300">
+        <h2 class="max-w-900 font-serif text-[clamp(2.25rem,5vw,45px)] font-normal leading-display tracking-[0.01em]">
+          What sets us apart
+        </h2>
+        <p class="mt-38 max-w-900 text-[clamp(1.1rem,2vw,26px)] leading-normal text-white/65">
+          Everything we do is guided by a commitment to quality, compliance, and the people using what we build. From policy to platform to long-term support, we help teams succeed whether we are delivering the work directly or advising the path forward.
+        </p>
+        <div class="mt-95 grid gap-x-76 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
+          {DIFFERENTIATORS.map(({ icon, title, body }) => (
+            <article class="max-w-360">
+              <div class="flex h-68 w-68 items-center justify-center rounded-full bg-white/8 text-1.4rem] text-white">
+                <i class={icon} aria-hidden />
+              </div>
+              <h3 class="mt-5 text-23 font-semibold leading-display text-white">{title}</h3>
+              <p class="mt-27 text-21 leading-normal text-white/85">{body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="relative isolate overflow-hidden bg-sws-text px-[clamp(1.25rem,5vw,100px)] py-76 text-white">
+      <Image
+        src={sectionPortfolioBg}
+        alt=""
+        width={sectionPortfolioBg.width}
+        height={sectionPortfolioBg.height}
+        class="absolute inset-0 size-full object-cover opacity-35"
+      />
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,23,26,0.25),rgba(23,23,26,0.68))]" aria-hidden />
+      <div class="relative mx-auto max-w-1300">
+        <h2 class="font-serif text-[clamp(1.8rem,4vw,33px)] font-normal leading-display">In their own words</h2>
+        <div class="mt-10 grid gap-8 lg:grid-cols-3">
+          {TESTIMONIALS.map(({ quote, name }) => (
+            <figure class="max-w-360">
+              <blockquote class="m-0 text-21 leading-normal text-white/92">“{quote}”</blockquote>
+              <figcaption class="mt-6 text-16 font-semibold uppercase tracking-[0.08em] text-white/70">{name}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="px-[clamp(1.25rem,5vw,100px)] py-114">
+      <div class="mx-auto max-w-1300">
+        <p class="text-15 font-semibold uppercase tracking-[0.14em] text-sws-text/45">What we are good at</p>
+        <h2 class="mt-4 max-w-900 font-serif text-[clamp(2rem,4vw,45px)] font-normal leading-display tracking-[0.01em]">
+          Expertise you can leverage
+        </h2>
+        <p class="mt-5 max-w-820 text-21 leading-normal text-sws-text/72">
+          We provide strategic consulting that helps teams align digital priorities, reduce risk, and make better decisions before delivery begins.
+        </p>
+        <div class="mt-48 grid gap-12 lg:grid-cols-3 lg:gap-48">
+          {EXPERTISE.map(({ title, body }) => (
+            <article class="border-t border-sws-text/20 pt-6">
+              <h3 class="font-serif text-33 font-normal leading-display">{title}</h3>
+              <p class="mt-4 max-w-350 text-21 leading-normal text-sws-text/75">{body}</p>
+            </article>
+          ))}
+        </div>
+        <ButtonPill as="a" href="#" className="mt-10 border-sws-red-bright px-[19 py-7 text-sws-text hover:bg-sws-red-bright/10">
+          Ask a consulting question <ArrowIcon className="text-sws-red-bright" />
+        </ButtonPill>
+      </div>
+    </section>
+
+    <section class="bg-sws-tan px-[clamp(1.25rem,5vw,100px)] py-114">
+      <div class="mx-auto max-w-1300">
+        <p class="text-15 font-semibold uppercase tracking-[0.14em] text-sws-text/45">Who we are working with</p>
+        <h2 class="mt-4 font-serif text-[clamp(2rem,4vw,45px)] font-normal leading-display tracking-[0.01em]">Your partners</h2>
+        <div class="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
+          {PARTNERS.map(([initials, name, team], index) => (
+            <article class="flex flex-col items-center text-center">
+              <div
+                class="flex h-72 w-72 items-center justify-center rounded-full text-21 font-semibold text-white shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
+                style={{
+                  background: `linear-gradient(135deg, rgba(177,4,14,0.92), rgba(${70 + index * 4}, ${90 + index * 3}, ${110 + index * 2}, 0.9))`,
+                }}
+              >
+                {initials}
+              </div>
+              <h3 class="mt-4 text-17 font-semibold leading-[1.25] text-sws-text">{name}</h3>
+              <p class="mt-1 text-15 leading-[1.35] text-sws-text/68">{team}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="relative isolate rs-mt-7 rs-p-5 overflow-hidden rounded-[20px] py-[clamp(1.5rem,4vw,38px)] text-white">
+          <Image
+            src={momentumHero}
+            alt=""
+            width={momentumHero.width}
+            height={momentumHero.height}
+            class="absolute inset-0 size-full object-cover"
+          />
+          <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(67,66,62,0.82),rgba(67,66,62,0.55))]" aria-hidden />
+          <div class="relative max-w-800 mx-auto rs-pb-3">
+            <h2 class="font-serif type-3 font-normal leading-display rs-mb-3">The advantage of an in-house partner</h2>
+            <p class="big-paragraph">Stanford is our home too.</p>
+            <p class="mt-4 card-paragraph leading-normal text-white/90 mb-0">
+              As a digital agency embedded within Stanford, we've spent years building solutions to the exact problems our neighbors face — at below-market rates. You get expert support, institutional knowledge, and a team invested in your future — not just the next contract.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

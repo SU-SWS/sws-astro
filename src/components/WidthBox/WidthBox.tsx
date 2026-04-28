@@ -1,5 +1,5 @@
 import { cnb } from 'cnbuilder';
-import { Container, type ContainerProps, type BgColorType } from '../Container';
+import { Container, type ContainerProps, type BgColorType } from '@components/Container';
 import { Grid, type GridProps } from '../Grid';
 import * as styles from './WidthBox.styles';
 

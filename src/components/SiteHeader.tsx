@@ -1,4 +1,5 @@
 import { UnitSignature } from "./UnitSignature";
+// import brandBarLogo from '@images/brand-bar-logo.svg';
 
 const NAV = [
   { href: "/", label: "Our work" },
@@ -16,29 +17,29 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
   const isDark = theme === "dark";
 
   return (
-    <header className={isDark ? "bg-sws-ood" : "bg-white"}>
-      <div className={`${isDark ? "bg-sws-cardinal" : "bg-white"} pt-[6px]`}>
-        <div className="cc pb-[6px]">
-          <img
-            src="/images/brand-bar-logo.svg"
+    <header className={isDark ? "bg-campaign-black" : "bg-white"}>
+      <div className={`${isDark ? "bg-sws-cardinal" : "bg-white"} pt-6`}>
+        <div className="cc pb-6">
+          {/* <img
+            src={brandBarLogo.src}
             alt="Stanford University"
             width={146}
             height={18}
-            className="block h-[18px] w-[146px] object-contain"
-          />
+            className="block h-18 w-146 object-contain"
+          /> */}
         </div>
       </div>
-      <div className="cc pt-[30px]">
-        <div className="mx-auto flex max-w-[1500px] flex-wrap items-start justify-between gap-6 pb-2">
+      <div className="cc pt-30">
+        <div className="mx-auto flex flex-wrap items-start justify-between gap-6 pb-2">
           <UnitSignature theme={theme} />
-          <nav className="flex flex-wrap items-center justify-end gap-[33px] pt-[9px]" aria-label="Primary">
+          <nav className="flex flex-wrap items-center justify-end gap-33 pt-9" aria-label="Primary">
             {NAV.map(({ href, label }) => (
               <a
                 key={label}
                 href={href}
                 aria-current={label === activeLabel ? "page" : undefined}
                 className={[
-                  "border-b-4 pb-[20px] whitespace-nowrap text-[19px] font-semibold leading-[1.32] transition-colors",
+                  "border-b-4 pb-20 whitespace-nowrap text-19 font-semibold leading-snug transition-colors",
                   label === activeLabel
                     ? isDark
                       ? "border-black-60 text-white"

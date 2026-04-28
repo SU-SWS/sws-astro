@@ -67,7 +67,7 @@ export function ScreenshotGrid({ gridClass, ariaLabel, cells }: ScreenshotGridPr
 
   return (
     <motion.div
-      className="relative aspect-768/760 w-full max-w-[768px]"
+      className="relative aspect-768/760 w-full max-w-768"
       role="img"
       aria-label={ariaLabel}
       variants={containerVariants}

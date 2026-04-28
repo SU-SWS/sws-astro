@@ -9,9 +9,9 @@ import {
   marginVerticals,
   type MarginType,
   type PaddingType,
-} from '../../utilities/datasource';
-import * as styles from './Container.styles';
-import * as types from './Container.types';
+} from '@utilities/datasource';
+import * as styles from '@components/Container/Container.styles';
+import * as types from '@components/Container/Container.types';
 
 export type ContainerProps = HTMLAttributes<HTMLElement> & {
   as?: types.ContainerElementType;

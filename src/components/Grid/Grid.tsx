@@ -9,7 +9,7 @@ import {
   paddingVerticals,
   type PaddingType,
   type MarginType,
-} from '../../utilities/datasource';
+} from '@utilities/datasource';
 import * as styles from './Grid.styles';
 import * as types from './Grid.types';
 
