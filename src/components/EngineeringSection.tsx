@@ -1,4 +1,9 @@
 import { ArrowIcon, ButtonPill } from "./ButtonPill";
+import anthemAwardLabel from '../images/Anthem_award_label.png';
+// import engineeringCentennialFront from '../images/engineering-centennial-100-front.svg';
+// import engineeringGlowEllipse1 from '../images/engineering-glow-ellipse-1.svg';
+// import engineeringGlowEllipse2 from '../images/engineering-glow-ellipse-2.svg';
+// import engineeringGlowEllipse3 from '../images/engineering-glow-ellipse-3.svg';
 
 export function EngineeringSection() {
   return (
@@ -6,24 +11,24 @@ export function EngineeringSection() {
       className="relative overflow-hidden bg-sws-engineering px-[clamp(1.25rem,5vw,100px)] pb-[114px] pt-[95px] text-white"
       aria-labelledby="engineering-title"
     >
-      <img
+      {/* <img
         className="pointer-events-none absolute right-[-20%] top-[-20%] z-0 w-[90vmin] opacity-45"
-        src="/images/engineering-glow-ellipse-1.svg"
+        src={engineeringGlowEllipse1.src}
         alt=""
         aria-hidden
       />
       <img
         className="pointer-events-none absolute bottom-[-30%] left-[-25%] z-0 w-[80vmin] opacity-45"
-        src="/images/engineering-glow-ellipse-2.svg"
+        src={engineeringGlowEllipse2.src}
         alt=""
         aria-hidden
       />
       <img
         className="pointer-events-none absolute bottom-[-40%] right-[10%] z-0 w-[85vmin] opacity-45"
-        src="/images/engineering-glow-ellipse-3.svg"
+        src={engineeringGlowEllipse3.src}
         alt=""
         aria-hidden
-      />
+      /> */}
 
       <div className="relative z-[1] mx-auto flex max-w-[1300px] flex-wrap items-stretch justify-center gap-8">
         <div className="flex max-w-[532px] flex-col justify-start gap-8">
@@ -47,17 +52,17 @@ export function EngineeringSection() {
         </div>
         <div className="relative max-w-[768px] flex-[1_1_320px]">
           <div className="relative z-[1] aspect-video w-full max-w-[768px] overflow-hidden rounded-md bg-sws-video-bg">
-            <img
+            {/* <img
               className="absolute inset-0 block size-full object-cover"
-              src="/images/engineering-centennial-100-front.svg"
+              src={engineeringCentennialFront.src}
               alt="Stanford Engineering Centennial website hero"
-            />
+            /> */}
             <div className="pointer-events-none absolute bottom-[clamp(12px,3vw,24px)] right-[clamp(12px,3vw,24px)] z-[2] flex max-w-[calc(100%-24px)]">
               <img
-                src="/images/Anthem_award_label.png"
+                src={anthemAwardLabel.src}
                 alt="Anthem Awards"
-                width={120}
-                height={120}
+                width={anthemAwardLabel.width}
+                height={anthemAwardLabel.height}
                 className="block h-auto w-[clamp(72px,16vw,120px)]"
               />
             </div>

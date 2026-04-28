@@ -12,7 +12,8 @@ export default defineConfig({
       name: "Source Sans 3",
       cssVariable: "--font-sans",
       provider: fontProviders.google(),
-      weights: [400, 600] ,
+      weights: [400, 600],
+      styles: ["normal", "italic"],
     },
     {
       name: "Source Serif 4",

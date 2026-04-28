@@ -1,6 +1,7 @@
 import { ScreenshotGrid } from "../ScreenshotGrid";
 import { stanfordSitesCells, solutionsCells } from "../data/screenshotCells";
 import { ArrowIcon, ButtonPill } from "./ButtonPill";
+import sectionPortfolioBg from '../images/section-portfolio-bg.jpg';
 
 const STATS_ROW_1 = [
   { num: "850 +", label: "Websites" },
@@ -31,7 +32,7 @@ export function PortfolioSection() {
   return (
     <section className="relative overflow-hidden px-[clamp(1.25rem,5vw,100px)] pb-[114px] pt-[95px] text-white" aria-label="Portfolio and impact">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <img src="/images/section-portfolio-bg.jpg" alt="" className="absolute inset-0 size-full object-cover" />
+        <img src={sectionPortfolioBg.src} alt="" width={sectionPortfolioBg.width} height={sectionPortfolioBg.height} className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-sws-bleed-overlay" />
       </div>
       <div className="relative z-[1] mx-auto max-w-[1500px]">

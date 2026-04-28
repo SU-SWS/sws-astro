@@ -1,4 +1,5 @@
 import { UnitSignature } from "./UnitSignature";
+// import brandBarLogo from '../images/brand-bar-logo.svg';
 
 const NAV = [
   { href: "/", label: "Our work" },
@@ -19,13 +20,13 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
     <header className={isDark ? "bg-sws-ood" : "bg-white"}>
       <div className={`${isDark ? "bg-sws-cardinal" : "bg-white"} pt-[6px]`}>
         <div className="cc pb-[6px]">
-          <img
-            src="/images/brand-bar-logo.svg"
+          {/* <img
+            src={brandBarLogo.src}
             alt="Stanford University"
             width={146}
             height={18}
             className="block h-[18px] w-[146px] object-contain"
-          />
+          /> */}
         </div>
       </div>
       <div className="cc pt-[30px]">

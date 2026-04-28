@@ -1,9 +1,14 @@
 @import "decanter";
 
-@theme {
-  --font-sans: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
-  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, serif;
+@font-face {
+  font-family: "Stanford";
+  src: url("./assets/fonts/stanford.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
+@theme {
   --color-sws-text: #43423e;
   --color-sws-digital-red: #b1040e;
   --color-sws-red-bright: #f83535;
@@ -20,31 +25,13 @@
 }
 
 @layer base {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
   body {
     margin: 0;
-    font-family: var(--font-sans);
     font-size: 19px;
-    line-height: 1.32;
-    font-weight: 350;
-    color: var(--color-sws-text);
-    background: #fff;
-    font-optical-sizing: auto;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
   }
 
   a {
-    color: inherit;
-    text-decoration: none;
+      color: inherit;
+      text-decoration: none;
   }
 }

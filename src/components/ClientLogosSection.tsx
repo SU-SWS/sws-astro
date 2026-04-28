@@ -1,15 +1,24 @@
+import btsLogo from '../images/logos/BTS.png';
+import centennialLogo from '../images/logos/Centennial logo wrapper.png';
+import doeerLogo from '../images/logos/Doeer wrapper.png';
+import gseLogo from '../images/logos/GSE Wrapper.png';
+import khsLogo from '../images/logos/KHS wrapper.png';
+import officeOfDevelopmentLogo from '../images/logos/Office of Development.png';
+import sulLogo from '../images/logos/SUL.png';
+import supLogo from '../images/logos/SUP logo.png';
+
 const ROW_1 = [
-  { src: "/images/logos/Office of Development.png", alt: "Office of Development, Stanford University" },
-  { src: "/images/logos/Centennial logo wrapper.png", alt: "Stanford Engineering Centennial" },
-  { src: "/images/logos/SUL.png", alt: "Stanford University Libraries" },
-  { src: "/images/logos/BTS.png", alt: "Stanford Business Technology Services" },
+  { src: officeOfDevelopmentLogo, alt: "Office of Development, Stanford University" },
+  { src: centennialLogo, alt: "Stanford Engineering Centennial" },
+  { src: sulLogo, alt: "Stanford University Libraries" },
+  { src: btsLogo, alt: "Stanford Business Technology Services" },
 ];
 
 const ROW_2 = [
-  { src: "/images/logos/GSE Wrapper.png", alt: "Stanford Graduate School of Education" },
-  { src: "/images/logos/KHS wrapper.png", alt: "Knight-Hennessy Scholars at Stanford" },
-  { src: "/images/logos/Doeer wrapper.png", alt: "Stanford Doerr School of Sustainability" },
-  { src: "/images/logos/SUP logo.png", alt: "Stanford University Press" },
+  { src: gseLogo, alt: "Stanford Graduate School of Education" },
+  { src: khsLogo, alt: "Knight-Hennessy Scholars at Stanford" },
+  { src: doeerLogo, alt: "Stanford Doerr School of Sustainability" },
+  { src: supLogo, alt: "Stanford University Press" },
 ];
 
 export function ClientLogosSection() {
@@ -29,8 +38,10 @@ export function ClientLogosSection() {
                 className={`max-h-[72px] w-auto object-contain max-[1000px]:max-h-[calc(72px*0.85)] ${
                   logo.alt === "Stanford Engineering Centennial" ? "max-[999px]:scale-[0.85] max-[999px]:origin-left" : ""
                 }`}
-                src={logo.src}
+                src={logo.src.src}
                 alt={logo.alt}
+                width={logo.src.width}
+                height={logo.src.height}
               />
             ))}
           </div>
@@ -39,8 +50,10 @@ export function ClientLogosSection() {
               <img
                 key={logo.alt}
                 className="max-h-[72px] w-auto object-contain max-[1000px]:max-h-[calc(72px*0.85)]"
-                src={logo.src}
+                src={logo.src.src}
                 alt={logo.alt}
+                width={logo.src.width}
+                height={logo.src.height}
               />
             ))}
           </div>
