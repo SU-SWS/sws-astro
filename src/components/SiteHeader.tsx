@@ -21,7 +21,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
     <header className={isDark ? "bg-campaign-black" : "bg-white"}>
       <div  className={cnb("cc pt-5 pb-1", isDark ? "bg-campaign-black" : "bg-white")}>
         <a
-          className={cnb("logo text-20 leading-none", isDark ? "text-white hocus:underline" : "text-black hocus:text-black hocus:no-underline")}
+          className={cnb("logo text-20 leading-none hocus:no-underline", isDark ? "text-white" : "text-black hocus:text-black")}
           href="https://www.stanford.edu"
         >
           Stanford University
