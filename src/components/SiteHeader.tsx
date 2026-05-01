@@ -1,3 +1,4 @@
+import { cnb } from 'cnbuilder';
 import { UnitSignature } from "./UnitSignature";
 // import brandBarLogo from '@images/brand-bar-logo.svg';
 
@@ -18,16 +19,13 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
 
   return (
     <header className={isDark ? "bg-campaign-black" : "bg-white"}>
-      <div className={`${isDark ? "bg-sws-cardinal" : "bg-white"} pt-6`}>
-        <div className="cc pb-6">
-          {/* <img
-            src={brandBarLogo.src}
-            alt="Stanford University"
-            width={146}
-            height={18}
-            className="block h-18 w-146 object-contain"
-          /> */}
-        </div>
+      <div  className={cnb("cc pt-5 pb-1", isDark ? "bg-campaign-black" : "bg-white")}>
+        <a
+          className={cnb("logo text-20 leading-none", isDark ? "text-white hocus:underline" : "text-black hocus:text-black hocus:no-underline")}
+          href="https://www.stanford.edu"
+        >
+          Stanford University
+        </a>
       </div>
       <div className="cc pt-30">
         <div className="mx-auto flex flex-wrap items-start justify-between gap-6 pb-2">
