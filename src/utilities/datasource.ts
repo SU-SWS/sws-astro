@@ -17,14 +17,14 @@ export type ImageAspectRatioType = keyof typeof imageAspectRatios;
 // Many components have dark and light themes - these are the basic options
 export const bgTextColorPairsBlackWhite = {
   black: 'bg-black text-white',
-  white: 'bg-white text--black',
+  white: 'bg-white text-black',
 };
 export type BgTextColorPairBlackWhiteType = keyof typeof bgTextColorPairsBlackWhite;
 
 // Some components, eg, Split Posters, have additional options
 export const bgTextColorPairsAdditional = {
   'black-70': 'bg-black-true/70 text-white',
-  'white-80': 'bg-white/80 text--black',
+  'white-80': 'bg-white/80 text-black',
 };
 
 export const bgTextColorPairs = {
