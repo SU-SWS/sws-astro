@@ -4,11 +4,11 @@ export const logo = 'text-19 sm:text-[1.43em] leading-half mt-[0.27em]';
 export const bar = 'hidden sm:block w-1 h-1em mx-03em';
 export const text = 'text-15 sm:text-[1.05em] mt-03em -ml-01em sm:ml-0';
 export const textColors = {
-  default: 'text-gc-black',
+  default: 'text-black',
   white: 'text-white',
 };
 export type LogoTextColorType = keyof typeof textColors;
 export const barColors = {
-  default: 'bg-gc-black',
+  default: 'bg-black',
   white: 'bg-white',
 };
