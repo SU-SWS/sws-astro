@@ -1,10 +1,10 @@
 import { UnitSignature } from "./UnitSignature";
 
 const NAV = [
-  { href: "/", label: "Our work" },
+  { href: "/work", label: "Our work" },
   { href: "/services", label: "Services" },
   { href: "/why", label: "Why Web Services" },
-  { href: "#", label: "Contact us" },
+  { href: "/contact", label: "Contact us" },
 ];
 
 interface FooterLocalProps {
