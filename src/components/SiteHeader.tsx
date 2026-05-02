@@ -5,7 +5,7 @@ import { UnitSignature } from "./UnitSignature";
 const NAV = [
   { href: "/", label: "Our work" },
   { href: "/services", label: "Services" },
-  { href: "/why-web-services", label: "Why Web Services" },
+  { href: "/why", label: "Why Web Services" },
   { href: "#", label: "Contact us" },
 ];
 

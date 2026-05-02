@@ -1,6 +1,6 @@
-import { ScreenshotGrid } from "../../ScreenshotGrid";
-import { stanfordSitesCells, solutionsCells } from "../../data/screenshotCells";
-import { ArrowIcon, ButtonPill } from "../ButtonPill";
+import { ScreenshotGrid } from "../../../ScreenshotGrid";
+import { stanfordSitesCells, solutionsCells } from "../../../data/screenshotCells";
+import { ArrowIcon, ButtonPill } from "../../ButtonPill";
 import sectionPortfolioBg from '@images/section-portfolio-bg.jpg';
 
 const STATS_ROW_1 = [

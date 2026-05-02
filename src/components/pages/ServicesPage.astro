@@ -1,6 +1,6 @@
 ---
 import { ArrowIcon, ButtonPill } from "@components/ButtonPill";
-import { ServiceSection } from "@components/sections/ServiceSection";
+import { ServiceSection } from "@components/sections/services/ServiceSection";
 import { Container } from "@components/Container/Container";
 
 const PRINCIPLES = [
@@ -106,7 +106,7 @@ const TECHNOLOGY_COLUMNS = [
           <div class="flex flex-col rs-gap-y-6">
             {SERVICES.map((service) => <ServiceSection {...service} />)}
           </div>
-          <a href="/why-web-services" class="mt-13 inline-flex items-center gap-6 text-19 leading-snug text-white">
+          <a href="/why" class="mt-13 inline-flex items-center gap-6 text-19 leading-snug text-white">
             <span class="underline decoration-digital-red-xlight underline-offset-4">Why partner with us</span>
             <ArrowIcon />
           </a>
