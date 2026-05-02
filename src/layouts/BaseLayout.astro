@@ -12,18 +12,13 @@ interface Props {
   footerActiveLabel?: string;
 }
 
-const {
-  title = "Stanford Web Services",
-  footerHeading = "We’d love to hear about what you’re working on.",
-  footerButtonHref = "#",
-  footerButtonLabel = "Connect with us",
-  footerActiveLabel,
-} = Astro.props;
+const { title = "Stanford Web Services", footerActiveLabel } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <Font cssVariable="--font-serif" />
     <Font cssVariable="--font-sans" />
     <Font cssVariable="--font-stanford" />
@@ -44,12 +39,7 @@ const {
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <slot />
-    <FooterLocal
-      heading={footerHeading}
-      buttonHref={footerButtonHref}
-      buttonLabel={footerButtonLabel}
-      activeLabel={footerActiveLabel}
-    />
+    <FooterLocal activeLabel={footerActiveLabel} />
     <GlobalFooter />
   </body>
 </html>

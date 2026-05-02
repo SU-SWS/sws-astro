@@ -19,7 +19,7 @@ export function UnitSignature({ className = "", theme = "light" }: UnitSignature
       </div>
       <span className={`ml-12 mr-12 mt-2 h-42 w-px shrink-0 ${isDark ? "bg-white/40" : "bg-sws-text/35"}`} aria-hidden />
       <span className="mt-1 flex flex-col">
-        <span className={`font-sans text-23 leading-snug ${isDark ? "text-white" : "text-sws-text"}`}>Web Services</span>
+        <span className={`font-sans text-23 leading-snug ${isDark ? "text-white" : "text-primary"}`}>Web Services</span>
         {isDark ? <span className="font-sans text-18 italic leading-snug text-white/80">University IT</span> : null}
       </span>
     </div>

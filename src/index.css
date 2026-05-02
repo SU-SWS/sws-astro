@@ -1,24 +1,14 @@
 @import "decanter";
 
 @theme {
-  --color-sws-text: #43423e;
-  --color-sws-digital-red: #b1040e;
-  --color-sws-red-bright: #f83535;
   --color-sws-tan: #f3f0e2;
-  --color-sws-muted: #c0c0bf;
   --color-campaign-black: #17171a;
-  --color-sws-cardinal: #8c1515;
   --color-sws-engineering: #4d0000;
-  --color-sws-bleed-overlay: rgba(0, 0, 0, 0.8);
-  --color-sws-momentum-frame: #3a50a0;
-  --color-sws-video-bg: #1a0a0a;
-
-  --shadow-card: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
   --color-primary: var(--color-black-90);
-  --color-secondary-muted: var(--color-black-70);
+  --color-muted: var(--color-black-70);
 }
 
 @layer base {
@@ -27,8 +17,12 @@
     font-size: 18px;
 
     @media (min-width: 992px) {
-      font-size: 2.3rem;
+      font-size: 2.1rem;
     }
+  }
+
+  h2, h3 {
+    font-weight: 400;
   }
 
   a {

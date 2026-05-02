@@ -4,8 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
+  site: "https://sws.stanford.edu",
   integrations: [
-    react()
+    react(),
+    sitemap(),
   ],
   vite: {
     plugins: [tailwindcss()],

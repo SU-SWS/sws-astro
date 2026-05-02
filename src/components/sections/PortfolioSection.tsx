@@ -23,7 +23,7 @@ function Stat({ num, label }: StatProps) {
   return (
     <div className="min-w-160 flex-[0_1_260px]">
       <p className="m-0 font-serif text-[clamp(4rem,8vw,110px)] font-normal leading-tight text-white">{num}</p>
-      <p className="m-0 mt-2 max-w-264 text-23 leading-snug text-sws-muted">{label}</p>
+      <p className="m-0 mt-2 max-w-264 text-23 leading-snug text-muted">{label}</p>
     </div>
   );
 }
@@ -33,7 +33,7 @@ export function PortfolioSection() {
     <section className="relative overflow-hidden px-[clamp(1.25rem,5vw,100px)] pb-114 pt-95 text-white" aria-label="Portfolio and impact">
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <img src={sectionPortfolioBg.src} alt="" width={sectionPortfolioBg.width} height={sectionPortfolioBg.height} className="absolute inset-0 size-full object-cover" />
-        <div className="absolute inset-0 bg-sws-bleed-overlay" />
+        <div className="absolute inset-0 bg-black-true/80" />
       </div>
       <div className="relative z-1 mx-auto">
         <div className="mx-auto flex w-full max-w-1300 flex-wrap items-start justify-center gap-8">
