@@ -3,10 +3,10 @@ import { UnitSignature } from "./UnitSignature";
 // import brandBarLogo from '@images/brand-bar-logo.svg';
 
 const NAV = [
-  { href: "/", label: "Our work" },
+  { href: "/work", label: "Our work" },
   { href: "/services", label: "Services" },
-  { href: "/why-web-services", label: "Why Web Services" },
-  { href: "#", label: "Contact us" },
+  { href: "/why", label: "Why Web Services" },
+  { href: "/contact", label: "Contact us" },
 ];
 
 interface SiteHeaderProps {
@@ -41,7 +41,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
                   label === activeLabel
                     ? isDark
                       ? "border-black-60 text-white"
-                      : "border-sws-text text-sws-text"
+                      : "border-sws-text text-primary"
                     : isDark
                       ? "border-transparent text-white hover:border-white/30 hover:text-white"
                       : "border-transparent text-digital-red hover:border-black-90/20 hover:text-black-90",

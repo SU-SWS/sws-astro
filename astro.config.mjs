@@ -1,9 +1,14 @@
 import { defineConfig, fontProviders } from "astro/config";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  integrations: [react()],
+  site: "https://sws.stanford.edu",
+  integrations: [
+    react(),
+    sitemap(),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

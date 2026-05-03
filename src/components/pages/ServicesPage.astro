@@ -1,6 +1,6 @@
 ---
 import { ArrowIcon, ButtonPill } from "@components/ButtonPill";
-import { ServiceSection } from "@components/sections/ServiceSection";
+import { ServiceSection } from "@components/sections/services/ServiceSection";
 import { Container } from "@components/Container/Container";
 
 const PRINCIPLES = [
@@ -83,7 +83,7 @@ const TECHNOLOGY_COLUMNS = [
       <h1 class="font-serif rs-mb-3 font-normal fluid-type-5 leading-display tracking-[0.01em] text-white">
         Services
       </h1>
-      <p class="max-w-900 intro-text leading-cozy text-secondary-muted">
+      <p class="max-w-900 type-2 leading-cozy text-muted">
         We partner with teams across Stanford big and small. From a ten hour ux strategy consult to a multi-year program, we are here to help. We are committed to finding the right solution for your project and creating tools that empower you to do your best work, all while taking the guesswork out of security, accessibility, and infrastructure decisions. moving Stanford forward through digital experiences that help your users engage with the mission behind your work.
       </p>
     </Container>
@@ -106,7 +106,7 @@ const TECHNOLOGY_COLUMNS = [
           <div class="flex flex-col rs-gap-y-6">
             {SERVICES.map((service) => <ServiceSection {...service} />)}
           </div>
-          <a href="/why-web-services" class="mt-13 inline-flex items-center gap-6 text-19 leading-snug text-white">
+          <a href="/why" class="mt-13 inline-flex items-center gap-6 text-19 leading-snug text-white">
             <span class="underline decoration-digital-red-xlight underline-offset-4">Why partner with us</span>
             <ArrowIcon />
           </a>

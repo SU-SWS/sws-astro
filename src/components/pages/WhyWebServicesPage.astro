@@ -90,7 +90,7 @@ const PARTNERS = [
 ];
 ---
 
-<div class="min-h-screen bg-white text-sws-text">
+<div class="min-h-screen bg-white text-primary">
   <main>
     <Container as="section" pt={8} pb={7} className="">
       <div class="mx-auto max-w-1300">
@@ -101,7 +101,7 @@ const PARTNERS = [
           <p class="basis-2/5 type-2 font-semibold leading-display text-primary lg:rs-pr-5">
             Security, legal compliance, malicious traffic might be new challenges for you, but they aren’t for us!
           </p>
-          <p class="basis-3/5 big-paragraph leading-normal text-secondary-muted lg:rs-pl-3">
+          <p class="basis-3/5 big-paragraph leading-normal text-muted lg:rs-pl-3">
             Websites are simple to launch but difficult to maintain. Behind every university web property lies a network of security requirements, accessibility standards, brand compliance, and ongoing vulnerability management that most content owners never see coming — until something goes wrong. We've spent years building platforms and practices that handle all of it, so you can focus on your communication strategy.
           </p>
         </div>
@@ -154,30 +154,30 @@ const PARTNERS = [
 
     <section class="px-[clamp(1.25rem,5vw,100px)] py-114">
       <div class="mx-auto max-w-1300">
-        <p class="text-15 font-semibold uppercase tracking-[0.14em] text-sws-text/45">What we are good at</p>
+        <p class="text-15 font-semibold uppercase tracking-[0.14em] text-primary/45">What we are good at</p>
         <h2 class="mt-4 max-w-900 font-serif text-[clamp(2rem,4vw,45px)] font-normal leading-display tracking-[0.01em]">
           Expertise you can leverage
         </h2>
-        <p class="mt-5 max-w-820 text-21 leading-normal text-sws-text/72">
+        <p class="mt-5 max-w-820 text-21 leading-normal text-primary/72">
           We provide strategic consulting that helps teams align digital priorities, reduce risk, and make better decisions before delivery begins.
         </p>
         <div class="mt-48 grid gap-12 lg:grid-cols-3 lg:gap-48">
           {EXPERTISE.map(({ title, body }) => (
             <article class="border-t border-sws-text/20 pt-6">
               <h3 class="font-serif text-33 font-normal leading-display">{title}</h3>
-              <p class="mt-4 max-w-350 text-21 leading-normal text-sws-text/75">{body}</p>
+              <p class="mt-4 max-w-350 text-21 leading-normal text-primary/75">{body}</p>
             </article>
           ))}
         </div>
-        <ButtonPill as="a" href="#" className="mt-10 border-sws-red-bright px-[19 py-7 text-sws-text hover:bg-sws-red-bright/10">
-          Ask a consulting question <ArrowIcon className="text-sws-red-bright" />
+        <ButtonPill as="a" href="#" className="mt-10 border-digital-red-xlight px-[19 py-7 text-primary hover:bg-digital-red-xlight/10">
+          Ask a consulting question <ArrowIcon className="text-digital-red-xlight" />
         </ButtonPill>
       </div>
     </section>
 
     <section class="bg-sws-tan px-[clamp(1.25rem,5vw,100px)] py-114">
       <div class="mx-auto max-w-1300">
-        <p class="text-15 font-semibold uppercase tracking-[0.14em] text-sws-text/45">Who we are working with</p>
+        <p class="text-15 font-semibold uppercase tracking-[0.14em] text-primary/45">Who we are working with</p>
         <h2 class="mt-4 font-serif text-[clamp(2rem,4vw,45px)] font-normal leading-display tracking-[0.01em]">Your partners</h2>
         <div class="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
           {PARTNERS.map(([initials, name, team], index) => (
@@ -190,8 +190,8 @@ const PARTNERS = [
               >
                 {initials}
               </div>
-              <h3 class="mt-4 text-17 font-semibold leading-[1.25] text-sws-text">{name}</h3>
-              <p class="mt-1 text-15 leading-[1.35] text-sws-text/68">{team}</p>
+              <h3 class="mt-4 text-17 font-semibold leading-[1.25] text-primary">{name}</h3>
+              <p class="mt-1 text-15 leading-[1.35] text-primary/68">{team}</p>
             </article>
           ))}
         </div>
