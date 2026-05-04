@@ -29,7 +29,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
       </div>
       <div className="cc pt-30">
         <div className="mx-auto flex flex-wrap items-start justify-between gap-6 pb-2">
-          <LogoLockup text="Web Services" color={isDark ? "white" : "default"} isLink />
+          <LogoLockup text="Web Services" line2="University IT" color={isDark ? "white" : "default"} isLink />
           <nav className="flex flex-wrap items-center justify-end gap-33 pt-9" aria-label="Primary">
             {NAV.map(({ href, label }) => (
               <a

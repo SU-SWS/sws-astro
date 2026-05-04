@@ -8,6 +8,7 @@ import * as styles from './LogoLockup.styles';
  */
 type LogoLockupProps = {
   text: string;
+  line2?: string;
   isLink?: boolean;
   color?: styles.LogoTextColorType;
   className?: string;
@@ -15,6 +16,7 @@ type LogoLockupProps = {
 
 export const LogoLockup = ({
   text,
+  line2,
   isLink,
   color = 'default',
   className,
@@ -27,9 +29,9 @@ export const LogoLockup = ({
         isLink={false}
         className={cnb(styles.logo)}
       />
-      <div className={cnb(styles.bar, styles.barColors[color])} aria-hidden="true" />
       <div className={cnb(styles.text, styles.textColors[color])}>
         {text}
+        {line2 && <div className={styles.line2}>{line2}</div>}
       </div>
     </FlexBox>
   );
