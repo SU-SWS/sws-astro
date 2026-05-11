@@ -1,7 +1,7 @@
 ### Components and Styling
 
 **Component Usage:**
-- Use starter components such as `Grid`, `FlexBox`, `WidthBox`, `Container` when possible
+- Use starter components such as `FlexBox`, `Container` when possible
 
 **Style Organization:**
 - Styles are defined in `*.styles.ts` files as exported constants

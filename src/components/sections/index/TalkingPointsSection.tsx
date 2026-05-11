@@ -1,39 +1,39 @@
+import { Container } from "@components/Container";
+
 const CARDS = [
   {
     title: "Modern practices. Flexible platforms. Award-winning work.",
-    body: "Phasellus convallis sagittis aliquam. Quisque porttitor nibh orci, non cursus odio elementum et. Quisque eu porttitor nulla, ut tempor erat. Sed non pulvinar leo, non fermentum odio.",
+    body: "Grounded in current industry standards and best-in-class practices, we work across web platforms and apps, shaping design and UX around the right solution for your product.",
   },
   {
     title: "Digital solutions, without the overhead.",
-    body: "Phasellus convallis sagittis aliquam. Quisque porttitor nibh orci, non cursus odio elementum et. Quisque eu porttitor nulla, ut tempor erat. Sed non pulvinar leo, non fermentum odio.",
+    body: "We build products so your team can have a secure, accessible, beautiful, and fully compliant digital presence — without becoming technical administrators. ",
   },
   {
     title: "The team Stanford teams trust.",
-    body: "Phasellus convallis sagittis aliquam. Quisque porttitor nibh orci, non cursus odio elementum et. Quisque eu porttitor nulla, ut tempor erat. Sed non pulvinar leo, non fermentum odio.",
+    body: "Years of solving the exact challenges our neighbors face. Award-winning design, technical depth, and a commitment to your success — whether we're building your product or helping you find someone who will.",
   },
 ];
 
 export function TalkingPointsSection() {
   return (
-    <section className="bg-sws-tan px-[clamp(1.25rem,5vw,100px)] pb-171 pt-133" aria-labelledby="talking-points">
-      <div className="mx-auto w-full max-w-1100">
-        <h2 id="talking-points" className="sr-only">
-          Talking points
-        </h2>
-        <p className="m-0 max-w-800 font-serif text-[clamp(1.5rem,2.5vw,36px)] font-normal leading-tight">
+    <Container bgColor="sand" pt={8} pb={9}>
+      <div className="max-w-1100 mx-auto">
+        <h2 className="fluid-type-1 font-semibold rs-mb-1">Collaboration that bring ideas to life</h2>
+        <p className="max-w-800 font-serif fluid-type-2 leading-snug">
           We work closely with the Stanford community to translate complex goals into clear, engaging, and easy-to-manage experiences.
         </p>
-        <div className="mt-95 grid grid-cols-1 gap-10 min-[901px]:grid-cols-3">
+        <div className="rs-mt-6 grid grid-gap grid-cols-1 md:grid-cols-3">
           {CARDS.map((card, index) => (
-            <article key={`${card.title}-${index}`}>
-              <h3 className="m-0 mb-19 font-serif text-[clamp(1.5rem,1.8vw,2.25rem)] font-normal leading-tight">
+            <div key={`${card.title}-${index}`}>
+              <h3 className="fluid-type-1 font-serif leading-display">
                 {card.title}
               </h3>
-              <p className="m-0 text-19 leading-normal">{card.body}</p>
-            </article>
+              <p className="caption leading-display">{card.body}</p>
+            </div>
           ))}
         </div>
       </div>
-    </section>
+    </Container>
   );
 }

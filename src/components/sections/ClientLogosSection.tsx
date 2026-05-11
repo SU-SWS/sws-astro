@@ -23,12 +23,12 @@ const ROW_2 = [
 
 export function ClientLogosSection() {
   return (
-    <section className="bg-campaign-black px-[clamp(1.25rem,5vw,100px)] py-114 text-white" aria-labelledby="logos-heading">
-      <div className="mx-auto max-w-1300 p-0">
-        <p className="m-0 mb-38 text-19 leading-snug">Lasting Partnerships</p>
-        <h2 id="logos-heading" className="m-0 max-w-1000 font-serif text-[clamp(2rem,3vw,51px)] font-normal leading-snug">
-          Our clients  |  SWS maintains long-term partnerships across Stanford, providing strategic and technical support for schools, institutes, and organizations.
-        </h2>
+    <section className="bg-fill-primary px-[clamp(1.25rem,5vw,100px)] py-114 text-white">
+      <div className="mx-auto max-w-1300">
+        <h2 className="card-paragraph leading-tight">Lasting Partnerships</h2>
+        <p className="rs-mt-2 rs-mb-8 max-w-1100 font-serif fluid-type-4 leading-display">
+          SWS maintains long-term partnerships across Stanford, providing strategic and technical support for schools, institutes, and organizations.
+        </p>
 
         <div className="mt-114 flex flex-col gap-114 max-[1000px]:gap-12">
           <div className="grid grid-cols-2 items-center justify-items-start gap-12 max-[1000px]:grid-cols-2 min-[1001px]:grid-cols-4 min-[1001px]:gap-3">

@@ -16,9 +16,5 @@ jobs:
           useLockFile: false
       - name: Lint
         run: npm run lint
-        env:
-          NODE_OPTIONS: '--max-old-space-size=8192'
       - name: Typecheck
         run: npm run check
-        env:
-          NODE_OPTIONS: '--max-old-space-size=8192'

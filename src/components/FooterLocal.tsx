@@ -15,7 +15,7 @@ export function FooterLocal({
   activeLabel,
 }: FooterLocalProps) {
   return (
-    <section className="cc bg-sws-tan rs-py-6">
+    <section className="cc bg-fill-secondary rs-py-6">
       <div className="grid md:grid-cols-2 md:gap-40">
         <div aria-hidden="true" />
         <div className="max-w-4xl flex-1 basis-md">
@@ -36,6 +36,7 @@ export function FooterLocal({
           {NAV.map(({ href, label }) => (
             <a
               key={label}
+              data-astro-prefetch
               href={href}
               aria-current={label === activeLabel ? "page" : undefined}
               className={[

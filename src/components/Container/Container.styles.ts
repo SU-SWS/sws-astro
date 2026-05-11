@@ -1,12 +1,11 @@
 export const widths = {
   full: 'w-full', // width: 100%; default
   site: 'cc', // Use Decanter custom screen margins and sets max content width of 1500px
-  wide: 'cc 3xl:px-100 4xl:px-[calc((100%-1800px)/2)]',
   screen: 'w-screen', // width: 100vw
 };
 
 export const bgColors = {
-  black: 'bg-black text-white',
-  white: 'bg-white text-black',
-  'fog-light': 'bg-fog-light text-black',
+  black: 'bg-fill-primary text-dark-primary',
+  white: 'bg-white text-primary',
+  sand: 'bg-fill-secondary text-primary',
 };

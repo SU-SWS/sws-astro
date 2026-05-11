@@ -1,15 +1,18 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import '../index.css';
 import { Font } from 'astro:assets';
+import { SiteHeader } from '@components/SiteHeader';
 import { GlobalFooter } from '@components/GlobalFooter/GlobalFooter';
 import { FooterLocal } from '@components/FooterLocal';
 
 interface Props {
   title?: string;
-  footerActiveLabel?: string;
+  activeLabel?: string;
+  theme?: 'light' | 'dark';
 }
 
-const { title = 'Stanford Web Services', footerActiveLabel } = Astro.props;
+const { title = 'Stanford Web Services', activeLabel, theme = 'light' } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,15 +31,20 @@ const { title = 'Stanford Web Services', footerActiveLabel } = Astro.props;
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <title>{`${title} | Stanford Web Services`}</title>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8XKF6XL"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <slot />
-    <FooterLocal activeLabel={footerActiveLabel} />
+    <SiteHeader theme={theme} activeLabel={activeLabel} />
+    <main id="main-content" tabindex={-1} class="relative">
+      <slot />
+    </main>
+    <FooterLocal activeLabel={activeLabel} />
     <GlobalFooter />
   </body>
 </html>
+
+<ClientRouter />
