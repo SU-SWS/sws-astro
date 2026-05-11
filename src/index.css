@@ -8,8 +8,9 @@
 
 @theme inline {
   /* Text colors */
-  --color-primary: var(--color-white);
-  --color-dark-primary: var(--color-black-90);
+
+  --color-primary: var(--color-black-90);
+  --color-dark-primary: var(--color-white);
   --color-dark-primary-muted: var(--color-black-70);
   --color-dark-secondary-muted: var(--color-black-50);
 

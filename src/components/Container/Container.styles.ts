@@ -5,7 +5,7 @@ export const widths = {
 };
 
 export const bgColors = {
-  black: 'bg-fill-primary text-primary',
-  white: 'bg-white text-dark-primary',
+  black: 'bg-fill-primary text-dark-primary',
+  white: 'bg-white text-primary',
   sand: 'bg-fill-secondary text-primary',
 };
