@@ -19,9 +19,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
-    "@astrojs/react": "^5.0.3",
+    "@astrojs/react": "^5.0.4",
     "@astrojs/sitemap": "^3.7.2",
-    "astro": "^6.1.7",
+    "@heroicons/react": "^2.2.0",
+    "astro": "^6.3.1",
     "cnbuilder": "^3.1.0",
     "decanter": "github:SU-SWS/decanter#v8",
     "motion": "^12.38.0",
