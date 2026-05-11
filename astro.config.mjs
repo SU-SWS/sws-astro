@@ -19,18 +19,21 @@ export default defineConfig({
       cssVariable: '--font-sans',
       provider: fontProviders.google(),
       weights: [400, 600],
-      styles: ['normal', 'italic'],
+      styles: ['normal'],
+      fallbacks: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
     },
     {
       name: 'Source Serif 4',
       cssVariable: '--font-serif',
-      provider: fontProviders.fontsource(),
+      provider: fontProviders.google(),
       styles: ['normal'],
+      fallbacks: ['Georgia', 'Times', 'Times New Roman', 'serif'],
     },
     {
       name: 'Stanford',
       cssVariable: '--font-stanford',
       provider: fontProviders.local(),
+      fallbacks: [],
       options: {
         // Weight and style are not specified so Astro
         // will try to infer them for each variant

@@ -9,8 +9,9 @@ import supVideo from '@videos/sup_02_720.mp4';
 ---
 
 <FeatureSection ctaLabel="Learn more about our work" ctaHref="/work">
-  <div class="pointer-events-none absolute inset-0" aria-hidden>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
     <Image
+      layout="full-width"
       src={sectionPortfolioBg}
       alt=""
       width={sectionPortfolioBg.width}
@@ -26,7 +27,14 @@ import supVideo from '@videos/sup_02_720.mp4';
     ctaLabel="Visit Momentum"
     ctaHref="https://momentum.stanford.edu/"
   >
-    <Image src={momentumHero} alt="Momentum campaign creative" width={momentumHero.width} height={momentumHero.height} class="size-full object-cover" />
+    <Image
+      layout="constrained"
+      src={momentumHero}
+      alt="Momentum website hero"
+      width={momentumHero.width}
+      height={momentumHero.height}
+      class="size-full object-cover"
+    />
     <div class="absolute bottom-[clamp(12px,3vw,24px)] right-[clamp(12px,3vw,24px)] z-2 flex max-w-[calc(100%-24px)] flex-col gap-1 rounded-lg bg-digital-blue p-1.5">
       <Image src={webbyNominee} alt="Webby Awards" width={webbyNominee.width} height={webbyNominee.height} class="h-auto w-90" />
     </div>
