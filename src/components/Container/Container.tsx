@@ -3,10 +3,8 @@ import { cnb } from 'cnbuilder';
 import {
   paddingTops,
   paddingBottoms,
-  paddingVerticals,
   marginTops,
   marginBottoms,
-  marginVerticals,
   type MarginType,
   type PaddingType,
 } from '@utilities/datasource';
@@ -29,12 +27,10 @@ export type ContainerProps = HTMLAttributes<HTMLElement> & {
 export const Container = ({
   as: AsComponent = 'div',
   width = 'site',
-  py,
   pt,
   pb,
   mt,
   mb,
-  my,
   bgColor,
   style,
   className,
@@ -46,10 +42,8 @@ export const Container = ({
     style={style}
     className={cnb(
       bgColor ? styles.bgColors[bgColor] : '',
-      py ? paddingVerticals[py] : '',
       pt ? paddingTops[pt] : '',
       pb ? paddingBottoms[pb] : '',
-      my ? marginVerticals[my] : '',
       mt ? marginTops[mt] : '',
       mb ? marginBottoms[mb] : '',
       width ? styles.widths[width] : '',
