@@ -1,29 +1,34 @@
-import { defineConfig, fontProviders } from "astro/config";
-import react from "@astrojs/react";
-import tailwindcss from "@tailwindcss/vite";
+import { defineConfig, fontProviders } from 'astro/config';
+import react from '@astrojs/react';
+import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  integrations: [react()],
+  site: 'https://sws.stanford.edu',
+  integrations: [
+    react(),
+    sitemap(),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
   fonts: [
     {
-      name: "Source Sans 3",
-      cssVariable: "--font-sans",
+      name: 'Source Sans 3',
+      cssVariable: '--font-sans',
       provider: fontProviders.google(),
       weights: [400, 600],
-      styles: ["normal", "italic"],
+      styles: ['normal', 'italic'],
     },
     {
-      name: "Source Serif 4",
-      cssVariable: "--font-serif",
+      name: 'Source Serif 4',
+      cssVariable: '--font-serif',
       provider: fontProviders.fontsource(),
-      styles: ["normal"],
+      styles: ['normal'],
     },
     {
-      name: "Stanford",
-      cssVariable: "--font-stanford",
+      name: 'Stanford',
+      cssVariable: '--font-stanford',
       provider: fontProviders.local(),
       options: {
         // Weight and style are not specified so Astro
@@ -31,11 +36,11 @@ export default defineConfig({
         variants: [
           {
             src: [
-              "./src/assets/fonts/stanford.woff2",
-            ]
+              './src/assets/fonts/stanford.woff2',
+            ],
           },
-        ]
-      }
-    }
+        ],
+      },
+    },
   ],
 });

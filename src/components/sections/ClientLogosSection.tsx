@@ -61,7 +61,7 @@ export function ClientLogosSection() {
 
         <div className="mt-95">
           <a className="inline-flex items-center gap-2 text-19 text-white" href="#">
-            <span className="underline decoration-sws-red-bright [text-underline-offset:4 hocus-visible:decoration-digital-red hocus-visible:decoration-2">
+            <span className="underline decoration-digital-red-xlight [text-underline-offset:4 hocus-visible:decoration-digital-red hocus-visible:decoration-2">
               Learn more about our services
             </span>
             <i

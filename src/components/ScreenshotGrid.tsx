@@ -78,7 +78,7 @@ export function ScreenshotGrid({ gridClass, ariaLabel, cells }: ScreenshotGridPr
       {cells.map((cell) => (
         <motion.div
           key={cell.id}
-          className={`absolute overflow-hidden rounded-md shadow-card ${layout[cell.id]}`}
+          className={`absolute overflow-hidden rounded-md ${layout[cell.id]}`}
           variants={itemVariants(reduceMotion)}
         >
           <img
