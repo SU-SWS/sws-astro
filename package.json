@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "tsc": "npm run check",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
