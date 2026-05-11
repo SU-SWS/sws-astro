@@ -1,4 +1,4 @@
-import { UnitSignature } from "./UnitSignature";
+import { LogoLockup } from '@components/Logo/LogoLockup';
 
 const NAV = [
   { href: "/work", label: "Our work" },
@@ -31,7 +31,7 @@ export function FooterLocal({
         </div>
       </div>
       <div className="flex flex-wrap items-start justify-between gap-8 rs-pt-6">
-        <UnitSignature />
+        <LogoLockup text="Web Services" line2="University IT" />
         <nav className="flex flex-wrap items-center justify-end gap-33 pt-2" aria-label="Footer">
           {NAV.map(({ href, label }) => (
             <a
