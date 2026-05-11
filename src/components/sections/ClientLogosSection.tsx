@@ -23,7 +23,7 @@ const ROW_2 = [
 
 export function ClientLogosSection() {
   return (
-    <section className="bg-campaign-black px-[clamp(1.25rem,5vw,100px)] py-114 text-white" aria-labelledby="logos-heading">
+    <section className="bg-fill-primary px-[clamp(1.25rem,5vw,100px)] py-114 text-white" aria-labelledby="logos-heading">
       <div className="mx-auto max-w-1300 p-0">
         <p className="m-0 mb-38 text-19 leading-snug">Lasting Partnerships</p>
         <h2 id="logos-heading" className="m-0 max-w-1000 font-serif text-[clamp(2rem,3vw,51px)] font-normal leading-snug">

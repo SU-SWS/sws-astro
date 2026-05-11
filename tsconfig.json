@@ -7,8 +7,8 @@
       "@components/*": ["./src/components/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
-      "@images/*": ["./src/images/*"],
-      "@videos/*": ["./src/videos/*"],
+      "@images/*": ["./src/assets/images/*"],
+      "@videos/*": ["./src/assets/videos/*"],
       "@utilities/*": ["./src/utilities/*"]
     }
   },

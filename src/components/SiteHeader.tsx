@@ -1,5 +1,6 @@
 import { cnb } from 'cnbuilder';
 import { UnitSignature } from "./UnitSignature";
+import { Skiplink } from '@components/SkipLink';
 
 const NAV = [
   { href: "/work", label: "Our work" },
@@ -17,8 +18,9 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
   const isDark = theme === "dark";
 
   return (
-    <header className={isDark ? "bg-campaign-black" : "bg-white"}>
-      <div  className={cnb("cc pt-5 pb-1", isDark ? "bg-campaign-black" : "bg-white")}>
+    <header className={isDark ? "bg-fill-primary" : "bg-white"}>
+      <Skiplink />
+      <div  className={cnb("cc pt-5 pb-1", isDark ? "bg-fill-primary" : "bg-white")}>
         <a
           className={cnb("logo text-20 leading-none hocus:no-underline", isDark ? "text-white" : "text-black hocus:text-black")}
           href="https://www.stanford.edu"
@@ -40,7 +42,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
                   label === activeLabel
                     ? isDark
                       ? "border-black-60 text-white"
-                      : "border-sws-text text-primary"
+                      : "border-sws-text text-dark-primary"
                     : isDark
                       ? "border-transparent text-white hover:border-white/30 hover:text-white"
                       : "border-transparent text-digital-red hover:border-black-90/20 hover:text-black-90",

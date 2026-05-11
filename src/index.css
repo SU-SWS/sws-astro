@@ -1,24 +1,42 @@
 @import "decanter";
 
 @theme {
-  --color-sws-tan: #f3f0e2;
-  --color-campaign-black: #17171a;
-  --color-sws-engineering: #4d0000;
+  --color-campaign-black: #17171A;
+  --color-sws-sand: #F3F0E2;
+  --color-sws-engineering: #4D0000;
 }
 
 @theme inline {
-  --color-primary: var(--color-black-90);
-  --color-muted: var(--color-black-70);
+  /* Text colors */
+  --color-primary: var(--color-white);
+  --color-dark-primary: var(--color-black-90);
+  --color-dark-primary-muted: var(--color-black-70);
+  --color-dark-secondary-muted: var(--color-black-50);
+
+  /* Fill colors, e.g., background colors */
+  --color-fill-primary: var(--color-campaign-black);
+  --color-fill-secondary: var(--color-sws-sand);
 }
 
 @layer base {
   body {
-    margin: 0;
     font-size: 18px;
+
+    @media (min-width: 768px) {
+      font-size: 1.9rem;
+    }
 
     @media (min-width: 992px) {
       font-size: 2.1rem;
     }
+
+    @media (min-width: 1500px) {
+      font-size: 2.3rem;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
   }
 
   h2, h3 {

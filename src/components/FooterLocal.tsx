@@ -15,7 +15,7 @@ export function FooterLocal({
   activeLabel,
 }: FooterLocalProps) {
   return (
-    <section className="cc bg-sws-tan rs-py-6">
+    <section className="cc bg-fill-secondary rs-py-6">
       <div className="grid md:grid-cols-2 md:gap-40">
         <div aria-hidden="true" />
         <div className="max-w-4xl flex-1 basis-md">
@@ -24,7 +24,7 @@ export function FooterLocal({
           </h2>
           <a
             href="/contact"
-            className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border-2 border-digital-red-xlight bg-transparent px-19 py-2 text-19 leading-snug text-primary hocus-visible:bg-digital-red-xlight/20"
+            className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border-2 border-digital-red-xlight bg-transparent px-19 py-2 text-19 leading-snug text-dark-primary hocus-visible:bg-digital-red-xlight/20"
           >
             Connect with us
           </a>
@@ -41,8 +41,8 @@ export function FooterLocal({
               className={[
                 "border-b-4 pb-5 whitespace-nowrap text-19 font-semibold transition-colors",
                 label === activeLabel
-                  ? "border-sws-text text-primary"
-                  : "border-transparent text-digital-red hover:border-sws-text/20 hover:text-primary",
+                  ? "border-sws-text text-dark-primary"
+                  : "border-transparent text-digital-red hover:border-sws-text/20 hover:text-dark-primary",
               ].join(" ")}
             >
               {label}

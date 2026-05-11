@@ -15,7 +15,7 @@ const CARDS = [
 
 export function TalkingPointsSection() {
   return (
-    <section className="bg-sws-tan px-[clamp(1.25rem,5vw,100px)] pb-171 pt-133" aria-labelledby="talking-points">
+    <section className="bg-fill-secondary px-[clamp(1.25rem,5vw,100px)] pb-171 pt-133" aria-labelledby="talking-points">
       <div className="mx-auto w-full max-w-1100">
         <h2 id="talking-points" className="sr-only">
           Talking points
