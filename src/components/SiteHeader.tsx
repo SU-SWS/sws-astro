@@ -1,6 +1,6 @@
 import { cnb } from 'cnbuilder';
-import { UnitSignature } from "./UnitSignature";
 import { Skiplink } from '@components/SkipLink';
+import { LogoLockup } from "./Logo";
 
 const NAV = [
   { href: "/work", label: "Our work" },
@@ -30,7 +30,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
       </div>
       <div className="cc pt-30">
         <div className="mx-auto flex flex-wrap items-start justify-between gap-6 pb-2">
-          <UnitSignature theme={theme} />
+          <LogoLockup text="Web Services" line2="University IT" color={isDark ? "white" : "default"} isLink />
           <nav className="flex flex-wrap items-center justify-end gap-33 pt-9" aria-label="Primary">
             {NAV.map(({ href, label }) => (
               <a
