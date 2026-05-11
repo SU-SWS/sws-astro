@@ -1,6 +1,5 @@
 import { cnb } from 'cnbuilder';
 import { UnitSignature } from "./UnitSignature";
-// import brandBarLogo from '@images/brand-bar-logo.svg';
 
 const NAV = [
   { href: "/work", label: "Our work" },
