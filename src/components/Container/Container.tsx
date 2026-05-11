@@ -1,4 +1,3 @@
-import { type HTMLAttributes } from 'react';
 import { cnb } from 'cnbuilder';
 import {
   paddingTops,
@@ -11,15 +10,13 @@ import {
 import * as styles from '@components/Container/Container.styles';
 import * as types from '@components/Container/Container.types';
 
-export type ContainerProps = HTMLAttributes<HTMLElement> & {
+export type ContainerProps = React.HTMLAttributes<HTMLElement> & {
   as?: types.ContainerElementType;
   width?: types.WidthType;
   pt?: PaddingType;
   pb?: PaddingType;
-  py?: PaddingType;
   mt?: MarginType;
   mb?: MarginType;
-  my?: MarginType;
   bgColor?: types.BgColorType;
   style?: React.CSSProperties;
 };
