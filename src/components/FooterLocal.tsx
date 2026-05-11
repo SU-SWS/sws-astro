@@ -36,6 +36,7 @@ export function FooterLocal({
           {NAV.map(({ href, label }) => (
             <a
               key={label}
+              data-astro-prefetch
               href={href}
               aria-current={label === activeLabel ? "page" : undefined}
               className={[

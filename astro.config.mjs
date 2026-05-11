@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://sws.stanford.edu',
+  prefetch: true,
   integrations: [
     react(),
     sitemap(),

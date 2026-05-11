@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import '../index.css';
 import { Font } from 'astro:assets';
 import { SiteHeader } from '@components/SiteHeader';
@@ -45,3 +46,5 @@ const { title = 'Stanford Web Services', activeLabel, theme = 'light' } = Astro.
     <GlobalFooter />
   </body>
 </html>
+
+<ClientRouter />
