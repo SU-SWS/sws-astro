@@ -1,4 +1,5 @@
 import { LogoLockup } from '@components/Logo/LogoLockup';
+import { CtaLink } from '@components/CtaLink';
 
 const NAV = [
   { href: "/work", label: "Our work" },
@@ -22,12 +23,9 @@ export function FooterLocal({
           <h2 className="rs-mb-2 font-serif type-2 font-normal leading-display">
             We’d love to hear about what you’re working on.
           </h2>
-          <a
-            href="/contact"
-            className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border-2 border-digital-red-xlight bg-transparent px-19 py-2 text-19 leading-snug text-primary hocus-visible:bg-digital-red-xlight/20"
-          >
+          <CtaLink variant="button-light" id="local-footer-connect-cta" href="/contact">
             Connect with us
-          </a>
+          </CtaLink>
         </div>
       </div>
       <div className="flex flex-wrap items-start justify-between gap-8 rs-pt-6">

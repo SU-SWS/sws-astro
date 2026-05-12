@@ -1,18 +1,8 @@
 ---
-import IntroLede from '@components/sections/index/IntroLede.astro';
-import MomentumSection from '@components/sections/index/MomentumSection.astro';
-import { TalkingPointsSection } from '@components/sections/index/TalkingPointsSection';
-import { PortfolioSection } from '@components/sections/index/PortfolioSection';
-import { ClientLogosSection } from '@components/sections/ClientLogosSection';
-import EngineeringSection from '@components/sections/index/EngineeringSection.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
+import HomePage from '@components/pages/HomePage.astro';
 ---
 
 <BaseLayout title="Home">
-  <IntroLede />
-  <MomentumSection />
-  <TalkingPointsSection />
-  <PortfolioSection client:visible />
-  <ClientLogosSection />
-  <EngineeringSection />
+  <HomePage />
 </BaseLayout>

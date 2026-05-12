@@ -1,7 +1,8 @@
 ---
-import { ArrowIcon, ButtonPill } from '@components/ButtonPill';
+import { CtaLink } from '@components/CtaLink';
 import { ServiceSection } from '@components/sections/services/ServiceSection';
 import { Container } from '@components/Container/Container';
+import { ClientLogosSection } from '@components/sections/ClientLogosSection';
 
 const PRINCIPLES = [
   {
@@ -81,7 +82,11 @@ const TECHNOLOGY_COLUMNS = [
     Services
   </h1>
   <p class="max-w-900 type-2 leading-cozy text-dark-primary-muted">
-    We partner with teams across Stanford big and small. From a ten hour ux strategy consult to a multi-year program, we are here to help. We are committed to finding the right solution for your project and creating tools that empower you to do your best work, all while taking the guesswork out of security, accessibility, and infrastructure decisions. moving Stanford forward through digital experiences that help your users engage with the mission behind your work.
+    We partner with teams across Stanford big and small. From a ten hour ux strategy consult to a multi-year program,
+    we are here to help. We are committed to finding the right solution for your project and
+    creating tools that empower you to do your best work, all while taking the guesswork out of security,
+    accessibility, and infrastructure decisions. moving Stanford forward through digital experiences
+    that help your users engage with the mission behind your work.
   </p>
 </Container>
 
@@ -103,23 +108,20 @@ const TECHNOLOGY_COLUMNS = [
       <div class="flex flex-col rs-gap-y-6">
         {SERVICES.map((service) => <ServiceSection {...service} />)}
       </div>
-      <a href="/why" class="mt-13 inline-flex items-center gap-6 text-19 leading-snug text-white">
-        <span class="underline decoration-digital-red-xlight underline-offset-4">Why partner with us</span>
-        <ArrowIcon />
-      </a>
     </div>
   </div>
+  <CtaLink href="/why" variant="link-dark" className="block! w-fit mx-auto rs-mt-6">Why partner with us</CtaLink>
 </Container>
 
 <Container bgColor="black" as="section" className="pb-114 pt-133">
   <div class="mx-auto rounded-[8 border border-black-60 px-38 py-61">
-    <p class="text-19 text-black-50">Types of work</p>
+    <p class="text-19 text-black-50">Collaboration</p>
     <h2 class="rs-pt-1 font-serif text-27 leading-display tracking-[0.01em] text-white md:text-36 4xl:text-45">
-      We do more than web
+      We flex to fit your needs
     </h2>
     <p class="rs-mt-2 max-w-900 text-2.1rem] leading-normal text-black-50 md:text-2.3rem] 4xl:text-2.6rem]">
-      Our team works across the spectrum of digital problem solving. That includes research and definition, AI prototyping,
-      structured consulting, and adjacent product work that stretches beyond a traditional website brief.
+      We have many services, but we also know that one size doesn’t fit all.
+      We can be embedded partners, on-demand specialists, or trusted advisors.
     </p>
 
     <div class="grid rs-gap-x-2 rs-gap-y-6 rs-pt-6 md:grid-cols-2">
@@ -132,9 +134,7 @@ const TECHNOLOGY_COLUMNS = [
     </div>
 
     <div class="flex justify-center pt-38">
-      <ButtonPill as="a" href="#" className="mt-0 border-digital-red-xlight px-22 py-11 text-white hover:bg-white/8">
-        Talk to us <ArrowIcon />
-      </ButtonPill>
+      <CtaLink href="/contact" variant="button-dark" className="rs-mt-6">Tell us what you need</CtaLink>
     </div>
   </div>
 </Container>
@@ -146,9 +146,12 @@ const TECHNOLOGY_COLUMNS = [
       We work in
     </h2>
     <p class="rs-mt-2 max-w-900 basefont-23 leading-snug text-black-50">
-      Partnerships come first, which means technology should never become the thing that blocks progress. We work across
-      multiple platforms, languages, and delivery models so teams can choose the solution that fits the problem rather than
-      forcing the problem to fit a tool.
+      Partnerships are our first commitment. We commit ourselves to working in numerous technologies, platforms,
+      and languages to help you find the best solution. And,
+      befitting a team embedded in Stanford’s culture of innovation, we are always up for new exploration.
+    </p>
+    <p class="rs-mt-2 max-w-900 basefont-23 leading-snug text-black-50">
+      These are just a few of the products, platforms, and technologies in our current tool belt:
     </p>
 
     <div class="grid gap-x-76 gap-y-16 pt-48 md:grid-cols-3">
@@ -162,5 +165,8 @@ const TECHNOLOGY_COLUMNS = [
         </ul>
       ))}
     </div>
+    <CtaLink href="/work" variant="link-dark" className="rs-mt-6 text-center mx-auto block! w-fit">Learn more about our work</CtaLink>
   </div>
 </Container>
+
+<ClientLogosSection />

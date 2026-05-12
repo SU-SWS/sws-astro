@@ -8,6 +8,7 @@
       "@layouts/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
       "@images/*": ["./src/assets/images/*"],
+      "@styles/*": ["./src/styles/*"],
       "@videos/*": ["./src/assets/videos/*"],
       "@utilities/*": ["./src/utilities/*"]
     }

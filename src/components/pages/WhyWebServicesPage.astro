@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { Container } from '@components/Container/Container';
-import { ArrowIcon, ButtonPill } from '@components/ButtonPill';
+import { CtaLink } from '@components/CtaLink';
 import momentumHero from '@images/momentum-hero.png';
 import sectionPortfolioBg from '@images/section-portfolio-bg.jpg';
 
@@ -59,15 +59,15 @@ const TESTIMONIALS = [
 const EXPERTISE = [
   {
     title: 'User Research',
-    body: 'Editorial strategy, content audits, and stakeholder alignment grounded in measurable audience needs.',
+    body: 'Understand your users, improve your content, and lay the groundwork for AI readiness — all through the same research practice.',
   },
   {
     title: 'Digital Strategy',
-    body: 'Roadmaps and platform planning that connect communications goals with sustainable delivery.',
+    body: 'Find the right path forward — and the plan to get there. We help Stanford teams evaluate platforms, build long-term roadmaps, and make the budget case to move projects from idea to approval.',
   },
   {
     title: 'Technical Consulting',
-    body: 'Practical guidance on architecture, governance, integrations, migration planning, and launch readiness.',
+    body: 'Get expert advice informed by a deep understanding of Stanford’s unique technical landscape. We help teams navigate complexity, meet compliance requirements, and make the right technical decisions for their specific needs.',
   },
 ];
 
@@ -95,12 +95,15 @@ const PARTNERS = [
     <h1 class="fluid-type-4 rs-mb-3 font-serif font-normal leading-display tracking-[0.01em]">
       Why Web Services
     </h1>
-    <div class="flex flex-col lg:flex-row lg:gap-48">
-      <p class="basis-2/5 type-2 font-semibold leading-display text-primary lg:rs-pr-5">
+    <div class="flex flex-col lg:flex-row rs-gap-3">
+      <p class="basis-2/5 type-2 leading-display text-primary mb-0">
         Security, legal compliance, malicious traffic might be new challenges for you, but they aren’t for us!
       </p>
-      <p class="basis-3/5 big-paragraph leading-normal text-primary-muted lg:rs-pl-3">
-        Websites are simple to launch but difficult to maintain. Behind every university web property lies a network of security requirements, accessibility standards, brand compliance, and ongoing vulnerability management that most content owners never see coming — until something goes wrong. We've spent years building platforms and practices that handle all of it, so you can focus on your communication strategy.
+      <p class="basis-3/5 big-paragraph leading-normal text-primary-muted mb-0">
+        Websites are simple to launch but difficult to maintain. Behind every university web property lies a network
+        of security requirements, accessibility standards, brand compliance, and ongoing vulnerability management
+        that most content owners never see coming, until something goes wrong. We've spent years building platforms
+        and practices that handle all of it, so you can focus on your communication strategy.
       </p>
     </div>
   </Container>
@@ -110,12 +113,14 @@ const PARTNERS = [
       What sets us apart
     </h2>
     <p class="mt-38 max-w-900 text-[clamp(1.1rem,2vw,26px)] leading-normal text-white/65">
-      Everything we do is guided by a commitment to quality, compliance, and the people using what we build. From policy to platform to long-term support, we help teams succeed whether we are delivering the work directly or advising the path forward.
+      Everything we do is guided by a commitment to quality, compliance, and the people using what we build.
+      From policy to platform to long-term support, we help teams succeed whether we are delivering
+      the work directly or advising the path forward.
     </p>
     <div class="mt-95 grid gap-x-76 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
       {DIFFERENTIATORS.map(({ icon, title, body }) => (
         <article class="max-w-360">
-          <div class="flex h-68 w-68 items-center justify-center rounded-full bg-white/8 text-1.4rem] text-white">
+          <div class="flex h-68 w-68 items-center justify-center rounded-full bg-white/8 text-1.4rem text-white">
             <i class={icon} aria-hidden />
           </div>
           <h3 class="mt-5 text-23 font-semibold leading-display text-white">{title}</h3>
@@ -146,24 +151,22 @@ const PARTNERS = [
   </section>
 
   <section class="cc py-114">
-    <p class="text-15 font-semibold uppercase tracking-[0.14em] text-primary/45">What we are good at</p>
-    <h2 class="mt-4 max-w-900 font-serif text-[clamp(2rem,4vw,45px)] font-normal leading-display tracking-[0.01em]">
+    <p class="caption text-secondary-muted">Technical and UX Consulting</p>
+    <h2 class="rs-mt-1 rs-mb-0 max-w-900 font-serif fluid-type-3 font-normal leading-display tracking-[0.01em]">
       Expertise you can leverage
     </h2>
-    <p class="mt-5 max-w-820 text-21 leading-normal text-primary/72">
-      We provide strategic consulting that helps teams align digital priorities, reduce risk, and make better decisions before delivery begins.
+    <p class="max-w-800 fluid-type-1 leading-display text-secondary-muted">
+      We’re invested in your success and here to help you navigate the path forward.
     </p>
     <div class="mt-48 grid gap-12 lg:grid-cols-3 lg:gap-48">
       {EXPERTISE.map(({ title, body }) => (
-        <article class="border-t border-sws-text/20 pt-6">
-          <h3 class="font-serif text-33 font-normal leading-display">{title}</h3>
-          <p class="mt-4 max-w-350 text-21 leading-normal text-primary/75">{body}</p>
-        </article>
+        <div>
+          <h3 class="font-serif fluid-type-2 leading-display">{title}</h3>
+          <p class="card-paragraph text-secondary-muted">{body}</p>
+        </div>
       ))}
     </div>
-    <ButtonPill as="a" href="#" className="mt-10 border-digital-red-xlight px-[19 py-7 text-primary hover:bg-digital-red-xlight/10">
-      Ask a consulting question <ArrowIcon className="text-digital-red-xlight" />
-    </ButtonPill>
+    <CtaLink href="/contact" variant="button-light" className="rs-mt-3 mx-auto block! w-fit">Make a consulting appointment</CtaLink>
   </section>
 
   <section class="bg-fill-secondary cc py-114">

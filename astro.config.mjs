@@ -4,12 +4,11 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
+  // TODO: confirm later
   site: 'https://sws.stanford.edu',
-  prefetch: true,
-  integrations: [
-    react(),
-    sitemap(),
-  ],
+  // No need to enable prefetch since we use View Transition which sets a default configuration of { prefetchAll: true }
+  // https://docs.astro.build/en/guides/prefetch/#using-with-view-transitions
+  integrations: [react(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },
@@ -19,18 +18,21 @@ export default defineConfig({
       cssVariable: '--font-sans',
       provider: fontProviders.google(),
       weights: [400, 600],
-      styles: ['normal', 'italic'],
+      styles: ['normal'],
+      fallbacks: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
     },
     {
       name: 'Source Serif 4',
       cssVariable: '--font-serif',
-      provider: fontProviders.fontsource(),
+      provider: fontProviders.google(),
       styles: ['normal'],
+      fallbacks: ['Georgia', 'Times', 'Times New Roman', 'serif'],
     },
     {
       name: 'Stanford',
       cssVariable: '--font-stanford',
       provider: fontProviders.local(),
+      fallbacks: [],
       options: {
         // Weight and style are not specified so Astro
         // will try to infer them for each variant

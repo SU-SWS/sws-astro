@@ -1,26 +1,32 @@
+import { cnb } from 'cnbuilder';
+import { Container } from '@components/Container';
+import { CtaLink } from '@components/CtaLink';
+
 type FeatureSectionProps = {
   ctaLabel?: string;
   ctaHref?: string;
+  ctaId?: string;
   children: React.ReactNode;
+  className?: string;
 };
 
 export const FeatureSection = ({
   ctaLabel,
   ctaHref,
+  ctaId,
   children,
+  className,
 }: FeatureSectionProps) => {
   return (
-    <section className="relative cc overflow-hidden rs-pt-6 rs-pb-7 text-white">
+    <Container as="section" pt={6} pb={7} className={cnb('relative overflow-hidden text-white', className)}>
       {children}
-      {ctaLabel && (
+      {ctaLabel && ctaHref && (
         <div className="relative z-1 rs-mt-6 text-center">
-          <a className="text-19 leading-snug text-white/95" href={ctaHref}>
-            <span className="underline decoration-digital-red-xlight underline-offset-4 hocus-visible:decoration-digital-red hover:decoration-2">
-              {ctaLabel}
-            </span>
-          </a>
+          <CtaLink href={ctaHref} id={ctaId} variant="link-dark">
+            {ctaLabel}
+          </CtaLink>
         </div>
       )}
-    </section>
+    </Container>
   );
 }

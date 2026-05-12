@@ -1,0 +1,15 @@
+---
+import IntroLede from '@components/sections/index/IntroLede.astro';
+import MomentumSection from '@components/sections/index/MomentumSection.astro';
+import { CollaborationSection } from '@components/sections/index/CollaborationSection';
+import { PortfolioSection } from '@components/sections/index/PortfolioSection';
+import { ClientLogosSection } from '@components/sections/ClientLogosSection';
+import EngineeringSection from '@components/sections/index/EngineeringSection.astro';
+---
+
+<IntroLede />
+<MomentumSection />
+<CollaborationSection />
+<PortfolioSection client:visible />
+<ClientLogosSection />
+<EngineeringSection />

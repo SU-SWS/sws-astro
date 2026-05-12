@@ -1,4 +1,4 @@
-import { ArrowIcon, ButtonPill } from '@components/ButtonPill';
+import { CtaLink } from '@components/CtaLink';
 import { cnb } from 'cnbuilder';
 
 export type FeatureContentProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -7,6 +7,7 @@ export type FeatureContentProps = React.HTMLAttributes<HTMLDivElement> & {
   description: string;
   ctaLabel?: string;
   ctaHref?: string;
+  ctaId?: string;
   awards?: React.ReactNode;
   sectionCtaLabel?: string;
   sectionCtaHref?: string;
@@ -20,6 +21,7 @@ export const FeatureContent = ({
   description,
   ctaLabel,
   ctaHref,
+  ctaId,
   awards,
   background,
   textOnRight,
@@ -28,7 +30,7 @@ export const FeatureContent = ({
   ...props
 }: FeatureContentProps) => {
   return (
-    <div className="relative z-1 mx-auto" {...props}>
+    <div  {...props} className={cnb('relative z-1 mx-auto', className)}>
       <div className={cnb('flex flex-col items-start justify-center rs-gap-3', textOnRight ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
         <div className="basis-2/5 flex flex-col justify-start gap-8">
           <p className="card-paragraph leading-tight text-white">{eyebrow}</p>
@@ -39,10 +41,11 @@ export const FeatureContent = ({
             <p className="card-paragraph">
               {description}
             </p>
-            <ButtonPill as="a" href={ctaHref}>
-              {ctaLabel}
-              <ArrowIcon />
-            </ButtonPill>
+            {ctaLabel && ctaHref && (
+              <CtaLink href={ctaHref} id={ctaId} className="rs-mt-1">
+                {ctaLabel}
+              </CtaLink>
+            )}
             {awards}
           </div>
         </div>
