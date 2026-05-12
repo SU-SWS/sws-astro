@@ -7,7 +7,7 @@ const linkBase = `${ctaBase} leading-display decoration-2 decoration-digital-red
 export const ctaVariants = {
   'button-light': `${buttonBase} text-primary`,
   'button-dark': `${buttonBase} text-dark-primary`,
-  'link-dark': `${linkBase} text-dark-primary-dark hocus-visible:text-dark-primary`,
+  'link-dark': `${linkBase} text-dark-primary hocus-visible:text-dark-primary`,
   'strategy': 'text-primary hover:text-primary-dark focus-visible:text-primary-dark',
 }
 export type CtaVariantType = keyof typeof ctaVariants;

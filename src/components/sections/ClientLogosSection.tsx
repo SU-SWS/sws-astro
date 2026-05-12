@@ -61,7 +61,7 @@ export function ClientLogosSection() {
       </div>
 
       <div className="mt-95">
-        <CtaLink href="/servies" variant="button-dark">
+        <CtaLink href="/services" variant="button-dark">
           Learn more about our services
         </CtaLink>
       </div>
