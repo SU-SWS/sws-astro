@@ -28,7 +28,7 @@ export const FeatureContent = ({
   ...props
 }: FeatureContentProps) => {
   return (
-    <div className="relative z-1 mx-auto" {...props}>
+    <div  {...props} className={cnb('relative z-1 mx-auto', className)}>
       <div className={cnb('flex flex-col items-start justify-center rs-gap-3', textOnRight ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
         <div className="basis-2/5 flex flex-col justify-start gap-8">
           <p className="card-paragraph leading-tight text-white">{eyebrow}</p>
