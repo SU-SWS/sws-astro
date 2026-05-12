@@ -1,4 +1,4 @@
-import { ArrowIcon, ButtonPill } from '@components/ButtonPill';
+import { CtaLink } from '@components/CtaLink';
 import { cnb } from 'cnbuilder';
 
 export type FeatureContentProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -39,10 +39,11 @@ export const FeatureContent = ({
             <p className="card-paragraph">
               {description}
             </p>
-            <ButtonPill as="a" href={ctaHref}>
-              {ctaLabel}
-              <ArrowIcon />
-            </ButtonPill>
+            {ctaLabel && ctaHref && (
+              <CtaLink href={ctaHref} className="rs-mt-1">
+                {ctaLabel}
+              </CtaLink>
+            )}
             {awards}
           </div>
         </div>

@@ -1,21 +1,28 @@
-import { Container } from "@components/Container";
+import { Container } from '@components/Container';
+import { CtaLink } from '@components/CtaLink';
 
 const CARDS = [
   {
     title: "Modern practices. Flexible platforms. Award-winning work.",
     body: "Grounded in current industry standards and best-in-class practices, we work across web platforms and apps, shaping design and UX around the right solution for your product.",
+    ctaLabel: "Explore our work",
+    ctaHref: "/work",
   },
   {
     title: "Digital solutions, without the overhead.",
-    body: "We build products so your team can have a secure, accessible, beautiful, and fully compliant digital presence — without becoming technical administrators. ",
+    body: "We build products so your team can have a secure, accessible, beautiful, and fully compliant digital presence — without becoming technical administrators.",
+    ctaLabel: "Learn about our services",
+    ctaHref: "/services",
   },
   {
     title: "The team Stanford teams trust.",
     body: "Years of solving the exact challenges our neighbors face. Award-winning design, technical depth, and a commitment to your success — whether we're building your product or helping you find someone who will.",
+    ctaLabel: "Why Web Services",
+    ctaHref: "/why",
   },
 ];
 
-export function TalkingPointsSection() {
+export function CollaborationSection() {
   return (
     <Container bgColor="sand" pt={8} pb={9}>
       <div className="max-w-1100 mx-auto">
@@ -23,13 +30,16 @@ export function TalkingPointsSection() {
         <p className="max-w-800 font-serif fluid-type-2 leading-snug">
           We work closely with the Stanford community to translate complex goals into clear, engaging, and easy-to-manage experiences.
         </p>
-        <div className="rs-mt-6 grid grid-gap grid-cols-1 md:grid-cols-3">
+        <div className="rs-mt-6 grid rs-gap-3 grid-cols-1 lg:grid-cols-3">
           {CARDS.map((card, index) => (
             <div key={`${card.title}-${index}`}>
               <h3 className="fluid-type-1 font-serif leading-display">
                 {card.title}
               </h3>
-              <p className="caption leading-display">{card.body}</p>
+              <p className="caption leading-display max-w-prose">{card.body}</p>
+              <CtaLink href={card.ctaHref} variant="button-light" className="rs-mt-1">
+                {card.ctaLabel}
+              </CtaLink>
             </div>
           ))}
         </div>

@@ -4,12 +4,11 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
+  // TODO: confirm later
   site: 'https://sws.stanford.edu',
-  prefetch: true,
-  integrations: [
-    react(),
-    sitemap(),
-  ],
+  // No need to enable prefetch since we use View Transition which sets a default configuration of { prefetchAll: true }
+  // https://docs.astro.build/en/guides/prefetch/#using-with-view-transitions
+  integrations: [react(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },

@@ -1,3 +1,4 @@
+import { CtaLink } from '@components/CtaLink';
 import btsLogo from '@images/logos/BTS.png';
 import centennialLogo from '@images/logos/Centennial logo wrapper.png';
 import doeerLogo from '@images/logos/Doeer wrapper.png';
@@ -60,15 +61,9 @@ export function ClientLogosSection() {
         </div>
 
         <div className="mt-95">
-          <a className="inline-flex items-center gap-2 text-19 text-white" href="#">
-            <span className="underline decoration-digital-red-xlight [text-underline-offset:4 hocus-visible:decoration-digital-red hocus-visible:decoration-2">
-              Learn more about our services
-            </span>
-            <i
-              className="fa-solid fa-arrow-right inline-flex items-center justify-center text-sm leading-none [-webkit-text-stroke:0.4px_currentColor] [transform:rotate(-45deg)]"
-              aria-hidden
-            />
-          </a>
+          <CtaLink href="/servies" variant="button-dark">
+            Learn more about our services
+          </CtaLink>
         </div>
       </div>
     </section>
