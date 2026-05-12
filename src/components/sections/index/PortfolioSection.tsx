@@ -41,6 +41,7 @@ export function PortfolioSection() {
         description="Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. StanfordSites is free to use, continuously updated, and built on a platform designed to meet Stanford's policies out of the box."
         ctaLabel="Request a Stanford Site"
         ctaHref="https://uit.stanford.edu/service/stanfordsites"
+        ctaId="home-stanfordsites-cta"
       >
         <ScreenshotGrid gridClass="grid-stanford-sites" ariaLabel="StanfordSites screenshots" cells={stanfordSitesCells} />
       </FeatureContent>
@@ -51,6 +52,7 @@ export function PortfolioSection() {
         description="Update once, deploy everywhere. Maintain brand consistency effortlessly. Slash costs with shared resources and unified hosting. Get complete visibility with consolidated analytics. Launch new sites in minutes, not months."
         ctaLabel="Ask us about multi-site platforms"
         ctaHref="/contact"
+        ctaId="home-solutions-cta"
         className="rs-mt-6"
       >
         <ScreenshotGrid gridClass="grid-solutions" ariaLabel="Solutions screenshots" cells={solutionsCells} />

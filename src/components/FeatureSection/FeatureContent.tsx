@@ -7,6 +7,7 @@ export type FeatureContentProps = React.HTMLAttributes<HTMLDivElement> & {
   description: string;
   ctaLabel?: string;
   ctaHref?: string;
+  ctaId?: string;
   awards?: React.ReactNode;
   sectionCtaLabel?: string;
   sectionCtaHref?: string;
@@ -20,6 +21,7 @@ export const FeatureContent = ({
   description,
   ctaLabel,
   ctaHref,
+  ctaId,
   awards,
   background,
   textOnRight,
@@ -40,7 +42,7 @@ export const FeatureContent = ({
               {description}
             </p>
             {ctaLabel && ctaHref && (
-              <CtaLink href={ctaHref} className="rs-mt-1">
+              <CtaLink href={ctaHref} id={ctaId} className="rs-mt-1">
                 {ctaLabel}
               </CtaLink>
             )}

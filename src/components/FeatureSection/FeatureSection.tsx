@@ -5,6 +5,7 @@ import { CtaLink } from '@components/CtaLink';
 type FeatureSectionProps = {
   ctaLabel?: string;
   ctaHref?: string;
+  ctaId?: string;
   children: React.ReactNode;
   className?: string;
 };
@@ -12,6 +13,7 @@ type FeatureSectionProps = {
 export const FeatureSection = ({
   ctaLabel,
   ctaHref,
+  ctaId,
   children,
   className,
 }: FeatureSectionProps) => {
@@ -20,7 +22,7 @@ export const FeatureSection = ({
       {children}
       {ctaLabel && ctaHref && (
         <div className="relative z-1 rs-mt-6 text-center">
-          <CtaLink href={ctaHref} variant="link-dark">
+          <CtaLink href={ctaHref} id={ctaId} variant="link-dark">
             {ctaLabel}
           </CtaLink>
         </div>
