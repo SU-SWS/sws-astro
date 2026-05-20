@@ -18,7 +18,7 @@ export const FeatureSection = ({
   className,
 }: FeatureSectionProps) => {
   return (
-    <Container as="section" pt={6} pb={7} className={cnb('relative overflow-hidden text-white', className)}>
+    <Container as="section" pt={6} pb={7} className={cnb('relative overflow-hidden text-dark-primary', className)}>
       {children}
       {ctaLabel && ctaHref && (
         <div className="relative z-1 rs-mt-6 text-center">

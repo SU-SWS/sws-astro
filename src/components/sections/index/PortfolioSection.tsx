@@ -22,7 +22,7 @@ interface StatProps {
 function Stat({ num, label }: StatProps) {
   return (
     <div className="min-w-160 flex-[0_1_260px]">
-      <p className="m-0 font-serif text-[clamp(4rem,8vw,110px)] font-normal leading-tight text-white">{num}</p>
+      <p className="m-0 font-serif text-[clamp(4rem,8vw,110px)] font-normal leading-tight text-dark-primary">{num}</p>
       <p className="m-0 mt-2 max-w-264 text-23 leading-snug text-primary-muted">{label}</p>
     </div>
   );

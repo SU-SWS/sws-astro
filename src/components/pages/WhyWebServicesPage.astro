@@ -108,11 +108,11 @@ const PARTNERS = [
     </div>
   </Container>
 
-  <section class="cc rs-py-7 bg-fill-primary text-white">
+  <section class="cc rs-py-7 bg-fill-primary text-dark-primary">
     <h2 class="fluid-type-3 font-serif font-normal leading-display tracking-[0.01em]">
       What sets us apart
     </h2>
-    <p class="mt-38 max-w-900 text-[clamp(1.1rem,2vw,26px)] leading-normal text-white/65">
+    <p class="mt-38 max-w-900 text-[clamp(1.1rem,2vw,26px)] leading-normal text-dark-primary/65">
       Everything we do is guided by a commitment to quality, compliance, and the people using what we build.
       From policy to platform to long-term support, we help teams succeed whether we are delivering
       the work directly or advising the path forward.
@@ -120,17 +120,17 @@ const PARTNERS = [
     <div class="mt-95 grid gap-x-76 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
       {DIFFERENTIATORS.map(({ icon, title, body }) => (
         <article class="max-w-360">
-          <div class="flex h-68 w-68 items-center justify-center rounded-full bg-white/8 text-1.4rem text-white">
+          <div class="flex h-68 w-68 items-center justify-center rounded-full bg-white/8 text-1.4rem text-dark-primary">
             <i class={icon} aria-hidden />
           </div>
-          <h3 class="mt-5 text-23 font-semibold leading-display text-white">{title}</h3>
-          <p class="mt-27 text-21 leading-normal text-white/85">{body}</p>
+          <h3 class="mt-5 text-23 font-semibold leading-display text-dark-primary">{title}</h3>
+          <p class="mt-27 text-21 leading-normal text-dark-primary/85">{body}</p>
         </article>
       ))}
     </div>
   </section>
 
-  <section class="relative cc isolate overflow-hidden bg-sws-text py-76 text-white">
+  <section class="relative cc isolate overflow-hidden bg-sws-text py-76 text-dark-primary">
     <Image
       src={sectionPortfolioBg}
       alt=""
@@ -143,8 +143,8 @@ const PARTNERS = [
     <div class="relative mt-10 grid gap-8 lg:grid-cols-3">
       {TESTIMONIALS.map(({ quote, name }) => (
         <figure class="max-w-360">
-          <blockquote class="m-0 text-21 leading-normal text-white/92">“{quote}”</blockquote>
-          <figcaption class="mt-6 text-16 font-semibold uppercase tracking-[0.08em] text-white/70">{name}</figcaption>
+          <blockquote class="m-0 text-21 leading-normal text-dark-primary/92">“{quote}”</blockquote>
+          <figcaption class="mt-6 text-16 font-semibold uppercase tracking-[0.08em] text-dark-primary/70">{name}</figcaption>
         </figure>
       ))}
     </div>
@@ -176,7 +176,7 @@ const PARTNERS = [
       {PARTNERS.map(([initials, name, team], index) => (
         <article class="flex flex-col items-center text-center">
           <div
-            class="flex h-72 w-72 items-center justify-center rounded-full text-21 font-semibold text-white shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
+            class="flex h-72 w-72 items-center justify-center rounded-full text-21 font-semibold text-dark-primary shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
             style={{
               background: `linear-gradient(135deg, rgba(177,4,14,0.92), rgba(${70 + index * 4}, ${90 + index * 3}, ${110 + index * 2}, 0.9))`,
             }}
@@ -189,7 +189,7 @@ const PARTNERS = [
       ))}
     </div>
 
-    <div class="relative isolate rs-mt-7 rs-p-5 overflow-hidden rounded-[20px] py-[clamp(1.5rem,4vw,38px)] text-white">
+    <div class="relative isolate rs-mt-7 rs-p-5 overflow-hidden rounded-[20px] py-[clamp(1.5rem,4vw,38px)] text-dark-primary">
       <Image
         src={momentumHero}
         alt=""
@@ -201,7 +201,7 @@ const PARTNERS = [
       <div class="relative max-w-800 mx-auto rs-pb-3">
         <h2 class="font-serif type-3 font-normal leading-display rs-mb-3">The advantage of an in-house partner</h2>
         <p class="big-paragraph">Stanford is our home too.</p>
-        <p class="mt-4 card-paragraph leading-normal text-white/90 mb-0">
+        <p class="mt-4 card-paragraph leading-normal text-dark-primary/90 mb-0">
           As a digital agency embedded within Stanford, we've spent years building solutions to the exact problems our neighbors face — at below-market rates. You get expert support, institutional knowledge, and a team invested in your future — not just the next contract.
         </p>
       </div>

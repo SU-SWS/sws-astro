@@ -1,7 +1,17 @@
+### Accessibility
+
+Accessibility coding rules: WCAG 2.1 AA conformance, semantic structure, keyboard support, focus management. Apply when writing or modifying UI code.
+
+### Code Quality
+
+- Avoid unnecessary abstractions or over-engineering. Write clear, straightforward code.
+- Avoid redundant components or styles.
+
+
 ### Components and Styling
 
 **Component Usage:**
-- Use starter components such as `FlexBox`, `Container` when possible
+- Use starter components such as `Container` when possible
 
 **Style Organization:**
 - Styles are defined in `*.styles.ts` files as exported constants
@@ -32,4 +42,4 @@
 - These are selector prefixes, not style values, and cannot be simplified
 
 **Custom Tokens:**
-- For non-numeric values (e.g., `max-w-prose`), use custom tokens defined in decanter theme`
+- For non-numeric values (e.g., `max-w-prose`), use custom tokens defined in decanter theme
