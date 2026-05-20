@@ -70,14 +70,7 @@ export const ClientLogosSection = ({
         </div>
       </div>
       {ctaLabel && ctaHref && (
-        <CtaLink
-          href={ctaHref}
-          id={ctaId}
-          variant="link-dark"
-          className="block! w-fit mx-auto rs-mt-6"
-        >
-          {ctaLabel}
-        </CtaLink>
+        <CtaLink href={ctaHref} id={ctaId} variant="link-dark" className="block! w-fit mx-auto rs-mt-6">{ctaLabel}</CtaLink>
       )}
     </Container>
   );
