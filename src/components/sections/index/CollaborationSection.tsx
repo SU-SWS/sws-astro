@@ -1,5 +1,5 @@
-import { Container } from '@components/Container';
-import { CtaLink } from '@components/CtaLink';
+import { Container } from '@components/Container/Container';
+import { CtaLink } from '@components/CtaLink/CtaLink';
 
 const CARDS = [
   {

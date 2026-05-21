@@ -1,4 +1,4 @@
-import { CtaLink } from '@components/CtaLink';
+import { CtaLink } from '@components/CtaLink/CtaLink';
 import { cnb } from 'cnbuilder';
 
 export type FeatureContentProps = React.HTMLAttributes<HTMLDivElement> & {

@@ -1,4 +1,5 @@
-import { FeatureContent, FeatureSection } from '@components/FeatureSection';
+import { FeatureContent } from '@components/FeatureSection/FeatureContent';
+import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import { ScreenshotGrid } from "../../../ScreenshotGrid";
 import { stanfordSitesCells, solutionsCells } from "../../../data/screenshotCells";
 import sectionPortfolioBg from '@images/section-portfolio-bg.jpg';

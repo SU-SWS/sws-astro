@@ -1,6 +1,6 @@
 import { Service } from '@components/Service/Service';
 import { Container } from '@components/Container/Container';
-import { CtaLink } from '@components/CtaLink';
+import { CtaLink } from '@components/CtaLink/CtaLink';
 
 const PRINCIPLES = [
   {

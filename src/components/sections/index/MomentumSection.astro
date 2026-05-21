@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Video } from '@components/Video/Video';
 import { FeatureContent } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import momentumHero from '@images/momentum-hero.png';
@@ -62,12 +63,7 @@ import supVideo from '@videos/sup_02_720.mp4';
     ctaHref="https://momentum.stanford.edu/"
   >
     <div class="basis-2/3 relative overflow-hidden rounded-md">
-      <video autoplay loop muted playsinline class="size-full object-cover">
-        <source src={supVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="absolute bottom-[clamp(12px,3vw,24px)] right-[clamp(12px,3vw,24px)] z-2 flex max-w-[calc(100%-24px)] flex-col gap-1 rounded-lg bg-digital-blue p-1.5">
-      </div>
+      <Video client:visible mp4Src={supVideo} posterSrc={momentumHero.src} />
     </div>
   </FeatureContent>
 </FeatureSection>

@@ -1,5 +1,5 @@
 import { StanfordLogo } from '../Logo';
-import { Container } from '@components/Container';
+import { Container } from '@components/Container/Container';
 import * as styles from './GlobalFooter.styles';
 
 export const GlobalFooter = () => (

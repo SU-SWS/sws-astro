@@ -1,6 +1,6 @@
 import { cnb } from 'cnbuilder';
-import { Container } from '@components/Container';
-import { CtaLink } from '@components/CtaLink';
+import { Container } from '@components/Container/Container';
+import { CtaLink } from '@components/CtaLink/CtaLink';
 
 type FeatureSectionProps = {
   ctaLabel?: string;

@@ -1,5 +1,5 @@
-import { CtaLink } from '@components/CtaLink';
-import { Container } from '@components/Container';
+import { CtaLink } from '@components/CtaLink/CtaLink';
+import { Container } from '@components/Container/Container';
 import btsLogo from '@images/logos/BTS.png';
 import centennialLogo from '@images/logos/Centennial logo wrapper.png';
 import doeerLogo from '@images/logos/Doeer wrapper.png';
