@@ -19,16 +19,27 @@ const { title = 'Stanford Web Services', activeLabel, theme = 'light' } = Astro.
 <html lang="en">
   <head>
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href="/icon1.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="/icon2.png" sizes="180x180" type="image/png">
+    <link rel="icon" href="/icon3.png" sizes="128x128" type="image/png">
+    <link rel="icon" href="/icon4.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/icon5.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="/icon2.png" />
     <Font cssVariable="--font-serif" />
     <Font cssVariable="--font-sans" />
     <Font cssVariable="--font-stanford" />
-    <!-- Google Tag Manager -->
-    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P8XKF6XL');</script>
-    <!-- End Google Tag Manager -->
+    {import.meta.env.PROD && (
+      <>
+        <!-- Google Tag Manager -->
+        <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P8XKF6XL');
+        </script>
+        <!-- End Google Tag Manager -->
+      </>
+    )}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{`${title} | Stanford Web Services`}</title>
