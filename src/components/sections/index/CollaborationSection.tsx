@@ -39,7 +39,7 @@ export function CollaborationSection() {
               <h3 className="fluid-type-1 font-serif leading-display">
                 {card.title}
               </h3>
-              <p className="caption leading-display max-w-prose">{card.body}</p>
+              <p className="text-09em leading-display max-w-prose">{card.body}</p>
               <CtaLink href={card.ctaHref} id={card.ctaId} variant="button-light" className="rs-mt-1">
                 {card.ctaLabel}
               </CtaLink>

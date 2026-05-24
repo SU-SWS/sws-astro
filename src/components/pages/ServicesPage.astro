@@ -1,5 +1,6 @@
 ---
 import { CtaLink } from '@components/CtaLink/CtaLink';
+import Intro from '@components/sections/services/Intro.astro';
 import ServicesSection from '@components/sections/services/ServicesSection.astro';
 import { Container } from '@components/Container/Container';
 import { ClientLogosSection } from '@components/sections/ClientLogosSection';
@@ -48,24 +49,13 @@ const TECHNOLOGIES = [
   ],
 ];
 ---
-<Container bgColor="black" as="section" pt={8} pb={7}>
-  <h1 class="font-serif rs-mb-3 font-normal fluid-type-5 leading-display tracking-[0.01em] text-dark-primary">
-    Services
-  </h1>
-  <p class="max-w-900 type-2 leading-cozy text-dark-primary-muted">
-    We partner with teams across Stanford big and small. From a ten hour ux strategy consult to a multi-year program,
-    we are here to help. We are committed to finding the right solution for your project and
-    creating tools that empower you to do your best work, all while taking the guesswork out of security,
-    accessibility, and infrastructure decisions. moving Stanford forward through digital experiences
-    that help your users engage with the mission behind your work.
-  </p>
-</Container>
 
+<Intro />
 <ServicesSection />
 
 <Container bgColor="black" as="section" pt={9}>
   <div class="rs-px-6 rs-pt-6 rs-pb-5 mx-auto rounded-4xl border border-black-60">
-    <p class="card-paragraph text-dark-secondary-muted">Collaboration</p>
+    <div class="card-paragraph text-dark-secondary-muted">Collaboration</div>
     <h2 class="rs-pt-1 font-serif fluid-type-3 leading-display tracking-[0.01em] text-dark-primary">
       We flex to fit your needs
     </h2>
@@ -78,7 +68,7 @@ const TECHNOLOGIES = [
       {WORK_TYPES.map((type) => (
         <li class="max-w-440 mb-0">
           <h3 class="font-serif fluid-type-1 leading-display text-dark-primary">{type.title}</h3>
-          <p class="rs-mt-0 caption leading-snug text-dark-secondary-muted">{type.body}</p>
+          <p class="rs-mt-0 text-09em leading-snug text-dark-secondary-muted">{type.body}</p>
         </li>
       ))}
     </ul>
@@ -89,10 +79,10 @@ const TECHNOLOGIES = [
   </div>
 </Container>
 
-<Container bgColor="black" as="section" pt={9} pb={9}>
+<Container bgColor="black" as="section" pt={9}>
   <div class="cc border-t border-black-60" aria-hidden="true" />
-  <div class="max-w-1300 pt-27">
-    <p class="caption text-dark-secondary-muted">Technologies</p>
+  <div class="max-w-1300 rs-pt-1">
+    <p class="text-09em text-dark-secondary-muted">Technologies</p>
     <h2 class="rs-pt-1 font-serif fluid-type-3 leading-display tracking-[0.01em] text-dark-primary">
       We work in
     </h2>
@@ -115,7 +105,8 @@ const TECHNOLOGIES = [
       </ul>
     ))}
   </div>
-  <CtaLink href="/work" variant="link-dark" className="rs-mt-6 mx-auto">Learn more about our work</CtaLink>
+  <CtaLink href="/work" variant="link-dark" className="rs-mt-6 mx-auto block! w-fit">Learn more about our work</CtaLink>
+  <div class="cc border-b border-black-60 rs-mt-10" aria-hidden="true" />
 </Container>
 
 <ClientLogosSection ctaHref="/work" ctaLabel="Learn more about our work" ctaId="services-clients-cta" />

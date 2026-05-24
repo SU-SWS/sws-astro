@@ -135,9 +135,13 @@ const SERVICES = [
     </ul>
 
     <div class="rs-mt-9 lg:col-span-2">
-      <div class="flex flex-col rs-gap-8">
-        {SERVICES.map((service) => <Service client:visible {...service} />)}
-      </div>
+      <ul class="list-unstyled flex flex-col rs-gap-8">
+        {SERVICES.map((service) => (
+          <li class="mb-0">
+            <Service client:visible {...service} />
+          </li>
+        ))}
+      </ul>
     </div>
   </div>
   <CtaLink href="/why" variant="link-dark" className="block! w-fit mx-auto rs-mt-6">Why partner with us</CtaLink>

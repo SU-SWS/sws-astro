@@ -24,7 +24,7 @@ export const Service = ({ title, body, items }: ServiceProps) => {
               as="li"
               animation="slideInFromRight"
               delay={index * 0.1}
-              key={item.href}
+              key={item.ctaLabel}
               className="mb-0 leading-display"
             >
               <CtaLink href={item.href} variant="service">

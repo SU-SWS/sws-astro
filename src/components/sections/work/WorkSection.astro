@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+import { Video } from '@components/Video/Video';
+import { FeatureContent } from '@components/FeatureSection/FeatureContent';
+import { FeatureSection } from '@components/FeatureSection/FeatureSection';
+import momentumHero from '@images/momentum-hero.png';
+import bgMomentum from '@images/bg-momentum.jpg';
+import centennial from '@images/screenshot-centennial-100.png';
+import webbyNominee from '@images/webby-nominee.png';
+import supVideo from '@videos/sup_02_720.mp4';
+---
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <Image
+      layout="full-width"
+      src={bgMomentum}
+      alt=""
+      width={bgMomentum.width}
+      height={bgMomentum.height}
+      class="absolute inset-0 size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black-true/80" />
+  </div>
+  <FeatureContent
+    eyebrow={['Custom', 'Storyblok', 'Office of Development']}
+    title="Momentum"
+    description="Momentum exists to tell Stanford’s most important stories — the research, discoveries, and human impact made possible through philanthropy. We partnered with the Office of Development to bring it to life, translating a vision and brand identity into an editorial platform built for dynamic, interactive storytelling."
+    ctaLabel="Visit Momentum"
+    ctaHref="https://momentum.stanford.edu/"
+    ctaId="home-momentum-cta"
+  >
+    <Image
+      layout="constrained"
+      src={momentumHero}
+      alt="Momentum website hero"
+      width={momentumHero.width}
+      height={momentumHero.height}
+      class="size-full object-cover"
+    />
+    <div class="absolute bottom-[clamp(12px,3vw,24px)] right-[clamp(12px,3vw,24px)] z-2 flex max-w-[calc(100%-24px)] flex-col gap-1 rounded-lg bg-digital-blue">
+      <Image src={webbyNominee} alt="Webby Awards" width={webbyNominee.width} height={webbyNominee.height} class="h-auto w-90" />
+    </div>
+  </FeatureContent>
+</FeatureSection>
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <Image
+      layout="full-width"
+      src={bgMomentum}
+      alt=""
+      width={bgMomentum.width}
+      height={bgMomentum.height}
+      class="absolute inset-0 size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black-true/80" />
+  </div>
+  <FeatureContent
+    textOnRight
+    eyebrow={['Custom', 'Flat file', 'School of Engineering']}
+    title="Engineering Centennial 2025"
+    description="One hundred years of Stanford Engineering, told the way it deserves. We collaborated with leaders Sarah Bielecki and Associate Dean Julie Greicius to build a visually striking, thoughtfully animated platform for their centennial, designed to let extraordinary content lead."
+    ctaLabel="Visit Engineering Centennial"
+    ctaHref="https://engineering100.stanford.edu/"
+    ctaId="home-momentum-cta"
+  >
+    <div class="rs-p-5">
+      <Image
+        layout="constrained"
+        src={centennial}
+        alt=""
+        width={centennial.width}
+        height={centennial.height}
+        class="size-full object-cover"
+      />
+    </div>
+  </FeatureContent>
+</FeatureSection>
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden>
+    <Image
+      src={bgMomentum}
+      alt=""
+      width={bgMomentum.width}
+      height={bgMomentum.height}
+      class="absolute inset-0 size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black-true/80" />
+  </div>
+  <FeatureContent
+    textOnRight
+    eyebrow="Lasting Partnerships"
+    title="Momentum"
+    description="Momentum exists to tell Stanford’s most important stories — the research, discoveries, and human impact made possible through philanthropy. We partnered with the Office of Development to bring it to life, translating a vision and brand identity into an editorial platform built for dynamic, interactive storytelling."
+    ctaLabel="Visit Momentum"
+    ctaHref="https://momentum.stanford.edu/"
+  >
+    <Video client:visible mp4Src={supVideo} posterSrc={momentumHero.src} />
+  </FeatureContent>
+</FeatureSection>

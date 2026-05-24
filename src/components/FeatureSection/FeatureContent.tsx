@@ -2,7 +2,7 @@ import { CtaLink } from '@components/CtaLink/CtaLink';
 import { cnb } from 'cnbuilder';
 
 export type FeatureContentProps = React.HTMLAttributes<HTMLDivElement> & {
-  eyebrow?: string;
+  eyebrow?: string | string[];
   title: string;
   description: string;
   ctaLabel?: string;
@@ -29,11 +29,23 @@ export const FeatureContent = ({
   className,
   ...props
 }: FeatureContentProps) => {
+  const eyebrowContent = Array.isArray(eyebrow) ? (
+    <span className="flex flex-wrap divide-x divide-black-60 text-09em text-dark-primary">
+      {eyebrow.map((item) => (
+        <span key={item} className="leading-none px-10 first:pl-0 last:pr-0">
+          {item}
+        </span>
+      ))}
+    </span>
+  ) : (
+    <span className="card-paragraph leading-tight text-dark-primary">{eyebrow}</span>
+  );
+
   return (
-    <div  {...props} className={cnb('relative z-1 mx-auto', className)}>
+    <div {...props} className={cnb('relative z-1 mx-auto', className)}>
       <div className={cnb('flex flex-col items-start justify-center rs-gap-3', textOnRight ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
         <div className="basis-2/5 flex flex-col justify-start gap-8">
-          <p className="card-paragraph leading-tight text-dark-primary">{eyebrow}</p>
+          {eyebrowContent}
           <div>
             <h2 className="rs-mt-7 mb-10 fluid-type-3 font-serif font-normal leading-tight">
               {title}
