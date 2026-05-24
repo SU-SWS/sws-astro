@@ -2,7 +2,7 @@ import { FeatureContent } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import { ScreenshotGrid } from "../../../ScreenshotGrid";
 import { stanfordSitesCells, solutionsCells } from "../../../data/screenshotCells";
-import sectionPortfolioBg from '@images/section-portfolio-bg.jpg';
+import tree from '@images/bg-tree.jpg';
 
 const STATS_ROW_1 = [
   { num: "850 +", label: "Websites" },
@@ -33,7 +33,7 @@ export function PortfolioSection() {
   return (
     <FeatureSection>
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <img src={sectionPortfolioBg.src} alt="" width={sectionPortfolioBg.width} height={sectionPortfolioBg.height} className="absolute inset-0 size-full object-cover" />
+        <img src={tree.src} alt="" width={tree.width} height={tree.height} className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-black-true/80" />
       </div>
       <FeatureContent

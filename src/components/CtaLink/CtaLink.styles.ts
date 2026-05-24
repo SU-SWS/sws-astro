@@ -12,7 +12,7 @@ export const ctaVariants = {
 }
 export type CtaVariantType = keyof typeof ctaVariants;
 
-export const icon = (isExternalLink: boolean) => cnb('inline-block text-current size-21 -mt-1 ml-02em transition-transform',
+export const icon = (isExternalLink: boolean) => cnb('inline-block text-current size-21 -mt-02em ml-02em transition-transform',
   isExternalLink
     ? 'group-hover/cta:translate-x-01em group-focus-visible/cta:translate-x-01em group-hover/cta:-translate-y-01em group-focus-visible/cta:-translate-y-01em'
     : 'group-hover/cta:translate-x-02em group-focus-visible/cta:translate-x-02em',
