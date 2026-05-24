@@ -1,3 +1,4 @@
+import { cnb } from 'cnbuilder';
 import { VideoButton } from './VideoButton';
 import { useVideoControl } from '@utilities/hooks/useVideoControl';
 import * as styles from './Video.styles';
@@ -24,7 +25,7 @@ export const Video = ({
   } = useVideoControl();
 
   return (
-    <div className="relative">
+    <div className={cnb('relative', className)}>
       <video
         ref={videoRef}
         role="presentation"
