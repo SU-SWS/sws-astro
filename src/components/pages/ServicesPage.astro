@@ -1,6 +1,6 @@
 ---
 import { CtaLink } from '@components/CtaLink/CtaLink';
-import { ServicesSection } from '@components/sections/services/ServicesSection';
+import ServicesSection from '@components/sections/services/ServicesSection.astro';
 import { Container } from '@components/Container/Container';
 import { ClientLogosSection } from '@components/sections/ClientLogosSection';
 
@@ -61,7 +61,7 @@ const TECHNOLOGIES = [
   </p>
 </Container>
 
-<ServicesSection client:load />
+<ServicesSection />
 
 <Container bgColor="black" as="section" pt={9}>
   <div class="rs-px-6 rs-pt-6 rs-pb-5 mx-auto rounded-4xl border border-black-60">

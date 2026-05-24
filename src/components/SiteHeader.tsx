@@ -1,6 +1,6 @@
 import { cnb } from 'cnbuilder';
 import { Skiplink } from '@components/SkipLink';
-import { LogoLockup } from "./Logo";
+import { LogoLockup } from '@components/Logo/LogoLockup';
 
 const NAV = [
   { href: "/work", label: "Our work" },

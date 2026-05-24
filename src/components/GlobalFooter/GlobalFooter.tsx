@@ -1,4 +1,4 @@
-import { StanfordLogo } from '../Logo';
+import { StanfordLogo } from '@components/Logo/StanfordLogo';
 import { Container } from '@components/Container/Container';
 import * as styles from './GlobalFooter.styles';
 

@@ -15,7 +15,7 @@ export const CtaLink = ({
   className,
   ...props
 }: CtalinkProps) => {
-  const renderIcon = variant !== 'strategy';
+  const renderIcon = variant !== 'service';
   const isExternalLink = href.startsWith('http');
   const Icon = isExternalLink ? ArrowUpRightIcon : ArrowRightIcon;
 
