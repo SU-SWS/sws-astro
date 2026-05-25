@@ -12,6 +12,8 @@ import bgArch from '@images/bg-partner.jpg';
 import bgTree from '@images/bg-tree.jpg';
 import centennial from '@images/screenshot-centennial-100.png';
 import screenshotDirectory from '@images/screenshot-directory.png';
+import mobile1 from '@images/screenshot-mobile1.jpg';
+import mobile2 from '@images/screenshot-mobile2.png';
 import summer from '@images/screenshot-summer.jpg';
 import awardAnthem from '@images/award-anthem.png';
 import awardCase from '@images/award-case.png';
@@ -136,7 +138,26 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     ctaLabel="Explore the app"
     ctaHref="https://apps.apple.com/us/app/stanford-mobile/id1495906858"
     ctaId="work-mobile-app-cta"
-  ></FeatureContent>
+  >
+    <div class="grid grid-cols-2 rs-gap-2 rs-px-4">
+      <Image
+        layout="constrained"
+        src={mobile1}
+        alt=""
+        width={mobile1.width}
+        height={mobile1.height}
+        class="size-full rounded-[3px]"
+      />
+      <Image
+        layout="constrained"
+        src={mobile2}
+        alt=""
+        width={mobile2.width}
+        height={mobile2.height}
+        class="size-full rounded-[3px]"
+      />
+    </div>
+  </FeatureContent>
 </FeatureSection>
 
 <FeatureSection>
