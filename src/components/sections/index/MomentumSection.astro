@@ -4,7 +4,8 @@ import { FeatureContent } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import momentumHero from '@images/momentum-hero.png';
 import bgMomentum from '@images/bg-momentum.jpg';
-import webbyNominee from '@images/webby-nominee.png';
+import awardCase from '@images/award-case.png';
+import awardWebby from '@images/award-webby.png';
 ---
 
 <FeatureSection ctaLabel="Learn more about our work" ctaHref="/work" ctaId="home-momentum-cta-learn-more">
@@ -23,6 +24,16 @@ import webbyNominee from '@images/webby-nominee.png';
     eyebrow="Lasting partnerships"
     title="Momentum"
     description="Momentum exists to tell Stanford’s most important stories — the research, discoveries, and human impact made possible through philanthropy. We partnered with the Office of Development to bring it to life, translating a vision and brand identity into an editorial platform built for dynamic, interactive storytelling."
+    awards={[
+      {
+        image: awardWebby,
+        alt: '2025 Webby Nominee',
+      },
+      {
+        image: awardCase,
+        alt: '2025 CASE Circle of Excellence Award',
+      },
+    ]}
     ctaLabel="Visit Momentum"
     ctaHref="https://momentum.stanford.edu/"
     ctaId="home-momentum-cta"
@@ -35,8 +46,5 @@ import webbyNominee from '@images/webby-nominee.png';
       height={momentumHero.height}
       class="size-full object-cover"
     />
-    <div class="absolute bottom-[clamp(12px,3vw,24px)] right-[clamp(12px,3vw,24px)] z-2 flex max-w-[calc(100%-24px)] flex-col gap-1 rounded-lg bg-digital-blue">
-      <Image src={webbyNominee} alt="Webby Awards" width={webbyNominee.width} height={webbyNominee.height} class="h-auto w-90" />
-    </div>
   </FeatureContent>
 </FeatureSection>
