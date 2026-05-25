@@ -1,6 +1,6 @@
 import { cnb } from 'cnbuilder';
-import { Container } from '@components/Container';
-import { CtaLink } from '@components/CtaLink';
+import { Container } from '@components/Container/Container';
+import { CtaLink } from '@components/CtaLink/CtaLink';
 
 type FeatureSectionProps = {
   ctaLabel?: string;
@@ -18,7 +18,7 @@ export const FeatureSection = ({
   className,
 }: FeatureSectionProps) => {
   return (
-    <Container as="section" pt={6} pb={7} className={cnb('relative overflow-hidden text-white', className)}>
+    <Container as="section" pt={6} pb={7} className={cnb('relative overflow-hidden text-dark-primary', className)}>
       {children}
       {ctaLabel && ctaHref && (
         <div className="relative z-1 rs-mt-6 text-center">

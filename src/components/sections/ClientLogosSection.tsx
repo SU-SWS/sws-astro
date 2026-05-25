@@ -1,5 +1,5 @@
-import { CtaLink } from '@components/CtaLink';
-import { Container } from '@components/Container';
+import { CtaLink } from '@components/CtaLink/CtaLink';
+import { Container } from '@components/Container/Container';
 import btsLogo from '@images/logos/BTS.png';
 import centennialLogo from '@images/logos/Centennial logo wrapper.png';
 import doeerLogo from '@images/logos/Doeer wrapper.png';
@@ -23,10 +23,20 @@ const ROW_2 = [
   { src: supLogo, alt: "Stanford University Press" },
 ];
 
-export function ClientLogosSection() {
+type ClientLogosSectionProps = {
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaId?: string;
+}
+
+export const ClientLogosSection = ({
+  ctaLabel,
+  ctaHref,
+  ctaId,
+}: ClientLogosSectionProps) => {
   return (
     <Container as="section" pt={7} pb={7} bgColor="black">
-      <h2 className="card-paragraph leading-tight">Lasting Partnerships</h2>
+      <h2 className="text-dark-secondary-muted card-paragraph leading-tight">Our clients</h2>
       <p className="rs-mt-2 rs-mb-8 max-w-1100 font-serif fluid-type-4 leading-display">
         SWS maintains long-term partnerships across Stanford, providing strategic and technical support for schools, institutes, and organizations.
       </p>
@@ -59,12 +69,9 @@ export function ClientLogosSection() {
           ))}
         </div>
       </div>
-
-      <div className="mt-95">
-        <CtaLink href="/services" variant="button-dark">
-          Learn more about our services
-        </CtaLink>
-      </div>
+      {ctaLabel && ctaHref && (
+        <CtaLink href={ctaHref} id={ctaId} variant="link-dark" className="block! w-fit mx-auto rs-mt-6">{ctaLabel}</CtaLink>
+      )}
     </Container>
   );
 }

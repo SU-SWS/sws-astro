@@ -1,20 +1,36 @@
 ---
-import { FeatureContent, FeatureSection } from '@components/FeatureSection';
-import centennial from '@images/centennial.png';
+import { Image } from 'astro:assets';
+import { FeatureContent } from '@components/FeatureSection/FeatureContent';
+import { FeatureSection } from '@components/FeatureSection/FeatureSection';
+import awardAnthem from '@images/award-anthem.png';
+import awardWebby from '@images/award-webby.png';
+import centennial from '@images/screenshot-centennial-100.png';
 ---
-
-<FeatureSection className="bg-sws-engineering">
+<FeatureSection className="bg-linear-to-r from-[#260000] to-[#760000]">
   <FeatureContent
-    eyebrow="Lasting Partnerships"
+    textOnRight
+    eyebrow="Lasting partnerships"
     title="Engineering Centennial 2025"
-    description="One hundred years of Stanford Engineering, told the way it deserves. We collaborated with leaders Sarah Bielecki and Associate Dean Julie Greicius to build a visually immersive platform for their centennial — visually striking, thoughtfully animated, and designed to let extraordinary content lead."
+    description="One hundred years of Stanford Engineering, told the way it deserves. We collaborated with leaders Sarah Bielecki and Associate Dean Julie Greicius to build a visually striking, thoughtfully animated platform for their centennial, designed to let extraordinary content lead."
+    awards={[
+      {
+        image: awardWebby,
+        alt: '2026 Webby Nominee',
+      },
+      {
+        image: awardAnthem,
+        alt: '2026 Anthem Award - Silver',
+      },
+    ]}
     ctaLabel="Visit Engineering Centennial"
     ctaHref="https://engineering100.stanford.edu/"
+    ctaId="work-centennial-cta"
   >
-    <div class="relative rounded-md">
-      <img
-        src={centennial.src}
-        alt="Centennial website screenshot"
+    <div class="rs-p-5">
+      <Image
+        layout="constrained"
+        src={centennial}
+        alt=""
         width={centennial.width}
         height={centennial.height}
         class="size-full object-cover"

@@ -1,0 +1,148 @@
+---
+import { Image } from 'astro:assets';
+import { Service } from '@components/Service/Service';
+import { Container } from '@components/Container/Container';
+import { CtaLink } from '@components/CtaLink/CtaLink';
+import learnIcon from '@images/icon-learn.png';
+import makeIcon from '@images/icon-make.png';
+import evolveIcon from '@images/icon-evolve.png';
+
+const PRINCIPLES = [
+  {
+    title: 'Learn',
+    icon: learnIcon,
+    body: 'We start by listening — then help you shape a strategy that fits your goals and constraints.',
+  },
+  {
+    title: 'Make',
+    icon: makeIcon,
+    body: 'We bring ideas to life early, then refine through collaboration. ',
+  },
+  {
+    title: 'Evolve',
+    icon: evolveIcon,
+    body: 'Your needs will change. We are here to maintain, refine, and grow alongside you.',
+  },
+];
+
+const SERVICES = [
+  {
+    title: 'Strategy',
+    body:
+      'We bring research, experience, and a deep understanding of Stanford’s best practices to every project. Whether that means defining a strategy, innovating on something new, or building on what already exists, we know how to navigate institutional requirements and find the right path forward.',
+    items: [
+      {
+        ctaLabel: 'Project discovery',
+        href: 'https://uit.stanford.edu/service/website-project-strategy',
+      },
+      {
+        ctaLabel: 'Digital strategy',
+        href: 'https://uit.stanford.edu/service/digital-strategy',
+      },
+      {
+        ctaLabel: 'UX research',
+        href: 'https://uit.stanford.edu/service/ux-research',
+      },
+      {
+        ctaLabel: 'Information architecture',
+        href: 'https://uit.stanford.edu/service/ux-research',
+      },
+    ],
+  },
+  {
+    title: 'Design',
+    body:
+      'We design interfaces that are as distinctive as the products they serve. Whether that means classical Stanford branding or something entirely your own. We build flexible, scalable design systems, ensuring every interaction is intuitive, consistent, and beautiful across everything from a single page annual report website to complex, API-driven applications.',
+    items: [
+      {
+        ctaLabel: 'Visual & interaction design',
+        href: 'https://uit.stanford.edu/service/visual-design',
+      },
+      {
+        ctaLabel: 'User experience',
+        href: 'https://uit.stanford.edu/service/ux-design',
+      },
+      {
+        ctaLabel: 'Prototyping',
+        href: 'https://uit.stanford.edu/service/app-design',
+      },
+      {
+        ctaLabel: 'Design systems & guidelines',
+        href: 'https://uit.stanford.edu/service/ux-design',
+      },
+    ],
+  },
+  {
+    title: 'Engineering',
+    body:
+      'We build for the product you need today and the product you need tomorrow.  We want your investment in technology to be maintainable and to grow with you. We listen closely to understand your ongoing needs, and pick technical approaches that fit into your existing workflows.',
+    items: [
+      {
+        ctaLabel: 'Website production',
+        href: 'https://uit.stanford.edu/sws/website-building',
+      },
+      {
+        ctaLabel: 'Custom development',
+        href: 'https://uit.stanford.edu/service/custom-website-project',
+      },
+      {
+        ctaLabel: 'Site building',
+        href: 'https://uit.stanford.edu/service/website-support-retainer',
+      },
+      {
+        ctaLabel: 'Animation & motion design',
+        href: 'https://uit.stanford.edu/service/visual-design',
+      },
+    ],
+  },
+  {
+    title: 'Continuous support, security, and performance',
+    body:
+      'Our ongoing services cover everything you need to stay secure, current, and effective — from security updates and infrastructure maintenance to feature development, content entry, and digital strategy. We build and maintain applications with security, stability, performance, and accessibility at the forefront, ensuring your platform meets the expectations of your local community while communicating your research to audiences around the world.',
+    items: [
+      {
+        ctaLabel: 'Security & maintenance',
+        href: 'https://uit.stanford.edu/service/website-support-retainer',
+      },
+      {
+        ctaLabel: 'Hosting support',
+        href: 'https://uit.stanford.edu/service/vendor-selection-liaison',
+      },
+      {
+        ctaLabel: 'Analytics & UX monitoring',
+        href: 'https://uit.stanford.edu/service/digital-strategy',
+      },
+      {
+        ctaLabel: 'Accessibility support',
+        href: 'https://uit.stanford.edu/service/website-accessibility',
+      },
+    ],
+  },
+];
+---
+<Container bgColor="black" as="section" pb={6}>
+  <div class="grid lg:grid-cols-3 lg:gap-60 2xl:gap-100">
+    <ul class="list-unstyled grid rs-gap-4 lg:sticky lg:top-0 lg:self-start rs-pt-2">
+      {PRINCIPLES.map((principle) => (
+        <li class="mb-0">
+          <Image src={principle.icon} alt="" width={principle.icon.width} height={principle.icon.height} />
+          <h2 class="font-serif fluid-type-3 rs-mb-1 mt-10 leading-display tracking-[0.01em] text-dark-primary">
+            {principle.title}
+          </h2>
+          <p class="max-w-prose card-paragraph leading-snug text-dark-secondary-muted mb-0">{principle.body}</p>
+        </li>
+      ))}
+    </ul>
+
+    <div class="rs-mt-9 lg:col-span-2">
+      <ul class="list-unstyled flex flex-col rs-gap-8">
+        {SERVICES.map((service) => (
+          <li class="mb-0">
+            <Service client:visible {...service} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <CtaLink href="/why" variant="link-dark" className="block! w-fit mx-auto rs-mt-6">Why partner with us</CtaLink>
+</Container>

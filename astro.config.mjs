@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   // TODO: confirm later
-  site: 'https://sws.stanford.edu',
+  site: 'https://webservices.stanford.edu',
   // No need to enable prefetch since we use View Transition which sets a default configuration of { prefetchAll: true }
   // https://docs.astro.build/en/guides/prefetch/#using-with-view-transitions
   integrations: [react(), sitemap()],

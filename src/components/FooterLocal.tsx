@@ -1,5 +1,5 @@
 import { LogoLockup } from '@components/Logo/LogoLockup';
-import { CtaLink } from '@components/CtaLink';
+import { CtaLink } from '@components/CtaLink/CtaLink';
 
 const NAV = [
   { href: "/work", label: "Our work" },

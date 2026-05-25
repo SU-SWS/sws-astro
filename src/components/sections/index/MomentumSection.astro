@@ -3,27 +3,37 @@ import { Image } from 'astro:assets';
 import { FeatureContent } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import momentumHero from '@images/momentum-hero.png';
-import sectionPortfolioBg from '@images/section-portfolio-bg.jpg';
-import webbyNominee from '@images/webby-nominee.png';
-import supVideo from '@videos/sup_02_720.mp4';
+import bgMomentum from '@images/bg-momentum.jpg';
+import awardCase from '@images/award-case.png';
+import awardWebby from '@images/award-webby.png';
 ---
 
 <FeatureSection ctaLabel="Learn more about our work" ctaHref="/work" ctaId="home-momentum-cta-learn-more">
   <div class="pointer-events-none absolute inset-0" aria-hidden="true">
     <Image
       layout="full-width"
-      src={sectionPortfolioBg}
+      src={bgMomentum}
       alt=""
-      width={sectionPortfolioBg.width}
-      height={sectionPortfolioBg.height}
+      width={bgMomentum.width}
+      height={bgMomentum.height}
       class="absolute inset-0 size-full object-cover"
     />
     <div class="absolute inset-0 bg-black-true/80" />
   </div>
   <FeatureContent
-    eyebrow="Lasting Partnerships"
+    eyebrow="Lasting partnerships"
     title="Momentum"
     description="Momentum exists to tell Stanford’s most important stories — the research, discoveries, and human impact made possible through philanthropy. We partnered with the Office of Development to bring it to life, translating a vision and brand identity into an editorial platform built for dynamic, interactive storytelling."
+    awards={[
+      {
+        image: awardWebby,
+        alt: '2025 Webby Nominee',
+      },
+      {
+        image: awardCase,
+        alt: '2025 CASE Circle of Excellence Award',
+      },
+    ]}
     ctaLabel="Visit Momentum"
     ctaHref="https://momentum.stanford.edu/"
     ctaId="home-momentum-cta"
@@ -36,38 +46,5 @@ import supVideo from '@videos/sup_02_720.mp4';
       height={momentumHero.height}
       class="size-full object-cover"
     />
-    <div class="absolute bottom-[clamp(12px,3vw,24px)] right-[clamp(12px,3vw,24px)] z-2 flex max-w-[calc(100%-24px)] flex-col gap-1 rounded-lg bg-digital-blue p-1.5">
-      <Image src={webbyNominee} alt="Webby Awards" width={webbyNominee.width} height={webbyNominee.height} class="h-auto w-90" />
-    </div>
-  </FeatureContent>
-</FeatureSection>
-
-<FeatureSection>
-  <div class="pointer-events-none absolute inset-0" aria-hidden>
-    <Image
-      src={sectionPortfolioBg}
-      alt=""
-      width={sectionPortfolioBg.width}
-      height={sectionPortfolioBg.height}
-      class="absolute inset-0 size-full object-cover"
-    />
-    <div class="absolute inset-0 bg-black-true/80" />
-  </div>
-  <FeatureContent
-    textOnRight
-    eyebrow="Lasting Partnerships"
-    title="Momentum"
-    description="Momentum exists to tell Stanford’s most important stories — the research, discoveries, and human impact made possible through philanthropy. We partnered with the Office of Development to bring it to life, translating a vision and brand identity into an editorial platform built for dynamic, interactive storytelling."
-    ctaLabel="Visit Momentum"
-    ctaHref="https://momentum.stanford.edu/"
-  >
-    <div class="basis-2/3 relative overflow-hidden rounded-md">
-      <video autoplay loop muted playsinline class="size-full object-cover">
-        <source src={supVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="absolute bottom-[clamp(12px,3vw,24px)] right-[clamp(12px,3vw,24px)] z-2 flex max-w-[calc(100%-24px)] flex-col gap-1 rounded-lg bg-digital-blue p-1.5">
-      </div>
-    </div>
   </FeatureContent>
 </FeatureSection>

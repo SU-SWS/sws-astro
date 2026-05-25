@@ -1,8 +1,7 @@
-import { type HTMLAttributes, type ReactNode } from 'react';
 import { cnb } from 'cnbuilder';
 import * as styles from './StanfordLogo.styles';
 
-type StanfordLogoProps = HTMLAttributes<HTMLElement> & {
+type StanfordLogoProps = React.HTMLAttributes<HTMLElement> & {
   color?: styles.StanfordLogoColorType;
   type?: 'short' | 'full' | 'stacked';
   isLink?: boolean;
@@ -15,7 +14,7 @@ export const StanfordLogo = ({
   isLink,
   ...rest
 }: StanfordLogoProps) => {
-  let logoText: string | ReactNode;
+  let logoText: string | React.ReactNode;
 
   switch (type) {
     case 'full':

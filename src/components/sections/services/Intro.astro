@@ -1,0 +1,25 @@
+---
+import { Container } from '@components/Container/Container';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+---
+
+<Container bgColor="black" as="section" pt={8} pb={7}>
+  <AnimateInView
+    client:visible
+    as="h1"
+    className="font-serif rs-mb-3 font-normal fluid-type-5 leading-display tracking-[0.01em] text-dark-primary"
+  >
+    Services
+  </AnimateInView>
+  <AnimateInView
+    client:visible
+    as="p"
+    delay={0.1}
+    className="max-w-900 type-2 leading-cozy text-dark-primary-muted"
+  >
+    We partner with teams across Stanford, big and small, from a ten-hour UX strategy consult to a multi-year program.
+    We’re committed to finding the right solution, crafting quality experiences,
+    and delivering tools that empower you to do your best work,
+    all while taking the guesswork out of security, accessibility, and infrastructure decisions.
+  </AnimateInView>
+</Container>

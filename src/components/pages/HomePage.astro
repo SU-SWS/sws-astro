@@ -1,5 +1,5 @@
 ---
-import IntroLede from '@components/sections/index/IntroLede.astro';
+import Intro from '@components/sections/index/Intro.astro';
 import MomentumSection from '@components/sections/index/MomentumSection.astro';
 import { CollaborationSection } from '@components/sections/index/CollaborationSection';
 import { PortfolioSection } from '@components/sections/index/PortfolioSection';
@@ -7,9 +7,9 @@ import { ClientLogosSection } from '@components/sections/ClientLogosSection';
 import EngineeringSection from '@components/sections/index/EngineeringSection.astro';
 ---
 
-<IntroLede />
+<Intro />
 <MomentumSection />
 <CollaborationSection />
 <PortfolioSection client:visible />
-<ClientLogosSection />
+<ClientLogosSection ctaHref="/services" ctaLabel="Learn more about our services" ctaId="home-clients-cta" />
 <EngineeringSection />

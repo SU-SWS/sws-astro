@@ -8,11 +8,11 @@ export const ctaVariants = {
   'button-light': `${buttonBase} text-primary`,
   'button-dark': `${buttonBase} text-dark-primary`,
   'link-dark': `${linkBase} text-dark-primary hocus-visible:text-dark-primary`,
-  'strategy': 'text-primary hover:text-primary-dark focus-visible:text-primary-dark',
+  'service': 'leading-display card-paragraph font-normal text-dark-secondary-muted hocus-visible:text-digital-red-xlight no-underline hocus-visible:underline underline-offset-4 transition-colors',
 }
 export type CtaVariantType = keyof typeof ctaVariants;
 
-export const icon = (isExternalLink: boolean) => cnb('inline-block text-current size-21 -mt-1 ml-02em transition-transform',
+export const icon = (isExternalLink: boolean) => cnb('inline-block text-current size-21 -mt-02em ml-02em transition-transform',
   isExternalLink
     ? 'group-hover/cta:translate-x-01em group-focus-visible/cta:translate-x-01em group-hover/cta:-translate-y-01em group-focus-visible/cta:-translate-y-01em'
     : 'group-hover/cta:translate-x-02em group-focus-visible/cta:translate-x-02em',

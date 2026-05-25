@@ -1,21 +1,15 @@
-import { StanfordLogo } from '../Logo';
-import { Container } from '@components/Container';
-import { FlexBox } from '../FlexBox';
+import { StanfordLogo } from '@components/Logo/StanfordLogo';
+import { Container } from '@components/Container/Container';
 import * as styles from './GlobalFooter.styles';
 
 export const GlobalFooter = () => (
   <Container className={styles.root}>
-    <FlexBox direction="col" className={styles.outerWrapper}>
+    <div className={styles.outerWrapper}>
       <div className={styles.logoWrapper}>
         <StanfordLogo isLink tabIndex={-1} aria-hidden className={styles.logo} type="stacked" color="white" />
       </div>
       <div className={styles.contentWrapper}>
-        <FlexBox
-          as="nav"
-          justifyContent="center"
-          aria-label="global footer menu"
-          className={styles.menusWrapper}
-        >
+        <nav aria-label="global footer menu" className={styles.menusWrapper}>
           <ul className={styles.stanfordMenu}>
             <li className={styles.listItem}>
               <a
@@ -116,12 +110,12 @@ export const GlobalFooter = () => (
               </a>
             </li>
           </ul>
-        </FlexBox>
+        </nav>
         <div className={styles.copyright}>
           <span className={styles.copyrightText}>&copy; Stanford University.</span>
           <span className={styles.copyrightText}>&nbsp; Stanford, California 94305.</span>
         </div>
       </div>
-    </FlexBox>
+    </div>
   </Container>
 );

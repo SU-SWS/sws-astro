@@ -1,7 +1,8 @@
-import { FeatureContent, FeatureSection } from '@components/FeatureSection';
+import { FeatureContent } from '@components/FeatureSection/FeatureContent';
+import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import { ScreenshotGrid } from "../../../ScreenshotGrid";
 import { stanfordSitesCells, solutionsCells } from "../../../data/screenshotCells";
-import sectionPortfolioBg from '@images/section-portfolio-bg.jpg';
+import tree from '@images/bg-tree.jpg';
 
 const STATS_ROW_1 = [
   { num: "850 +", label: "Websites" },
@@ -22,7 +23,7 @@ interface StatProps {
 function Stat({ num, label }: StatProps) {
   return (
     <div className="min-w-160 flex-[0_1_260px]">
-      <p className="m-0 font-serif text-[clamp(4rem,8vw,110px)] font-normal leading-tight text-white">{num}</p>
+      <p className="m-0 font-serif text-[clamp(4rem,8vw,110px)] font-normal leading-tight text-dark-primary">{num}</p>
       <p className="m-0 mt-2 max-w-264 text-23 leading-snug text-primary-muted">{label}</p>
     </div>
   );
@@ -31,14 +32,14 @@ function Stat({ num, label }: StatProps) {
 export function PortfolioSection() {
   return (
     <FeatureSection>
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <img src={sectionPortfolioBg.src} alt="" width={sectionPortfolioBg.width} height={sectionPortfolioBg.height} className="absolute inset-0 size-full object-cover" />
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <img src={tree.src} alt="" width={tree.width} height={tree.height} className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-black-true/80" />
       </div>
       <FeatureContent
         eyebrow="Value and speed to delivery"
         title="StanfordSites"
-        description="Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. StanfordSites is free to use, continuously updated, and built on a platform designed to meet Stanford's policies out of the box."
+        description="Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. StanfordSites is free to use, continuously updated, and built on a platform designed to meet Stanford’s policies out of the box."
         ctaLabel="Request a Stanford Site"
         ctaHref="https://uit.stanford.edu/service/stanfordsites"
         ctaId="home-stanfordsites-cta"

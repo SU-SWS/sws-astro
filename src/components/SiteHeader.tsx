@@ -1,6 +1,6 @@
 import { cnb } from 'cnbuilder';
 import { Skiplink } from '@components/SkipLink';
-import { LogoLockup } from "./Logo";
+import { LogoLockup } from '@components/Logo/LogoLockup';
 
 const NAV = [
   { href: "/work", label: "Our work" },
@@ -22,7 +22,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
       <Skiplink />
       <div  className={cnb("cc pt-5 pb-1", isDark ? "bg-fill-primary" : "bg-white")}>
         <a
-          className={cnb("logo text-20 leading-none hocus:no-underline", isDark ? "text-white" : "text-black hocus:text-black")}
+          className={cnb("logo text-20 leading-none hocus:no-underline", isDark ? "text-dark-primary" : "text-black hocus:text-black")}
           href="https://www.stanford.edu"
         >
           Stanford University
@@ -42,10 +42,10 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
                   "border-b-4 pb-20 whitespace-nowrap text-19 font-semibold leading-snug transition-colors",
                   label === activeLabel
                     ? isDark
-                      ? "border-black-60 text-white"
+                      ? "border-black-60 text-dark-primary"
                       : "border-sws-text text-primary"
                     : isDark
-                      ? "border-transparent text-white hover:border-white/30 hover:text-white"
+                      ? "border-transparent text-dark-primary hover:border-white/30 hover:text-dark-primary"
                       : "border-transparent text-digital-red hover:border-black-90/20 hover:text-black-90",
                 ].join(" ")}
               >

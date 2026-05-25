@@ -1,0 +1,283 @@
+---
+import { Image } from 'astro:assets';
+import { FeatureContent } from '@components/FeatureSection/FeatureContent';
+import { FeatureSection } from '@components/FeatureSection/FeatureSection';
+import { ScreenshotGrid } from '../../../ScreenshotGrid';
+import { stanfordSitesCells } from '../../../data/screenshotCells';
+import momentumHero from '@images/momentum-hero.png';
+import bgMomentum from '@images/bg-momentum.jpg';
+import bgTravelstudy from '@images/bg-travelstudy.jpg';
+import bgPress from '@images/bg-press.jpg';
+import bgArch from '@images/bg-partner.jpg';
+import bgTree from '@images/bg-tree.jpg';
+import centennial from '@images/screenshot-centennial-100.png';
+import screenshotDirectory from '@images/screenshot-directory.png';
+import mobile1 from '@images/screenshot-mobile1.jpg';
+import mobile2 from '@images/screenshot-mobile2.png';
+import summer from '@images/screenshot-summer.jpg';
+import awardAnthem from '@images/award-anthem.png';
+import awardCase from '@images/award-case.png';
+import awardWebby from '@images/award-webby.png';
+import travelStudyScreenshot from '@images/travelstudy-screenshot.jpg';
+import pressScreenshot from '@images/press-screenshot.jpg';
+---
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <Image
+      layout="full-width"
+      src={bgMomentum}
+      alt=""
+      width={bgMomentum.width}
+      height={bgMomentum.height}
+      class="absolute inset-0 size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black-true/80" />
+  </div>
+  <FeatureContent
+    eyebrow={['Custom', 'Storyblok', 'Office of Development']}
+    title="Momentum"
+    description="Momentum exists to tell Stanford’s most important stories — the research, discoveries, and human impact made possible through philanthropy. We partnered with the Office of Development to bring it to life, translating a vision and brand identity into an editorial platform built for dynamic, interactive storytelling."
+    awards={[
+      {
+        image: awardWebby,
+        alt: '2025 Webby Nominee',
+      },
+      {
+        image: awardCase,
+        alt: '2025 CASE Circle of Excellence Award',
+      },
+    ]}
+    ctaLabel="Visit Momentum"
+    ctaHref="https://momentum.stanford.edu/"
+    ctaId="work-momentum-cta"
+  >
+    <Image
+      layout="constrained"
+      src={momentumHero}
+      alt=""
+      width={momentumHero.width}
+      height={momentumHero.height}
+      class="size-full object-cover"
+    />
+  </FeatureContent>
+</FeatureSection>
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <Image
+      layout="full-width"
+      src={bgMomentum}
+      alt=""
+      width={bgMomentum.width}
+      height={bgMomentum.height}
+      class="absolute inset-0 size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black-true/80" />
+  </div>
+  <FeatureContent
+    textOnRight
+    eyebrow={['Custom', 'Flat file', 'School of Engineering']}
+    title="Engineering Centennial 2025"
+    description="One hundred years of Stanford Engineering, told the way it deserves. We collaborated with leaders Sarah Bielecki and Associate Dean Julie Greicius to build a visually striking, thoughtfully animated platform for their centennial, designed to let extraordinary content lead."
+    awards={[
+      {
+        image: awardWebby,
+        alt: '2026 Webby Nominee',
+      },
+      {
+        image: awardAnthem,
+        alt: '2026 Anthem Award - Silver',
+      },
+    ]}
+    ctaLabel="Visit Engineering Centennial"
+    ctaHref="https://engineering100.stanford.edu/"
+    ctaId="work-centennial-cta"
+  >
+    <div class="rs-p-5">
+      <Image
+        layout="constrained"
+        src={centennial}
+        alt=""
+        width={centennial.width}
+        height={centennial.height}
+        class="size-full object-cover"
+      />
+    </div>
+  </FeatureContent>
+</FeatureSection>
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <img src={bgTree.src} alt="" width={bgTree.width} height={bgTree.height} class="size-full object-cover" />
+    <div class="absolute inset-0 bg-black-true/80" />
+  </div>
+  <FeatureContent
+    eyebrow={['Platform', 'Drupal']}
+    title="StanfordSites"
+    description="Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. StanfordSites is free to use, continuously updated, and built on a platform designed to meet Stanford’s policies out of the box."
+    ctaLabel="Request a Stanford Site"
+    ctaHref="https://uit.stanford.edu/service/stanfordsites"
+    ctaId="work-stanfordsites-cta"
+  >
+    <ScreenshotGrid
+      client:visible
+      gridClass="grid-stanford-sites"
+      ariaLabel="Stanford Sites example screenshots"
+      cells={stanfordSitesCells}
+    />
+  </FeatureContent>
+</FeatureSection>
+
+<FeatureSection className="bg-linear-to-r from-[#260000] to-[#760000]">
+  <FeatureContent
+    textOnRight
+    eyebrow={['Custom', 'iOS / Android', 'University IT']}
+    title="Stanford Mobile App: mobile key"
+    description="Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In pellentesque rutrum nisl, nec lacinia nibh."
+    ctaLabel="Explore the app"
+    ctaHref="https://apps.apple.com/us/app/stanford-mobile/id1495906858"
+    ctaId="work-mobile-app-cta"
+  >
+    <div class="grid grid-cols-2 rs-gap-2 rs-px-4">
+      <Image
+        layout="constrained"
+        src={mobile1}
+        alt=""
+        width={mobile1.width}
+        height={mobile1.height}
+        class="size-full rounded-[3px]"
+      />
+      <Image
+        layout="constrained"
+        src={mobile2}
+        alt=""
+        width={mobile2.width}
+        height={mobile2.height}
+        class="size-full rounded-[3px]"
+      />
+    </div>
+  </FeatureContent>
+</FeatureSection>
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <Image
+      layout="full-width"
+      src={bgArch}
+      alt=""
+      width={bgArch.width}
+      height={bgArch.height}
+      class="size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-palo-alto-dark/90" />
+  </div>
+  <FeatureContent
+    eyebrow={['Custom', 'Drupal headless', '?']}
+    title="Summer Session"
+    description="We designed the Stanford Summer Session site to do two things well. To help prospective students quickly find what they’re looking for, and make them want to apply. A show-don’t-tell approach, real student voices, and sun-drenched California imagery bring the experience to life for a primarily international audience."
+    ctaLabel="Visit Stanford Summer Session"
+    ctaHref="https://summer.stanford.edu/"
+    ctaId="work-summer-session-cta"
+  >
+    <Image
+      layout="constrained"
+      position="top"
+      src={summer}
+      alt=""
+      width={summer.width}
+      height={summer.height}
+      class="size-full aspect-7/6 object-cover"
+    />
+  </FeatureContent>
+</FeatureSection>
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <Image
+      layout="full-width"
+      src={bgTravelstudy}
+      alt=""
+      width={bgTravelstudy.width}
+      height={bgTravelstudy.height}
+      class="size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black-true/80" />
+  </div>
+  <FeatureContent
+    textOnRight
+    eyebrow={['Custom', 'Storyblok', 'Alumni Association']}
+    title="Stanford Alumni Travel/Study"
+    description="The goal was simple — build an interactive experience worthy of the trips themselves. We collaborated with the Alumni Travel/Study team to design trip detail, browse, and list pages that are as beautiful and immersive as the destinations they represent, with clear information hierarchy, intuitive flow, and interactions that hold up against the best travel booking experiences in the industry."
+    ctaLabel="Visit Travel/Study"
+    ctaHref="https://alumni.stanford.edu/travel-study/"
+    ctaId="work-travel-study-cta"
+  >
+    <Image
+      layout="constrained"
+      src={travelStudyScreenshot}
+      alt=""
+      width={travelStudyScreenshot.width}
+      height={travelStudyScreenshot.height}
+      class="size-full object-cover"
+    />
+  </FeatureContent>
+</FeatureSection>
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <Image
+      layout="full-width"
+      src={bgPress}
+      alt=""
+      width={bgPress.width}
+      height={bgPress.height}
+      class="size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-linear-to-r from-palo-alto-dark/95 to-palo-verde/50" />
+  </div>
+  <FeatureContent
+    eyebrow={['Custom', 'Drupal headless', 'Stanford University Press']}
+    title="Stanford University Press"
+    description="Stanford University Press needed a site as distinguished as its catalog. We worked with Stanford University Press to redesign their site with modern content hierarchy, intuitive book browsing and checkout, and a visual experience beautiful enough to match the caliber of their authors and their work."
+    ctaLabel="Visit SUP"
+    ctaHref="https://www.sup.org/"
+    ctaId="work-sup-cta"
+  >
+    <Image
+      layout="constrained"
+      position="top"
+      src={pressScreenshot}
+      alt="Stanford University Press website"
+      width={pressScreenshot.width}
+      height={pressScreenshot.height}
+      class="size-full object-cover aspect-square"
+    />
+  </FeatureContent>
+</FeatureSection>
+
+<FeatureSection className="bg-fill-primary">
+  <FeatureContent
+    textOnRight
+    eyebrow={['Custom', 'Storyblok', 'Alumni Association']}
+    title="Alumni: My Account"
+    description="My Account is the central destination where Stanford alumni and constituents manage much of their personal data — from contact details and privacy settings to professional information, and more. Designed and built by teams across Stanford, it serves as an important part of the alumni and constituent digital ecosystem, where account and profile updates are managed and stored in a single application."
+  ></FeatureContent>
+</FeatureSection>
+
+<FeatureSection className="bg-linear-to-r from-[#260000] to-[#760000]">
+  <FeatureContent
+    eyebrow={['Custom', 'Storyblok', 'Alumni']}
+    title="Alumni Directory"
+    description="The Directory is where Stanford’s community finds itself. Powered by My Account, it gives students and alumni a powerful, intuitive way to discover connections that support their professional and personal goals — designed from the ground up to make search feel effortless and results feel meaningful."
+  >
+    <Image
+      layout="constrained"
+      src={screenshotDirectory}
+      alt="Alumni Directory website"
+      width={screenshotDirectory.width}
+      height={screenshotDirectory.height}
+      class="size-full object-cover"
+    />
+  </FeatureContent>
+</FeatureSection>

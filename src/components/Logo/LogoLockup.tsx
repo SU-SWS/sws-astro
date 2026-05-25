@@ -1,5 +1,4 @@
 import { cnb } from 'cnbuilder';
-import { FlexBox } from '../FlexBox';
 import { StanfordLogo } from './StanfordLogo';
 import * as styles from './LogoLockup.styles';
 
@@ -23,7 +22,7 @@ export const LogoLockup = ({
   ...rest
 }: LogoLockupProps) => {
   const LockupContent = (
-    <FlexBox className={styles.contentWrapper}>
+    <div className={styles.contentWrapper}>
       <StanfordLogo
         color={color === 'white' ? 'white' : 'cardinal-red'}
         isLink={false}
@@ -33,7 +32,7 @@ export const LogoLockup = ({
         {text}
         {line2 && <div className={styles.line2}>{line2}</div>}
       </div>
-    </FlexBox>
+    </div>
   );
 
   if (isLink) {
