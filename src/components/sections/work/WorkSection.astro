@@ -13,7 +13,9 @@ import bgTree from '@images/bg-tree.jpg';
 import centennial from '@images/screenshot-centennial-100.png';
 import screenshotDirectory from '@images/screenshot-directory.png';
 import summer from '@images/screenshot-summer.jpg';
-import webbyNominee from '@images/webby-nominee.png';
+import awardAnthem from '@images/award-anthem.png';
+import awardCase from '@images/award-case.png';
+import awardWebby from '@images/award-webby.png';
 import travelStudyScreenshot from '@images/travelstudy-screenshot.jpg';
 import pressScreenshot from '@images/press-screenshot.jpg';
 ---
@@ -34,21 +36,28 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     eyebrow={['Custom', 'Storyblok', 'Office of Development']}
     title="Momentum"
     description="Momentum exists to tell Stanford’s most important stories — the research, discoveries, and human impact made possible through philanthropy. We partnered with the Office of Development to bring it to life, translating a vision and brand identity into an editorial platform built for dynamic, interactive storytelling."
+    awards={[
+      {
+        image: awardWebby,
+        alt: '2025 Webby Nominee',
+      },
+      {
+        image: awardCase,
+        alt: '2025 CASE Circle of Excellence Award',
+      },
+    ]}
     ctaLabel="Visit Momentum"
     ctaHref="https://momentum.stanford.edu/"
-    ctaId="home-momentum-cta"
+    ctaId="work-momentum-cta"
   >
     <Image
       layout="constrained"
       src={momentumHero}
-      alt="Momentum website hero"
+      alt=""
       width={momentumHero.width}
       height={momentumHero.height}
       class="size-full object-cover"
     />
-    <div class="absolute bottom-[clamp(12px,3vw,24px)] right-[clamp(12px,3vw,24px)] z-2 flex max-w-[calc(100%-24px)] flex-col gap-1 rounded-lg bg-digital-blue">
-      <Image src={webbyNominee} alt="Webby Awards" width={webbyNominee.width} height={webbyNominee.height} class="h-auto w-90" />
-    </div>
   </FeatureContent>
 </FeatureSection>
 
@@ -69,9 +78,19 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     eyebrow={['Custom', 'Flat file', 'School of Engineering']}
     title="Engineering Centennial 2025"
     description="One hundred years of Stanford Engineering, told the way it deserves. We collaborated with leaders Sarah Bielecki and Associate Dean Julie Greicius to build a visually striking, thoughtfully animated platform for their centennial, designed to let extraordinary content lead."
+    awards={[
+      {
+        image: awardWebby,
+        alt: '2026 Webby Nominee',
+      },
+      {
+        image: awardAnthem,
+        alt: '2026 Anthem Award - Silver',
+      },
+    ]}
     ctaLabel="Visit Engineering Centennial"
     ctaHref="https://engineering100.stanford.edu/"
-    ctaId="home-momentum-cta"
+    ctaId="work-centennial-cta"
   >
     <div class="rs-p-5">
       <Image
@@ -87,7 +106,7 @@ import pressScreenshot from '@images/press-screenshot.jpg';
 </FeatureSection>
 
 <FeatureSection>
-  <div class="pointer-events-none absolute inset-0" aria-hidden>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
     <img src={bgTree.src} alt="" width={bgTree.width} height={bgTree.height} class="size-full object-cover" />
     <div class="absolute inset-0 bg-black-true/80" />
   </div>
@@ -108,18 +127,7 @@ import pressScreenshot from '@images/press-screenshot.jpg';
   </FeatureContent>
 </FeatureSection>
 
-<FeatureSection>
-  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <Image
-      layout="full-width"
-      src={bgMomentum}
-      alt=""
-      width={bgMomentum.width}
-      height={bgMomentum.height}
-      class="absolute inset-0 size-full object-cover"
-    />
-    <div class="absolute inset-0 bg-black-true/80" />
-  </div>
+<FeatureSection className="bg-linear-to-r from-[#260000] to-[#760000]">
   <FeatureContent
     textOnRight
     eyebrow={['Custom', 'iOS / Android', 'University IT']}
@@ -212,7 +220,7 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     title="Stanford University Press"
     description="Stanford University Press needed a site as distinguished as its catalog. We worked with Stanford University Press to redesign their site with modern content hierarchy, intuitive book browsing and checkout, and a visual experience beautiful enough to match the caliber of their authors and their work."
     ctaLabel="Visit SUP"
-    ctaHref="#"
+    ctaHref="https://www.sup.org/"
     ctaId="work-sup-cta"
   >
     <Image
@@ -236,7 +244,7 @@ import pressScreenshot from '@images/press-screenshot.jpg';
   ></FeatureContent>
 </FeatureSection>
 
-<FeatureSection className="bg-sws-engineering">
+<FeatureSection className="bg-linear-to-r from-[#260000] to-[#760000]">
   <FeatureContent
     eyebrow={['Custom', 'Storyblok', 'Alumni']}
     title="Alumni Directory"

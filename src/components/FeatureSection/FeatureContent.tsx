@@ -1,5 +1,11 @@
+import { type ImageMetadata } from 'astro';
 import { CtaLink } from '@components/CtaLink/CtaLink';
 import { cnb } from 'cnbuilder';
+
+type AwardType = {
+  image: ImageMetadata;
+  alt?: string;
+};
 
 export type FeatureContentProps = React.HTMLAttributes<HTMLDivElement> & {
   eyebrow?: string | string[];
@@ -8,7 +14,7 @@ export type FeatureContentProps = React.HTMLAttributes<HTMLDivElement> & {
   ctaLabel?: string;
   ctaHref?: string;
   ctaId?: string;
-  awards?: React.ReactNode;
+  awards?: AwardType | AwardType[];
   sectionCtaLabel?: string;
   sectionCtaHref?: string;
   background?: React.ReactNode;
@@ -58,7 +64,20 @@ export const FeatureContent = ({
                 {ctaLabel}
               </CtaLink>
             )}
-            {awards}
+            {awards && (
+              <div className="flex justify-end rs-gap-x-1 rs-mt-4 rs-px-4">
+                {(Array.isArray(awards) ? awards : [awards]).map((award) => (
+                  <img
+                    key={award.image.src}
+                    src={award.image.src}
+                    width={award.image.width}
+                    height={award.image.height}
+                    alt={award.alt ?? ''}
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
         {/* The screenshot/video side */}

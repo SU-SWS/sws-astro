@@ -32,14 +32,14 @@ function Stat({ num, label }: StatProps) {
 export function PortfolioSection() {
   return (
     <FeatureSection>
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <img src={tree.src} alt="" width={tree.width} height={tree.height} className="absolute inset-0 size-full object-cover" />
         <div className="absolute inset-0 bg-black-true/80" />
       </div>
       <FeatureContent
         eyebrow="Value and speed to delivery"
         title="StanfordSites"
-        description="Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. StanfordSites is free to use, continuously updated, and built on a platform designed to meet Stanford's policies out of the box."
+        description="Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. StanfordSites is free to use, continuously updated, and built on a platform designed to meet Stanford’s policies out of the box."
         ctaLabel="Request a Stanford Site"
         ctaHref="https://uit.stanford.edu/service/stanfordsites"
         ctaId="home-stanfordsites-cta"

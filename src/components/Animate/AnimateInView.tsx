@@ -37,7 +37,7 @@ export const AnimateInView = ({
 
   if (animation === 'none') {
     return (
-      <StaticComponent className={className} {...props}>
+      <StaticComponent id={id} className={className} {...props}>
         {children}
       </StaticComponent>
     );
