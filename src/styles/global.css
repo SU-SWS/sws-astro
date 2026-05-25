@@ -4,6 +4,12 @@
   --color-campaign-black: #17171A;
   --color-sws-sand: #F3F0E2;
   --color-sws-engineering: #4D0000;
+  --color-sws-red-dark: #260000;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
 }
 
 @theme inline {

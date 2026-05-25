@@ -44,8 +44,7 @@ export const Video = ({
       <VideoButton
         isPause={isPlaying}
         onClick={toggleVideo}
-        // Use aria-disabled instead of disabled so tab order is preserved
-        aria-disabled={!isVideoInView}
+        disabled={!isVideoInView}
       />
     </div>
   );

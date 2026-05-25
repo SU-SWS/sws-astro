@@ -7,12 +7,12 @@ type VideoButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
    * if isPause is true, the button is a pause button, otherwise it's a play button
    */
   isPause: boolean;
-  svgTitle?: string;
+  disabled?: boolean;
 }
 
 export const VideoButton = ({
   isPause,
-  svgTitle = `${isPause ? 'Pause' : 'Play'} video`,
+  disabled = false,
   className,
   ...props
 }: VideoButtonProps) => {
@@ -22,13 +22,11 @@ export const VideoButton = ({
     <button
       type="button"
       className={cnb(styles.videoButton, className)}
+      aria-label={`${isPause ? 'Pause' : 'Play'} video`}
+      disabled={disabled}
       {...props}
     >
-      <Icon
-        aria-hidden={undefined}
-        title={svgTitle}
-        className={styles.icon(isPause)}
-      />
+      <Icon className={styles.icon(isPause)} />
     </button>
   );
 };
