@@ -1,42 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import { Container } from '@components/Container/Container';
 import { CtaLink } from '@components/CtaLink/CtaLink';
+import Intro from '@components/sections/why/Intro.astro';
+import ApartSection from '@components/sections/why/ApartSection.astro';
 import momentumHero from '@images/momentum-hero.png';
 import sectionPortfolioBg from '@images/bg-tree.jpg';
-
-const DIFFERENTIATORS = [
-  {
-    icon: 'fa-regular fa-clipboard',
-    title: 'University policy compliance',
-    body: 'Committed adherence to security, accessibility, privacy, and Stanford brand guidelines.',
-  },
-  {
-    icon: 'fa-solid fa-server',
-    title: 'Robust solutions',
-    body: 'Scalable delivery designed for performance, maintainability, and long-term resilience.',
-  },
-  {
-    icon: 'fa-solid fa-arrow-pointer',
-    title: 'Easy-to-use platforms',
-    body: 'Tools that balance editorial simplicity with standards your site needs behind the scenes.',
-  },
-  {
-    icon: 'fa-solid fa-life-ring',
-    title: 'Premier customer support',
-    body: 'A reliable team that helps site owners respond quickly, recover smoothly, and keep momentum.',
-  },
-  {
-    icon: 'fa-solid fa-screwdriver-wrench',
-    title: 'Continuous support',
-    body: 'We stay involved after launch with platform stewardship, guidance, and ongoing iteration.',
-  },
-  {
-    icon: 'fa-solid fa-seedling',
-    title: 'Award-winning products',
-    body: 'Thoughtful, high-performing experiences shaped around university needs, audiences, and scale.',
-  },
-];
 
 const TESTIMONIALS = [
   {
@@ -90,46 +58,10 @@ const PARTNERS = [
 ];
 ---
 
+<Intro />
+<ApartSection />
+
 <div class="min-h-screen bg-white text-primary">
-  <Container as="section" pt={8} pb={7}>
-    <h1 class="fluid-type-4 rs-mb-3 font-serif font-normal leading-display tracking-[0.01em]">
-      Why Web Services
-    </h1>
-    <div class="flex flex-col lg:flex-row rs-gap-3">
-      <p class="basis-2/5 type-2 leading-display text-primary mb-0">
-        Security, legal compliance, malicious traffic might be new challenges for you, but they aren’t for us!
-      </p>
-      <p class="basis-3/5 big-paragraph leading-normal text-primary-muted mb-0">
-        Websites are simple to launch but difficult to maintain. Behind every university web property lies a network
-        of security requirements, accessibility standards, brand compliance, and ongoing vulnerability management
-        that most content owners never see coming, until something goes wrong. We've spent years building platforms
-        and practices that handle all of it, so you can focus on your communication strategy.
-      </p>
-    </div>
-  </Container>
-
-  <section class="cc rs-py-7 bg-fill-primary text-dark-primary">
-    <h2 class="fluid-type-3 font-serif font-normal leading-display tracking-[0.01em]">
-      What sets us apart
-    </h2>
-    <p class="mt-38 max-w-900 text-[clamp(1.1rem,2vw,26px)] leading-normal text-dark-primary/65">
-      Everything we do is guided by a commitment to quality, compliance, and the people using what we build.
-      From policy to platform to long-term support, we help teams succeed whether we are delivering
-      the work directly or advising the path forward.
-    </p>
-    <div class="mt-95 grid gap-x-76 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
-      {DIFFERENTIATORS.map(({ icon, title, body }) => (
-        <article class="max-w-360">
-          <div class="flex h-68 w-68 items-center justify-center rounded-full bg-white/8 text-1.4rem text-dark-primary">
-            <i class={icon} aria-hidden />
-          </div>
-          <h3 class="mt-5 text-23 font-semibold leading-display text-dark-primary">{title}</h3>
-          <p class="mt-27 text-21 leading-normal text-dark-primary/85">{body}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
   <section class="relative cc isolate overflow-hidden bg-sws-text py-76 text-dark-primary">
     <Image
       src={sectionPortfolioBg}

@@ -33,7 +33,7 @@ export function CollaborationSection() {
         <p className="max-w-800 font-serif fluid-type-2 leading-snug">
           We work closely with the Stanford community to translate complex goals into clear, engaging, and easy-to-manage experiences.
         </p>
-        <div className="rs-mt-6 grid rs-gap-3 grid-cols-1 lg:grid-cols-3">
+        <div className="rs-mt-6 grid rs-gap-x-3 rs-gap-y-4 grid-cols-1 lg:grid-cols-3">
           {CARDS.map((card, index) => (
             <div key={`${card.title}-${index}`}>
               <h3 className="fluid-type-1 font-serif leading-display">

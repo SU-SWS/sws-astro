@@ -56,7 +56,7 @@ export const FeatureContent = ({
             <h2 className="rs-mt-7 mb-10 fluid-type-3 font-serif font-normal leading-tight">
               {title}
             </h2>
-            <p className="card-paragraph">
+            <p className="card-paragraph max-w-prose-wide">
               {description}
             </p>
             {ctaLabel && ctaHref && (
