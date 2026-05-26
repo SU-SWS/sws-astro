@@ -54,11 +54,11 @@ const DIFFERENTIATORS = [
       From policy to platform to long-term support, we help teams succeed whether we are delivering
       the work directly or advising the path forward.
     </p>
-    <div class="rs-mt-6 grid rs-gap-x-5 rs-gap-y-6 sm:grid-cols-2 xl:grid-cols-3">
+    <ul class="list-unstyled rs-mt-6 grid rs-gap-x-5 rs-gap-y-6 sm:grid-cols-2 xl:grid-cols-3">
       {DIFFERENTIATORS.map(({ icon, title, body }, index) => {
         const Icon = icon;
         return (
-          <div class="w-full text-dark-primary">
+          <li class="w-full text-dark-primary mb-0">
             <AnimateInView
               client:visible
               animation="zoomIn"
@@ -70,9 +70,9 @@ const DIFFERENTIATORS = [
             </AnimateInView>
             <h3 class="rs-mt-0 rs-mb-1 type-0 font-semibold leading-display">{title}</h3>
             <p class="card-paragraph leading-normal">{body}</p>
-          </div>
+          </li>
         );
       })}
-    </div>
+    </ul>
   </div>
 </Container>
