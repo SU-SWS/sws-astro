@@ -3,26 +3,8 @@ import { Image } from 'astro:assets';
 import { CtaLink } from '@components/CtaLink/CtaLink';
 import Intro from '@components/sections/why/Intro.astro';
 import ApartSection from '@components/sections/why/ApartSection.astro';
+import Testimonials from '@components/sections/work/Testimonials.astro';
 import momentumHero from '@images/momentum-hero.png';
-import sectionPortfolioBg from '@images/bg-tree.jpg';
-
-const TESTIMONIALS = [
-  {
-    quote:
-      'Their deep expertise, professional responsiveness, and steady partnership made a real and valuable difference in our launch.',
-    name: 'Research Communications Lead',
-  },
-  {
-    quote:
-      'Web Services guided our team practically and strategically through decisions that would have slowed us down on our own.',
-    name: 'School of Engineering Partner',
-  },
-  {
-    quote:
-      'Working as an extension of our staff, they brought structure, trust, and momentum when timelines were tight.',
-    name: 'University IT Collaborator',
-  },
-];
 
 const EXPERTISE = [
   {
@@ -57,49 +39,28 @@ const PARTNERS = [
   ['KH', 'Kendall H.', 'Communications'],
 ];
 ---
-
 <Intro />
 <ApartSection />
+<Testimonials />
 
-<div class="min-h-screen bg-white text-primary">
-  <section class="relative cc isolate overflow-hidden bg-sws-text py-76 text-dark-primary">
-    <Image
-      src={sectionPortfolioBg}
-      alt=""
-      width={sectionPortfolioBg.width}
-      height={sectionPortfolioBg.height}
-      class="absolute inset-0 size-full object-cover opacity-35"
-    />
-    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,23,26,0.25),rgba(23,23,26,0.68))]" aria-hidden />
-    <h2 class="font-serif text-[clamp(1.8rem,4vw,33px)] font-normal leading-display">In their own words</h2>
-    <div class="relative mt-10 grid gap-8 lg:grid-cols-3">
-      {TESTIMONIALS.map(({ quote, name }) => (
-        <figure class="max-w-360">
-          <blockquote class="m-0 text-21 leading-normal text-dark-primary/92">“{quote}”</blockquote>
-          <figcaption class="mt-6 text-16 font-semibold uppercase tracking-[0.08em] text-dark-primary/70">{name}</figcaption>
-        </figure>
-      ))}
-    </div>
-  </section>
-
-  <section class="cc py-114">
-    <p class="text-09em text-secondary-muted">Technical and UX Consulting</p>
-    <h2 class="rs-mt-1 rs-mb-0 max-w-900 font-serif fluid-type-3 font-normal leading-display tracking-[0.01em]">
-      Expertise you can leverage
-    </h2>
-    <p class="max-w-800 fluid-type-1 leading-display text-secondary-muted">
-      We’re invested in your success and here to help you navigate the path forward.
-    </p>
-    <div class="mt-48 grid gap-12 lg:grid-cols-3 lg:gap-48">
-      {EXPERTISE.map(({ title, body }) => (
-        <div>
-          <h3 class="font-serif fluid-type-2 leading-display">{title}</h3>
-          <p class="card-paragraph text-secondary-muted">{body}</p>
-        </div>
-      ))}
-    </div>
-    <CtaLink href="/contact" variant="button-light" className="rs-mt-3 mx-auto block! w-fit">Make a consulting appointment</CtaLink>
-  </section>
+<section class="cc py-114">
+  <p class="text-09em text-secondary-muted">Technical and UX Consulting</p>
+  <h2 class="rs-mt-1 rs-mb-0 max-w-900 font-serif fluid-type-3 font-normal leading-display tracking-[0.01em]">
+    Expertise you can leverage
+  </h2>
+  <p class="max-w-800 fluid-type-1 leading-display text-secondary-muted">
+    We’re invested in your success and here to help you navigate the path forward.
+  </p>
+  <div class="mt-48 grid gap-12 lg:grid-cols-3 lg:gap-48">
+    {EXPERTISE.map(({ title, body }) => (
+      <div>
+        <h3 class="font-serif fluid-type-2 leading-display">{title}</h3>
+        <p class="card-paragraph text-secondary-muted">{body}</p>
+      </div>
+    ))}
+  </div>
+  <CtaLink href="/contact" variant="button-light" className="rs-mt-3 mx-auto block! w-fit">Make a consulting appointment</CtaLink>
+</section>
 
   <section class="bg-fill-secondary cc py-114">
     <p class="text-15 font-semibold uppercase tracking-[0.14em] text-primary/45">Who we are working with</p>
@@ -142,4 +103,3 @@ const PARTNERS = [
       </div>
     </div>
   </section>
-</div>
