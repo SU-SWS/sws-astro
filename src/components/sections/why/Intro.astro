@@ -1,0 +1,36 @@
+---
+import { Container } from '@components/Container/Container';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+---
+
+<Container as="section" pt={8} pb={7}>
+  <AnimateInView
+    client:visible
+    as="h1"
+    className="font-serif rs-mb-3 font-normal fluid-type-4 leading-display tracking-[0.01em]"
+  >
+    Why Web Services
+  </AnimateInView>
+  <div class="flex flex-col lg:flex-row rs-gap-3">
+    <AnimateInView
+      client:visible
+      as="p"
+      delay={0.1}
+      className="basis-2/5 fluid-type-2 leading-display text-primary mb-0"
+    >
+      Security, legal compliance, and malicious traffic are challenges we know well — so you don’t have to.
+    </AnimateInView>
+    <AnimateInView
+      client:visible
+      as="p"
+      delay={0.2}
+      animation="slideInFromRight"
+      className="basis-3/5 big-paragraph leading-normal text-primary-muted mb-0"
+    >
+      Websites are simple to launch but difficult to maintain. Behind every university web property lies a network
+      of security requirements, accessibility standards, brand compliance, and ongoing vulnerability management
+      that most content owners never see coming, until something goes wrong. We’ve spent years building platforms
+      and practices that handle all of it, so you can focus on your communication strategy.
+    </AnimateInView>
+  </div>
+</Container>

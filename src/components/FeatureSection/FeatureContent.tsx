@@ -50,13 +50,13 @@ export const FeatureContent = ({
   return (
     <div {...props} className={cnb('relative z-1 mx-auto', className)}>
       <div className={cnb('flex flex-col items-start justify-center rs-gap-3', textOnRight ? 'lg:flex-row-reverse' : 'lg:flex-row')}>
-        <div className="basis-2/5 flex flex-col justify-start gap-8">
+        <div className="w-full basis-2/5 flex flex-col justify-start gap-8">
           {eyebrowContent}
           <div>
             <h2 className="rs-mt-7 mb-10 fluid-type-3 font-serif font-normal leading-tight">
               {title}
             </h2>
-            <p className="card-paragraph">
+            <p className="card-paragraph max-w-prose-wide">
               {description}
             </p>
             {ctaLabel && ctaHref && (
@@ -81,7 +81,7 @@ export const FeatureContent = ({
           </div>
         </div>
         {/* The screenshot/video side */}
-        <div className="basis-3/5 relative overflow-hidden rounded-md">
+        <div className="w-full basis-3/5 relative overflow-hidden rounded-md">
           {children}
         </div>
       </div>

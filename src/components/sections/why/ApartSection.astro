@@ -1,0 +1,78 @@
+---
+import { AnimateInView } from '@components/Animate/AnimateInView';
+import {
+  ClipboardDocumentListIcon,
+  ServerStackIcon,
+  CursorArrowRaysIcon,
+  ChatBubbleLeftRightIcon,
+  LifebuoyIcon,
+  TrophyIcon,
+} from '@heroicons/react/24/outline';
+import { Container } from '@components/Container/Container';
+
+const DIFFERENTIATORS = [
+  {
+    icon: ClipboardDocumentListIcon,
+    title: 'University policy compliance',
+    body: 'Committed adherence to security, accessibility, privacy, and Stanford brand guidelines.',
+  },
+  {
+    icon: ServerStackIcon,
+    title: 'Robust solutions',
+    body: 'Scalable delivery designed for performance, maintainability, and long-term resilience.',
+  },
+  {
+    icon: CursorArrowRaysIcon,
+    title: 'Easy-to-use platforms',
+    body: 'Tools that balance editorial simplicity with standards your site needs behind the scenes.',
+  },
+  {
+    icon: ChatBubbleLeftRightIcon,
+    title: 'Premier customer support',
+    body: 'A reliable team that helps site owners respond quickly, recover smoothly, and keep momentum.',
+  },
+  {
+    icon: LifebuoyIcon,
+    title: 'Continuous support',
+    body: 'We stay involved after launch with platform stewardship, guidance, and ongoing iteration.',
+  },
+  {
+    icon: TrophyIcon,
+    title: 'Award-winning products',
+    body: 'Thoughtful, high-performing experiences shaped around university needs, audiences, and scale.',
+  },
+];
+---
+
+<Container bgColor="black" pt={7} pb={7}>
+  <div class="max-w-1100 mx-auto">
+    <h2 class="fluid-type-3 font-serif font-normal leading-display tracking-[0.01em]">
+      What sets us apart
+    </h2>
+    <p class="rs-mt-2 max-w-900 big-paragraph text-secondary-muted">
+      Everything we do is guided by a commitment to quality, compliance, and the people using what we build.
+      From policy to platform to long-term support, we help teams succeed whether we are delivering
+      the work directly or advising the path forward.
+    </p>
+    <ul class="list-unstyled rs-mt-6 grid rs-gap-x-5 rs-gap-y-6 sm:grid-cols-2 xl:grid-cols-3">
+      {DIFFERENTIATORS.map(({ icon, title, body }, index) => {
+        const Icon = icon;
+        return (
+          <li class="w-full text-dark-primary mb-0">
+            <AnimateInView
+              client:visible
+              animation="zoomIn"
+              delay={index * 0.1}
+              duration={0.3}
+              className="flex items-center justify-center rounded-full size-52 md:size-68 bg-black"
+            >
+              <Icon className="size-32 md:size-44 text-fog-dark stroke-1" />
+            </AnimateInView>
+            <h3 class="rs-mt-0 rs-mb-1 type-0 font-semibold leading-display">{title}</h3>
+            <p class="card-paragraph leading-normal">{body}</p>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</Container>

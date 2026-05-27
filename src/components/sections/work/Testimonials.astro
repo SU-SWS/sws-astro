@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import { Container } from '@components/Container/Container';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+import bgTestimonial from '@images/bg-testimonial.jpg';
+
+const TESTIMONIALS = [
+  {
+    quote:
+      'They bring technical precision and human-centered design together — a rare and valuable combination.',
+    name: 'Associate Dean, School of Engineering',
+  },
+  {
+    quote:
+      'SWS provided outstanding partnership from planning through launch. Their understanding of Stanford’s systems made every stage smoother.',
+    name: 'Communications Director, School of Medicine',
+  },
+  {
+    quote:
+      'We rely on SWS not only for their expertise, but for their collaboration and consistency.',
+    name: 'Director, Stanford Alumni Association',
+  },
+];
+---
+
+<Container as="section" pt={7} pb={7} className="relative bg-[#2f2424]">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <Image
+      src={bgTestimonial}
+      alt=""
+      width={bgTestimonial.width}
+      height={bgTestimonial.height}
+      class="size-full object-cover"
+    />
+    <div class="absolute inset-0 bg-[#2f2424]/80" />
+  </div>
+  <div class="relative z-10">
+    <h2 class="font-serif fluid-type-2 font-normal leading-display text-dark-primary">In their own words</h2>
+    <AnimateInView
+      client:visible
+      animation="sharpen"
+      duration={0.5}
+    >
+      <ul class="relative list-unstyled rs-mt-5 grid rs-gap-x-4 rs-gap-y-5 lg:grid-cols-3">
+        {TESTIMONIALS.map(({ quote, name }) => (
+          <li class="mb-0">
+            <figure>
+              <blockquote class="font-serif type-0 leading-normal text-dark-primary max-w-prose">“{quote}”</blockquote>
+              <figcaption class="rs-mt-1 text-09em text-fog/85">{name}</figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+    </AnimateInView>
+  </div>
+</Container>

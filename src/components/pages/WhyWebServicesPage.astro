@@ -1,60 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import { Container } from '@components/Container/Container';
 import { CtaLink } from '@components/CtaLink/CtaLink';
+import Intro from '@components/sections/why/Intro.astro';
+import ApartSection from '@components/sections/why/ApartSection.astro';
+import Testimonials from '@components/sections/work/Testimonials.astro';
 import momentumHero from '@images/momentum-hero.png';
-import sectionPortfolioBg from '@images/bg-tree.jpg';
-
-const DIFFERENTIATORS = [
-  {
-    icon: 'fa-regular fa-clipboard',
-    title: 'University policy compliance',
-    body: 'Committed adherence to security, accessibility, privacy, and Stanford brand guidelines.',
-  },
-  {
-    icon: 'fa-solid fa-server',
-    title: 'Robust solutions',
-    body: 'Scalable delivery designed for performance, maintainability, and long-term resilience.',
-  },
-  {
-    icon: 'fa-solid fa-arrow-pointer',
-    title: 'Easy-to-use platforms',
-    body: 'Tools that balance editorial simplicity with standards your site needs behind the scenes.',
-  },
-  {
-    icon: 'fa-solid fa-life-ring',
-    title: 'Premier customer support',
-    body: 'A reliable team that helps site owners respond quickly, recover smoothly, and keep momentum.',
-  },
-  {
-    icon: 'fa-solid fa-screwdriver-wrench',
-    title: 'Continuous support',
-    body: 'We stay involved after launch with platform stewardship, guidance, and ongoing iteration.',
-  },
-  {
-    icon: 'fa-solid fa-seedling',
-    title: 'Award-winning products',
-    body: 'Thoughtful, high-performing experiences shaped around university needs, audiences, and scale.',
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      'Their deep expertise, professional responsiveness, and steady partnership made a real and valuable difference in our launch.',
-    name: 'Research Communications Lead',
-  },
-  {
-    quote:
-      'Web Services guided our team practically and strategically through decisions that would have slowed us down on our own.',
-    name: 'School of Engineering Partner',
-  },
-  {
-    quote:
-      'Working as an extension of our staff, they brought structure, trust, and momentum when timelines were tight.',
-    name: 'University IT Collaborator',
-  },
-];
 
 const EXPERTISE = [
   {
@@ -89,85 +39,28 @@ const PARTNERS = [
   ['KH', 'Kendall H.', 'Communications'],
 ];
 ---
+<Intro />
+<ApartSection />
+<Testimonials />
 
-<div class="min-h-screen bg-white text-primary">
-  <Container as="section" pt={8} pb={7}>
-    <h1 class="fluid-type-4 rs-mb-3 font-serif font-normal leading-display tracking-[0.01em]">
-      Why Web Services
-    </h1>
-    <div class="flex flex-col lg:flex-row rs-gap-3">
-      <p class="basis-2/5 type-2 leading-display text-primary mb-0">
-        Security, legal compliance, malicious traffic might be new challenges for you, but they aren’t for us!
-      </p>
-      <p class="basis-3/5 big-paragraph leading-normal text-primary-muted mb-0">
-        Websites are simple to launch but difficult to maintain. Behind every university web property lies a network
-        of security requirements, accessibility standards, brand compliance, and ongoing vulnerability management
-        that most content owners never see coming, until something goes wrong. We've spent years building platforms
-        and practices that handle all of it, so you can focus on your communication strategy.
-      </p>
-    </div>
-  </Container>
-
-  <section class="cc rs-py-7 bg-fill-primary text-dark-primary">
-    <h2 class="fluid-type-3 font-serif font-normal leading-display tracking-[0.01em]">
-      What sets us apart
-    </h2>
-    <p class="mt-38 max-w-900 text-[clamp(1.1rem,2vw,26px)] leading-normal text-dark-primary/65">
-      Everything we do is guided by a commitment to quality, compliance, and the people using what we build.
-      From policy to platform to long-term support, we help teams succeed whether we are delivering
-      the work directly or advising the path forward.
-    </p>
-    <div class="mt-95 grid gap-x-76 gap-y-16 md:grid-cols-2 xl:grid-cols-3">
-      {DIFFERENTIATORS.map(({ icon, title, body }) => (
-        <article class="max-w-360">
-          <div class="flex h-68 w-68 items-center justify-center rounded-full bg-white/8 text-1.4rem text-dark-primary">
-            <i class={icon} aria-hidden />
-          </div>
-          <h3 class="mt-5 text-23 font-semibold leading-display text-dark-primary">{title}</h3>
-          <p class="mt-27 text-21 leading-normal text-dark-primary/85">{body}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="relative cc isolate overflow-hidden bg-sws-text py-76 text-dark-primary">
-    <Image
-      src={sectionPortfolioBg}
-      alt=""
-      width={sectionPortfolioBg.width}
-      height={sectionPortfolioBg.height}
-      class="absolute inset-0 size-full object-cover opacity-35"
-    />
-    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,23,26,0.25),rgba(23,23,26,0.68))]" aria-hidden />
-    <h2 class="font-serif text-[clamp(1.8rem,4vw,33px)] font-normal leading-display">In their own words</h2>
-    <div class="relative mt-10 grid gap-8 lg:grid-cols-3">
-      {TESTIMONIALS.map(({ quote, name }) => (
-        <figure class="max-w-360">
-          <blockquote class="m-0 text-21 leading-normal text-dark-primary/92">“{quote}”</blockquote>
-          <figcaption class="mt-6 text-16 font-semibold uppercase tracking-[0.08em] text-dark-primary/70">{name}</figcaption>
-        </figure>
-      ))}
-    </div>
-  </section>
-
-  <section class="cc py-114">
-    <p class="text-09em text-secondary-muted">Technical and UX Consulting</p>
-    <h2 class="rs-mt-1 rs-mb-0 max-w-900 font-serif fluid-type-3 font-normal leading-display tracking-[0.01em]">
-      Expertise you can leverage
-    </h2>
-    <p class="max-w-800 fluid-type-1 leading-display text-secondary-muted">
-      We’re invested in your success and here to help you navigate the path forward.
-    </p>
-    <div class="mt-48 grid gap-12 lg:grid-cols-3 lg:gap-48">
-      {EXPERTISE.map(({ title, body }) => (
-        <div>
-          <h3 class="font-serif fluid-type-2 leading-display">{title}</h3>
-          <p class="card-paragraph text-secondary-muted">{body}</p>
-        </div>
-      ))}
-    </div>
-    <CtaLink href="/contact" variant="button-light" className="rs-mt-3 mx-auto block! w-fit">Make a consulting appointment</CtaLink>
-  </section>
+<section class="cc py-114">
+  <p class="text-09em text-secondary-muted">Technical and UX Consulting</p>
+  <h2 class="rs-mt-1 rs-mb-0 max-w-900 font-serif fluid-type-3 font-normal leading-display tracking-[0.01em]">
+    Expertise you can leverage
+  </h2>
+  <p class="max-w-800 fluid-type-1 leading-display text-secondary-muted">
+    We’re invested in your success and here to help you navigate the path forward.
+  </p>
+  <div class="mt-48 grid gap-12 lg:grid-cols-3 lg:gap-48">
+    {EXPERTISE.map(({ title, body }) => (
+      <div>
+        <h3 class="font-serif fluid-type-2 leading-display">{title}</h3>
+        <p class="card-paragraph text-secondary-muted">{body}</p>
+      </div>
+    ))}
+  </div>
+  <CtaLink href="/contact" variant="button-light" className="rs-mt-3 mx-auto block! w-fit">Make a consulting appointment</CtaLink>
+</section>
 
   <section class="bg-fill-secondary cc py-114">
     <p class="text-15 font-semibold uppercase tracking-[0.14em] text-primary/45">Who we are working with</p>
@@ -189,7 +82,7 @@ const PARTNERS = [
       ))}
     </div>
 
-    <div class="relative isolate rs-mt-7 rs-p-5 overflow-hidden rounded-[20px] py-[clamp(1.5rem,4vw,38px)] text-dark-primary">
+    <div class="relative isolate rs-mt-7 rs-p-5 overflow-hidden rounded-xl py-[clamp(1.5rem,4vw,38px)] text-dark-primary">
       <Image
         src={momentumHero}
         alt=""
@@ -210,4 +103,3 @@ const PARTNERS = [
       </div>
     </div>
   </section>
-</div>

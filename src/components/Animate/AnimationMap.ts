@@ -50,7 +50,7 @@ export const AnimationMap = {
   slideUp: {
     hidden: {
       opacity: 0,
-      y: 30,
+      y: 80,
     },
     visible: {
       opacity: 1,
@@ -60,7 +60,7 @@ export const AnimationMap = {
   slideDown: {
     hidden: {
       opacity: 0,
-      y: -30,
+      y: -80,
     },
     visible: {
       opacity: 1,
