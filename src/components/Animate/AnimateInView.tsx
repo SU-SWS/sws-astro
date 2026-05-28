@@ -23,7 +23,7 @@ export const AnimateInView = ({
   animation = 'slideUp',
   id,
   once = true,
-  duration = 0.6,
+  duration = 0.5,
   delay,
   transition = 'easeOut',
   children,

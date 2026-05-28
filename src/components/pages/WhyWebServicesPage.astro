@@ -1,105 +1,14 @@
 ---
-import { Image } from 'astro:assets';
-import { CtaLink } from '@components/CtaLink/CtaLink';
 import Intro from '@components/sections/why/Intro.astro';
 import ApartSection from '@components/sections/why/ApartSection.astro';
-import Testimonials from '@components/sections/work/Testimonials.astro';
-import momentumHero from '@images/momentum-hero.png';
-
-const EXPERTISE = [
-  {
-    title: 'User Research',
-    body: 'Understand your users, improve your content, and lay the groundwork for AI readiness — all through the same research practice.',
-  },
-  {
-    title: 'Digital Strategy',
-    body: 'Find the right path forward — and the plan to get there. We help Stanford teams evaluate platforms, build long-term roadmaps, and make the budget case to move projects from idea to approval.',
-  },
-  {
-    title: 'Technical Consulting',
-    body: 'Get expert advice informed by a deep understanding of Stanford’s unique technical landscape. We help teams navigate complexity, meet compliance requirements, and make the right technical decisions for their specific needs.',
-  },
-];
-
-const PARTNERS = [
-  ['SM', 'Sarah M.', 'School of Medicine'],
-  ['DT', 'David T.', 'Earth Systems'],
-  ['JR', 'Jordan R.', 'Graduate School of Education'],
-  ['CM', 'Chris M.', 'Department Communications'],
-  ['TR', 'Taylor R.', 'Vice Provost Office'],
-  ['AP', 'Avery P.', 'Admissions'],
-  ['MN', 'Morgan N.', 'Human Resources'],
-  ['SL', 'Sam L.', 'Libraries'],
-  ['VK', 'Val K.', 'Student Affairs'],
-  ['JC', 'Jamie C.', 'Research Programs'],
-  ['EL', 'Emerson L.', 'Doerr School'],
-  ['AM', 'Alex M.', 'Alumni Relations'],
-  ['CW', 'Casey W.', 'Engineering'],
-  ['RB', 'Riley B.', 'University IT'],
-  ['KH', 'Kendall H.', 'Communications'],
-];
+import Testimonials from '@components/sections/why/Testimonials.astro';
+import ExpertiseSection from '@components/sections/why/ExpertiseSection.astro';
+import PartnerSection from '@components/sections/why/PartnerSection.astro';
 ---
+
 <Intro />
 <ApartSection />
 <Testimonials />
+<ExpertiseSection />
+<PartnerSection />
 
-<section class="cc py-114">
-  <p class="text-09em text-secondary-muted">Technical and UX Consulting</p>
-  <h2 class="rs-mt-1 rs-mb-0 max-w-900 font-serif fluid-type-3 font-normal leading-display tracking-[0.01em]">
-    Expertise you can leverage
-  </h2>
-  <p class="max-w-800 fluid-type-1 leading-display text-secondary-muted">
-    We’re invested in your success and here to help you navigate the path forward.
-  </p>
-  <div class="mt-48 grid gap-12 lg:grid-cols-3 lg:gap-48">
-    {EXPERTISE.map(({ title, body }) => (
-      <div>
-        <h3 class="font-serif fluid-type-2 leading-display">{title}</h3>
-        <p class="card-paragraph text-secondary-muted">{body}</p>
-      </div>
-    ))}
-  </div>
-  <CtaLink href="/contact" variant="button-light" className="rs-mt-3 mx-auto block! w-fit">Make a consulting appointment</CtaLink>
-</section>
-
-  <section class="bg-fill-secondary cc py-114">
-    <p class="text-15 font-semibold uppercase tracking-[0.14em] text-primary/45">Who we are working with</p>
-    <h2 class="mt-4 font-serif text-[clamp(2rem,4vw,45px)] font-normal leading-display tracking-[0.01em]">Your partners</h2>
-    <div class="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
-      {PARTNERS.map(([initials, name, team], index) => (
-        <article class="flex flex-col items-center text-center">
-          <div
-            class="flex h-72 w-72 items-center justify-center rounded-full text-21 font-semibold text-dark-primary shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
-            style={{
-              background: `linear-gradient(135deg, rgba(177,4,14,0.92), rgba(${70 + index * 4}, ${90 + index * 3}, ${110 + index * 2}, 0.9))`,
-            }}
-          >
-            {initials}
-          </div>
-          <h3 class="mt-4 text-17 font-semibold leading-[1.25] text-primary">{name}</h3>
-          <p class="mt-1 text-15 leading-[1.35] text-primary/68">{team}</p>
-        </article>
-      ))}
-    </div>
-
-    <div class="relative isolate rs-mt-7 rs-p-5 overflow-hidden rounded-xl py-[clamp(1.5rem,4vw,38px)] text-dark-primary">
-      <Image
-        src={momentumHero}
-        alt=""
-        width={momentumHero.width}
-        height={momentumHero.height}
-        class="absolute inset-0 size-full object-cover"
-      />
-      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(67,66,62,0.82),rgba(67,66,62,0.55))]" aria-hidden />
-      <div class="relative max-w-800 mx-auto rs-pb-3">
-        <h2 class="font-serif type-3 font-normal leading-display rs-mb-3">The advantage of an in-house partner</h2>
-        <p class="big-paragraph">Stanford is our home too.</p>
-        <p class="mt-4 card-paragraph leading-normal text-dark-primary/90 mb-0">
-          As a digital agency embedded within Stanford, we’ve spent years building solutions
-          to the exact problems our neighbors face — at below-market rates.
-          You get expert support, institutional knowledge,
-          and a team invested in your future — not just the next contract.
-        </p>
-      </div>
-    </div>
-  </section>

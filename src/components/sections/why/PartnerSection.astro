@@ -1,0 +1,177 @@
+---
+import { Image } from 'astro:assets';
+import { Container } from '@components/Container/Container';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+import bgPartner from '@images/bg-partner.jpg';
+import headshotSara from '@images/headshot-sara.jpg';
+import headshotDena from '@images/headshot-dena.jpg';
+import headshotJohn from '@images/headshot-john.jpg';
+import headshotCatalina from '@images/headshot-catalina.jpg';
+import headshotShea from '@images/headshot-shea.jpg';
+import headshotKerri from '@images/headshot-kerri.jpg';
+import headshotMike from '@images/headshot-mike.jpg';
+import headshotDavid from '@images/headshot-david.jpg';
+import headshotKat from '@images/headshot-kat.jpg';
+import headshotShane from '@images/headshot-shane.jpg';
+import headshotEric from '@images/headshot-eric.jpg';
+import headshotJoe from '@images/headshot-joe.jpg';
+import headshotRebecca from '@images/headshot-rebecca.jpg';
+import headshotIan from '@images/headshot-ian.jpg';
+import headshotJen from '@images/headshot-jen.jpg';
+import headshotCaryl from '@images/headshot-caryl.jpg';
+import headshotCynthia from '@images/headshot-cynthia.jpg';
+import headshotDavina from '@images/headshot-davina.jpg';
+import headshotMelanie from '@images/headshot-melanie.jpg';
+import headshotYvonne from '@images/headshot-yvonne.jpg';
+
+const PARTNERS = [
+  {
+    name: 'Sara Worrell-Berg',
+    title: 'Director',
+    image: headshotSara,
+  },
+  {
+    name: 'Dena DeBry',
+    title: 'Senior Manager, Client Solutions',
+    image: headshotDena,
+  },
+  {
+    name: 'John Bickar',
+    title: 'Manager, Development Operations',
+    image: headshotJohn,
+  },
+  {
+    name: 'Catalina Verdu-Cano',
+    title: 'Manager, Project Operations',
+    image: headshotCatalina,
+  },
+  {
+    name: 'Shea McKinney',
+    title: 'Senior Technical Architect',
+    image: headshotShea,
+  },
+  {
+    name: 'Kerri Augenstein',
+    title: 'User Experience Architect, Creative Director',
+    image: headshotKerri,
+  },
+  {
+    name: 'Mike Decker',
+    title: 'Senior Web Developer',
+    image: headshotMike,
+  },
+  {
+    name: 'Yvonne Tang',
+    title: 'Senior Front End Developer',
+    image: headshotYvonne,
+  },
+  {
+    name: 'David Salazar',
+    title: 'Senior UX Researcher',
+    image: headshotDavid,
+  },
+  {
+    name: 'Kat Verani',
+    title: 'Senior UX Designer',
+    image: headshotKat,
+  },
+  {
+    name: 'Shane Cyr',
+    title: 'Senior Web Project Manager',
+    image: headshotShane,
+  },
+  {
+    name: 'Eric Bakenhus',
+    title: 'Full Stack Developer',
+    image: headshotEric,
+  },
+  {
+    name: 'Joe Gilliland-Lloyd',
+    title: 'Web Developer',
+    image: headshotJoe,
+  },
+  {
+    name: 'Rebecca Hong',
+    title: 'Full Stack Developer',
+    image: headshotRebecca,
+  },
+  {
+    name: 'Ian D. Monroe',
+    title: 'Web Developer',
+    image: headshotIan,
+  },
+  {
+    name: 'Jennifer Breese-Kauth',
+    title: 'Front End Developer',
+    image: headshotJen,
+  },
+  {
+    name: 'Caryl J. Westerberg',
+    title: 'Accessibility Specialist',
+    image: headshotCaryl,
+  },
+  {
+    name: 'Cynthia Mijares',
+    title: 'Web Project Manager',
+    image: headshotCynthia,
+  },
+  {
+    name: 'Davina Pallone',
+    title: 'Web Project Manager',
+    image: headshotDavina,
+  },
+  {
+    name: 'Melanie Biton',
+    title: 'Web Project Specialist',
+    image: headshotMelanie,
+  },
+];
+---
+
+<Container bgColor="sand" pt={7} pb={7}>
+  <div class="max-w-1100 mx-auto border-t border-border-primary">
+    <div class="rs-pt-1 text-09em text-secondary-muted leading-display">Our team</div>
+    <h2 class="rs-mt-1 rs-mb-3 font-serif fluid-type-2 font-normal leading-display tracking-[0.01em]">Your partners</h2>
+    <ul class="list-unstyled grid rs-gap-y-3 rs-gap-x-0 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
+      {PARTNERS.map(({ name, title, image }, index) => (
+        <li class="w-full m-0 flex flex-col items-center text-center">
+          <AnimateInView client:visible animation="zoomIn" duration={0.3} delay={index % 5 * 0.1}>
+            <Image
+              layout="fixed"
+              src={image}
+              alt=""
+              width={image.width}
+              height={image.height}
+              class="size-90 rounded-full"
+            />
+          </AnimateInView>
+          <h3 class="mt-12 mb-3 card-paragraph leading-display text-primary">{name}</h3>
+          <span class="text-14 md:text-16 leading-display text-primary text-balance">{title}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="relative rs-mt-7 rs-px-5 rs-pt-6 rs-pb-7 overflow-hidden rounded-xl text-dark-primary">
+    <Image
+      src={bgPartner}
+      alt=""
+      width={bgPartner.width}
+      height={bgPartner.height}
+      class="absolute inset-0 size-full object-cover"
+    />
+    <AnimateInView client:visible animation="fadeIn" duration={0.4}>
+      <div class="absolute inset-0 bg-archway-dark/80" aria-hidden="true" />
+    </AnimateInView>
+    <AnimateInView client:visible animation="fadeIn" delay={0.3} className="relative max-w-900 mx-auto">
+      <h3 class="font-serif fluid-type-3 font-normal leading-display rs-mb-2">The advantage of an in-house partner</h3>
+      <p class="big-paragraph mb-1em">Stanford is our home too.</p>
+      <p class="card-paragraph leading-normal text-dark-primary/90 mb-0">
+        As a digital agency embedded within Stanford, we’ve spent years building solutions
+        to the exact problems our neighbors face — at below-market rates.
+        You get expert support, institutional knowledge,
+        and a team invested in your future — not just the next contract.
+      </p>
+    </AnimateInView>
+  </div>
+</Container>

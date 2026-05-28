@@ -1,0 +1,46 @@
+---
+import { CtaLink } from '@components/CtaLink/CtaLink';
+import { Container } from '@components/Container/Container';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+
+const EXPERTISE = [
+  {
+    title: 'User Research',
+    body: 'Understand your users, improve your content, and lay the groundwork for AI readiness — all through the same research practice.',
+  },
+  {
+    title: 'Digital Strategy',
+    body: 'Find the right path forward — and the plan to get there. We help Stanford teams evaluate platforms, build long-term roadmaps, and make the budget case to move projects from idea to approval.',
+  },
+  {
+    title: 'Technical Consulting',
+    body: 'Get expert advice informed by a deep understanding of Stanford’s unique technical landscape. We help teams navigate complexity, meet compliance requirements, and make the right technical decisions for their specific needs.',
+  },
+];
+---
+
+<Container bgColor="white" pt={6} pb={7}>
+  <div class="max-w-1100 mx-auto">
+    <p class="text-09em text-secondary-muted leading-display">Technical and UX Consulting</p>
+    <h2 class="rs-mt-1 rs-mb-0 max-w-900 font-serif fluid-type-3 font-normal leading-display tracking-[0.01em]">
+      Expertise you can leverage
+    </h2>
+    <p class="max-w-prose text-pretty fluid-type-1 leading-display text-secondary-muted">
+      We’re invested in your success and here to help you navigate the path forward.
+    </p>
+    <ul class="list-unstyled rs-mt-4 grid rs-gap-x-3 rs-gap-y-5 lg:grid-cols-3">
+      {EXPERTISE.map(({ title, body }, index) => (
+        <li class="w-full mb-0">
+          <AnimateInView
+            client:visible
+            delay={index * 0.1}
+          >
+            <h3 class="font-serif fluid-type-2 leading-display">{title}</h3>
+            <p class="card-paragraph text-secondary-muted">{body}</p>
+          </AnimateInView>
+        </li>
+      ))}
+    </ul>
+    <CtaLink href="/contact" variant="button-light" className="rs-mt-3 mx-auto block! w-fit">Make a consulting appointment</CtaLink>
+  </div>
+</Container>

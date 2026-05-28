@@ -23,6 +23,8 @@
   /* Fill colors, e.g., background colors */
   --color-fill-primary: var(--color-campaign-black);
   --color-fill-secondary: var(--color-sws-sand);
+
+  --color-border-primary: var(--color-black-30);
 }
 
 @layer base {
