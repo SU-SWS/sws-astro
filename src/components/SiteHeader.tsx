@@ -28,7 +28,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
           Stanford University
         </a>
       </div>
-      <div className="cc mt-10 md:mt-45">
+      <div className="cc mt-10 md:mt-30 xl:mt-45">
         <div className="mx-auto flex flex-wrap items-start justify-between gap-6 pb-2">
           <LogoLockup text="Web Services" line2="University IT" color={isDark ? "white" : "default"} />
           <nav className="flex flex-wrap items-center justify-end gap-33 pt-9" aria-label="Primary">

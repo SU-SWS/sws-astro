@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import { CtaLink } from '@components/CtaLink/CtaLink';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+import { Container } from '@components/Container/Container';
+import btsLogo from '@images/logos/BTS.png';
+import centennialLogo from '@images/logos/Centennial logo wrapper.png';
+import doeerLogo from '@images/logos/Doeer wrapper.png';
+import gseLogo from '@images/logos/GSE Wrapper.png';
+import khsLogo from '@images/logos/KHS wrapper.png';
+import officeOfDevelopmentLogo from '@images/logos/Office of Development.png';
+import sulLogo from '@images/logos/SUL.png';
+import supLogo from '@images/logos/SUP logo.png';
+
+type Props = {
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaId?: string;
+};
+
+const { ctaLabel, ctaHref, ctaId } = Astro.props;
+
+const LOGOS = [
+  {
+    src: officeOfDevelopmentLogo,
+    alt: 'Stanford Office of Development',
+    href: 'https://externalrelations.stanford.edu/organizations/office-development',
+  },
+  {
+    src: centennialLogo,
+    alt: 'Stanford Engineering Centennial',
+    href: 'https://engineering100.stanford.edu',
+  },
+  {
+    src: sulLogo,
+    alt: 'Stanford University Libraries',
+    href: 'https://library.stanford.edu/',
+  },
+  {
+    src: btsLogo,
+    alt: 'Stanford Business Technology Services',
+    href: 'https://externalrelations.stanford.edu/organizations/external-relations-operations-teams',
+  },
+  {
+    src: gseLogo,
+    alt: 'Stanford Graduate School of Education',
+    href: 'https://ed.stanford.edu/',
+  },
+  {
+    src: khsLogo,
+    alt: 'Knight-Hennessy Scholars at Stanford University',
+    href: 'https://knight-hennessy.stanford.edu/',
+  },
+  {
+    src: doeerLogo,
+    alt: 'Stanford Doerr School of Sustainability',
+    href: 'https://sustainability.stanford.edu/',
+  },
+  {
+    src: supLogo,
+    alt: 'Stanford University Press',
+    href: 'https://sup.org',
+  },
+];
+---
+
+<Container bgColor="black" pt={7} pb={7}>
+  <h2 class="text-dark-secondary-muted card-paragraph leading-tight">Our clients</h2>
+  <p class="rs-mt-2 rs-mb-8 max-w-1100 font-serif fluid-type-4 leading-display">
+    SWS maintains long-term partnerships across Stanford, providing strategic and technical support for schools,
+    institutes, and organizations.
+  </p>
+  <ul class="list-unstyled grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 items-center justify-items-start rs-gap-x-1 rs-gap-y-7">
+    {LOGOS.map((logo, index) => (
+      <li class="mb-0">
+        <AnimateInView client:visible animation="zoomIn" delay={index % 4 * 0.1}>
+          <a href={logo.href} class="hocus-visible:opacity-70 transition-opacity">
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={logo.src.width}
+              height={logo.src.height}
+            />
+          </a>
+        </AnimateInView>
+      </li>
+    ))}
+  </ul>
+  {ctaLabel && ctaHref && (
+    <CtaLink href={ctaHref} id={ctaId} variant="link-dark" className="block! w-fit mx-auto rs-mt-6">{ctaLabel}</CtaLink>
+  )}
+</Container>
