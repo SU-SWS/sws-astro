@@ -1,0 +1,60 @@
+---
+import { CtaLink } from '@components/CtaLink/CtaLink';
+import { Container } from '@components/Container/Container';
+
+
+const TECHNOLOGIES = [
+  [
+    'Drupal',
+    'Netlify',
+    'Figma',
+    'AEM',
+    'Looker Studio',
+    'Storyblok',
+    'Storybook',
+    'Algolia',
+    'Acquia',
+    'Git',
+    'React',
+    'NextJS',
+    'Coveo',
+    'Pantheon',
+    'Astro',
+    'Tailwind CSS',
+    'Vercel',
+    'WordPress',
+    'Google Analytics',
+    'And more...',
+  ],
+];
+---
+
+<Container bgColor="black" as="section" pt={9}>
+  <div class="cc border-t border-border-dark-primary" aria-hidden="true" />
+  <div class="max-w-1300 rs-pt-1">
+    <p class="text-09em text-dark-secondary-muted">Technologies</p>
+    <h2 class="rs-pt-1 font-serif fluid-type-3 leading-display tracking-[0.01em] text-dark-primary">
+      We work in
+    </h2>
+    <p class="rs-mt-2 max-w-900 card-paragraph leading-snug text-dark-secondary-muted mb-1em">
+      Partnerships are our first commitment. We commit ourselves to working in numerous technologies, platforms,
+      and languages to help you find the best solution. And,
+      befitting a team embedded in Stanford’s culture of innovation, we are always up for new exploration.
+    </p>
+    <p class="rs-mt-2 max-w-900 card-paragraph leading-snug text-dark-secondary-muted">
+      These are just a few of the products, platforms, and technologies in our current tool belt:
+    </p>
+
+    {TECHNOLOGIES.map((tech) => (
+      <ul class="rs-mt-4 max-w-1000 mx-auto list-unstyled grid gap-x-20 gap-y-12 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 text-dark-secondary-muted card-paragraph">
+        {tech.map((item) => (
+          <li class="mb-0 leading-display">
+            {item}
+          </li>
+        ))}
+      </ul>
+    ))}
+  </div>
+  <CtaLink id="services-tech-work" href="/work" variant="link-dark" className="rs-mt-6 mx-auto block! w-fit">Learn more about our work</CtaLink>
+  <div class="cc border-b border-border-dark-primary rs-mt-10" aria-hidden="true" />
+</Container>

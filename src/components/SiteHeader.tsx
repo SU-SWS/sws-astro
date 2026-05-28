@@ -28,7 +28,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
           Stanford University
         </a>
       </div>
-      <div className="cc pt-30">
+      <div className="cc mt-10 md:mt-45">
         <div className="mx-auto flex flex-wrap items-start justify-between gap-6 pb-2">
           <LogoLockup text="Web Services" line2="University IT" color={isDark ? "white" : "default"} isLink />
           <nav className="flex flex-wrap items-center justify-end gap-33 pt-9" aria-label="Primary">
@@ -42,7 +42,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
                   "border-b-4 pb-20 whitespace-nowrap text-19 font-semibold leading-snug transition-colors",
                   label === activeLabel
                     ? isDark
-                      ? "border-black-60 text-dark-primary"
+                      ? "border-border-dark-primary text-dark-primary"
                       : "border-sws-text text-primary"
                     : isDark
                       ? "border-transparent text-dark-primary hover:border-white/30 hover:text-dark-primary"

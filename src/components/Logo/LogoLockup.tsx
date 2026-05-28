@@ -7,8 +7,7 @@ import * as styles from './LogoLockup.styles';
  */
 type LogoLockupProps = {
   text: string;
-  line2?: string;
-  isLink?: boolean;
+  line2: string;
   color?: styles.LogoTextColorType;
   className?: string;
 }
@@ -16,7 +15,6 @@ type LogoLockupProps = {
 export const LogoLockup = ({
   text,
   line2,
-  isLink,
   color = 'default',
   className,
   ...rest
@@ -29,27 +27,19 @@ export const LogoLockup = ({
         className={cnb(styles.logo)}
       />
       <div className={cnb(styles.text, styles.textColors[color])}>
-        {text}
-        {line2 && <div className={styles.line2}>{line2}</div>}
+        <span className={styles.line1}>{text}</span>
+        <div className={styles.line2}>{line2}</div>
       </div>
     </div>
   );
 
-  if (isLink) {
-    return (
-      <a
-        className={cnb(styles.root, className)}
-        href="/"
-        {...rest}
-      >
-        {LockupContent}
-      </a>
-    );
-  }
-
   return (
-    <div className={cnb(styles.root, className)} {...rest}>
+    <a
+      className={cnb(styles.root, className)}
+      href="/"
+      {...rest}
+    >
       {LockupContent}
-    </div>
+    </a>
   );
 };

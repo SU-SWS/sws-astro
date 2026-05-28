@@ -160,10 +160,10 @@ const PARTNERS = [
       height={bgPartner.height}
       class="absolute inset-0 size-full object-cover"
     />
-    <AnimateInView client:visible animation="fadeIn" duration={0.4}>
+    <AnimateInView client:visible animation="fadeIn" duration={0.4} delay={0.1}>
       <div class="absolute inset-0 bg-archway-dark/80" aria-hidden="true" />
     </AnimateInView>
-    <AnimateInView client:visible animation="fadeIn" delay={0.3} className="relative max-w-900 mx-auto">
+    <AnimateInView client:visible animation="fadeIn" delay={0.4} className="relative max-w-900 mx-auto">
       <h3 class="font-serif fluid-type-3 font-normal leading-display rs-mb-2">The advantage of an in-house partner</h3>
       <p class="big-paragraph mb-1em">Stanford is our home too.</p>
       <p class="card-paragraph leading-normal text-dark-primary/90 mb-0">

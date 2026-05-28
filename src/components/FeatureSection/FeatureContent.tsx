@@ -53,7 +53,7 @@ export const FeatureContent = ({
         <div className="w-full basis-2/5 flex flex-col justify-start gap-8">
           {eyebrowContent}
           <div>
-            <h2 className="rs-mt-7 mb-10 fluid-type-3 font-serif font-normal leading-tight">
+            <h2 className="rs-mt-7 mb-10 text-balance fluid-type-3 font-serif font-normal leading-tight">
               {title}
             </h2>
             <p className="card-paragraph max-w-prose-wide">

@@ -25,6 +25,7 @@
   --color-fill-secondary: var(--color-sws-sand);
 
   --color-border-primary: var(--color-black-30);
+  --color-border-dark-primary: var(--color-black-60);
 }
 
 @layer base {
