@@ -49,7 +49,7 @@ const { title = 'Stanford Web Services', activeLabel, theme = 'light' } = Astro.
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8XKF6XL"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <SiteHeader theme={theme} activeLabel={activeLabel} />
+    <SiteHeader client:load theme={theme} activeLabel={activeLabel} />
     <main id="main-content" tabindex={-1} class="relative">
       <slot />
     </main>
