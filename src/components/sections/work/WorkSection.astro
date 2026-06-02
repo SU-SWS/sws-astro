@@ -14,6 +14,8 @@ import bgArch from '@images/bg-partner.jpg';
 import bgTree from '@images/bg-tree.jpg';
 import centennialVideo from '@videos/centennial-adjusted4.mp4';
 import posterCentennial from '@images/poster-centennial.png';
+import myaccountVideo from '@videos/myaccount.mp4';
+import posterMyaccount from '@images/poster-myaccount.png';
 import { CentennialCommonContent } from '@components/sections/index/CentennialSection.astro';
 import { MomentumCommonContent } from '@components/sections/index/MomentumSection.astro';
 import screenshotDirectory from '@images/screenshot-directory.png';
@@ -59,14 +61,12 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     eyebrow={['Custom', 'Next.js', 'School of Engineering']}
     ctaId="work-centennial-cta"
   >
-    <div class="sm:rs-px-5">
-      <Video
-        client:load
-        mp4Src={centennialVideo}
-        posterSrc={posterCentennial.src}
-        className="size-full"
-      />
-    </div>
+    <Video
+      client:load
+      mp4Src={centennialVideo}
+      posterSrc={posterCentennial.src}
+      className="size-full sm:rs-px-5"
+    />
   </FeatureContent>
 </FeatureSection>
 
@@ -78,8 +78,8 @@ import pressScreenshot from '@images/press-screenshot.jpg';
   </div>
   <FeatureContent
     eyebrow={['Platform', 'Drupal']}
-    title="StanfordSites"
-    description="Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. StanfordSites is free to use, continuously updated, and built on a platform designed to meet Stanford’s policies out of the box."
+    title="Stanford Sites"
+    description="Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. Stanford Sites is free to use, continuously updated, and built on a platform designed to meet Stanford’s policies out of the box."
     ctaLabel="Request a Stanford Site"
     ctaHref="https://uit.stanford.edu/service/stanfordsites"
     ctaId="work-stanfordsites-cta"
@@ -231,13 +231,20 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     eyebrow={['Web app', 'Next.js', 'Alumni Association']}
     title="Alumni: My Account"
     description="My Account is the central destination where Stanford alumni and constituents manage much of their personal data — from contact details and privacy settings to professional information, and more. Designed and built by teams across Stanford, it serves as an important part of the alumni and constituent digital ecosystem, where account and profile updates are managed and stored in a single application."
-  ></FeatureContent>
+  >
+    <Video
+      client:visible
+      mp4Src={myaccountVideo}
+      posterSrc={posterMyaccount.src}
+      className="size-full"
+    />
+  </FeatureContent>
 </FeatureSection>
 
 {/* Directory */}
 <FeatureSection className="bg-linear-to-r from-sws-red-dark to-cardinal-red-xdark">
   <FeatureContent
-    eyebrow={['Web app', 'Next.js', 'Alumni']}
+    eyebrow={['Web app', 'Next.js', 'Alumni Association']}
     title="Alumni Directory"
     description="The Directory is where Stanford’s community finds itself. Powered by My Account, it gives students and alumni a powerful, intuitive way to discover connections that support their professional and personal goals — designed from the ground up to make search feel effortless and results feel meaningful."
   >

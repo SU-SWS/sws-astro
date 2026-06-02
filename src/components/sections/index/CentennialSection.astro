@@ -29,15 +29,13 @@ export const CentennialCommonContent: FeatureContentProps = {
   <FeatureContent
     {...CentennialCommonContent}
     eyebrow="Lasting partnerships"
-    ctaId="work-centennial-cta"
+    ctaId="home-centennial-cta"
   >
-    <div class="sm:rs-px-5">
-      <Video
-        client:load
-        mp4Src={centennialVideo}
-        posterSrc={posterCentennial.src}
-        className="size-full"
-      />
-    </div>
+    <Video
+      client:load
+      mp4Src={centennialVideo}
+      posterSrc={posterCentennial.src}
+      className="size-full sm:rs-px-5"
+    />
   </FeatureContent>
 </FeatureSection>
