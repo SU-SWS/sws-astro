@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+import stanfordSitesPresident from '@images/screenshot-stanfordsites-president.jpg';
+import stanfordSitesStudentAffairs from '@images/screenshot-stanfordsites-student-affairs.jpg';
+import stanfordSitesCsharp from '@images/screenshot-stanfordsites-csharp.jpg';
+import stanfordSitesCTL from '@images/screenshot-stanfordsites-ctl.jpg';
+---
+
+<div class="grid grid-cols-2 grid-gap">
+  <AnimateInView client:visible>
+    <Image
+      layout="constrained"
+      src={stanfordSitesPresident}
+      alt="Office of the President website"
+      width={stanfordSitesPresident.width}
+      height={stanfordSitesPresident.height}
+      class="size-full rounded"
+    />
+  </AnimateInView>
+  <AnimateInView client:visible delay={0.1}>
+    <Image
+      layout="constrained"
+      src={stanfordSitesStudentAffairs}
+      alt="Stanford Student Affairs website"
+      width={stanfordSitesStudentAffairs.width}
+      height={stanfordSitesStudentAffairs.height}
+      class="size-full rounded"
+    />
+  </AnimateInView>
+  <AnimateInView client:visible delay={0.2}>
+    <Image
+      layout="constrained"
+      src={stanfordSitesCsharp}
+      alt="Stanford C-ShaRP website"
+      width={stanfordSitesCsharp.width}
+      height={stanfordSitesCsharp.height}
+      class="size-full rounded"
+    />
+  </AnimateInView>
+  <AnimateInView client:visible delay={0.3}>
+    <Image
+      layout="constrained"
+      src={stanfordSitesCTL}
+      alt="Stanford Center for Teaching and Learning website"
+      width={stanfordSitesCTL.width}
+      height={stanfordSitesCTL.height}
+      class="size-full rounded"
+    />
+  </AnimateInView>
+</div>

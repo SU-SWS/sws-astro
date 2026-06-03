@@ -3,8 +3,7 @@ import { Image } from 'astro:assets';
 import { Video } from '@components/Video/Video';
 import { FeatureContent } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
-import { ScreenshotGrid } from '../../../ScreenshotGrid';
-import { stanfordSitesCells } from '../../../data/screenshotCells';
+import StanfordSitesGrid from '@components/StanfordSitesGrid.astro';
 import momentumVideo from '@videos/moment2.mp4';
 import posterMomentum from '@images/poster-momentum.png';
 import bgMomentum from '@images/bg-momentum.jpg';
@@ -18,11 +17,12 @@ import myaccountVideo from '@videos/myaccount.mp4';
 import posterMyaccount from '@images/poster-myaccount.png';
 import { CentennialCommonContent } from '@components/sections/index/CentennialSection.astro';
 import { MomentumCommonContent } from '@components/sections/index/MomentumSection.astro';
+import { StanfordSitesCommonContent } from '@components/sections/index/DrupalSection.astro';
 import screenshotDirectory from '@images/screenshot-directory.png';
 import mobile1 from '@images/screenshot-mobile1.jpg';
 import mobile2 from '@images/screenshot-mobile2.png';
 import summer from '@images/screenshot-summer.jpg';
-import travelStudyScreenshot from '@images/travelstudy-screenshot.jpg';
+import travelStudyScreenshot from '@images/screenshot-travelstudy.jpg';
 import pressScreenshot from '@images/press-screenshot.jpg';
 ---
 
@@ -77,19 +77,11 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     <div class="absolute inset-0 bg-black-true/80" />
   </div>
   <FeatureContent
+    {...StanfordSitesCommonContent}
     eyebrow={['Platform', 'Drupal']}
-    title="Stanford Sites"
-    description="Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. Stanford Sites is free to use, continuously updated, and built on a platform designed to meet Stanford’s policies out of the box."
-    ctaLabel="Request a Stanford Site"
-    ctaHref="https://uit.stanford.edu/service/stanfordsites"
     ctaId="work-stanfordsites-cta"
   >
-    <ScreenshotGrid
-      client:visible
-      gridClass="grid-stanford-sites"
-      ariaLabel="Stanford Sites example screenshots"
-      cells={stanfordSitesCells}
-    />
+    <StanfordSitesGrid />
   </FeatureContent>
 </FeatureSection>
 

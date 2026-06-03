@@ -1,0 +1,104 @@
+---
+import { Image } from 'astro:assets';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+import StanfordSitesGrid from '@components/StanfordSitesGrid.astro';
+import { FeatureContent, type FeatureContentProps } from '@components/FeatureSection/FeatureContent';
+import { FeatureSection } from '@components/FeatureSection/FeatureSection';
+import { Stat } from '@components/Stat/Stat';
+import tree from '@images/bg-tree.jpg';
+import solutionsArts from '@images/screenshot-solutions-arts.jpg';
+import solutionsEng from '@images/screenshot-solutions-eng.jpg';
+import solutionsGSE from '@images/screenshot-solutions-gse.jpg';
+import solutionsSDSS from '@images/screenshot-solutions-sdss.jpg';
+
+const STATS = [
+  { stat: '1200+', label: 'Stanford Sites websites' },
+  { stat: '90+', label: 'Stanford Sites intranets' },
+  { stat: '250M', label: 'Stanford Sites hits/month on average' },
+];
+
+export const StanfordSitesCommonContent: FeatureContentProps = {
+  title: 'Stanford Sites',
+  description:
+    'Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. Stanford Sites is free to use, continuously updated, and built on a platform designed to meet Stanford’s policies out of the box.',
+  ctaLabel: 'Request a Stanford Site',
+  ctaHref: 'https://uit.stanford.edu/service/stanfordsites',
+};
+---
+
+<FeatureSection>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <Image src={tree} alt="" width={tree.width} height={tree.height} class="absolute inset-0 size-full object-cover" />
+    <div class="absolute inset-0 bg-black-true/80" />
+  </div>
+
+  <FeatureContent
+    eyebrow="EYEBROW - NEEDS COPY"
+    title="Solutions at scale"
+    description="Update once, deploy everywhere. Maintain brand consistency effortlessly. Slash costs with shared resources and unified hosting. Get complete visibility with consolidated analytics. Launch new sites in minutes, not months."
+    ctaLabel="Ask us about multi-site platforms"
+    ctaHref="/contact"
+    ctaId="home-solutions-cta"
+  >
+    <div class="grid grid-cols-2 grid-gap">
+      <AnimateInView client:visible>
+        <Image
+          layout="constrained"
+          src={solutionsEng}
+          alt="Stanford Engineering website"
+          width={solutionsEng.width}
+          height={solutionsEng.height}
+          class="size-full rounded"
+        />
+      </AnimateInView>
+      <AnimateInView client:visible delay={0.1}>
+        <Image
+          layout="constrained"
+          src={solutionsSDSS}
+          alt="Stanford Geophysics Department website"
+          width={solutionsSDSS.width}
+          height={solutionsSDSS.height}
+          class="size-full rounded"
+        />
+      </AnimateInView>
+      <AnimateInView client:visible delay={0.2}>
+        <Image
+          layout="constrained"
+          src={solutionsGSE}
+          alt="Stanford Graduate School of Education website"
+          width={solutionsGSE.width}
+          height={solutionsGSE.height}
+          class="size-full rounded"
+        />
+      </AnimateInView>
+      <AnimateInView client:visible delay={0.3}>
+        <Image
+          layout="constrained"
+          src={solutionsArts}
+          alt="Department of Art & Art History website"
+          width={solutionsArts.width}
+          height={solutionsArts.height}
+          class="size-full rounded"
+        />
+      </AnimateInView>
+    </div>
+  </FeatureContent>
+
+  <FeatureContent
+    {...StanfordSitesCommonContent}
+    textOnRight
+    eyebrow="Value and speed to delivery"
+    ctaId="home-stanfordsites-cta"
+    className="rs-mt-6"
+  >
+    <StanfordSitesGrid />
+  </FeatureContent>
+
+  <div class="relative mx-auto rs-mt-6">
+    <ul class="list-unstyled flex flex-wrap rs-gap-5">
+      {STATS.map((stat) => (
+        <Stat {...stat} />
+      ))}
+    </ul>
+  </div>
+</FeatureSection>

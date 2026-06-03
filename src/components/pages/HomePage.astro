@@ -2,7 +2,7 @@
 import Intro from '@components/sections/index/Intro.astro';
 import MomentumSection from '@components/sections/index/MomentumSection.astro';
 import { CollaborationSection } from '@components/sections/index/CollaborationSection';
-import { PortfolioSection } from '@components/sections/index/PortfolioSection';
+import DrupalSection from '@components/sections/index/DrupalSection.astro';
 import ClientLogosSection from '@components/sections/ClientLogosSection.astro';
 import CentennialSection from '@components/sections/index/CentennialSection.astro';
 ---
@@ -10,6 +10,6 @@ import CentennialSection from '@components/sections/index/CentennialSection.astr
 <Intro />
 <MomentumSection />
 <CollaborationSection />
-<PortfolioSection client:visible />
+<DrupalSection client:visible />
 <ClientLogosSection ctaHref="/services" ctaLabel="Learn more about our services" ctaId="home-clients-cta" />
 <CentennialSection />
