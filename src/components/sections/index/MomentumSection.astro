@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { Video } from '@components/Video/Video';
+import { AnimateInView } from '@components/Animate/AnimateInView';
 import { FeatureContent, type FeatureContentProps } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import momentumVideo from '@videos/moment2.mp4';
@@ -45,11 +46,13 @@ export const MomentumCommonContent: FeatureContentProps = {
     eyebrow="Lasting partnerships"
     ctaId="home-momentum-cta"
   >
-    <Video
-      client:visible
-      mp4Src={momentumVideo}
-      posterSrc={posterMomentum.src}
-      className="size-full"
-    />
+    <AnimateInView client:visible animation="fadeIn">
+      <Video
+        client:visible
+        mp4Src={momentumVideo}
+        posterSrc={posterMomentum.src}
+        className="size-full"
+      />
+    </AnimateInView>
   </FeatureContent>
 </FeatureSection>

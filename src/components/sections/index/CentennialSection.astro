@@ -1,5 +1,6 @@
 ---
 import { Video } from '@components/Video/Video';
+import { AnimateInView } from '@components/Animate/AnimateInView';
 import { FeatureContent, type FeatureContentProps } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import centennialVideo from '@videos/centennial-adjusted4.mp4';
@@ -31,11 +32,13 @@ export const CentennialCommonContent: FeatureContentProps = {
     eyebrow="Lasting partnerships"
     ctaId="home-centennial-cta"
   >
-    <Video
-      client:load
-      mp4Src={centennialVideo}
-      posterSrc={posterCentennial.src}
-      className="size-full sm:rs-px-5"
-    />
+    <AnimateInView client:visible animation="fadeIn">
+      <Video
+        client:load
+        mp4Src={centennialVideo}
+        posterSrc={posterCentennial.src}
+        className="size-full sm:rs-px-5"
+      />
+    </AnimateInView>
   </FeatureContent>
 </FeatureSection>

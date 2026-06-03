@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { Video } from '@components/Video/Video';
+import { AnimateInView } from '@components/Animate/AnimateInView';
 import { FeatureContent } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import StanfordSitesGrid from '@components/StanfordSitesGrid.astro';
@@ -44,12 +45,14 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     eyebrow={['Custom', 'Storyblok', 'Office of Development']}
     ctaId="work-momentum-cta"
   >
-    <Video
-      client:visible
-      mp4Src={momentumVideo}
-      posterSrc={posterMomentum.src}
-      className="size-full"
-    />
+    <AnimateInView client:visible animation="fadeIn">
+      <Video
+        client:visible
+        mp4Src={momentumVideo}
+        posterSrc={posterMomentum.src}
+        className="size-full"
+      />
+    </AnimateInView>
   </FeatureContent>
 </FeatureSection>
 
@@ -61,12 +64,14 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     eyebrow={['Custom', 'Next.js', 'School of Engineering']}
     ctaId="work-centennial-cta"
   >
-    <Video
-      client:load
-      mp4Src={centennialVideo}
-      posterSrc={posterCentennial.src}
-      className="size-full sm:rs-px-5"
-    />
+    <AnimateInView client:visible animation="fadeIn">
+      <Video
+        client:visible
+        mp4Src={centennialVideo}
+        posterSrc={posterCentennial.src}
+        className="size-full sm:rs-px-5"
+      />
+    </AnimateInView>
   </FeatureContent>
 </FeatureSection>
 
@@ -97,22 +102,26 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     ctaId="work-mobile-app-cta"
   >
     <div class="grid grid-cols-2 rs-gap-2 rs-px-4">
-      <Image
-        layout="constrained"
-        src={mobile1}
-        alt=""
-        width={mobile1.width}
-        height={mobile1.height}
-        class="size-full rounded-md"
-      />
-      <Image
-        layout="constrained"
-        src={mobile2}
-        alt=""
-        width={mobile2.width}
-        height={mobile2.height}
-        class="size-full rounded-md"
-      />
+      <AnimateInView client:visible>
+        <Image
+          layout="constrained"
+          src={mobile1}
+          alt=""
+          width={mobile1.width}
+          height={mobile1.height}
+          class="size-full rounded-md"
+        />
+      </AnimateInView>
+      <AnimateInView client:visible delay={0.2}>
+        <Image
+          layout="constrained"
+          src={mobile2}
+          alt=""
+          width={mobile2.width}
+          height={mobile2.height}
+          class="size-full rounded-md"
+        />
+      </AnimateInView>
     </div>
   </FeatureContent>
 </FeatureSection>
@@ -138,15 +147,17 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     ctaHref="https://summer.stanford.edu/"
     ctaId="work-summer-session-cta"
   >
-    <Image
-      layout="constrained"
-      position="top"
-      src={summer}
-      alt=""
-      width={summer.width}
-      height={summer.height}
-      class="size-full aspect-7/6 object-cover"
-    />
+    <AnimateInView client:visible>
+      <Image
+        layout="constrained"
+        position="top"
+        src={summer}
+        alt=""
+        width={summer.width}
+        height={summer.height}
+        class="size-full aspect-7/6 object-cover"
+      />
+    </AnimateInView>
   </FeatureContent>
 </FeatureSection>
 
@@ -172,14 +183,16 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     ctaHref="https://alumni.stanford.edu/travel-study/"
     ctaId="work-travel-study-cta"
   >
-    <Image
-      layout="constrained"
-      src={travelStudyScreenshot}
-      alt=""
-      width={travelStudyScreenshot.width}
-      height={travelStudyScreenshot.height}
-      class="size-full object-cover"
-    />
+    <AnimateInView client:visible>
+      <Image
+        layout="constrained"
+        src={travelStudyScreenshot}
+        alt=""
+        width={travelStudyScreenshot.width}
+        height={travelStudyScreenshot.height}
+        class="size-full object-cover"
+      />
+    </AnimateInView>
   </FeatureContent>
 </FeatureSection>
 
@@ -204,15 +217,17 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     ctaHref="https://www.sup.org/"
     ctaId="work-sup-cta"
   >
-    <Image
-      layout="constrained"
-      position="top"
-      src={pressScreenshot}
-      alt="Stanford University Press website"
-      width={pressScreenshot.width}
-      height={pressScreenshot.height}
-      class="size-full object-cover aspect-square"
-    />
+    <AnimateInView client:visible>
+      <Image
+        layout="constrained"
+        position="top"
+        src={pressScreenshot}
+        alt="Stanford University Press website"
+        width={pressScreenshot.width}
+        height={pressScreenshot.height}
+        class="size-full object-cover aspect-square"
+      />
+    </AnimateInView>
   </FeatureContent>
 </FeatureSection>
 
@@ -224,12 +239,14 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     title="Alumni: My Account"
     description="My Account is the central destination where Stanford alumni and constituents manage much of their personal data — from contact details and privacy settings to professional information, and more. Designed and built by teams across Stanford, it serves as an important part of the alumni and constituent digital ecosystem, where account and profile updates are managed and stored in a single application."
   >
-    <Video
-      client:visible
-      mp4Src={myaccountVideo}
-      posterSrc={posterMyaccount.src}
-      className="size-full"
-    />
+    <AnimateInView client:visible>
+      <Video
+        client:visible
+        mp4Src={myaccountVideo}
+        posterSrc={posterMyaccount.src}
+        className="size-full"
+      />
+    </AnimateInView>
   </FeatureContent>
 </FeatureSection>
 
@@ -240,13 +257,15 @@ import pressScreenshot from '@images/press-screenshot.jpg';
     title="Alumni Directory"
     description="The Directory is where Stanford’s community finds itself. Powered by My Account, it gives students and alumni a powerful, intuitive way to discover connections that support their professional and personal goals — designed from the ground up to make search feel effortless and results feel meaningful."
   >
-    <Image
-      layout="constrained"
-      src={screenshotDirectory}
-      alt="Alumni Directory website"
-      width={screenshotDirectory.width}
-      height={screenshotDirectory.height}
-      class="size-full object-cover"
-    />
+    <AnimateInView client:visible>
+      <Image
+        layout="constrained"
+        src={screenshotDirectory}
+        alt="Alumni Directory website"
+        width={screenshotDirectory.width}
+        height={screenshotDirectory.height}
+        class="size-full object-cover"
+      />
+    </AnimateInView>
   </FeatureContent>
 </FeatureSection>
