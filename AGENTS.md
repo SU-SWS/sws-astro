@@ -1,14 +1,22 @@
-### Accessibility
+## Security Restrictions
+
+**CRITICAL: The following actions are FORBIDDEN:**
+
+1. **Git commits/pushes**: Never execute `git commit`, `git push`, `git add`, or any commands that modify git history or push to remote repositories
+2. **Environment variables**: Never read, modify, or create `.env`, `.env.local`, `.env.production`, or any other environment/secrets files
+3. **SSH/credentials**: Never access SSH keys, API tokens, passwords, or any credential files
+
+## Accessibility
 
 Accessibility coding rules: WCAG 2.1 AA conformance, semantic structure, keyboard support, focus management. Apply when writing or modifying UI code.
 
-### Code Quality
+## Code Quality
 
 - Avoid unnecessary abstractions or over-engineering. Write clear, straightforward code.
 - Avoid redundant components or styles.
 
 
-### Components and Styling
+## Components and Styling
 
 **Component Usage:**
 - Use starter components such as `Container` when possible
@@ -19,7 +27,7 @@ Accessibility coding rules: WCAG 2.1 AA conformance, semantic structure, keyboar
 - Export individual style constants or style object maps
 - Some common style object maps in `utilities/datasource.ts`
 
-### Tailwind CSS v4 / Decanter Conventions
+## Tailwind CSS v4 / Decanter Conventions
 
 **Numeric Scale:**
 - Base unit: `--spacing: 0.1rem` (1px)
