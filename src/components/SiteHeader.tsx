@@ -157,8 +157,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
         aria-modal="true"
         aria-label="Navigation"
         className={cnb(
-          "md:hidden fixed inset-y-0 right-0 z-50 flex w-md flex-col shadow-xl transition-transform duration-300 ease-in-out",
-          isDark ? "bg-fill-primary text-dark-primary" : "bg-white text-primary",
+          "md:hidden fixed inset-y-0 right-0 z-50 flex w-md flex-col shadow-xl transition-transform duration-300 ease-in-out bg-fill-primary text-dark-primary",
           drawerOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -168,36 +167,27 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
             type="button"
             aria-label="Close navigation menu"
             onClick={closeDrawer}
-            className={cnb(
-              "rounded p-6 transition-colors",
-              isDark ? "text-dark-primary hover:bg-white/10" : "text-primary hover:bg-black/5"
-            )}
+            className="rounded p-6 transition-colors text-dark-primary hover:bg-white/10"
           >
             <XMarkIcon className="size-28" aria-hidden="true" />
           </button>
         </div>
 
-        <nav className="flex flex-col px-24 pb-24" aria-label="Primary">
-          {NAV.map(({ href, label }) => (
-            <a
-              key={label}
-              data-astro-prefetch
-              href={href}
-              aria-current={label === activeLabel ? "page" : undefined}
-              className={cnb(
-                "border-b py-16 text-19 font-semibold leading-snug transition-colors",
-                label === activeLabel
-                  ? isDark
-                    ? "border-border-dark-primary text-dark-primary"
-                    : "border-sws-text text-primary"
-                  : isDark
-                    ? "border-border-dark-primary/20 text-dark-primary hover:text-dark-primary/70"
-                    : "border-black/10 text-digital-red hover:text-black-90"
-              )}
-            >
-              {label}
-            </a>
-          ))}
+        <nav className="px-24 pb-24" aria-label="Site">
+          <ul className="flex flex-col list-unstyled">
+            {NAV.map(({ href, label }) => (
+              <li key={label} className="block border-b border-black-80 mb-0 leading-display">
+                <a
+                  data-astro-prefetch
+                  href={href}
+                  aria-current={label === activeLabel ? "page" : undefined}
+                  className="block py-20 text-20 font-semibold leading-display transition-colors text-dark-primary hocus-visible:text-digital-red-xlight"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
       </div>
     </header>
