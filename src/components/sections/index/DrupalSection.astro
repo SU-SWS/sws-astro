@@ -12,9 +12,9 @@ import solutionsGSE from '@images/screenshot-solutions-gse.jpg';
 import solutionsSDSS from '@images/screenshot-solutions-sdss.jpg';
 
 const STATS = [
-  { stat: '1200+', label: 'Stanford Sites websites' },
-  { stat: '90+', label: 'Stanford Sites intranets' },
-  { stat: '250M', label: 'Stanford Sites hits/month on average' },
+  { stat: 1200, suffix: '+', label: 'Stanford Sites websites' },
+  { stat: 90, suffix: '+', label: 'Stanford Sites intranets' },
+  { stat: 250, suffix: 'M', label: 'Stanford Sites hits/month on average' },
 ];
 
 export const StanfordSitesCommonContent: FeatureContentProps = {
@@ -94,10 +94,12 @@ export const StanfordSitesCommonContent: FeatureContentProps = {
     <StanfordSitesGrid />
   </FeatureContent>
 
-  <div class="relative mx-auto rs-mt-6">
-    <ul class="list-unstyled flex flex-wrap rs-gap-5">
+  <div class="relative mx-auto rs-mt-5">
+    <ul class="list-unstyled flex flex-col items-center md:flex-row md:flex-wrap rs-gap-6">
       {STATS.map((stat) => (
-        <Stat {...stat} />
+        <li class="mb-0">
+          <Stat client:visible {...stat} />
+        </li>
       ))}
     </ul>
   </div>
