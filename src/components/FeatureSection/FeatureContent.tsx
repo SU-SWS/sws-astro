@@ -81,7 +81,7 @@ export const FeatureContent = ({
           </div>
         </div>
         {/* The screenshot/video side */}
-        <div className="w-full basis-3/5 relative overflow-hidden rounded-md">
+        <div className="w-full basis-3/5 relative overflow-hidden">
           {children}
         </div>
       </div>
