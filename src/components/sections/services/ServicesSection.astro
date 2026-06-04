@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { AnimateInView } from '@components/Animate/AnimateInView';
 import { Service } from '@components/Service/Service';
 import { Container } from '@components/Container/Container';
 import { CtaLink } from '@components/CtaLink/CtaLink';
@@ -123,9 +124,11 @@ const SERVICES = [
 <Container bgColor="black" as="section" pb={6}>
   <div class="grid lg:grid-cols-3 lg:gap-60 2xl:gap-100">
     <ul class="list-unstyled grid rs-gap-4 lg:sticky lg:top-0 lg:self-start rs-pt-2">
-      {PRINCIPLES.map((principle) => (
+      {PRINCIPLES.map((principle, index) => (
         <li class="mb-0">
-          <Image src={principle.icon} alt="" width={principle.icon.width} height={principle.icon.height} />
+          <AnimateInView client:visible animation="zoomIn" delay={index * 0.2} className="w-fit">
+            <Image src={principle.icon} alt="" width={principle.icon.width} height={principle.icon.height} />
+          </AnimateInView>
           <h2 class="font-serif fluid-type-3 rs-mb-1 mt-10 leading-display tracking-[0.01em] text-dark-primary">
             {principle.title}
           </h2>

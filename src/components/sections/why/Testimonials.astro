@@ -36,22 +36,15 @@ const TESTIMONIALS = [
   </div>
   <div class="relative z-10">
     <h2 class="font-serif fluid-type-2 font-normal leading-display text-dark-primary">In their own words</h2>
-    <AnimateInView
-      client:visible
-      animation="sharpen"
-      duration={0.6}
-      delay={0.1}
-    >
-      <ul class="relative list-unstyled rs-mt-5 grid rs-gap-x-4 rs-gap-y-5 lg:grid-cols-3">
-        {TESTIMONIALS.map(({ quote, name }) => (
-          <li class="mb-0">
-            <figure>
-              <blockquote class="font-serif type-0 leading-normal text-dark-primary max-w-prose">“{quote}”</blockquote>
-              <figcaption class="rs-mt-1 text-09em text-fog/85">{name}</figcaption>
-            </figure>
-          </li>
-        ))}
-      </ul>
-    </AnimateInView>
+    <ul class="relative list-unstyled rs-mt-5 grid rs-gap-x-4 rs-gap-y-5 lg:grid-cols-3">
+      {TESTIMONIALS.map(({ quote, name }, index) => (
+        <li class="mb-0">
+          <AnimateInView as="figure" client:visible animation="sharpen" delay={index * 0.2}>
+            <blockquote class="font-serif type-0 leading-normal text-dark-primary max-w-prose">“{quote}”</blockquote>
+            <figcaption class="rs-mt-1 text-09em text-fog/85">{name}</figcaption>
+          </AnimateInView>
+        </li>
+      ))}
+    </ul>
   </div>
 </Container>
