@@ -128,7 +128,7 @@ const PARTNERS = [
 ];
 ---
 
-<Container bgColor="sand" pt={7} pb={7}>
+<Container as="section" bgColor="sand" pt={7} pb={7}>
   <div class="max-w-1100 mx-auto border-t border-border-primary">
     <div class="rs-pt-1 text-09em text-secondary-muted leading-display">Our team</div>
     <h2 class="rs-mt-1 rs-mb-3 font-serif fluid-type-2 font-normal leading-display tracking-[0.01em]">Your partners</h2>
@@ -145,7 +145,7 @@ const PARTNERS = [
               class="size-90 rounded-full"
             />
           </AnimateInView>
-          <h3 class="mt-12 mb-3 card-paragraph leading-display text-primary">{name}</h3>
+          <span class="mt-12 mb-3 card-paragraph leading-display text-primary">{name}</span>
           <span class="text-14 md:text-16 leading-display text-primary text-balance">{title}</span>
         </li>
       ))}
@@ -160,11 +160,9 @@ const PARTNERS = [
       height={bgPartner.height}
       class="absolute inset-0 size-full object-cover"
     />
-    <AnimateInView client:visible animation="fadeIn" duration={0.4} delay={0.1}>
-      <div class="absolute inset-0 bg-archway-dark/80" aria-hidden="true" />
-    </AnimateInView>
+    <div class="absolute inset-0 bg-archway-dark/80" aria-hidden="true" />
     <AnimateInView client:visible animation="fadeIn" delay={0.4} className="relative max-w-900 mx-auto">
-      <h3 class="font-serif fluid-type-3 font-normal leading-display rs-mb-2">The advantage of an in-house partner</h3>
+      <h2 class="font-serif fluid-type-3 font-normal leading-display rs-mb-2">The advantage of an in-house partner</h2>
       <p class="big-paragraph mb-1em">Stanford is our home too.</p>
       <p class="card-paragraph leading-normal text-dark-primary/90 mb-0">
         As a digital agency embedded within Stanford, we’ve spent years building solutions

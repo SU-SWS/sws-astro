@@ -15,7 +15,7 @@ interface ServiceProps {
 export const Service = ({ title, body, items }: ServiceProps) => {
   return (
     <AnimateInView animation="slideUp">
-      <h3 className="rs-mb-2 max-w-550 font-serif fluid-type-2 leading-display text-dark-primary">{title}</h3>
+      <h2 className="rs-mb-2 max-w-550 font-serif fluid-type-2 leading-display text-dark-primary">{title}</h2>
       <div className="grid rs-gap-x-4 rs-gap-y-2 sm:grid-cols-5 items-start">
         <p className="card-paragraph leading-normal mb-0 text-dark-primary sm:col-span-3">{body}</p>
         <ul className="grid gap-y-12 list-unstyled text-dark-secondary-muted sm:col-span-2">

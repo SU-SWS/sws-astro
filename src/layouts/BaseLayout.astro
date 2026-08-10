@@ -80,6 +80,16 @@ const ogImageURL = new URL(ogImageAsset.src, Astro.site);
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL.href} />
+    <!-- Content is SSR'd with motion's hidden state (opacity:0); force visible when JS can't hydrate. -->
+    <noscript>
+      <style>
+        [data-animate] {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
