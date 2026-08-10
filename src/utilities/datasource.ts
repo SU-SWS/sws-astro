@@ -29,34 +29,3 @@ export const paddingBottoms = {
 };
 
 export type PaddingType = keyof typeof paddingTops;
-
-export const marginTops = {
-  none: 'mt-0',
-  base: 'rs-mt-0',
-  1: 'rs-mt-1',
-  2: 'rs-mt-2',
-  3: 'rs-mt-3',
-  4: 'rs-mt-4',
-  5: 'rs-mt-5',
-  6: 'rs-mt-6',
-  7: 'rs-mt-7',
-  8: 'rs-mt-8',
-  9: 'rs-mt-9',
-  10: 'rs-mt-10',
-};
-
-export const marginBottoms = {
-  none: 'mb-0',
-  base: 'rs-mb-0',
-  1: 'rs-mb-1',
-  2: 'rs-mb-2',
-  3: 'rs-mb-3',
-  4: 'rs-mb-4',
-  5: 'rs-mb-5',
-  6: 'rs-mb-6',
-  7: 'rs-mb-7',
-  8: 'rs-mb-8',
-  9: 'rs-mb-9',
-  10: 'rs-mb-10',
-};
-export type MarginType = keyof typeof marginBottoms;

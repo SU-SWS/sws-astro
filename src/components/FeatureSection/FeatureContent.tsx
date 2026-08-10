@@ -15,9 +15,6 @@ export type FeatureContentProps = React.HTMLAttributes<HTMLDivElement> & {
   ctaHref?: string;
   ctaId?: string;
   awards?: AwardType | AwardType[];
-  sectionCtaLabel?: string;
-  sectionCtaHref?: string;
-  background?: React.ReactNode;
   textOnRight?: boolean;
 };
 
@@ -29,7 +26,6 @@ export const FeatureContent = ({
   ctaHref,
   ctaId,
   awards,
-  background,
   textOnRight,
   children,
   className,

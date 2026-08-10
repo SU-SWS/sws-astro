@@ -20,25 +20,22 @@ export const useVideoControl = (viewThreshold?: number) => {
   const [isUserPaused, setIsUserPaused] = useState<boolean>(false);
 
   /**
-   * Toggle video play/pause state manually
+   * Toggle video play/pause state manually.
+   * The video element is the source of truth; isPlaying is updated by its play/pause events.
    */
   const toggleVideo = () => {
-    if (!videoRef.current) return;
+    const video = videoRef.current;
+    if (!video) return;
 
-    setIsPlaying((prev) => {
-      if (prev) {
-        videoRef.current?.pause();
-        setIsUserPaused(true);
-      } else {
-        videoRef.current
-          ?.play()
-          .catch(() => {
-            // Silently handle autoplay restrictions
-          });
-        setIsUserPaused(false);
-      }
-      return !prev;
-    });
+    if (video.paused) {
+      setIsUserPaused(false);
+      video.play().catch(() => {
+        // Silently handle autoplay restrictions
+      });
+    } else {
+      setIsUserPaused(true);
+      video.pause();
+    }
   };
 
   /**
