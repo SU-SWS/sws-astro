@@ -22,7 +22,7 @@ export const GlobalFooter = () => (
             </li>
             <li className={styles.listItem}>
               <a
-                href="https://visit.stanford.edu/plan/"
+                href="https://visit.stanford.edu/basics"
                 rel="nofollow"
                 className={styles.link}
               >
@@ -51,7 +51,7 @@ export const GlobalFooter = () => (
           <ul className={styles.legalMenu}>
             <li className={styles.listItem}>
               <a
-                href="https://www.stanford.edu/site/terms/"
+                href="https://www.stanford.edu/terms/"
                 rel="nofollow"
                 title="Terms of use for sites"
                 className={styles.link}
@@ -61,7 +61,7 @@ export const GlobalFooter = () => (
             </li>
             <li className={styles.listItem}>
               <a
-                href="https://www.stanford.edu/site/privacy/"
+                href="https://www.stanford.edu/privacy/"
                 rel="nofollow"
                 title="Privacy and cookie policy"
                 className={styles.link}
@@ -101,7 +101,7 @@ export const GlobalFooter = () => (
             </li>
             <li>
               <a
-                href="https://www.stanford.edu/site/accessibility"
+                href="https://www.stanford.edu/accessibility"
                 rel="nofollow"
                 title="Report web accessibility issues"
                 className={styles.link}
