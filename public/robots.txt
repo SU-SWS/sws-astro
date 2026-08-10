@@ -1,0 +1,5 @@
+# TODO: before launch, replace the Disallow below with `Allow: /` to open the site to crawlers.
+User-agent: *
+Disallow: /
+
+Sitemap: https://webservices.stanford.edu/sitemap-index.xml
