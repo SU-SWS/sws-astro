@@ -78,7 +78,14 @@ import pressScreenshot from '@images/press-screenshot.jpg';
 {/* Stanford Sites */}
 <FeatureSection>
   <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <img src={bgTree.src} alt="" width={bgTree.width} height={bgTree.height} class="size-full object-cover" />
+    <Image
+      layout="full-width"
+      src={bgTree}
+      alt=""
+      width={bgTree.width}
+      height={bgTree.height}
+      class="size-full object-cover"
+    />
     <div class="absolute inset-0 bg-black-true/80" />
   </div>
   <FeatureContent

@@ -49,7 +49,8 @@ const ogImageURL = new URL(ogImageAsset.src, Astro.site);
     <link rel="icon" href="/icon4.png" sizes="32x32" type="image/png">
     <link rel="icon" href="/icon5.png" sizes="16x16" type="image/png">
     <link rel="apple-touch-icon" href="/icon2.png" />
-    <Font cssVariable="--font-serif" />
+    {/* Preloaded: every page's LCP element is a large font-serif text block. */}
+    <Font cssVariable="--font-serif" preload />
     <Font cssVariable="--font-sans" />
     <Font cssVariable="--font-stanford" />
     {import.meta.env.PROD && (
