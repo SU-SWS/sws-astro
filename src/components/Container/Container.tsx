@@ -2,9 +2,6 @@ import { cnb } from 'cnbuilder';
 import {
   paddingTops,
   paddingBottoms,
-  marginTops,
-  marginBottoms,
-  type MarginType,
   type PaddingType,
 } from '@utilities/datasource';
 import * as styles from '@components/Container/Container.styles';
@@ -15,8 +12,6 @@ export type ContainerProps = React.HTMLAttributes<HTMLElement> & {
   width?: types.WidthType;
   pt?: PaddingType;
   pb?: PaddingType;
-  mt?: MarginType;
-  mb?: MarginType;
   bgColor?: types.BgColorType;
   style?: React.CSSProperties;
 };
@@ -26,8 +21,6 @@ export const Container = ({
   width = 'site',
   pt,
   pb,
-  mt,
-  mb,
   bgColor,
   style,
   className,
@@ -41,8 +34,6 @@ export const Container = ({
       bgColor ? styles.bgColors[bgColor] : '',
       pt ? paddingTops[pt] : '',
       pb ? paddingBottoms[pb] : '',
-      mt ? marginTops[mt] : '',
-      mb ? marginBottoms[mb] : '',
       width ? styles.widths[width] : '',
       className,
     )}

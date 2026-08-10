@@ -20,6 +20,7 @@ export const Video = ({
     isPlaying,
     toggleVideo,
     isVideoInView,
+    prefersReducedMotion,
     onPlay,
     onPause,
   } = useVideoControl();
@@ -32,7 +33,7 @@ export const Video = ({
         onPlay={onPlay}
         onPause={onPause}
         muted
-        autoPlay
+        autoPlay={!prefersReducedMotion}
         loop
         playsInline
         poster={posterSrc}

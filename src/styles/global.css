@@ -59,3 +59,23 @@
       text-decoration: none;
   }
 }
+
+/*
+ * AnimateInView server-renders its hidden state as an inline style (opacity:0, and a
+ * transform or blur depending on the variant), so that content is invisible until motion
+ * hydrates and reveals it. This forces it visible for anyone who asked for less motion.
+ *
+ * !important is required: an important author declaration outranks a normal inline style
+ * in the cascade, which is the only way to beat motion's own style attribute.
+ *
+ * The AnimateInView component also skips animating entirely when it detects this
+ * preference — this rule is the net that still works if that JS never runs, and covers
+ * every property AnimationMap animates. BaseLayout has the matching <noscript> override.
+ */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

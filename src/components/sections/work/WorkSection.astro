@@ -6,22 +6,22 @@ import { FeatureContent } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import StanfordSitesGrid from '@components/StanfordSitesGrid.astro';
 import momentumVideo from '@videos/moment2.mp4';
-import posterMomentum from '@images/poster-momentum.png';
+import posterMomentum from '@images/poster-momentum.jpg';
 import bgMomentum from '@images/bg-momentum.jpg';
 import bgTravelstudy from '@images/bg-travelstudy.jpg';
 import bgPress from '@images/bg-press.jpg';
 import bgArch from '@images/bg-partner.jpg';
 import bgTree from '@images/bg-tree.jpg';
 import centennialVideo from '@videos/centennial-adjusted4.mp4';
-import posterCentennial from '@images/poster-centennial.png';
+import posterCentennial from '@images/poster-centennial.jpg';
 import myaccountVideo from '@videos/myaccount.mp4';
-import posterMyaccount from '@images/poster-myaccount.png';
+import posterMyaccount from '@images/poster-myaccount.jpg';
 import { CentennialCommonContent } from '@components/sections/index/CentennialSection.astro';
 import { MomentumCommonContent } from '@components/sections/index/MomentumSection.astro';
 import { StanfordSitesCommonContent } from '@components/sections/index/DrupalSection.astro';
 import screenshotDirectory from '@images/screenshot-directory.jpg';
 import mobile1 from '@images/screenshot-mobile1.jpg';
-import mobile2 from '@images/screenshot-mobile2.png';
+import mobile2 from '@images/screenshot-mobile2.jpg';
 import summer from '@images/screenshot-summer.jpg';
 import travelStudyScreenshot from '@images/screenshot-travelstudy.jpg';
 import pressScreenshot from '@images/press-screenshot.jpg';
@@ -78,7 +78,14 @@ import pressScreenshot from '@images/press-screenshot.jpg';
 {/* Stanford Sites */}
 <FeatureSection>
   <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <img src={bgTree.src} alt="" width={bgTree.width} height={bgTree.height} class="size-full object-cover" />
+    <Image
+      layout="full-width"
+      src={bgTree}
+      alt=""
+      width={bgTree.width}
+      height={bgTree.height}
+      class="size-full object-cover"
+    />
     <div class="absolute inset-0 bg-black-true/80" />
   </div>
   <FeatureContent

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { LazyMotion, domAnimation } from "motion/react"
 import * as m from 'motion/react-m';
-import { useInView } from 'motion/react';
+import { useInView, useReducedMotion } from 'motion/react';
 import { type DOMMotionComponents, type EasingDefinition } from 'motion/react';
 import { AnimationMap, type AnimationType } from './AnimationMap';
 
@@ -32,10 +32,11 @@ export const AnimateInView = ({
 }: AnimateInViewProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once });
+  const prefersReducedMotion = useReducedMotion();
   const MotionComponent = m[elementTag] as React.ElementType;
   const StaticComponent = elementTag as React.ElementType;
 
-  if (animation === 'none') {
+  if (animation === 'none' || prefersReducedMotion) {
     return (
       <StaticComponent id={id} className={className} {...props}>
         {children}
@@ -48,6 +49,7 @@ export const AnimateInView = ({
       <MotionComponent
         ref={ref}
         id={id}
+        data-animate
         variants={AnimationMap[animation]}
         transition={{
           delay,
