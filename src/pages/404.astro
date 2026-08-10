@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { Container } from '@components/Container/Container';
+import { CtaLink } from '@components/CtaLink/CtaLink';
+---
+
+<BaseLayout
+  title="Page not found"
+  description="The page you’re looking for doesn’t exist. Return to Stanford Web Services to explore our work, services, and team, or get in touch."
+>
+  <Container as="section" pt={8} pb={9}>
+    <div class="max-w-900 mx-auto text-center">
+      <h1 class="font-serif rs-mb-2 font-normal fluid-type-4 leading-display tracking-[0.01em]">
+        Sorry, we couldn’t find that page
+      </h1>
+      <p class="fluid-type-1 leading-cozy text-secondary-muted">
+        The page you’re looking for may have moved or no longer exists.
+      </p>
+      <div class="flex flex-wrap justify-center rs-gap-2 rs-mt-6">
+        <CtaLink id="404-home" href="/" variant="button-light">Back to the homepage</CtaLink>
+      </div>
+    </div>
+  </Container>
+</BaseLayout>
