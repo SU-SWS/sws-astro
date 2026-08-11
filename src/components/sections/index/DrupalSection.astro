@@ -98,7 +98,7 @@ export const StanfordSitesCommonContent: FeatureContentProps = {
     <ul class="list-unstyled flex flex-col items-center md:flex-row md:flex-wrap rs-gap-6">
       {STATS.map((stat) => (
         <li class="mb-0">
-          <Stat client:visible {...stat} />
+          <Stat client:idle {...stat} />
         </li>
       ))}
     </ul>
