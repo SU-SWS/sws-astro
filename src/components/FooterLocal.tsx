@@ -18,8 +18,7 @@ export function FooterLocal({
   return (
     <section className="cc bg-fill-secondary rs-py-6">
       <div className="grid md:grid-cols-2 md:gap-40">
-        <div aria-hidden="true" />
-        <div className="max-w-4xl flex-1 basis-md">
+        <div className="max-w-4xl flex-1 basis-md md:col-start-2">
           <h2 className="rs-mb-2 font-serif type-2 font-normal leading-display">
             We’d love to hear about what you’re working on.
           </h2>
