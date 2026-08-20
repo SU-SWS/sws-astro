@@ -100,8 +100,10 @@ const ogImageURL = new URL(ogImageAsset.src, Astro.site);
     <main id="main-content" tabindex={-1} class="relative">
       <slot />
     </main>
-    <FooterLocal activeLabel={activeLabel} />
-    <GlobalFooter />
+    <footer>
+      <FooterLocal activeLabel={activeLabel} />
+      <GlobalFooter />
+    </footer>
   </body>
 </html>
 
