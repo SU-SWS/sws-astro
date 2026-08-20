@@ -29,7 +29,7 @@ export function CollaborationSection() {
   return (
     <Container bgColor="sand" pt={8} pb={9}>
       <div className="max-w-1100 mx-auto">
-        <h2 className="fluid-type-1 font-semibold rs-mb-1">Collaboration that bring ideas to life</h2>
+        <h2 className="fluid-type-1 font-semibold rs-mb-1">Collaboration that brings ideas to life</h2>
         <p className="max-w-800 font-serif fluid-type-2 leading-snug">
           We work closely with the Stanford community to translate complex goals into clear, engaging, and easy-to-manage experiences.
         </p>

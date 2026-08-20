@@ -34,7 +34,7 @@ export const Container = ({
       bgColor ? styles.bgColors[bgColor] : '',
       pt ? paddingTops[pt] : '',
       pb ? paddingBottoms[pb] : '',
-      width ? styles.widths[width] : '',
+      styles.widths[width],
       className,
     )}
   >
