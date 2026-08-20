@@ -40,17 +40,6 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
     }
   }, [drawerOpen]);
 
-  // Inert on drawer when closed — prevents tabbing to any element inside
-  useEffect(() => {
-    const drawer = drawerRef.current;
-    if (!drawer) return;
-    if (drawerOpen) {
-      drawer.removeAttribute('inert');
-    } else {
-      drawer.setAttribute('inert', '');
-    }
-  }, [drawerOpen]);
-
   // Keyboard: Escape closes; Tab traps focus inside drawer
   useEffect(() => {
     if (!drawerOpen) return;
@@ -149,10 +138,11 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
         )}
       />
 
-      {/* Mobile drawer — inert attribute set imperatively via useEffect when closed */}
+      {/* Mobile drawer */}
       <div
         ref={drawerRef}
         id="mobile-nav-drawer"
+        inert={!drawerOpen}
         role="dialog"
         aria-modal="true"
         aria-label="Navigation"
