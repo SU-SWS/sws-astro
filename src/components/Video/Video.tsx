@@ -29,7 +29,6 @@ export const Video = ({
     <div className={cnb('relative', className)}>
       <video
         ref={videoRef}
-        role="presentation"
         onPlay={onPlay}
         onPause={onPause}
         muted
@@ -37,6 +36,7 @@ export const Video = ({
         loop
         playsInline
         poster={posterSrc}
+        aria-hidden="true"
         className={styles.video}
       >
         <source src={mp4Src} type="video/mp4" />
