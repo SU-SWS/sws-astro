@@ -41,7 +41,7 @@ export function FooterLocal({
                 "border-b-4 pb-5 whitespace-nowrap text-19 font-semibold transition-colors",
                 label === activeLabel
                   ? "border-sws-text text-primary"
-                  : "border-transparent text-digital-red hover:border-sws-text/20 hover:text-primary",
+                  : "border-transparent text-digital-red hocus-visible:border-sws-text/20 hocus-visible:text-primary",
               ].join(" ")}
             >
               {label}

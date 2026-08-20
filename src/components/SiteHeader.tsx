@@ -101,8 +101,8 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
                       ? "border-border-dark-primary text-dark-primary"
                       : "border-sws-text text-primary"
                     : isDark
-                      ? "border-transparent text-dark-primary hover:border-white/30 hover:text-dark-primary"
-                      : "border-transparent text-digital-red hover:border-black-90/20 hover:text-black-90",
+                      ? "border-transparent text-dark-primary hocus-visible:border-white/30 hocus-visible:text-dark-primary"
+                      : "border-transparent text-digital-red hocus-visible:border-black-90/20 hocus-visible:text-black-90",
                 ].join(" ")}
               >
                 {label}
@@ -120,7 +120,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
             onClick={() => setDrawerOpen(true)}
             className={cnb(
               "md:hidden mt-6 rounded p-6 transition-colors",
-              isDark ? "text-dark-primary hover:bg-white/10" : "text-primary hover:bg-black/5"
+              isDark ? "text-dark-primary hocus-visible:bg-white/10" : "text-primary hocus-visible:bg-black/5"
             )}
           >
             <Bars3Icon className="size-28" aria-hidden="true" />
@@ -157,7 +157,7 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
             type="button"
             aria-label="Close navigation menu"
             onClick={closeDrawer}
-            className="rounded p-6 transition-colors text-dark-primary hover:bg-white/10"
+            className="rounded p-6 transition-colors text-dark-primary hocus-visible:bg-white/10"
           >
             <XMarkIcon className="size-28" aria-hidden="true" />
           </button>
