@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { cnb } from 'cnbuilder';
+import { LayoutGroup, LazyMotion, domMax, useReducedMotion } from 'motion/react';
+import * as m from 'motion/react-m';
 import { LogoLockup } from '@components/Logo/LogoLockup';
 import { MobileNav } from '@components/MobileNav';
 import * as styles from './SiteNavigation.styles';
@@ -21,9 +24,14 @@ export function SiteNavigation({
   location,
   theme = 'light',
 }: SiteNavigationProps) {
+  const [hoveredLabel, setHoveredLabel] = useState<string | null>(null);
+  const [focusedLabel, setFocusedLabel] = useState<string | null>(null);
+  const prefersReducedMotion = useReducedMotion();
   const isDark = location === 'header' && theme === 'dark';
   const colorMode = isDark ? 'dark' : 'light';
   const ariaLabel = location === 'header' ? 'Primary' : 'Footer';
+  const highlightedLabel = focusedLabel ?? hoveredLabel ?? activeLabel;
+  const indicatorState = highlightedLabel === activeLabel ? 'active' : 'hover';
 
   return (
     <div className={styles.root}>
@@ -33,27 +41,52 @@ export function SiteNavigation({
         color={isDark ? 'white' : 'default'}
       />
 
-      <nav className={styles.desktopNav} aria-label={ariaLabel}>
-        {NAV_ITEMS.map(({ href, label }) => {
-          const linkState = label === activeLabel ? 'active' : 'default';
-          const colorStyles = styles.desktopLinkColors[colorMode][linkState];
+      <LazyMotion features={domMax}>
+        <LayoutGroup id={`${location}-desktop-navigation`}>
+          <nav
+            className={styles.desktopNav}
+            aria-label={ariaLabel}
+            onMouseLeave={() => setHoveredLabel(null)}
+          >
+            {NAV_ITEMS.map(({ href, label }) => {
+              const linkState = label === activeLabel ? 'active' : 'default';
+              const colorStyles = styles.desktopLinkColors[colorMode][linkState];
 
-          return (
-            <a
-              key={label}
-              data-astro-prefetch
-              href={href}
-              aria-current={linkState === 'active' ? 'page' : undefined}
-              className={cnb(
-                styles.desktopLink,
-                colorStyles,
-              )}
-            >
-              {label}
-            </a>
-          );
-        })}
-      </nav>
+              return (
+                <a
+                  key={label}
+                  data-astro-prefetch
+                  href={href}
+                  aria-current={linkState === 'active' ? 'page' : undefined}
+                  onMouseEnter={() => setHoveredLabel(label)}
+                  onFocus={() => setFocusedLabel(label)}
+                  onBlur={() => setFocusedLabel(null)}
+                  className={cnb(
+                    styles.desktopLink,
+                    colorStyles,
+                  )}
+                >
+                  {label}
+                  {label === highlightedLabel && (
+                    <m.span
+                      layoutId="desktop-navigation-indicator"
+                      data-nav-indicator
+                      aria-hidden="true"
+                      className={cnb(
+                        styles.desktopIndicator,
+                        styles.desktopIndicatorColors[colorMode][indicatorState],
+                      )}
+                      transition={prefersReducedMotion
+                        ? { duration: 0 }
+                        : { type: 'spring', stiffness: 500, damping: 40 }}
+                    />
+                  )}
+                </a>
+              );
+            })}
+          </nav>
+        </LayoutGroup>
+      </LazyMotion>
 
       <MobileNav
         nav={NAV_ITEMS}
