@@ -86,15 +86,15 @@ export function SiteNavigation({
             })}
           </nav>
         </LayoutGroup>
-      </LazyMotion>
 
-      <MobileNav
-        nav={NAV_ITEMS}
-        activeLabel={activeLabel}
-        isDark={isDark}
-        drawerId={`${location}-mobile-nav-drawer`}
-        navLabel={ariaLabel}
-      />
+        <MobileNav
+          nav={NAV_ITEMS}
+          activeLabel={activeLabel}
+          isDark={isDark}
+          drawerId={`${location}-mobile-nav-drawer`}
+          navLabel={ariaLabel}
+        />
+      </LazyMotion>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { cnb } from 'cnbuilder';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { LayoutGroup, useReducedMotion } from 'motion/react';
+import * as m from 'motion/react-m';
 import * as styles from './MobileNav.styles';
 
 const FOCUSABLE_SELECTORS = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -21,13 +23,22 @@ export function MobileNav({
   navLabel,
 }: MobileNavProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState<number | null>(null);
+  const prefersReducedMotion = useReducedMotion();
+  const activeIndex = nav.findIndex(({ label }) => label === activeLabel);
+  const indicatorIndex = highlightedIndex ?? (activeIndex >= 0 ? activeIndex : null);
+  const indicatorState = indicatorIndex === activeIndex ? 'active' : 'hover';
+  const drawerState = drawerOpen ? 'open' : 'closed';
 
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
   const prevOpenRef = useRef(false);
 
-  const closeDrawer = useCallback(() => setDrawerOpen(false), []);
+  const closeDrawer = useCallback(() => {
+    setDrawerOpen(false);
+    setHighlightedIndex(null);
+  }, []);
 
   // Focus management: open → focus close button; close → return focus to hamburger
   useEffect(() => {
@@ -83,8 +94,7 @@ export function MobileNav({
         onClick={() => setDrawerOpen(true)}
         className={cnb(
           styles.menuButton,
-          "2xl:hidden mt-6",
-          isDark ? "text-dark-primary" : "text-primary"
+          styles.menuButtonColors[isDark ? 'dark' : 'light'],
         )}
       >
         <Bars3Icon className={styles.hamburgerIcon} aria-hidden="true" />
@@ -95,8 +105,8 @@ export function MobileNav({
         aria-hidden="true"
         onClick={closeDrawer}
         className={cnb(
-          "2xl:hidden fixed inset-0 z-40 bg-black/60 transition-opacity duration-300",
-          drawerOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          styles.backdrop,
+          styles.backdropStates[drawerState],
         )}
       />
 
@@ -109,38 +119,61 @@ export function MobileNav({
         aria-modal="true"
         aria-label={`${navLabel} navigation`}
         className={cnb(
-          "2xl:hidden fixed inset-y-0 right-0 z-50 flex w-md flex-col shadow-xl transition-transform duration-300 ease-in-out bg-fill-primary text-dark-primary",
-          drawerOpen ? "translate-x-0" : "translate-x-full"
+          styles.drawer,
+          styles.drawerStates[drawerState],
         )}
       >
-        <div className="flex justify-end p-16">
+        <div className={styles.drawerHeader}>
           <button
             ref={closeButtonRef}
             type="button"
             aria-label="Close navigation menu"
             onClick={closeDrawer}
-            className={cnb(styles.menuButton, "text-dark-primary")}
+            className={cnb(styles.menuButton, styles.closeButton)}
           >
             <XMarkIcon className={styles.closeIcon} aria-hidden="true" />
           </button>
         </div>
 
-        <nav className="px-24 pb-24" aria-label={navLabel}>
-          <ul className="flex flex-col list-unstyled">
-            {nav.map(({ href, label }) => (
-              <li key={label} className="block border-b border-black-80 mb-0 leading-display">
-                <a
-                  data-astro-prefetch
-                  href={href}
-                  aria-current={label === activeLabel ? "page" : undefined}
-                  className="block py-20 text-20 font-semibold leading-display transition-colors text-dark-primary hocus-visible:text-digital-red-xlight"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <LayoutGroup id={`${drawerId}-navigation`}>
+          <nav
+            className={styles.nav}
+            aria-label={navLabel}
+            onMouseLeave={() => setHighlightedIndex(null)}
+          >
+            <ul className={styles.navList}>
+              {nav.map(({ href, label }, index) => (
+                <li key={label} className={styles.navItem}>
+                  <a
+                    data-astro-prefetch
+                    href={href}
+                    aria-current={label === activeLabel ? "page" : undefined}
+                    onMouseEnter={() => setHighlightedIndex(index)}
+                    onFocus={() => setHighlightedIndex(index)}
+                    onBlur={() => setHighlightedIndex(null)}
+                    className={styles.navLink}
+                  >
+                    {label}
+                    {index === indicatorIndex && (
+                      <m.span
+                        layoutId="mobile-navigation-indicator"
+                        data-mobile-nav-indicator
+                        aria-hidden="true"
+                        className={cnb(
+                          styles.navIndicator,
+                          styles.navIndicatorColors[indicatorState],
+                        )}
+                        transition={prefersReducedMotion
+                          ? { duration: 0 }
+                          : { type: 'spring', stiffness: 500, damping: 40 }}
+                      />
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </LayoutGroup>
       </div>
     </>
   );
