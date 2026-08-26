@@ -29,28 +29,28 @@ export function SiteHeader({ activeLabel, theme = "light" }: SiteHeaderProps) {
           Stanford University
         </a>
       </div>
-      <div className="cc mt-10 md:mt-30 xl:mt-45">
-        <div className="mx-auto flex flex-wrap items-start justify-between gap-6 pb-2">
+      <div className="cc mt-10 md:mt-30">
+        <div className="mx-auto flex flex-wrap items-start justify-between gap-20">
           <LogoLockup text="Web Services" line2="University IT" color={isDark ? "white" : "default"} />
 
           {/* Desktop nav */}
-          <nav className="hidden xl:flex flex-wrap items-center justify-end gap-33 pt-9" aria-label="Primary">
+          <nav className="hidden xl:flex flex-wrap items-center justify-end gap-33 mt-9 2xl:mt-13" aria-label="Primary">
             {NAV.map(({ href, label }) => (
               <a
                 key={label}
                 data-astro-prefetch
                 href={href}
                 aria-current={label === activeLabel ? "page" : undefined}
-                className={[
-                  "border-b-4 pb-20 whitespace-nowrap text-19 font-semibold leading-snug transition-colors",
+                className={cnb(
+                  "border-b-4 py-19 whitespace-nowrap text-19 font-semibold leading-snug transition-colors",
                   label === activeLabel
                     ? isDark
                       ? "border-border-dark-primary text-dark-primary"
-                      : "border-sws-text text-primary"
+                      : "border-border-dark-primary text-primary"
                     : isDark
                       ? "border-transparent text-dark-primary hocus-visible:border-white/30 hocus-visible:text-dark-primary"
                       : "border-transparent text-digital-red hocus-visible:border-black-90/20 hocus-visible:text-black-90",
-                ].join(" ")}
+                )}
               >
                 {label}
               </a>
