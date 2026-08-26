@@ -1,4 +1,4 @@
-export const menuButton = 'xl:hidden group rounded-full border-2 border-transparent bg-transparent p-4 transition-colors hocus-visible:border-digital-red-xlight';
+export const menuButton = 'xl:hidden group rounded-full border-2 border-transparent bg-transparent p-4 transition-colors hocus-visible:border-digital-red-xlight focus:outline-none';
 
 export const menuButtonColors = {
   light: 'text-primary',
