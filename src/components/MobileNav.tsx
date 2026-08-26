@@ -8,9 +8,17 @@ interface MobileNavProps {
   nav: { href: string; label: string }[];
   activeLabel?: string;
   isDark?: boolean;
+  drawerId: string;
+  navLabel: string;
 }
 
-export function MobileNav({ nav, activeLabel, isDark }: MobileNavProps) {
+export function MobileNav({
+  nav,
+  activeLabel,
+  isDark,
+  drawerId,
+  navLabel,
+}: MobileNavProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const hamburgerRef = useRef<HTMLButtonElement>(null);
@@ -70,7 +78,7 @@ export function MobileNav({ nav, activeLabel, isDark }: MobileNavProps) {
         type="button"
         aria-label="Open navigation menu"
         aria-expanded={drawerOpen}
-        aria-controls="mobile-nav-drawer"
+        aria-controls={drawerId}
         onClick={() => setDrawerOpen(true)}
         className={cnb(
           "xl:hidden mt-6 rounded p-6 transition-colors",
@@ -93,11 +101,11 @@ export function MobileNav({ nav, activeLabel, isDark }: MobileNavProps) {
       {/* Mobile drawer */}
       <div
         ref={drawerRef}
-        id="mobile-nav-drawer"
+        id={drawerId}
         inert={!drawerOpen}
         role="dialog"
         aria-modal="true"
-        aria-label="Navigation"
+        aria-label={`${navLabel} navigation`}
         className={cnb(
           "xl:hidden fixed inset-y-0 right-0 z-50 flex w-md flex-col shadow-xl transition-transform duration-300 ease-in-out bg-fill-primary text-dark-primary",
           drawerOpen ? "translate-x-0" : "translate-x-full"
@@ -115,7 +123,7 @@ export function MobileNav({ nav, activeLabel, isDark }: MobileNavProps) {
           </button>
         </div>
 
-        <nav className="px-24 pb-24" aria-label="Site">
+        <nav className="px-24 pb-24" aria-label={navLabel}>
           <ul className="flex flex-col list-unstyled">
             {nav.map(({ href, label }) => (
               <li key={label} className="block border-b border-black-80 mb-0 leading-display">
