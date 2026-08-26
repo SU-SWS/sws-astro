@@ -16,11 +16,11 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/react": "^6.0.2",
+    "@astrojs/react": "^6.0.4",
     "@astrojs/sitemap": "^3.7.3",
     "@heroicons/react": "^2.2.0",
     "@number-flow/react": "^0.6.2",
-    "astro": "^7.2.0",
+    "astro": "^7.2.7",
     "cnbuilder": "^3.1.0",
     "decanter": "^8.0.0-beta.0",
     "motion": "^13.1.0",
@@ -33,7 +33,7 @@
     "@types/react-dom": "^19.2.4",
     "@typescript-eslint/parser": "^8.67.0",
     "eslint": "^10.8.1",
-    "eslint-plugin-astro": "^1.7.0",
+    "eslint-plugin-astro": "^3.1.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
   }
