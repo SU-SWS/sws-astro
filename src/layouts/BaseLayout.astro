@@ -101,7 +101,7 @@ const ogImageURL = new URL(ogImageAsset.src, Astro.site);
       <slot />
     </main>
     <footer>
-      <FooterLocal activeLabel={activeLabel} />
+      <FooterLocal client:load activeLabel={activeLabel} />
       <GlobalFooter />
     </footer>
   </body>

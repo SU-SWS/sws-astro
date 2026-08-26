@@ -16,9 +16,7 @@ import centennialVideo from '@videos/centennial-adjusted4.mp4';
 import posterCentennial from '@images/poster-centennial.jpg';
 import myaccountVideo from '@videos/myaccount.mp4';
 import posterMyaccount from '@images/poster-myaccount.jpg';
-import { CentennialCommonContent } from '@components/sections/index/CentennialSection.astro';
-import { MomentumCommonContent } from '@components/sections/index/MomentumSection.astro';
-import { StanfordSitesCommonContent } from '@components/sections/index/DrupalSection.astro';
+import { CentennialCommonContent, MomentumCommonContent, StanfordSitesCommonContent } from '@components/sections/content';
 import screenshotDirectory from '@images/screenshot-directory.jpg';
 import mobile1 from '@images/screenshot-mobile1.jpg';
 import mobile2 from '@images/screenshot-mobile2.jpg';
@@ -113,7 +111,7 @@ import pressScreenshot from '@images/press-screenshot.jpg';
         <Image
           layout="constrained"
           src={mobile1}
-          alt=""
+          alt="Stanford Mobile login screen"
           width={mobile1.width}
           height={mobile1.height}
           class="size-full rounded-md"
@@ -123,7 +121,7 @@ import pressScreenshot from '@images/press-screenshot.jpg';
         <Image
           layout="constrained"
           src={mobile2}
-          alt=""
+          alt="Mobile University ID and key access"
           width={mobile2.width}
           height={mobile2.height}
           class="size-full rounded-md"

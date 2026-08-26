@@ -1,29 +1,11 @@
 ---
 import { Video } from '@components/Video/Video';
 import { AnimateInView } from '@components/Animate/AnimateInView';
-import { FeatureContent, type FeatureContentProps } from '@components/FeatureSection/FeatureContent';
+import { FeatureContent } from '@components/FeatureSection/FeatureContent';
 import { FeatureSection } from '@components/FeatureSection/FeatureSection';
+import { CentennialCommonContent } from '../content';
 import centennialVideo from '@videos/centennial-adjusted4.mp4';
 import posterCentennial from '@images/poster-centennial.jpg';
-import awardAnthem from '@images/award-anthem.png';
-import awardWebby from '@images/award-webby.png';
-
-export const CentennialCommonContent: FeatureContentProps = {
-  title: 'Engineering Centennial 2025',
-  description: 'One hundred years of Stanford Engineering, told the way it deserves. We collaborated with leaders Sarah Bielecki and Associate Dean Julie Greicius to build a visually striking, thoughtfully animated platform for their centennial, designed to let extraordinary content lead.',
-  awards: [
-    {
-      image: awardWebby,
-      alt: '2026 Webby Nominee',
-    },
-    {
-      image: awardAnthem,
-      alt: '2026 Anthem Award - Silver',
-    },
-  ],
-  ctaLabel: 'Visit Engineering Centennial',
-  ctaHref: 'https://engineering100.stanford.edu/',
-};
 ---
 
 <FeatureSection className="bg-cardinal-red-xdark">
