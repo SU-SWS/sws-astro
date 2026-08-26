@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { cnb } from 'cnbuilder';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import * as styles from './MobileNav.styles';
 
 const FOCUSABLE_SELECTORS = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -81,11 +82,12 @@ export function MobileNav({
         aria-controls={drawerId}
         onClick={() => setDrawerOpen(true)}
         className={cnb(
-          "xl:hidden mt-6 rounded p-6 transition-colors",
-          isDark ? "text-dark-primary hocus-visible:bg-white/10" : "text-primary hocus-visible:bg-black/5"
+          styles.menuButton,
+          "2xl:hidden mt-6",
+          isDark ? "text-dark-primary" : "text-primary"
         )}
       >
-        <Bars3Icon className="size-28" aria-hidden="true" />
+        <Bars3Icon className={styles.hamburgerIcon} aria-hidden="true" />
       </button>
 
       {/* Backdrop */}
@@ -93,7 +95,7 @@ export function MobileNav({
         aria-hidden="true"
         onClick={closeDrawer}
         className={cnb(
-          "xl:hidden fixed inset-0 z-40 bg-black/60 transition-opacity duration-300",
+          "2xl:hidden fixed inset-0 z-40 bg-black/60 transition-opacity duration-300",
           drawerOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       />
@@ -107,7 +109,7 @@ export function MobileNav({
         aria-modal="true"
         aria-label={`${navLabel} navigation`}
         className={cnb(
-          "xl:hidden fixed inset-y-0 right-0 z-50 flex w-md flex-col shadow-xl transition-transform duration-300 ease-in-out bg-fill-primary text-dark-primary",
+          "2xl:hidden fixed inset-y-0 right-0 z-50 flex w-md flex-col shadow-xl transition-transform duration-300 ease-in-out bg-fill-primary text-dark-primary",
           drawerOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -117,9 +119,9 @@ export function MobileNav({
             type="button"
             aria-label="Close navigation menu"
             onClick={closeDrawer}
-            className="rounded p-6 transition-colors text-dark-primary hocus-visible:bg-white/10"
+            className={cnb(styles.menuButton, "text-dark-primary")}
           >
-            <XMarkIcon className="size-28" aria-hidden="true" />
+            <XMarkIcon className={styles.closeIcon} aria-hidden="true" />
           </button>
         </div>
 
