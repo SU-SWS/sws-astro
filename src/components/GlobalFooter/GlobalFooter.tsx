@@ -32,7 +32,7 @@ export const GlobalFooter = () => (
               </li>
               <li className={styles.listItem}>
                 <a
-                  href="https://www.stanford.edu/search/"
+                  href="https://www.stanford.edu/search"
                   rel="nofollow"
                   className={styles.link}
                 >
@@ -54,7 +54,7 @@ export const GlobalFooter = () => (
             <ul className={styles.legalMenu}>
               <li className={styles.listItem}>
                 <a
-                  href="https://www.stanford.edu/terms/"
+                  href="https://www.stanford.edu/terms"
                   rel="nofollow"
                   title="Terms of use for sites"
                   className={styles.link}
@@ -64,7 +64,7 @@ export const GlobalFooter = () => (
               </li>
               <li className={styles.listItem}>
                 <a
-                  href="https://www.stanford.edu/privacy/"
+                  href="https://www.stanford.edu/privacy"
                   rel="nofollow"
                   title="Privacy and cookie policy"
                   className={styles.link}
@@ -84,7 +84,7 @@ export const GlobalFooter = () => (
               </li>
               <li className={styles.listItem}>
                 <a
-                  href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4"
+                  href="https://adminguide.stanford.edu/chapters/guiding-policies-and-principles/conflict-interest/ownership-and-use-stanford-trademarks"
                   rel="nofollow"
                   title="Ownership and use of Stanford trademarks and images"
                   className={styles.link}

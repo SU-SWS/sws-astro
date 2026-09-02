@@ -15,7 +15,7 @@ export function FooterLocal({
           <h2 className="rs-mb-2 font-serif type-2 font-normal leading-display">
             We’d love to hear about what you’re working on.
           </h2>
-          <CtaLink variant="button-light" id="local-footer-connect-cta" href="/contact">
+          <CtaLink variant="button-light" id="local-footer-connect-cta" href="/contact/">
             Connect with us
           </CtaLink>
         </div>
