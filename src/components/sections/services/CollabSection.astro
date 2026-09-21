@@ -4,20 +4,20 @@ import { Container } from '@components/Container/Container';
 
 const WORK_TYPES = [
   {
-    title: 'Extend your team',
-    body: 'Keep your website content fresh during staff vacations. Save the hassle of hiring and onboarding a contract designer or developer to complete a large project. We can augment your team to help you deliver on your goals in whatever way makes the most sense for your context.',
+    title: 'Extra hands when you need them',
+    body: 'Get help maintaining website content during your busy season. Save the hassle of finding freelancers to help complete a large project. We’re here to step in when you need it, so that you can stay on track.',
   },
   {
-    title: 'Guide vendors',
-    body: 'Need a partner to translate your communication needs into technical requirements? We are fluent in agency-speak so you don’t have to be! We can help you avoid costly rework by ensuring your vendor understands your needs and Stanford’s requirements.',
+    title: 'Fluent in agency-speak',
+    body: 'Need a partner to translate communication goals into technical requirements? We’ll work directly with your vendor, making sure they understand both your needs and Stanford’s web standards.',
   },
   {
     title: 'Fill gaps',
-    body: 'Already have branding and designs, but don’t know how to bring it to life? Have a development team or a off-the-shelf product, but need custom design? We are comfortable working with whatever teams and resources you already have lined up.',
+    body: 'Need data on user behavior to inform project strategy? Already have branding and designs, but need help to bring it to life? Or maybe your development team needs access to design expertise? We’re comfortable stepping into a project that’s already in motion—with whatever teams and resources you’ve got lined up.',
   },
   {
     title: 'Level up',
-    body: 'Keep up in these fast-paced times. We can work with you to bring your existing processes and practices into alignment with modern standards, including Stanford’s requirements for security and accessibility and emerging user behavior patterns and expectations.',
+    body: 'We help bring your existing processes up to date — while meeting Stanford’s requirements for security and accessibility and keeping pace with how users actually behave and what they expect.',
   },
 ];
 ---
@@ -26,18 +26,19 @@ const WORK_TYPES = [
   <div class="rs-px-6 rs-pt-6 rs-pb-5 mx-auto rounded-4xl border border-border-dark-primary">
     <div class="card-paragraph text-dark-secondary-muted">Collaboration</div>
     <h2 class="rs-pt-1 font-serif fluid-type-3 leading-display text-dark-primary">
-      We flex to fit your needs
+      We adapt to how you work
     </h2>
     <p class="rs-mt-2 max-w-900 big-paragraph text-dark-secondary-muted">
-      We have many services, but we also know that one size doesn’t fit all. We
-      can be embedded partners, on-demand specialists, or trusted advisors.
+      We offer a wide array of services, and our level of involvement is up to you.
+      Depending on your requirements, we can be an extension of your team, on-demand specialists,
+      or just trusted advisors when you need us.
     </p>
 
     <ul class="list-unstyled max-w-1000 grid rs-gap-x-3 rs-gap-y-6 rs-pt-6 md:grid-cols-2">
       {
         WORK_TYPES.map((type) => (
           <li class="max-w-440 mb-0">
-            <h3 class="font-serif fluid-type-1 leading-display text-dark-primary">
+            <h3 class="font-serif fluid-type-1 leading-display text-dark-primary text-pretty">
               {type.title}
             </h3>
             <p class="rs-mt-0 text-09em leading-snug text-dark-secondary-muted">

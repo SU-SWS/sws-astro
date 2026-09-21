@@ -1,9 +1,7 @@
 import { AnimateInView } from '@components/Animate/AnimateInView';
-import { CtaLink } from '@components/CtaLink/CtaLink';
 
 type ServiceItemType = {
-  ctaLabel: string;
-  href: string;
+  service: string;
 };
 
 interface ServiceProps {
@@ -24,12 +22,10 @@ export const Service = ({ title, body, items }: ServiceProps) => {
               as="li"
               animation="slideInFromRight"
               delay={index * 0.1}
-              key={item.ctaLabel}
+              key={item.service}
               className="mb-0 leading-display"
             >
-              <CtaLink href={item.href} variant="service">
-                {item.ctaLabel}
-              </CtaLink>
+              {item.service}
             </AnimateInView>
           ))}
         </ul>

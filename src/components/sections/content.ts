@@ -5,7 +5,7 @@ import awardCase from '@images/award-case.png';
 
 export const CentennialCommonContent: FeatureContentProps = {
   title: 'Engineering Centennial 2025',
-  description: 'One hundred years of Stanford Engineering, told the way it deserves. We collaborated with leaders Sarah Bielecki and Associate Dean Julie Greicius to build a visually striking, thoughtfully animated platform for their centennial, designed to let extraordinary content lead.',
+  description: 'We collaborated with Stanford Engineering to build a visually striking, thoughtfully animated platform celebrating one hundred years of the school. Featuring a dynamic user experience and interactive timeline, we designed the site to lead with the extraordinary and engaging content.',
   awards: [
     {
       image: awardWebby,
@@ -16,14 +16,14 @@ export const CentennialCommonContent: FeatureContentProps = {
       alt: '2026 Anthem Award - Silver',
     },
   ],
-  ctaLabel: 'Visit Engineering Centennial',
+  ctaLabel: 'Visit Stanford Engineering Centennial',
   ctaHref: 'https://engineering100.stanford.edu/',
 };
 
 export const MomentumCommonContent: FeatureContentProps = {
   title: 'Momentum',
   description:
-    'Momentum exists to tell Stanford’s most important stories — the research, discoveries, and human impact made possible through philanthropy. We partnered with the Office of Development to bring it to life, translating a vision and brand identity into an editorial platform built for dynamic, interactive storytelling.',
+    'We partnered with the Office of Development to translate their vision and brand identity into an immersive editorial platform. Momentum showcases the research and discoveries made possible through philanthropy, and highlights the real-world human impact through dynamic, interactive storytelling.',
   awards: [
     {
       image: awardWebby,
@@ -41,7 +41,7 @@ export const MomentumCommonContent: FeatureContentProps = {
 export const StanfordSitesCommonContent: FeatureContentProps = {
   title: 'Stanford Sites',
   description:
-    'Stanford Sites gives schools, departments, research labs, and individuals an easy path to create a website and ongoing support to maintain it. Stanford Sites is free to use, continuously updated, and built on a platform designed to meet Stanford’s policies out of the box.',
-  ctaLabel: 'Request a Stanford Site',
+    'The Stanford Sites Drupal CMS provides departments, research labs, other groups, and individuals with an easy path to create a website and ongoing support to keep it running smoothly. Stanford Sites is free to use, continuously updated, and designed to meet Stanford’s policies out of the box.',
+  ctaLabel: 'Learn more about Stanford Sites',
   ctaHref: 'https://uit.stanford.edu/service/stanfordsites',
 };
