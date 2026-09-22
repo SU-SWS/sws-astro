@@ -1,0 +1,55 @@
+# Stanford Web Services
+
+> Stanford Web Services (SWS) is Stanford University's in-house digital agency, part of University IT. We provide strategy, design, engineering, and continuous support for websites and web applications built for Stanford's schools, departments, institutes, and organizations.
+
+We build world-class websites and digital experiences that reflect the caliber of your work and the excellence of the team behind it — at any scale, for every vision. Because we are part of Stanford rather than an outside vendor, we already know the university's security, accessibility, privacy, and brand requirements, and we stay involved after launch.
+
+Key facts:
+
+- **Four service areas:** strategy (project discovery, digital strategy, UX research, information architecture); design (visual and interaction design, user experience, prototyping, design systems); engineering (website production, custom development, site building, animation and motion design); and continuous support, security, and performance (security and maintenance, hosting support, analytics and UX monitoring, accessibility support).
+- **How we work:** Discover, Create, Evolve. Engagements range from a single strategy consultation to a multi-year partnership. We can act as an extension of your team, on-demand specialists, or trusted advisors, and we can join a project that is already in motion or work alongside an outside vendor.
+- **Technologies:** Drupal, Storyblok, WordPress, React, Next.js, Astro, Tailwind CSS, Storybook, Figma, Algolia, Coveo, Netlify, Vercel, Acquia, Pantheon, Git, Looker Studio, Google Analytics, ChatGPT, and Claude. We are not tied to one platform or language and choose the technology that fits the problem.
+- **Stanford Sites:** a free, continuously updated Drupal CMS platform SWS runs for campus. It hosts more than 1,200 websites and more than 90 intranets, averaging roughly 250 million hits per month.
+- **Recognition:** 2026 Webby nominee and 2026 Anthem Award (Silver) for Engineering Centennial; 2025 Webby nominee and 2025 CASE Circle of Excellence Award for Momentum.
+- **Consulting:** user research, digital strategy, and technical consulting are available on their own, including help evaluating platforms, building roadmaps, and making the budget case for a project.
+- **Contact:** project inquiries and consultation requests go through the form on the contact page. The team is based at Stanford University Redwood City location in California.
+
+## Pages
+
+- [Home](https://webservices.stanford.edu/): Overview of Stanford Web Services, featured partnerships (Momentum, Engineering Centennial), the Stanford Sites platform, scaled design-system work, and the client roster.
+- [Our work](https://webservices.stanford.edu/work/): Portfolio of editorial platforms, microsites, and API-driven applications built for Stanford, with the technology used for each.
+- [Services](https://webservices.stanford.edu/services/): Full service catalog across strategy, design, engineering, and ongoing support, plus collaboration models and the technologies we work in.
+- [Why Web Services](https://webservices.stanford.edu/why/): What sets SWS apart, client testimonials, consulting offerings, and the team roster of about twenty designers, developers, researchers, and project managers.
+- [Contact us](https://webservices.stanford.edu/contact/): Consultation request form for teams starting a project, planning a refresh, or expanding a digital presence.
+
+## Featured work
+
+- [Momentum](https://momentum.stanford.edu/): Immersive editorial platform built with the Office of Development on Storyblok, showcasing research made possible through philanthropy. 2025 Webby nominee and 2025 CASE Circle of Excellence Award.
+- [Stanford Engineering Centennial](https://engineering100.stanford.edu/): Animated Next.js platform with an interactive timeline celebrating one hundred years of the School of Engineering. 2026 Webby nominee and 2026 Anthem Award, Silver.
+- [Stanford Sites](https://uit.stanford.edu/service/stanfordsites): Free Drupal CMS platform giving departments, labs, groups, and individuals a fast path to a website that meets Stanford policy out of the box, with ongoing support.
+- [Stanford Mobile app](https://uit.stanford.edu/stanford-mobile): User research and product design for the iOS and Android campus companion app, including mobile key, built with UIT Endpoint Engineering and Development.
+- [Summer Session](https://summer.stanford.edu/): Headless Drupal site rebuilt to help prospective students, largely international, find courses and apply.
+- [Stanford Alumni Travel/Study](https://alumni.stanford.edu/travel-study/): Storyblok site with trip detail, browse, and list pages designed to match the best travel booking experiences.
+- [Stanford University Press](https://www.sup.org/): Headless Drupal redesign with modern content hierarchy, intuitive browsing and checkout, and a showcase for book covers and authors.
+
+Two Next.js web applications are covered on the work page but are behind authentication and have no public URL: Alumni My Account, the central place where alumni and constituents manage personal data, privacy settings, and professional information; and the Alumni Directory, powered by My Account, which helps students and alumni discover connections.
+
+## Clients
+
+- [Stanford Office of Development](https://externalrelations.stanford.edu/organizations/office-development)
+- [Stanford Engineering Centennial](https://engineering100.stanford.edu)
+- [Stanford University Libraries](https://library.stanford.edu/)
+- [Stanford Business Technology Services](https://externalrelations.stanford.edu/organizations/external-relations-operations-teams)
+- [Stanford Graduate School of Education](https://ed.stanford.edu/)
+- [Knight-Hennessy Scholars](https://knight-hennessy.stanford.edu/)
+- [Stanford University Press](https://sup.org)
+- [Stanford Doerr School of Sustainability](https://sustainability.stanford.edu/)
+
+## Optional
+
+- [Sitemap](https://webservices.stanford.edu/sitemap-index.xml): Machine-readable index of every page on this site.
+- [Stanford University](https://www.stanford.edu): Parent institution.
+- [University IT](https://uit.stanford.edu): The Stanford organization Web Services belongs to.
+- [Web accessibility](https://www.stanford.edu/accessibility): Stanford's accessibility policy and reporting channel.
+- [Privacy](https://www.stanford.edu/privacy): Stanford privacy and cookie policy.
+- [Terms of use](https://www.stanford.edu/terms): Terms of use for Stanford sites.
