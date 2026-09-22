@@ -6,6 +6,7 @@ import { Font, getImage } from 'astro:assets';
 import { SiteHeader } from '@components/SiteHeader';
 import { GlobalFooter } from '@components/GlobalFooter/GlobalFooter';
 import { FooterLocal } from '@components/FooterLocal';
+import OrganizationSchema from '@components/OrganizationSchema.astro';
 import social from '@images/sws-social.jpg';
 
 interface Props {
@@ -27,6 +28,8 @@ const {
 
 const pageTitle = `${title} | Stanford Web Services`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Organization JSON-LD belongs on one page only; the homepage is that page.
+const isHomepage = Astro.url.pathname === '/';
 const ogImageAsset = await getImage({
   src: ogImage,
   width: 1200,
@@ -80,6 +83,7 @@ const ogImageURL = new URL(ogImageAsset.src, Astro.site);
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL.href} />
+    {isHomepage && <OrganizationSchema />}
     <!-- Content is SSR'd with motion's hidden state (opacity:0); force visible when JS can't hydrate. -->
     <noscript>
       <style>
