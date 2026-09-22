@@ -1,0 +1,105 @@
+---
+import logo from '@images/swslogo.png';
+
+/**
+ * Organization structured data (JSON-LD).
+ *
+ * Google recommends publishing Organization markup on a single page rather
+ * than site-wide, so BaseLayout renders this on the homepage only.
+ * URLs are derived from `site` in astro.config.mjs.
+ */
+const siteUrl = new URL('/', Astro.site).href;
+const logoUrl = new URL(logo.src, Astro.site).href;
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${siteUrl}#organization`,
+  name: 'Stanford Web Services',
+  alternateName: 'SWS',
+  url: siteUrl,
+  logo: logoUrl,
+  description:
+    'Stanford Web Services is Stanford University’s in-house digital agency, providing strategy, design, engineering, and ongoing support for the websites and web applications of Stanford’s schools, departments, and organizations.',
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Stanford University IT',
+    url: 'https://uit.stanford.edu',
+    parentOrganization: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Stanford University',
+      url: 'https://www.stanford.edu',
+    },
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Stanford',
+    addressRegion: 'CA',
+    postalCode: '94305',
+    addressCountry: 'US',
+  },
+  areaServed: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Stanford University',
+    url: 'https://www.stanford.edu',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    url: new URL('/contact/', Astro.site).href,
+    availableLanguage: 'English',
+  },
+  knowsAbout: [
+    'Web design',
+    'Web development',
+    'User experience research',
+    'Digital strategy',
+    'Information architecture',
+    'Design systems',
+    'Web accessibility',
+    'Drupal',
+    'Content management systems',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Stanford Web Services offerings',
+    url: new URL('/services/', Astro.site).href,
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Strategy',
+          description: 'Project discovery, digital strategy, UX research, and information architecture.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Design',
+          description: 'Visual and interaction design, user experience, prototyping, and design systems.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Engineering',
+          description: 'Website production, custom development, site building, and animation and motion design.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Continuous support, security, and performance',
+          description: 'Security and maintenance, hosting support, analytics and UX monitoring, and accessibility support.',
+        },
+      },
+    ],
+  },
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(organization)} />
