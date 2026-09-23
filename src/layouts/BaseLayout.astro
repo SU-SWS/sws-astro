@@ -15,6 +15,7 @@ interface Props {
   activeLabel?: string;
   theme?: 'light' | 'dark';
   ogImage?: ImageMetadata;
+  noindex?: boolean;
 }
 
 const {
@@ -24,6 +25,7 @@ const {
   theme = 'light',
   // Placeholder social-share image; replace with a purpose-made 1200x630 asset.
   ogImage = social,
+  noindex = false,
 } = Astro.props;
 
 const pageTitle = `${title} | Stanford Web Services`;
@@ -70,7 +72,7 @@ const ogImageURL = new URL(ogImageAsset.src, Astro.site);
     )}
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL.href} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalURL.href} />}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
