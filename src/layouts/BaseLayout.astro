@@ -39,6 +39,8 @@ const ogImageAsset = await getImage({
   format: 'jpeg',
 });
 const ogImageURL = new URL(ogImageAsset.src, Astro.site);
+// Netlify sets CONTEXT at build time; deploy previews and branch deploys must not send analytics.
+const loadGTM = process.env.CONTEXT === 'production';
 ---
 
 <!doctype html>
@@ -57,7 +59,7 @@ const ogImageURL = new URL(ogImageAsset.src, Astro.site);
     <Font cssVariable="--font-serif" preload />
     <Font cssVariable="--font-sans" />
     <Font cssVariable="--font-stanford" />
-    {import.meta.env.PROD && (
+    {loadGTM && (
       <>
         <!-- Google Tag Manager -->
         <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -97,10 +99,14 @@ const ogImageURL = new URL(ogImageAsset.src, Astro.site);
     </noscript>
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8XKF6XL"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    {loadGTM && (
+      <>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8XKF6XL"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+      </>
+    )}
     <SiteHeader client:load theme={theme} activeLabel={activeLabel} />
     <main id="main-content" tabindex={-1} class="relative">
       <slot />
