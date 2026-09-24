@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  // TODO: confirm later
   site: 'https://webservices.stanford.edu',
   // No need to enable prefetch since we use View Transition which sets a default configuration of { prefetchAll: true }
   // https://docs.astro.build/en/guides/prefetch/#using-with-view-transitions
@@ -32,7 +31,7 @@ export default defineConfig({
       name: 'Stanford',
       cssVariable: '--font-stanford',
       provider: fontProviders.local(),
-      fallbacks: [],
+      fallbacks: ['Georgia', 'Times', 'Times New Roman', 'serif'],
       options: {
         // Weight and style are not specified so Astro
         // will try to infer them for each variant

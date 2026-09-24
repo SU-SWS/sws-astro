@@ -37,7 +37,7 @@ Two Next.js web applications are covered on the work page but are behind authent
 ## Clients
 
 - [Stanford Office of Development](https://externalrelations.stanford.edu/organizations/office-development)
-- [Stanford Engineering Centennial](https://engineering100.stanford.edu)
+- [Stanford Engineering](https://engineering.stanford.edu)
 - [Stanford University Libraries](https://library.stanford.edu/)
 - [Stanford Business Technology Services](https://externalrelations.stanford.edu/organizations/external-relations-operations-teams)
 - [Stanford Graduate School of Education](https://ed.stanford.edu/)
