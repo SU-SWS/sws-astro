@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import { Video } from '@components/Video/Video';
 import { AnimateInView } from '@components/Animate/AnimateInView';
 import { FeatureContent } from '@components/FeatureSection/FeatureContent';
@@ -23,6 +23,11 @@ import mobile2 from '@images/screenshot-mobile2.jpg';
 import summer from '@images/screenshot-summer.jpg';
 import travelStudyScreenshot from '@images/screenshot-travelstudy.jpg';
 import pressScreenshot from '@images/press-screenshot.jpg';
+
+// <video poster> can't take a srcset, so optimize to a single WebP at native size.
+const posterMomentumWebp = await getImage({ src: posterMomentum, format: 'webp' });
+const posterCentennialWebp = await getImage({ src: posterCentennial, format: 'webp' });
+const posterMyaccountWebp = await getImage({ src: posterMyaccount, format: 'webp' });
 ---
 
 {/* Momentum */}
@@ -47,7 +52,7 @@ import pressScreenshot from '@images/press-screenshot.jpg';
       <Video
         client:visible
         mp4Src={momentumVideo}
-        posterSrc={posterMomentum.src}
+        posterSrc={posterMomentumWebp.src}
         className="size-full rounded-md overflow-hidden"
       />
     </AnimateInView>
@@ -66,7 +71,7 @@ import pressScreenshot from '@images/press-screenshot.jpg';
       <Video
         client:visible
         mp4Src={centennialVideo}
-        posterSrc={posterCentennial.src}
+        posterSrc={posterCentennialWebp.src}
         className="size-full sm:rs-px-5"
       />
     </AnimateInView>
@@ -248,7 +253,7 @@ import pressScreenshot from '@images/press-screenshot.jpg';
       <Video
         client:visible
         mp4Src={myaccountVideo}
-        posterSrc={posterMyaccount.src}
+        posterSrc={posterMyaccountWebp.src}
         className="size-full rounded-md overflow-hidden"
       />
     </AnimateInView>

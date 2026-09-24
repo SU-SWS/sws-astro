@@ -1,4 +1,5 @@
 ---
+import { getImage } from 'astro:assets';
 import { Video } from '@components/Video/Video';
 import { AnimateInView } from '@components/Animate/AnimateInView';
 import { FeatureContent } from '@components/FeatureSection/FeatureContent';
@@ -6,6 +7,9 @@ import { FeatureSection } from '@components/FeatureSection/FeatureSection';
 import { CentennialCommonContent } from '../content';
 import centennialVideo from '@videos/centennial-adjusted4.mp4';
 import posterCentennial from '@images/poster-centennial.jpg';
+
+// <video poster> can't take a srcset, so optimize to a single WebP at native size.
+const posterCentennialWebp = await getImage({ src: posterCentennial, format: 'webp' });
 ---
 
 <FeatureSection className="bg-cardinal-red-xdark">
@@ -18,7 +22,7 @@ import posterCentennial from '@images/poster-centennial.jpg';
       <Video
         client:load
         mp4Src={centennialVideo}
-        posterSrc={posterCentennial.src}
+        posterSrc={posterCentennialWebp.src}
         className="size-full sm:rs-px-5"
       />
     </AnimateInView>
