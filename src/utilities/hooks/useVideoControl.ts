@@ -64,23 +64,11 @@ export const useVideoControl = (viewThreshold?: number) => {
     }
   }, [isVideoInView, isUserPaused, prefersReducedMotion]);
 
-  /**
-   * useReducedMotion() returns false during SSR, so the autoPlay attribute is present
-   * in the static HTML and playback may begin before hydration. Defensively stop it.
-   * Keyed only on prefersReducedMotion so it never re-runs and cancels manual playback.
-   */
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      videoRef.current?.pause();
-    }
-  }, [prefersReducedMotion]);
-
   return {
     videoRef,
     isPlaying,
     isUserPaused,
     isVideoInView,
-    prefersReducedMotion,
     toggleVideo,
     onPlay: () => setIsPlaying(true),
     onPause: () => setIsPlaying(false),

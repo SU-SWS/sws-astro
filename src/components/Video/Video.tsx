@@ -20,7 +20,6 @@ export const Video = ({
     isPlaying,
     toggleVideo,
     isVideoInView,
-    prefersReducedMotion,
     onPlay,
     onPause,
   } = useVideoControl();
@@ -32,7 +31,9 @@ export const Video = ({
         onPlay={onPlay}
         onPause={onPause}
         muted
-        autoPlay={!prefersReducedMotion}
+        // No autoPlay: useVideoControl starts playback once the video is in view (and not
+        // under reduced motion), so nothing downloads until then.
+        preload="none"
         loop
         playsInline
         poster={posterSrc}

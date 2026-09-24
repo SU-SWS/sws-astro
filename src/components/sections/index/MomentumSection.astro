@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import { Video } from '@components/Video/Video';
 import { AnimateInView } from '@components/Animate/AnimateInView';
 import { FeatureContent } from '@components/FeatureSection/FeatureContent';
@@ -8,6 +8,9 @@ import { MomentumCommonContent } from '../content';
 import momentumVideo from '@videos/moment2.mp4';
 import posterMomentum from '@images/poster-momentum.jpg';
 import bgMomentum from '@images/bg-momentum.jpg';
+
+// <video poster> can't take a srcset, so optimize to a single WebP at native size.
+const posterMomentumWebp = await getImage({ src: posterMomentum, format: 'webp' });
 ---
 
 <FeatureSection ctaLabel="Learn more about our work" ctaHref="/work/" ctaId="home-momentum-cta-learn-more">
@@ -31,7 +34,7 @@ import bgMomentum from '@images/bg-momentum.jpg';
       <Video
         client:visible
         mp4Src={momentumVideo}
-        posterSrc={posterMomentum.src}
+        posterSrc={posterMomentumWebp.src}
         className="size-full rounded-md overflow-hidden"
       />
     </AnimateInView>
