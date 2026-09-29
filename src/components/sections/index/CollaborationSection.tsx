@@ -3,7 +3,7 @@ import { CtaLink } from '@components/CtaLink/CtaLink';
 
 const CARDS = [
   {
-    title: "Modern practices. Award-winning work.",
+    title: "Modern practices, award-winning work",
     body: "Grounded in current industry standards and innovative practices, our research and user experience design solutions are tailored to fit your project, creating insights and aesthetics that bring your vision to life.",
     ctaLabel: "Explore our work",
     ctaHref: "/work",
