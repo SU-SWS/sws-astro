@@ -19,7 +19,7 @@ interface Props {
 }
 
 const {
-  title = 'Stanford Web Services',
+  title,
   description = 'Stanford Web Services is Stanford University’s in-house digital agency, providing strategy, design, and engineering for university schools and departments.',
   activeLabel,
   theme = 'light',
@@ -27,7 +27,7 @@ const {
   noindex = false,
 } = Astro.props;
 
-const pageTitle = `${title} | Stanford Web Services`;
+const pageTitle = title ? `${title} | Stanford Web Services` : 'Stanford Web Services';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Organization JSON-LD belongs on one page only; the homepage is that page.
 const isHomepage = Astro.url.pathname === '/';
