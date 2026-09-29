@@ -4,11 +4,28 @@ import { AnimateInView } from '@components/Animate/AnimateInView';
 ---
 
 <Container pt={6} pb={7}>
-  <h1 class="sr-only">
-    Stanford Web Services homepage
-  </h1>
-  <AnimateInView client:visible as="p" className="mb-0 max-w-1100 mx-auto font-serif fluid-type-4 leading-snug text-primary">
-    We build world-class websites and digital experiences that reflect the caliber
-    of your work and the excellence of the team behind it — at any scale, for every vision.
-  </AnimateInView>
+  <div class="flex flex-col lg:flex-row rs-gap-3">
+    <AnimateInView
+      client:visible
+      as="h1"
+      className="font-serif font-normal basis-3/7 fluid-type-4 leading-cozy text-primary mb-0 text-pretty"
+    >
+      World-class work deserves a digital presence to match.
+    </AnimateInView>
+    <AnimateInView
+      client:visible
+      as="div"
+      delay={0.1}
+      animation="slideInFromRight"
+      className="basis-4/7 text-pretty"
+    >
+      <p class="fluid-type-2 leading-cozy text-primary rs-mb-0">Your vision brought to life.</p>
+      <p class="big-paragraph text-secondary-muted leading-normal text-primary-muted mb-0">
+        Behind every breakthrough at Stanford is a human story.
+        Your digital presence should honor those stories. Combining world-class aesthetics with smart,
+        future-proof engineering, we create web experiences that feel intuitive, inspire action,
+        and match the excellence of your work.
+      </p>
+    </AnimateInView>
+  </div>
 </Container>

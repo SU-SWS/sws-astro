@@ -13,10 +13,10 @@ export function FooterLocal({
       <div className="grid lg:grid-cols-2 lg:gap-40 rs-pb-4">
         <div className="max-w-600 flex-1 basis-md lg:col-start-2">
           <h2 className="mb-10 font-serif type-2 font-normal leading-display">
-            We’d love to hear from you.
+            Ready to bring your vision to life?
           </h2>
           <p className="card-paragraph rs-mb-0">
-            Whether you’re just getting started, planning a site refresh, or expanding your digital presence, our team is here to guide you through the process, every step of the way.
+            Whether defining your audience, crafting a new digital experience, or scaling your impact, partner with a team dedicated to collaboration and creativity at every step.
           </p>
           <CtaLink variant="button-light" id="local-footer-connect-cta" href="/contact/">
             Connect with us
