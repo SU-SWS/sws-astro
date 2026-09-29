@@ -61,7 +61,7 @@ export const FeatureContent = ({
               </CtaLink>
             )}
             {awards && (
-              <div className="flex justify-end rs-gap-x-1 rs-mt-4 rs-px-4">
+              <div className="flex items-center justify-end rs-gap-x-1 rs-mt-4 rs-px-4">
                 {(Array.isArray(awards) ? awards : [awards]).map((award) => (
                   <img
                     key={award.image.src}
