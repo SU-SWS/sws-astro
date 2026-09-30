@@ -98,7 +98,7 @@ const loadGTM = process.env.CONTEXT === 'production';
       </style>
     </noscript>
   </head>
-  <body>
+  <body class="flex min-h-dvh flex-col">
     {loadGTM && (
       <>
         <!-- Google Tag Manager (noscript) -->
@@ -108,7 +108,7 @@ const loadGTM = process.env.CONTEXT === 'production';
       </>
     )}
     <SiteHeader client:load theme={theme} activeLabel={activeLabel} />
-    <main id="main-content" tabindex={-1} class="relative">
+    <main id="main-content" tabindex={-1} class="relative grow">
       <slot />
     </main>
     <footer>
