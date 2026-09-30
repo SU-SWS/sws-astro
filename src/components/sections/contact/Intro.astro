@@ -1,6 +1,7 @@
 ---
 import { Container } from '@components/Container/Container';
 import { AnimateInView } from '@components/Animate/AnimateInView';
+import { CtaLink } from '@components/CtaLink/CtaLink';
 ---
 
 <Container bgColor="white" as="section" pt={8} pb={7}>
@@ -13,10 +14,15 @@ import { AnimateInView } from '@components/Animate/AnimateInView';
   </AnimateInView>
   <AnimateInView
     client:visible
-    as="p"
+    as="div"
     delay={0.1}
-    className="max-w-900 fluid-type-2 leading-cozy text-primary-muted text-pretty"
+    className="max-w-900"
   >
-    Ready to bring your vision to life? We’d love to hear about what you’re working on.
+    <p class="fluid-type-2 leading-cozy text-primary-muted text-pretty">
+      Ready to bring your vision to life? We’d love to hear about what you’re working on.
+    </p>
+    <CtaLink variant="button-light" href="https://getsws.stanford.edu/" className="rs-mt-1">
+      Request a consultation with SWS
+    </CtaLink>
   </AnimateInView>
 </Container>
