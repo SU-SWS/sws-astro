@@ -6,8 +6,15 @@ import { Font, getImage } from 'astro:assets';
 import { SiteHeader } from '@components/SiteHeader';
 import { GlobalFooter } from '@components/GlobalFooter/GlobalFooter';
 import { FooterLocal } from '@components/FooterLocal';
-import OrganizationSchema from '@components/OrganizationSchema.astro';
 import social from '@images/sws-social.jpg';
+import logo from '@images/swslogo.png';
+import {
+  type WebPageType,
+  breadcrumbNode,
+  organizationNode,
+  webPageNode,
+  websiteNode,
+} from '@utilities/schema';
 
 interface Props {
   title?: string;
@@ -16,6 +23,10 @@ interface Props {
   theme?: 'light' | 'dark';
   ogImage?: ImageMetadata;
   noindex?: boolean;
+  /** schema.org WebPage subtype for this page's JSON-LD. */
+  pageType?: WebPageType;
+  /** Primary thing the page is about (e.g. an ItemList of services or projects). */
+  mainEntity?: Record<string, unknown>;
 }
 
 const {
@@ -25,11 +36,12 @@ const {
   theme = 'light',
   ogImage = social,
   noindex = false,
+  pageType = 'WebPage',
+  mainEntity,
 } = Astro.props;
 
 const pageTitle = title ? `${title} | Stanford Web Services` : 'Stanford Web Services';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-// Organization JSON-LD belongs on one page only; the homepage is that page.
 const isHomepage = Astro.url.pathname === '/';
 const ogImageAsset = await getImage({
   src: ogImage,
@@ -39,6 +51,26 @@ const ogImageAsset = await getImage({
   format: 'jpeg',
 });
 const ogImageURL = new URL(ogImageAsset.src, Astro.site);
+
+// One JSON-LD graph per page. Organization and WebSite are published on the
+// homepage only; other pages reference them by @id. Noindex pages get none.
+const site = Astro.site;
+const jsonLd = noindex ? null : {
+  '@context': 'https://schema.org',
+  '@graph': [
+    ...(isHomepage ? [organizationNode(site, new URL(logo.src, site).href), websiteNode(site)] : []),
+    webPageNode(site, {
+      type: pageType,
+      url: canonicalURL.href,
+      name: pageTitle,
+      description,
+      imageUrl: ogImageURL.href,
+      hasBreadcrumb: !isHomepage,
+      mainEntity,
+    }),
+    ...(isHomepage ? [] : [breadcrumbNode(site, canonicalURL.href, title ?? pageTitle)]),
+  ],
+};
 // Netlify sets CONTEXT at build time; deploy previews and branch deploys must not send analytics.
 const loadGTM = process.env.CONTEXT === 'production';
 ---
@@ -86,7 +118,7 @@ const loadGTM = process.env.CONTEXT === 'production';
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL.href} />
-    {isHomepage && <OrganizationSchema />}
+    {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
     <!-- Content is SSR'd with motion's hidden state (opacity:0); force visible when JS can't hydrate. -->
     <noscript>
       <style>

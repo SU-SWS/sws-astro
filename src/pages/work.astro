@@ -1,11 +1,14 @@
 ---
 import OurWorkPage from '@components/pages/OurWorkPage.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { projectsList } from '@utilities/schema';
 ---
 
 <BaseLayout
   title="Our work"
   description="Browse Stanford Web Services’ portfolio of editorial platforms, microsites, and API-driven apps, reflecting award-winning design and engineering for Stanford."
+  pageType="CollectionPage"
+  mainEntity={projectsList(Astro.site)}
   activeLabel="Our work"
 >
   <OurWorkPage />

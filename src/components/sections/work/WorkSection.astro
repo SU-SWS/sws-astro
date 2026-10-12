@@ -16,7 +16,17 @@ import centennialVideo from '@videos/centennial-adjusted4.mp4';
 import posterCentennial from '@images/poster-centennial.jpg';
 import myaccountVideo from '@videos/myaccount.mp4';
 import posterMyaccount from '@images/poster-myaccount.jpg';
-import { CentennialCommonContent, MomentumCommonContent, StanfordSitesCommonContent } from '@components/sections/content';
+import {
+  CentennialCommonContent,
+  DirectoryContent,
+  MobileAppContent,
+  MomentumCommonContent,
+  MyAccountContent,
+  PressContent,
+  StanfordSitesCommonContent,
+  SummerSessionContent,
+  TravelStudyContent,
+} from '@components/sections/content';
 import screenshotDirectory from '@images/screenshot-directory.jpg';
 import mobile1 from '@images/screenshot-mobile1.jpg';
 import mobile2 from '@images/screenshot-mobile2.jpg';
@@ -104,11 +114,8 @@ const posterMyaccountWebp = await getImage({ src: posterMyaccount, format: 'webp
 <FeatureSection className="bg-linear-to-r from-sws-red-dark to-cardinal-red-xdark">
   <FeatureContent
     textOnRight
+    {...MobileAppContent}
     eyebrow={['User research and design', 'iOS / Android']}
-    title="Stanford Mobile App: mobile key"
-    description="A collaboration with UIT Endpoint Engineering and Development (EED) to design Stanford Mobile — a campus companion serving students, faculty, and visitors. Our team led structured usability testing with diverse user groups and iterative product design to craft a cohesive visual design system honoring Stanford’s institutional identity and meeting the expectations of a modern mobile experience."
-    ctaLabel="Explore the app"
-    ctaHref="https://uit.stanford.edu/stanford-mobile"
     ctaId="work-mobile-app-cta"
   >
     <div class="grid grid-cols-2 rs-gap-2 rs-px-4">
@@ -150,11 +157,8 @@ const posterMyaccountWebp = await getImage({ src: posterMyaccount, format: 'webp
     <div class="absolute inset-0 bg-palo-alto-dark/90" />
   </div>
   <FeatureContent
+    {...SummerSessionContent}
     eyebrow={['Website', 'Drupal headless']}
-    title="Summer Session"
-    description="A redesign of the Stanford Summer Session website had two primary objectives: help prospective students quickly find the courses they want, and give them every reason to apply. A show-don’t-tell approach, real student voices, and sun-drenched California imagery bring the experience to life for a primarily international audience."
-    ctaLabel="Visit Stanford Summer Session"
-    ctaHref="https://summer.stanford.edu/"
     ctaId="work-summer-session-cta"
   >
     <AnimateInView client:visible>
@@ -186,11 +190,8 @@ const posterMyaccountWebp = await getImage({ src: posterMyaccount, format: 'webp
   </div>
   <FeatureContent
     textOnRight
+    {...TravelStudyContent}
     eyebrow={['Website', 'Storyblok']}
-    title="Stanford Alumni Travel/Study"
-    description="The goal for Travel/Study was simple: build an interactive experience as beautiful and immersive as the destinations themselves. This collaboration with the Stanford Alumni Association Travel/Study team delivered trip details, browse, and list pages with a clear information hierarchy, intuitive flow, and interactions that hold up against the best travel booking experiences in the industry."
-    ctaLabel="Visit Travel/Study"
-    ctaHref="https://alumni.stanford.edu/travel-study/"
     ctaId="work-travel-study-cta"
   >
     <AnimateInView client:visible>
@@ -220,11 +221,8 @@ const posterMyaccountWebp = await getImage({ src: posterMyaccount, format: 'webp
     <div class="absolute inset-0 bg-linear-to-r from-palo-alto-dark/95 to-palo-verde/50" />
   </div>
   <FeatureContent
+    {...PressContent}
     eyebrow={['Website', 'Drupal headless']}
-    title="Stanford University Press"
-    description="Stanford University Press needed a site as distinguished as its catalog. Now the site delivers an elevated experience through modern content hierarchy, intuitive browsing and checkout, all in a polished visual design that showcases the book covers and caliber of the authors and their work."
-    ctaLabel="Visit Stanford University Press"
-    ctaHref="https://www.sup.org/"
     ctaId="work-sup-cta"
   >
     <AnimateInView client:visible>
@@ -245,9 +243,8 @@ const posterMyaccountWebp = await getImage({ src: posterMyaccount, format: 'webp
 <FeatureSection className="bg-fill-primary">
   <FeatureContent
     textOnRight
+    {...MyAccountContent}
     eyebrow={['Web application', 'Next.js']}
-    title="Alumni: My Account"
-    description="My Account is the central destination where Stanford alumni and constituents manage much of their personal data — from contact details and privacy settings to professional information and more. Designed and built by teams across Stanford, it serves as an important part of the alumni and constituent digital ecosystem, where account and profile updates are managed and stored in a single application."
   >
     <AnimateInView client:visible>
       <Video
@@ -263,9 +260,8 @@ const posterMyaccountWebp = await getImage({ src: posterMyaccount, format: 'webp
 {/* Directory */}
 <FeatureSection className="bg-linear-to-r from-sws-red-dark to-cardinal-red-xdark">
   <FeatureContent
+    {...DirectoryContent}
     eyebrow={['Web application', 'Next.js']}
-    title="Alumni Directory"
-    description="The Directory is where Stanford’s community connects. Powered by My Account, it gives students and alumni a powerful, intuitive way to discover connections that support their professional and personal goals — designed from the ground up so search is effortless and results feel meaningful."
   >
     <AnimateInView client:visible>
       <Image
