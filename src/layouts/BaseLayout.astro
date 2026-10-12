@@ -17,11 +17,16 @@ import {
 } from '@utilities/schema';
 
 interface Props {
+  /** Short page name, used for breadcrumbs and the default `<title>`. */
   title?: string;
+  /** Full `<title>` override when the default "{title} | Stanford Web Services" isn't descriptive enough. */
+  metaTitle?: string;
   description?: string;
   activeLabel?: string;
   theme?: 'light' | 'dark';
   ogImage?: ImageMetadata;
+  /** Alt text for ogImage; required whenever ogImage is overridden. */
+  ogImageAlt?: string;
   noindex?: boolean;
   /** schema.org WebPage subtype for this page's JSON-LD. */
   pageType?: WebPageType;
@@ -31,16 +36,18 @@ interface Props {
 
 const {
   title,
+  metaTitle,
   description = 'Stanford Web Services is Stanford University’s in-house digital agency, providing strategy, design, and engineering for university schools and departments.',
   activeLabel,
   theme = 'light',
   ogImage = social,
+  ogImageAlt = 'Stanford Web Services, University IT, over a tree-lined walkway on the Stanford campus',
   noindex = false,
   pageType = 'WebPage',
   mainEntity,
 } = Astro.props;
 
-const pageTitle = title ? `${title} | Stanford Web Services` : 'Stanford Web Services';
+const pageTitle = metaTitle ?? (title ? `${title} | Stanford Web Services` : 'Stanford Web Services');
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const isHomepage = Astro.url.pathname === '/';
 const ogImageAsset = await getImage({
@@ -113,11 +120,14 @@ const loadGTM = process.env.CONTEXT === 'production';
     <meta property="og:image" content={ogImageURL.href} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Stanford Web Services" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL.href} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
     <!-- Content is SSR'd with motion's hidden state (opacity:0); force visible when JS can't hydrate. -->
     <noscript>
