@@ -4,7 +4,8 @@
  * BaseLayout renders one `@graph` per page. Every page gets a WebPage node
  * (and a BreadcrumbList off the homepage) that references the Organization
  * and WebSite by `@id`. The full Organization and WebSite nodes are published
- * on the homepage only, per Google's guidance for Organization markup.
+ * on the homepage only, per Google's guidance for Organization markup; other
+ * pages carry name-and-URL stubs under the same `@id`s.
  *
  * Page-specific data (services, projects) comes from the same content objects
  * the pages render, so the markup always matches what's visible.
@@ -106,6 +107,19 @@ export function organizationNode(site: URL | undefined, logoUrl: string): Node {
       })),
     },
   };
+}
+
+/**
+ * Minimal Organization and WebSite nodes for pages other than the homepage.
+ * Crawlers read each page's graph on its own and don't follow an `@id` to
+ * another page, so the references on these pages need a name to land on.
+ */
+export function organizationStub(site?: URL): Node {
+  return { '@type': 'Organization', '@id': orgId(site), name: 'Stanford Web Services', url: abs('/', site) };
+}
+
+export function websiteStub(site?: URL): Node {
+  return { '@type': 'WebSite', '@id': websiteId(site), name: 'Stanford Web Services', url: abs('/', site) };
 }
 
 export function websiteNode(site?: URL): Node {

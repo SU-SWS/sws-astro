@@ -12,8 +12,10 @@ import {
   type WebPageType,
   breadcrumbNode,
   organizationNode,
+  organizationStub,
   webPageNode,
   websiteNode,
+  websiteStub,
 } from '@utilities/schema';
 
 interface Props {
@@ -59,13 +61,15 @@ const ogImageAsset = await getImage({
 });
 const ogImageURL = new URL(ogImageAsset.src, Astro.site);
 
-// One JSON-LD graph per page. Organization and WebSite are published on the
-// homepage only; other pages reference them by @id. Noindex pages get none.
+// One JSON-LD graph per page. The full Organization and WebSite are published
+// on the homepage only; other pages get stubs with the same @id. Noindex pages get none.
 const site = Astro.site;
 const jsonLd = noindex ? null : {
   '@context': 'https://schema.org',
   '@graph': [
-    ...(isHomepage ? [organizationNode(site, new URL(logo.src, site).href), websiteNode(site)] : []),
+    ...(isHomepage
+      ? [organizationNode(site, new URL(logo.src, site).href), websiteNode(site)]
+      : [organizationStub(site), websiteStub(site)]),
     webPageNode(site, {
       type: pageType,
       url: canonicalURL.href,
