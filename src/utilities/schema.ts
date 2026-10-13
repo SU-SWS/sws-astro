@@ -31,6 +31,27 @@ const stanford = {
   url: 'https://www.stanford.edu',
 };
 
+// Stanford's own locations, where SWS clients are. Kept to university sites so
+// it doesn't read as serving the wider region.
+const place = (locality: string) => ({
+  '@type': 'Place',
+  name: `${locality}, CA`,
+  address: { '@type': 'PostalAddress', addressLocality: locality, addressRegion: 'CA', addressCountry: 'US' },
+});
+const areaServed = [
+  place('Stanford'),
+  place('Redwood City'), // Stanford Redwood City campus
+  place('Palo Alto'), // Stanford Medicine, Stanford Research Park
+  place('Menlo Park'), // SLAC
+];
+
+// Who each Service is for. Organization has no `audience` property, so this
+// lives on the Service nodes only.
+const audience = {
+  '@type': 'Audience',
+  audienceType: 'Stanford University schools, departments, and organizations',
+};
+
 export function organizationNode(site: URL | undefined, logoUrl: string): Node {
   return {
     '@type': 'Organization',
@@ -57,7 +78,7 @@ export function organizationNode(site: URL | undefined, logoUrl: string): Node {
       postalCode: '94063',
       addressCountry: 'US',
     },
-    areaServed: stanford,
+    areaServed,
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
@@ -151,7 +172,8 @@ export function servicesList(site?: URL): Node {
         name: title,
         description: body,
         provider: orgRef(site),
-        areaServed: stanford,
+        areaServed,
+        audience,
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: title,
