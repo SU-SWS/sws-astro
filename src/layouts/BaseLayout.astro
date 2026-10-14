@@ -7,7 +7,6 @@ import { SiteHeader } from '@components/SiteHeader';
 import { GlobalFooter } from '@components/GlobalFooter/GlobalFooter';
 import { FooterLocal } from '@components/FooterLocal';
 import social from '@images/sws-social.jpg';
-import logo from '@images/swslogo.png';
 import {
   type WebPageType,
   breadcrumbNode,
@@ -62,26 +61,23 @@ const ogImageAsset = await getImage({
 const ogImageURL = new URL(ogImageAsset.src, Astro.site);
 
 // One JSON-LD graph per page. The full Organization and WebSite are published
-// on the homepage only; other pages get stubs with the same @id. Noindex pages get none.
-const site = Astro.site;
-const jsonLd = noindex ? null : {
-  '@context': 'https://schema.org',
-  '@graph': [
-    ...(isHomepage
-      ? [organizationNode(site, new URL(logo.src, site).href), websiteNode(site)]
-      : [organizationStub(site), websiteStub(site)]),
-    webPageNode(site, {
-      type: pageType,
-      url: canonicalURL.href,
-      name: pageTitle,
-      description,
-      imageUrl: ogImageURL.href,
-      hasBreadcrumb: !isHomepage,
-      mainEntity,
-    }),
-    ...(isHomepage ? [] : [breadcrumbNode(site, canonicalURL.href, title ?? pageTitle)]),
-  ],
-};
+// on the homepage only; other pages get stubs with the same @id plus a breadcrumb.
+// Noindex pages get none.
+const url = canonicalURL.href;
+const breadcrumbId = isHomepage ? undefined : `${url}#breadcrumb`;
+const webPage = webPageNode({
+  type: pageType,
+  url,
+  name: pageTitle,
+  description,
+  imageUrl: ogImageURL.href,
+  breadcrumbId,
+  mainEntity,
+});
+const graph = breadcrumbId
+  ? [organizationStub(), websiteStub(), webPage, breadcrumbNode(breadcrumbId, url, title ?? pageTitle)]
+  : [organizationNode(), websiteNode(), webPage];
+const jsonLd = noindex ? null : { '@context': 'https://schema.org', '@graph': graph };
 // Netlify sets CONTEXT at build time; deploy previews and branch deploys must not send analytics.
 const loadGTM = process.env.CONTEXT === 'production';
 ---

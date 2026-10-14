@@ -9,22 +9,25 @@
  *
  * Page-specific data (services, projects) comes from the same content objects
  * the pages render, so the markup always matches what's visible.
+ * URLs resolve against `site` in astro.config.mjs.
  * Undefined properties are dropped by JSON.stringify.
  */
+import logo from '@images/swslogo.png';
 import { PROJECTS, SERVICES } from '@components/sections/content';
 
 type Node = Record<string, unknown>;
 
 export type WebPageType = 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage';
 
-const abs = (path: string, site?: URL) => new URL(path, site).href;
+const abs = (path: string) => new URL(path, import.meta.env.SITE).href;
 const slug = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-export const orgId = (site?: URL) => `${abs('/', site)}#organization`;
-export const websiteId = (site?: URL) => `${abs('/', site)}#website`;
-const serviceId = (title: string, site?: URL) => `${abs('/services/', site)}#${slug(title)}`;
+const homeUrl = abs('/');
+const orgId = `${homeUrl}#organization`;
+const websiteId = `${homeUrl}#website`;
+const serviceId = (title: string) => `${abs('/services/')}#${slug(title)}`;
 
-const orgRef = (site?: URL) => ({ '@id': orgId(site) });
+const orgRef = { '@id': orgId };
 
 const stanford = {
   '@type': 'CollegeOrUniversity',
@@ -53,14 +56,14 @@ const audience = {
   audienceType: 'Stanford University schools, departments, and organizations',
 };
 
-export function organizationNode(site: URL | undefined, logoUrl: string): Node {
+export function organizationNode(): Node {
   return {
     '@type': 'Organization',
-    '@id': orgId(site),
+    '@id': orgId,
     name: 'Stanford Web Services',
     alternateName: 'SWS',
-    url: abs('/', site),
-    logo: logoUrl,
+    url: homeUrl,
+    logo: abs(logo.src),
     description:
       'Stanford Web Services is Stanford University’s in-house digital agency, providing strategy, design, engineering, and ongoing support for the websites and web applications of Stanford’s schools, departments, and organizations.',
     parentOrganization: {
@@ -83,7 +86,7 @@ export function organizationNode(site: URL | undefined, logoUrl: string): Node {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
-      url: abs('/contact/', site),
+      url: abs('/contact/'),
       availableLanguage: 'English',
     },
     knowsAbout: [
@@ -100,10 +103,10 @@ export function organizationNode(site: URL | undefined, logoUrl: string): Node {
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Stanford Web Services offerings',
-      url: abs('/services/', site),
+      url: abs('/services/'),
       itemListElement: SERVICES.map(({ title }) => ({
         '@type': 'Offer',
-        itemOffered: { '@type': 'Service', '@id': serviceId(title, site), name: title },
+        itemOffered: { '@type': 'Service', '@id': serviceId(title), name: title },
       })),
     },
   };
@@ -114,23 +117,23 @@ export function organizationNode(site: URL | undefined, logoUrl: string): Node {
  * Crawlers read each page's graph on its own and don't follow an `@id` to
  * another page, so the references on these pages need a name to land on.
  */
-export function organizationStub(site?: URL): Node {
-  return { '@type': 'Organization', '@id': orgId(site), name: 'Stanford Web Services', url: abs('/', site) };
+export function organizationStub(): Node {
+  return { '@type': 'Organization', '@id': orgId, name: 'Stanford Web Services', url: homeUrl };
 }
 
-export function websiteStub(site?: URL): Node {
-  return { '@type': 'WebSite', '@id': websiteId(site), name: 'Stanford Web Services', url: abs('/', site) };
+export function websiteStub(): Node {
+  return { '@type': 'WebSite', '@id': websiteId, name: 'Stanford Web Services', url: homeUrl };
 }
 
-export function websiteNode(site?: URL): Node {
+export function websiteNode(): Node {
   return {
     '@type': 'WebSite',
-    '@id': websiteId(site),
+    '@id': websiteId,
     name: 'Stanford Web Services',
     alternateName: 'SWS',
-    url: abs('/', site),
+    url: homeUrl,
     inLanguage: 'en',
-    publisher: orgRef(site),
+    publisher: orgRef,
   };
 }
 
@@ -140,11 +143,12 @@ interface WebPageOptions {
   name: string;
   description: string;
   imageUrl: string;
-  hasBreadcrumb: boolean;
+  /** `@id` of this page's BreadcrumbList, when it has one. */
+  breadcrumbId?: string;
   mainEntity?: Node;
 }
 
-export function webPageNode(site: URL | undefined, opts: WebPageOptions): Node {
+export function webPageNode(opts: WebPageOptions): Node {
   return {
     '@type': opts.type,
     '@id': `${opts.url}#webpage`,
@@ -152,28 +156,28 @@ export function webPageNode(site: URL | undefined, opts: WebPageOptions): Node {
     name: opts.name,
     description: opts.description,
     inLanguage: 'en',
-    isPartOf: { '@id': websiteId(site) },
-    about: orgRef(site),
-    publisher: orgRef(site),
+    isPartOf: { '@id': websiteId },
+    about: orgRef,
+    publisher: orgRef,
     primaryImageOfPage: { '@type': 'ImageObject', url: opts.imageUrl },
-    breadcrumb: opts.hasBreadcrumb ? { '@id': `${opts.url}#breadcrumb` } : undefined,
+    breadcrumb: opts.breadcrumbId ? { '@id': opts.breadcrumbId } : undefined,
     mainEntity: opts.mainEntity,
   };
 }
 
-export function breadcrumbNode(site: URL | undefined, url: string, name: string): Node {
+export function breadcrumbNode(id: string, url: string, name: string): Node {
   return {
     '@type': 'BreadcrumbList',
-    '@id': `${url}#breadcrumb`,
+    '@id': id,
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/', site) },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: homeUrl },
       { '@type': 'ListItem', position: 2, name, item: url },
     ],
   };
 }
 
 /** mainEntity for /services/: the four service areas and what each includes. */
-export function servicesList(site?: URL): Node {
+export function servicesList(): Node {
   return {
     '@type': 'ItemList',
     name: 'Stanford Web Services service areas',
@@ -182,10 +186,10 @@ export function servicesList(site?: URL): Node {
       position: index + 1,
       item: {
         '@type': 'Service',
-        '@id': serviceId(title, site),
+        '@id': serviceId(title),
         name: title,
         description: body,
-        provider: orgRef(site),
+        provider: orgRef,
         areaServed,
         audience,
         hasOfferCatalog: {
@@ -202,7 +206,7 @@ export function servicesList(site?: URL): Node {
 }
 
 /** mainEntity for /work/: every portfolio project, with awards where earned. */
-export function projectsList(site?: URL): Node {
+export function projectsList(): Node {
   return {
     '@type': 'ItemList',
     name: 'Stanford Web Services portfolio',
@@ -215,7 +219,7 @@ export function projectsList(site?: URL): Node {
           '@type': 'CreativeWork',
           name: title,
           description,
-          creator: orgRef(site),
+          creator: orgRef,
           url: ctaHref,
           award: awardNames.length ? awardNames : undefined,
         },
