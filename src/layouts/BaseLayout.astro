@@ -6,30 +6,50 @@ import { Font, getImage } from 'astro:assets';
 import { SiteHeader } from '@components/SiteHeader';
 import { GlobalFooter } from '@components/GlobalFooter/GlobalFooter';
 import { FooterLocal } from '@components/FooterLocal';
-import OrganizationSchema from '@components/OrganizationSchema.astro';
 import social from '@images/sws-social.jpg';
+import {
+  type WebPageType,
+  breadcrumbNode,
+  organizationNode,
+  organizationStub,
+  webPageNode,
+  websiteNode,
+  websiteStub,
+} from '@utilities/schema';
 
 interface Props {
+  /** Short page name, used for breadcrumbs and the default `<title>`. */
   title?: string;
+  /** Full `<title>` override when the default "{title} | Stanford Web Services" isn't descriptive enough. */
+  metaTitle?: string;
   description?: string;
   activeLabel?: string;
   theme?: 'light' | 'dark';
   ogImage?: ImageMetadata;
+  /** Alt text for ogImage; required whenever ogImage is overridden. */
+  ogImageAlt?: string;
   noindex?: boolean;
+  /** schema.org WebPage subtype for this page's JSON-LD. */
+  pageType?: WebPageType;
+  /** Primary thing the page is about (e.g. an ItemList of services or projects). */
+  mainEntity?: Record<string, unknown>;
 }
 
 const {
   title,
+  metaTitle,
   description = 'Stanford Web Services is Stanford University’s in-house digital agency, providing strategy, design, and engineering for university schools and departments.',
   activeLabel,
   theme = 'light',
   ogImage = social,
+  ogImageAlt = 'Stanford Web Services, University IT, over a tree-lined walkway on the Stanford campus',
   noindex = false,
+  pageType = 'WebPage',
+  mainEntity,
 } = Astro.props;
 
-const pageTitle = title ? `${title} | Stanford Web Services` : 'Stanford Web Services';
+const pageTitle = metaTitle ?? (title ? `${title} | Stanford Web Services` : 'Stanford Web Services');
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-// Organization JSON-LD belongs on one page only; the homepage is that page.
 const isHomepage = Astro.url.pathname === '/';
 const ogImageAsset = await getImage({
   src: ogImage,
@@ -39,6 +59,25 @@ const ogImageAsset = await getImage({
   format: 'jpeg',
 });
 const ogImageURL = new URL(ogImageAsset.src, Astro.site);
+
+// One JSON-LD graph per page. The full Organization and WebSite are published
+// on the homepage only; other pages get stubs with the same @id plus a breadcrumb.
+// Noindex pages get none.
+const url = canonicalURL.href;
+const breadcrumbId = isHomepage ? undefined : `${url}#breadcrumb`;
+const webPage = webPageNode({
+  type: pageType,
+  url,
+  name: pageTitle,
+  description,
+  imageUrl: ogImageURL.href,
+  breadcrumbId,
+  mainEntity,
+});
+const graph = breadcrumbId
+  ? [organizationStub(), websiteStub(), webPage, breadcrumbNode(breadcrumbId, url, title ?? pageTitle)]
+  : [organizationNode(), websiteNode(), webPage];
+const jsonLd = noindex ? null : { '@context': 'https://schema.org', '@graph': graph };
 // Netlify sets CONTEXT at build time; deploy previews and branch deploys must not send analytics.
 const loadGTM = process.env.CONTEXT === 'production';
 ---
@@ -81,12 +120,15 @@ const loadGTM = process.env.CONTEXT === 'production';
     <meta property="og:image" content={ogImageURL.href} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Stanford Web Services" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL.href} />
-    {isHomepage && <OrganizationSchema />}
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+    {jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />}
     <!-- Content is SSR'd with motion's hidden state (opacity:0); force visible when JS can't hydrate. -->
     <noscript>
       <style>

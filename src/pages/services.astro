@@ -1,12 +1,15 @@
 ---
 import ServicesPage from '@components/pages/ServicesPage.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { servicesList } from '@utilities/schema';
 ---
 
 <BaseLayout
   title="Services"
+  metaTitle="Web strategy, design & engineering | Stanford Web Services"
   description="Stanford Web Services partners with Stanford teams on strategy, design, and engineering, taking the guesswork out of security and infrastructure decisions."
   theme="dark"
+  mainEntity={servicesList()}
   activeLabel="Services"
 >
   <ServicesPage />
