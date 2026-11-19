@@ -1,0 +1,56 @@
+---
+import { Container } from '@components/Container/Container';
+import { CtaLink } from '@components/CtaLink/CtaLink';
+import { JOIN_PANEL_URL } from './content';
+
+const COLLECTED = [
+  'Your name',
+  'Your Stanford email address',
+  'Confirmation that you are staff',
+  'Your school or department and your job title, from the Stanford directory',
+];
+
+const DETAILS = [
+  {
+    title: 'Where it is kept',
+    body: 'Your details are held in Stanford’s Google Workspace. We are reviewing whether to use a dedicated panel tool in future. If we adopt one, we will tell you before moving your details.',
+  },
+  {
+    title: 'What we do with what you tell us',
+    body: 'Departments who commission our work receive our findings. They do not receive the panel list.',
+  },
+];
+---
+
+<Container as="section" bgColor="white" pt={8} pb={8}>
+  <div class="max-w-1100 mx-auto">
+    <h2 class="font-serif font-normal fluid-type-3 leading-display rs-mb-3">What we collect</h2>
+    <div class="grid gap-48 lg:grid-cols-2 lg:gap-61 items-center">
+      <div class="h-full border border-border-primary rounded-lg p-27">
+        <h3 class="type-0 font-semibold leading-display pb-27">We collect</h3>
+        <ul class="list-unstyled card-paragraph leading-snug mb-0">
+          {COLLECTED.map((item) => (
+            <li class="flex gap-16 items-start py-14 mb-0 border-b border-black-20">
+              <span aria-hidden="true" class="type-0 font-semibold leading-snug text-palo-alto">✓</span>
+              <span class="flex-1">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="card-paragraph leading-cozy text-secondary-muted pt-27">Nothing else.</p>
+      </div>
+      <div class="flex flex-col gap-38">
+        {DETAILS.map(({ title, body }) => (
+          <div>
+            <h3 class="font-serif font-normal fluid-type-1 leading-snug mb-12">{title}</h3>
+            <p class="card-paragraph leading-snug">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="flex justify-center rs-mt-3">
+      <CtaLink variant="button-filled" id="research-panel-collect-join" href={JOIN_PANEL_URL}>
+        Join the panel
+      </CtaLink>
+    </div>
+  </div>
+</Container>

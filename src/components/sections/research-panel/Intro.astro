@@ -1,0 +1,45 @@
+---
+import { Container } from '@components/Container/Container';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+import { CtaLink } from '@components/CtaLink/CtaLink';
+import { JOIN_PANEL_URL } from './content';
+
+const FACTS = [
+  { label: 'Who can join', value: 'Stanford staff, for now. We hope to open the panel to faculty and students later.' },
+  { label: 'How often', value: 'Around two to four invitations a year.' },
+  { label: 'How long', value: 'Live sessions take 30 to 45 minutes. Tasks you do on your own are usually 10 to 20 minutes.' },
+  { label: 'Where', value: 'Usually over Zoom, occasionally in person, sometimes on your own.' },
+  { label: 'Saying no', value: 'Say no to any invitation, without giving a reason.' },
+  { label: 'Leaving', value: 'Any time, by email. We delete your details.' },
+];
+---
+
+{/* White band so the masthead keeps breathing room above the grey hero. */}
+<div class="bg-white rs-pt-3" aria-hidden="true"></div>
+<Container as="section" className="bg-fog-light text-primary" pt={8} pb={8}>
+  <div class="max-w-1300 grid gap-48 lg:grid-cols-12 lg:gap-64">
+    <AnimateInView client:visible as="div" className="lg:col-span-5">
+      <p class="type-0 font-semibold leading-display pb-13">UX Design and Research</p>
+      <h1 class="font-serif font-normal fluid-type-4 leading-display rs-mb-3">Staff Research Panel</h1>
+      <p class="leading-normal">
+        We are the UX Design and Research Team of Stanford Web Services. We work with departments across
+        Stanford to improve the websites, tools and services that staff use every day. To do that well,
+        we need to hear from the people who use them.
+      </p>
+      <CtaLink variant="button-filled" id="research-panel-hero-join" href={JOIN_PANEL_URL} className="rs-mt-3">
+        Join the panel
+      </CtaLink>
+    </AnimateInView>
+    <AnimateInView client:visible as="div" delay={0.1} className="lg:col-span-7 bg-white border border-border-primary rounded-lg p-24 md:p-40">
+      <h2 class="font-serif font-normal fluid-type-1 leading-snug mb-8">At a glance</h2>
+      <dl class="card-paragraph leading-snug mb-0">
+        {FACTS.map(({ label, value }) => (
+          <div class="flex flex-col gap-4 sm:flex-row sm:gap-24 py-16 border-b border-black-20 last:border-b-0">
+            <dt class="shrink-0 sm:w-150 text-secondary-muted">{label}</dt>
+            <dd class="m-0 flex-1">{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </AnimateInView>
+  </div>
+</Container>

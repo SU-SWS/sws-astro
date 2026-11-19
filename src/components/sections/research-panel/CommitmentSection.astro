@@ -1,0 +1,45 @@
+---
+import { Container } from '@components/Container/Container';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+
+const CARDS = [
+  {
+    title: 'Your time',
+    body: 'Joining puts you on a list. It does not commit you to anything. We expect to invite people around two to four times a year, and you can say no to any invitation.',
+  },
+  {
+    title: 'Your privacy',
+    body: 'Taking part is entirely voluntary and separate from your job. We never share the panel list, so no department knows who is on it.',
+  },
+  {
+    title: 'Recordings',
+    body: 'Some studies are recorded, and we sometimes share a recording or a short clip with the team who asked for the work, but we will always ask your permission.',
+  },
+];
+---
+
+<Container as="section" bgColor="black" pt={8} pb={8}>
+  <div class="max-w-1100 mx-auto">
+    <div class="max-w-800 rs-mb-3">
+      <p class="type-0 font-semibold leading-display text-dark-secondary-muted mb-19">Your commitment</p>
+      <h2 class="font-serif font-normal fluid-type-3 leading-display">
+        What joining does and does not commit you to
+      </h2>
+    </div>
+    <ul class="list-unstyled grid gap-24 md:grid-cols-3 mb-0">
+      {CARDS.map(({ title, body }, index) => (
+        <li class="mb-0">
+          <AnimateInView
+            client:visible
+            as="div"
+            delay={index * 0.1}
+            className="h-full flex flex-col gap-16 p-24 md:p-40 border border-black-70 rounded-lg"
+          >
+            <h3 class="type-0 font-semibold leading-display text-dark-secondary-muted">{title}</h3>
+            <p class="card-paragraph leading-snug">{body}</p>
+          </AnimateInView>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Container>

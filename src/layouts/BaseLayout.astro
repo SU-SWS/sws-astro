@@ -5,7 +5,7 @@ import '@styles/global.css';
 import { Font, getImage } from 'astro:assets';
 import { SiteHeader } from '@components/SiteHeader';
 import { GlobalFooter } from '@components/GlobalFooter/GlobalFooter';
-import { FooterLocal } from '@components/FooterLocal';
+import { FooterLocal, type FooterCta } from '@components/FooterLocal';
 import social from '@images/sws-social.jpg';
 import {
   type WebPageType,
@@ -33,6 +33,8 @@ interface Props {
   pageType?: WebPageType;
   /** Primary thing the page is about (e.g. an ItemList of services or projects). */
   mainEntity?: Record<string, unknown>;
+  /** Page-specific call to action in the local footer; defaults to "Connect with us". */
+  footerCta?: FooterCta;
 }
 
 const {
@@ -46,6 +48,7 @@ const {
   noindex = false,
   pageType = 'WebPage',
   mainEntity,
+  footerCta,
 } = Astro.props;
 
 const pageTitle = metaTitle ?? (title ? `${title} | Stanford Web Services` : 'Stanford Web Services');
@@ -154,7 +157,7 @@ const loadGTM = process.env.CONTEXT === 'production';
       <slot />
     </main>
     <footer>
-      <FooterLocal client:load activeLabel={activeLabel} />
+      <FooterLocal client:load activeLabel={activeLabel} cta={footerCta} />
       <GlobalFooter />
     </footer>
   </body>
