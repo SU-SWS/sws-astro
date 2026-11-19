@@ -5,34 +5,34 @@ import { CtaLink } from '@components/CtaLink/CtaLink';
 import { ConsultationForm } from './ConsultationForm';
 import * as styles from './ConsultationForm.styles';
 
-// ServiceNow front door for now. TODO: point to the SWS-specific help ticket form once there is one.
-const HELP_TICKET_URL = 'https://stanford.service-now.com/services?id=services_portal_home';
+// ServiceNow help ticket form for existing SWS sites.
+const HELP_TICKET_URL = 'https://stanford.service-now.com/it_services?id=sc_cat_item&sys_id=83daed294f4143009a9a97411310c70a';
 ---
 
 <Container as="section" pt={8} pb={7} className="bg-fog-light text-primary">
   <AnimateInView
     client:visible
     as="h1"
-    className="font-serif rs-mb-3 font-normal fluid-type-4 leading-display"
+    className="font-serif rs-mb-0 font-normal fluid-type-4 leading-display"
   >
     Connect with us
   </AnimateInView>
   <AnimateInView client:visible as="div" delay={0.1} className="max-w-900 rs-mb-4">
-    <p class="fluid-type-2 leading-cozy text-secondary-muted text-pretty">
+    <p class="big-paragraph leading-normal text-secondary-muted text-pretty">
       We’re here to learn about your needs and explore how we can help.
     </p>
   </AnimateInView>
 
   <div class="flex flex-col gap-40 lg:flex-row lg:items-start lg:justify-between lg:gap-60">
     <div class={styles.card}>
-      <h2 id="consultation-form-heading" class="type-1 leading-tight font-normal rs-mb-3">
+      <h2 id="consultation-form-heading" class="type-0 leading-display font-semibold rs-mb-3">
         Request a consultation with Stanford Web Services
       </h2>
       <ConsultationForm client:load />
     </div>
 
     <aside class={styles.helpCard} aria-labelledby="need-help-heading">
-      <h2 id="need-help-heading" class="font-serif type-2 font-normal leading-cozy">
+      <h2 id="need-help-heading" class="font-serif text-26 lg:text-30 font-normal leading-cozy">
         Need help?
       </h2>
       <p class="card-paragraph leading-snug text-secondary-muted py-19">

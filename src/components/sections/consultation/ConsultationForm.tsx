@@ -146,7 +146,7 @@ export const ConsultationForm = () => {
           Your website (<em>if one exists</em>)
         </label>
         <p id="consultation-website-help" className={styles.helpText}>
-          If this project involves redesigning or updating an existing website, please share the URL (e.g., sitename.stanford.edu).
+          If this project involves an existing website, please share the URL.
         </p>
         <input
           id="consultation-website"
