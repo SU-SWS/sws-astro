@@ -7,7 +7,8 @@ export default defineConfig({
   site: 'https://webservices.stanford.edu',
   // No need to enable prefetch since we use View Transition which sets a default configuration of { prefetchAll: true }
   // https://docs.astro.build/en/guides/prefetch/#using-with-view-transitions
-  integrations: [react(), sitemap()],
+  // The consultation landing page is unlisted, so keep it out of the sitemap.
+  integrations: [react(), sitemap({ filter: (page) => !page.includes('/consultation') })],
   vite: {
     plugins: [tailwindcss()],
   },
