@@ -1,0 +1,19 @@
+---
+import ResearchPanelPage from '@components/pages/ResearchPanelPage.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { JOIN_PANEL_URL, PANEL_CONTACT_EMAIL } from '@components/sections/research-panel/content';
+---
+
+<BaseLayout
+  title="Staff Research Panel"
+  metaTitle="Staff Research Panel | Stanford Web Services"
+  description="Join the Stanford Web Services Staff Research Panel and help improve the websites, tools, and services Stanford staff use every day."
+  footerCta={{
+    heading: 'Questions about the panel?',
+    email: PANEL_CONTACT_EMAIL,
+    ctaLabel: 'Join the panel',
+    ctaHref: JOIN_PANEL_URL,
+  }}
+>
+  <ResearchPanelPage />
+</BaseLayout>
