@@ -76,7 +76,7 @@ Treat the key like a password, the same way as the Slack webhook. If it leaks, r
 
 1. In the Netlify UI, open this site and go to **Site configuration** → **Environment variables**.
 2. Add both variables above:
-   - **Scopes:** **Functions** only. The build doesn't need these values.
+   - **Scopes:** **Functions** only if possible. The build doesn't need these values.
    - **Deploy contexts:** **Production**. Add **Deploy previews** too if you want to test on PR previews, but those test submissions go to the real #newclients channel and HubSpot. A preview runs its PR's code with these values before anyone reviews it, so only add them to previews if everyone who can push to this repo is trusted, and keep Netlify's sensitive-variable policy requiring approval for PRs from forks.
    - Mark both as **secrets** if Netlify offers the option.
 3. Redeploy the site (**Deploys** → **Trigger deploy** → **Deploy site**) so the function picks up the variables.
