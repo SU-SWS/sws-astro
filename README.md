@@ -28,10 +28,17 @@ Run `npm run lint` and `npm run check` before considering any change done — th
 
 `/consultation/` is an unlisted landing page: it isn't in the site navigation or the sitemap, and it's marked `noindex`. Its form posts to a Netlify function ([`netlify/functions/consultation.mts`](netlify/functions/consultation.mts)) that does two things with each request:
 
-1. **Saves it to HubSpot**: it creates the requester's contact (or updates it, matched by email) and a deal titled "[UXR] Consultation request: …" in the consultation pipeline (pipeline `1572379368`, stage `2515363565`), linked to that contact.
+1. **Saves it to HubSpot**: it finds the requester's contact by email, or creates one if there isn't one, and creates a deal titled "[UXR] Consultation request: …" in the consultation pipeline (pipeline `1572379368`, stage `2515363565`), linked to that contact.
 2. **Posts it to the #newclients Slack channel** with the title **"[UXR] New consultation request"**. If the HubSpot save failed, the Slack message says so, so someone can add it by hand.
 
 The visitor sees the success message if either step worked, so they aren't asked to resubmit and create a duplicate. They see the error message only if both failed.
+
+An existing HubSpot contact is never changed, because anyone can type anyone's email into the form. The deal and the Slack message still show everything that was submitted. If the requester's name or organization in HubSpot is out of date, update the contact by hand.
+
+The function also:
+
+- **Rate limits submissions** to 5 per minute per visitor IP (`rateLimit` in the function's `config`). Over the limit, Netlify returns `429` without running the function, and the form says to wait a minute. Netlify doesn't fail the deploy if a rule is invalid, so check the deploy log after changing it.
+- **Rejects posts from other websites** by checking the request's `Origin` header against the site's own.
 
 ### Environment variables
 
@@ -69,8 +76,8 @@ Treat the key like a password, the same way as the Slack webhook. If it leaks, r
 
 1. In the Netlify UI, open this site and go to **Site configuration** → **Environment variables**.
 2. Add both variables above:
-   - **Scopes:** at least **Functions**
-   - **Deploy contexts:** **Production**. Add **Deploy previews** too if you want to test on PR previews, but those test submissions go to the real #newclients channel and HubSpot.
+   - **Scopes:** **Functions** only. The build doesn't need these values.
+   - **Deploy contexts:** **Production**. Add **Deploy previews** too if you want to test on PR previews, but those test submissions go to the real #newclients channel and HubSpot. A preview runs its PR's code with these values before anyone reviews it, so only add them to previews if everyone who can push to this repo is trusted, and keep Netlify's sensitive-variable policy requiring approval for PRs from forks.
    - Mark both as **secrets** if Netlify offers the option.
 3. Redeploy the site (**Deploys** → **Trigger deploy** → **Deploy site**) so the function picks up the variables.
 

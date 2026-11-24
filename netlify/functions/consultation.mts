@@ -67,11 +67,17 @@ async function saveToHubSpot(values: Values): Promise<boolean> {
     return false;
   }
 
-  // Create the contact, or update it if one with this email already exists.
-  const contact = await callHubSpot('/crm/v3/objects/contacts/batch/upsert', token, {
-    inputs: [{
-      idProperty: 'email',
-      id: values.email,
+  // Anyone can type any email into the form, so an existing contact is linked
+  // to the new record but never updated. What was submitted is still in the
+  // record's description and the Slack message.
+  const findContact = async () => (await callHubSpot('/crm/v3/objects/contacts/batch/read', token, {
+    idProperty: 'email',
+    inputs: [{ id: values.email }],
+    properties: ['email'],
+  }))?.results?.[0]?.id;
+
+  const contactId = await findContact()
+    ?? (await callHubSpot('/crm/v3/objects/contacts', token, {
       properties: {
         email: values.email,
         firstname: values.firstName,
@@ -79,9 +85,10 @@ async function saveToHubSpot(values: Values): Promise<boolean> {
         company: values.organization,
         ...(values.website && { website: values.website }),
       },
-    }],
-  });
-  const contactId = contact?.results?.[0]?.id;
+    }))?.id
+    // The create fails if the same email was added in the meantime (e.g. a
+    // double submit), so look it up once more.
+    ?? await findContact();
   if (!contactId) {
     return false;
   }
@@ -160,6 +167,14 @@ export default async (req: Request) => {
     return new Response('Method not allowed', { status: 405, headers: { Allow: 'POST' } });
   }
 
+  // Browsers send Origin on every POST, so this stops other websites from
+  // submitting the form in the background. Requests without one aren't from a
+  // browser page and can't be told apart this way, so they're let through.
+  const origin = req.headers.get('origin');
+  if (origin && origin !== new URL(req.url).origin) {
+    return new Response('Forbidden', { status: 403 });
+  }
+
   let data: FormData;
   try {
     data = await req.formData();
@@ -195,4 +210,12 @@ export default async (req: Request) => {
 
 export const config = {
   path: '/api/consultation',
+  // Far more than a person needs, but stops a script from flooding HubSpot and
+  // Slack. Over the limit, Netlify returns 429 without running the function.
+  // Rules that don't validate don't fail the deploy, so check the deploy log.
+  rateLimit: {
+    windowLimit: 5,
+    windowSize: 60,
+    aggregateBy: ['ip', 'domain'],
+  },
 };

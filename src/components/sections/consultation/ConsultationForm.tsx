@@ -43,7 +43,7 @@ const ORGANIZATIONS = [
 
 const ENDPOINT = '/api/consultation';
 
-type Status = 'idle' | 'sending' | 'success' | 'error';
+type Status = 'idle' | 'sending' | 'success' | 'error' | 'rateLimited';
 
 export const ConsultationForm = () => {
   const [status, setStatus] = useState<Status>('idle');
@@ -66,6 +66,10 @@ export const ConsultationForm = () => {
         headers: { Accept: 'application/json' },
         body: new FormData(form),
       });
+      if (response.status === 429) {
+        setStatus('rateLimited');
+        return;
+      }
       if (!response.ok) throw new Error(`Request failed: ${response.status}`);
       form.reset();
       setStatus('success');
@@ -198,6 +202,11 @@ export const ConsultationForm = () => {
           {status === 'error' && (
             <span className={styles.statusVariants.error}>
               Sorry, something went wrong sending your request. Please try again.
+            </span>
+          )}
+          {status === 'rateLimited' && (
+            <span className={styles.statusVariants.error}>
+              Too many requests. Please wait a minute and try again.
             </span>
           )}
         </p>
