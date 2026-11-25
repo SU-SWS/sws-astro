@@ -1,0 +1,60 @@
+---
+import { Container } from '@components/Container/Container';
+import { AnimateInView } from '@components/Animate/AnimateInView';
+import { CtaLink } from '@components/CtaLink/CtaLink';
+import { ConsultationForm } from './ConsultationForm';
+import * as styles from './ConsultationForm.styles';
+
+// ServiceNow help ticket form for existing SWS sites.
+const HELP_TICKET_URL = 'https://stanford.service-now.com/it_services?id=sc_cat_item&sys_id=83daed294f4143009a9a97411310c70a';
+---
+
+<Container as="section" pt={8} pb={7} className="bg-fog-light text-primary">
+  <AnimateInView
+    client:visible
+    as="h1"
+    className="font-serif rs-mb-0 font-normal fluid-type-4 leading-display"
+  >
+    Connect with us
+  </AnimateInView>
+  <AnimateInView client:visible as="div" delay={0.1} className="max-w-900 rs-mb-4">
+    <p class="big-paragraph leading-normal text-secondary-muted text-pretty">
+      Make your content easy to find for people and AI. The UX Researchers at Stanford Web Services
+      are here to help you test and refine webpages for bots and every audience.
+    </p>
+  </AnimateInView>
+
+  <div class="flex flex-col gap-40 lg:flex-row lg:items-start lg:justify-between lg:gap-60">
+    <div class={styles.card}>
+      <h2 id="consultation-form-heading" class="type-0 leading-display font-semibold rs-mb-3">
+        Request a consultation with Stanford Web Services
+      </h2>
+      <ConsultationForm client:load />
+      <!--
+        Without JS the form posts natively and the function redirects back to
+        #request-sent or #request-failed, which reveals the matching message.
+        With JS the form shows its own status instead.
+      -->
+      <noscript>
+        <p id="request-sent" tabindex="-1" class={`${styles.noscriptStatus} ${styles.statusVariants.success}`}>
+          Thank you! Your request has been sent. Our team will be in touch soon.
+        </p>
+        <p id="request-failed" tabindex="-1" class={`${styles.noscriptStatus} ${styles.statusVariants.error}`}>
+          Sorry, something went wrong sending your request. Please check your entries and try again.
+        </p>
+      </noscript>
+    </div>
+
+    <aside class={styles.helpCard} aria-labelledby="need-help-heading">
+      <h2 id="need-help-heading" class="font-serif text-26 lg:text-30 font-normal leading-cozy">
+        Need help?
+      </h2>
+      <p class="card-paragraph leading-snug text-secondary-muted py-19">
+        If you need help on your existing Stanford Web Services site.
+      </p>
+      <CtaLink variant="button-light" href={HELP_TICKET_URL}>
+        Create a help ticket
+      </CtaLink>
+    </aside>
+  </div>
+</Container>
