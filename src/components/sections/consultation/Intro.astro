@@ -30,6 +30,19 @@ const HELP_TICKET_URL = 'https://stanford.service-now.com/it_services?id=sc_cat_
         Request a consultation with Stanford Web Services
       </h2>
       <ConsultationForm client:load />
+      <!--
+        Without JS the form posts natively and the function redirects back to
+        #request-sent or #request-failed, which reveals the matching message.
+        With JS the form shows its own status instead.
+      -->
+      <noscript>
+        <p id="request-sent" tabindex="-1" class={`${styles.noscriptStatus} ${styles.statusVariants.success}`}>
+          Thank you! Your request has been sent. Our team will be in touch soon.
+        </p>
+        <p id="request-failed" tabindex="-1" class={`${styles.noscriptStatus} ${styles.statusVariants.error}`}>
+          Sorry, something went wrong sending your request. Please check your entries and try again.
+        </p>
+      </noscript>
     </div>
 
     <aside class={styles.helpCard} aria-labelledby="need-help-heading">

@@ -94,6 +94,10 @@ export const ConsultationForm = () => {
           type="email"
           autoComplete="email"
           required
+          maxLength={254}
+          // Same rule as the server: browsers alone accept addresses with no dot in the domain.
+          pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+          title="Enter an email address like name@stanford.edu"
           className={styles.input}
         />
       </div>
@@ -106,6 +110,7 @@ export const ConsultationForm = () => {
           type="text"
           autoComplete="given-name"
           required
+          maxLength={100}
           className={styles.input}
         />
       </div>
@@ -118,6 +123,7 @@ export const ConsultationForm = () => {
           type="text"
           autoComplete="family-name"
           required
+          maxLength={100}
           className={styles.input}
         />
       </div>
@@ -158,6 +164,7 @@ export const ConsultationForm = () => {
           type="text"
           inputMode="url"
           autoComplete="url"
+          maxLength={500}
           aria-describedby="consultation-website-help"
           className={styles.input}
         />

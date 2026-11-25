@@ -37,11 +37,31 @@ const FIELDS = {
   details: { label: 'Tell us more', required: false, max: 5000 },
 } as const;
 
+// Kept in sync with the email input's `pattern` in ConsultationForm.tsx.
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 type FieldName = keyof typeof FIELDS;
 type Values = Record<FieldName, string>;
 
 // Slack mrkdwn only needs these three characters escaped.
 const escapeSlack = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// Slack rejects the whole message if a section's text is over 3,000
+// characters, and "Tell us more" can be 5,000 before escaping. Split the
+// labeled, escaped field into as many sections as it needs, one character at a
+// time so an escape like `&amp;` is never cut in half.
+const SLACK_SECTION_MAX = 3000;
+function slackSections(label: string, value: string): string[] {
+  const sections = [`*${label}:*\n`];
+  for (const char of value) {
+    const escaped = escapeSlack(char);
+    if (sections[sections.length - 1].length + escaped.length > SLACK_SECTION_MAX) {
+      sections.push('');
+    }
+    sections[sections.length - 1] += escaped;
+  }
+  return sections;
+}
 
 async function callHubSpot(path: string, token: string, body: unknown): Promise<{ id?: string; results?: { id: string }[] } | null> {
   const response = await fetch(`https://api.hubapi.com${path}`, {
@@ -124,7 +144,7 @@ async function postToSlack(values: Values, savedToHubSpot: boolean): Promise<boo
   const name = escapeSlack(`${values.firstName} ${values.lastName}`);
   const lines = (Object.keys(FIELDS) as FieldName[])
     .filter((key) => values[key])
-    .map((key) => `*${FIELDS[key].label}:*\n${escapeSlack(values[key])}`);
+    .flatMap((key) => slackSections(FIELDS[key].label, values[key]));
 
   const response = await fetch(webhookUrl, {
     method: 'POST',
@@ -158,10 +178,15 @@ async function postToSlack(values: Values, savedToHubSpot: boolean): Promise<boo
 
 export default async (req: Request) => {
   const wantsJson = req.headers.get('accept')?.includes('application/json') ?? false;
-  // Native (no-JS) form posts get sent back to the page with a status flag.
+  // Native form posts get sent back to the page. The query flag is for when
+  // JS loads on the returned page; the fragment shows the result without JS
+  // (see the <noscript> messages in Intro.astro).
   const respond = (ok: boolean, status: number) => (wantsJson
     ? Response.json({ ok }, { status })
-    : Response.redirect(new URL(`${PAGE_PATH}?${ok ? 'submitted' : 'error'}=1`, req.url), 303));
+    : Response.redirect(new URL(
+      ok ? `${PAGE_PATH}?submitted=1#request-sent` : `${PAGE_PATH}?error=1#request-failed`,
+      req.url,
+    ), 303));
 
   if (req.method !== 'POST') {
     return new Response('Method not allowed', { status: 405, headers: { Allow: 'POST' } });
@@ -189,13 +214,15 @@ export default async (req: Request) => {
 
   const values = {} as Values;
   for (const [name, field] of Object.entries(FIELDS) as [FieldName, (typeof FIELDS)[FieldName]][]) {
-    const value = String(data.get(name) ?? '').trim();
+    // Browsers send textarea line breaks as \r\n but count them as one
+    // character toward maxlength, so normalize before checking the length.
+    const value = String(data.get(name) ?? '').replace(/\r\n/g, '\n').trim();
     if ((field.required && !value) || value.length > field.max) {
       return respond(false, 400);
     }
     values[name] = value;
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+  if (!EMAIL_PATTERN.test(values.email)) {
     return respond(false, 400);
   }
 

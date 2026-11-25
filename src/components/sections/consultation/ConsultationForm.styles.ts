@@ -15,6 +15,8 @@ export const selectIcon = 'pointer-events-none absolute right-20 bottom-22 size-
 
 export const submitRow = 'flex flex-col items-end gap-16';
 export const status = 'w-full leading-snug';
+// No-JS result messages, hidden until the redirect's #fragment targets one.
+export const noscriptStatus = 'hidden target:block mt-16 leading-snug';
 export const statusVariants = {
   success: 'text-digital-green',
   error: 'text-digital-red',
