@@ -178,7 +178,7 @@ export const ConsultationForm = () => {
         <textarea
           id="consultation-details"
           name="details"
-          rows={1}
+          rows={4}
           maxLength={5000}
           aria-describedby="consultation-details-help"
           className={styles.textarea}
